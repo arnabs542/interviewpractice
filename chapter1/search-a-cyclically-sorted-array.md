@@ -32,7 +32,7 @@ lo    hi    mid
 
 0    0
 
-In this case, when the inversion point occurs on mid, by setting hi = mid - 1 we actually end up skipping over the answer. However, if we leave hi = mid, our iterations will proceed as follows:
+In this case, when the inversion point occurs on mid, by setting `hi = mid - 1` we actually end up skipping over the answer. However, if we leave `hi = mid`, our iterations will proceed as follows:
 
 lo    hi    mid
 
@@ -60,10 +60,6 @@ def search_smallest(A):
     return lo
 ```
 
-
-
-
-
 This passed more tests, but failed on the following input: \[10, 20, 30, 40, 5\]
 
 lo    hi    mid
@@ -76,5 +72,5 @@ lo    hi    mid
 
 This fails on the initial termination condition, since `lo <= hi` forces one more check, which ends up bringing `lo` to 5, which is out of bounds. However, by replacing &lt;= with &lt;, we fail on the first input \[3,1,2\] again, since by setting `hi = mid - 1` we end up skipping over the inversion point when it lies directly on mid.
 
-In the end, I stumbled onto the solution by accident. We can set `hi = mid` to avoid skipping over the inversion point, but to prevent us from being locked in a loop we set `lo = mid + 1` regardless. This makes sense because if` A[lo] > A[mid]` is false, that means `A[mid] >= A[lo]`, which also means that there is no possible situation in which `A[mid]` could be the smallest element in the array. Therefore, we can discard it in our bounds.
+In the end, I stumbled onto the solution by accident. We can set `hi = mid` to avoid skipping over the inversion point, but to prevent us from being locked in a loop we set `lo = mid + 1` regardless. This makes sense because if`A[lo] > A[mid]` is false, that means `A[mid] >= A[lo]`, which also means that there is no possible situation in which `A[mid]` could be the smallest element in the array. Therefore, we can discard it in our bounds.
 
