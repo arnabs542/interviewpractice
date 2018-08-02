@@ -2,7 +2,7 @@
 
 My first attempted was a modified version of Template 1 \(refer to Leetcode section on binary search\), which is the inclusive upper bound. We proceed by looking for where the inversion point lies.
 
-```
+```py
 def search_smallest(A):
     lo, hi = 0, len(A) - 1
     while lo < hi:
