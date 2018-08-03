@@ -31,6 +31,8 @@ def square_root(k):
 
 Again, the general intuition here is that we want to find the largest number$$\small m$$ for which $$\small m * m < k$$ holds true. If $$\small m > \lfloor \frac{k}{m} \rfloor$$, then $$\small m $$ is strictly too big, and we can move `hi` to $$\small m - 1$$. Otherwise, we move `lo` up. By the time we terminate, `hi` should be smaller of the two numbers, and should hold the answer.
 
+We want to set our terminating condition to `lo <= hi` because we need to check the final number when both of these converge to a single number, since that could be answer. If we set the terminating condition strictly to `lo < hi`, when `lo == hi` we will end up not checking that number.
+
 Below is the book solution:
 
 ```py
