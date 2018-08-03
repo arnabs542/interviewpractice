@@ -31,5 +31,5 @@ The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$
 
 dsfsdf
 
-$$\ceil*[\big]{\frac{1}{2}}\]$$
+$$\ceil[\big]{\frac{1}{2}}\]$$
 
