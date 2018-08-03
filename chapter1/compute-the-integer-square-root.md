@@ -37,9 +37,7 @@ $$\ceil{1 over 2}$$
 Here is some inline math: $$a \ne 0$$
 ```
 
-
-
 $$a \ne 0$$
 
-$$`\lceil[\frac{\sqrt x}{y^3}\rceil]$`
+$$\`lceil[\frac{\sqrt x}{y^3}\rceil]$`
 
