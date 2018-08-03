@@ -54,7 +54,5 @@ For example, if $$\small k = 21$$, we initialize the interval to $$\small [0,21]
 
 For $$\small k = 25$$, the sequence of intervals is $$\small [0, 25], [0, 11], [6, 11], [6, 7], [6,5]$$. The returned value is $$\small 6 -1 = 5$$.
 
-
-
 Running time is $$\mathcal{O}(\log{n})$$.
 
