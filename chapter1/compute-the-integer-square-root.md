@@ -18,20 +18,24 @@ def square_root(k):
     if k < 2:
         return k
     lo, hi = 1, k // 2 + 1
-    while True:
+    while lo <= hi:
         mid = (lo + hi) // 2
         if mid > (k // mid):
             hi = mid - 1
-        elif mid + 1 > (k // (mid + 1)):
-            return mid
         else:
             lo = mid + 1
-    return lo
+    return hi
 ```
 
-If a number $$\small n$$ is exactly the integer square root of $$\small k $$, then $$\small n = \frac{k}{n}$$. If 
+Again, the general intuition here is that we want to find the largest number $$\small$$ for which
 
 
+
+We are looking for the integer square root, which means our answer $$\small n$$ must be smaller than equal to $$\small \frac{k}{n}$$. If $$\small n > \lfloor \frac{k}{n} \rfloor$$, then $$\small n$$ is strictly too large, and we can move `hi` to $$\small n - 1$$. 
+
+If $$\small n + 1 > \lfloor \frac{k}{n + 1} \rfloor$$ then $$\small n$$ must be the answer, since 
+
+If a number $$\small n$$ is exactly the integer square root of $$\small k $$, then $$\small n = \frac{k}{n}$$,
 
 Below if the book solution:
 
