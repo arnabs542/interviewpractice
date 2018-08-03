@@ -1,5 +1,16 @@
 # Compute the Integer Square Root
 
+The brute force solution is to iterate from 1 to 
+
+```py
+def square_root(k):
+    if k < 2:
+        return k
+    for i in range(1, k//2 + 2):
+        if i * i > k:
+            return i - 1
+```
+
 ```py
 def square_root(k):
     if k < 2:
@@ -15,6 +26,8 @@ def square_root(k):
             lo = mid + 1
     return lo
 ```
+
+The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$
 
 
 
