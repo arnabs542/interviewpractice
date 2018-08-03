@@ -17,17 +17,19 @@ Below is one implementation of the binary search solution.
 def square_root(k):
     if k < 2:
         return k
-    lo, hi = 1, k // 2
-    while lo < hi:
+    lo, hi = 1, k // 2 + 1
+    while True:
         mid = (lo + hi) // 2
         if mid > (k // mid):
-            hi = mid
+            hi = mid - 1
         elif mid + 1 > (k // (mid + 1)):
             return mid
         else:
             lo = mid + 1
     return lo
 ```
+
+If a number $$\small n$$ is exactly the integer square root of $$\small k $$, then $$\small n = \frac{k}{n}$$. If 
 
 
 
