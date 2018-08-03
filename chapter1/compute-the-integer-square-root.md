@@ -29,11 +29,12 @@ def square_root(k):
     return lo
 ```
 
-The intuition comes from the realization that if $$x^{2} < k$$, there is no point in checking any number smaller than $$x$$. Similarly, if $$x^{2} > k$$, then there is no point in checking any number larger than $$x$$. **The ability to discard large chunks of the search space is usually and indicator that this could be a binary search problem.** Specifically, we want to maintain a search space that consist of values whose squares are unclassified with respect to $$k$$, i.e. might be less than or greater than $$k$$.
+The intuition comes from the realization that if $$\small x^{2} < k$$, there is no point in checking any number smaller than $$x$$. Similarly, if $$\small x^{2} > k$$, then there is no point in checking any number larger than $$x$$. **The ability to discard large chunks of the search space is usually and indicator that this could be a binary search problem.** Specifically, we want to maintain a search space that consist of values whose squares are unclassified with respect to $$k$$, i.e. might be less than or greater than $$k$$.
 
-We iniitialize the interval to $$[0, k]$$. We compare the square of $$m = \lfloor(l+2)/2)\rfloor$$ with $$k$$, and use the elimination rule to update the interval. If $$m^{2} \leq k$$, we know that all integers less than or equal to $$m$$ have an square less than or equal to $$k$$. Therefore, we update the interval to $$[m + 1, r]$$. If $$m^{2} > k$$, we know all numbers greater than or equal to $$m$$ have a square greater than $$k$$, so we update the candidate interval to $$[l, m - 1]$$. The algorithm terminates when the interval is empty, in which case every number less than $$l$$ has a square less than or equal to $$k$$ and $$l's$$ square is greater than $$k$$, so the result is $$l - 1$$. 
+We iniitialize the interval to $$\small [0, k]$$. We compare the square of $$\small m = \lfloor(l+2)/2)\rfloor$$ with $$k$$, and use the elimination rule to update the interval. If $$\small m^{2} \leq k$$, we know that all integers less than or equal to $$m$$ have an square less than or equal to $$k$$. Therefore, we update the interval to $$\small [m + 1, r]$$. If $$\small m^{2} > k$$, we know all numbers greater than or equal to $$m$$ have a square greater than $$k$$, so we update the candidate interval to $$\small [l, m - 1]$$. The algorithm terminates when the interval is empty, in which case every number less than $$l$$ has a square less than or equal to $$k$$ and $$l's$$ square is greater than $$k$$, so the result is $$l - 1$$.
 
-For example, if $$k = 21$$, we initialize the interval to $$[0,21]$$. The midpoint $$m = \lfloor(0 + 21)/2\rfloor = 10$$; since $$10^{2} > 21$$, we update the interval to $$[0, 9]$$. Now $$m = \lfloor\(0 + 9\)/2\rfloor = 4$$
+For example, if $$\small k = 21$$, we initialize the interval to $\[0,21\]$$$$$. The midpoint $$small m = \lfloor(0 + 21)/2\rfloor = 10$$; since $$10^{2} > 21$$, we update the interval to $$\small [0, 9]$$. Now $$\small m = \lfloor(0 + 9
+)/2\rfloor = 4$$; since 
 
 $$\ceil{1 over 2}$$
 
