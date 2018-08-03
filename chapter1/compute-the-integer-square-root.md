@@ -1,6 +1,6 @@
 # Compute the Integer Square Root
 
-The brute force solution is to iterate from 1 to $$\ceil[k \over 2]$$ and return 
+The brute force solution is to iterate from 1 to $$\ceil[k \over 2]$$ and return
 
 ```py
 def square_root(k):
@@ -29,9 +29,7 @@ def square_root(k):
 
 The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$
 
-
-
-
+dsfsdf
 
 \ceil\*\[\big\]{\frac{1}{2}}\\]
 
