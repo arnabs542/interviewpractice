@@ -1,6 +1,6 @@
 # Compute the Integer Square Root
 
-The brute force solution is to iterate from 1 to $$\ceil[k \over 2]$$ and return
+The brute force solution is to iterate from 1 to \lceil\(\frac{k}{2}\rceil\) and return
 
 ```py
 def square_root(k):
@@ -39,7 +39,5 @@ Here is some inline math: $$a \ne 0$$
 
 $$a \ne 0$$
 
-`\lceil(\frac{\sqrt x}{y^3}\rceil)`
-
-
+$$$$
 
