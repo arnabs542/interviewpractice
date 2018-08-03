@@ -31,5 +31,15 @@ The quadratic formula is $$-b \pm \sqrt{b^2 - 4ac} \over 2a$$
 
 dsfsdf
 
-$$\ceil[\big]{\frac{1}{2}}\]$$
+$$\ceil{1 over 2}$$
+
+```
+Here is some inline math: $$a \ne 0$$
+```
+
+
+
+$$a \ne 0$$
+
+$$`\lceil[\frac{\sqrt x}{y^3}\rceil]$`
 
