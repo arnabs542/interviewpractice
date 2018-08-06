@@ -113,8 +113,6 @@ def binarySearch(nums, target):
 
 Template 3 is used to search for an element or condition which requires _accessing the current index and its immediate left and right neighbor's index_ in the array.
 
-
-
 **Key Attributes:**
 
 * Inclusive bounds
@@ -122,8 +120,6 @@ Template 3 is used to search for an element or condition which requires _accessi
 * Use element's neighbors to determine if condition is met and decide whether to go left or right
 * Gurantees Search Space is at least 3 in size at each step
 * Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
-
-
 
 **Distinguishing Syntax:**
 
