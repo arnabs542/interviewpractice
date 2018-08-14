@@ -19,3 +19,19 @@ The first condition ensures that each verification operation can be done quickly
 
 The binary search part of the solution usually comes in satisfying condition 2 - if we are able to establish a search space, and each iteration we are able to discard half of the space, then we generally have a good a good way to process the search space, since this will usually take us $$\small \mathcal O (\log{n})$$ iterations. We usually want to see if we can limit **condition 1** to around $$\small \mathcal O(n)$$ time to give us a $$\small \mathcal O(n\log(n))$$ time complexity.
 
+
+
+Other problems of this type:
+
+	• 786. K-th Smallest Prime Fraction
+
+	• 774 Minimize Max Distance to Gas Station
+
+	• 719. Find K-th Smallest Pair Distance
+
+	• 668. Kth Smallest Number in Multiplication Table
+
+	• 644. Maximum Average Subarray II
+
+	• 378. Kth Smallest Element in a Sorted Matrix
+
