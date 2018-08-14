@@ -21,7 +21,43 @@
 > where the largest sum among the two subarrays is only 18.
 > ```
 
+##### Code:
+
+```py
+def splitArray(self, nums, m):
+
+    # Test if solution is viable
+    def can_split(nums, splits, max_ele):
+        acc = 0
+        for e in nums:
+            if acc + e <= max_ele:
+                acc += e
+            else:
+                splits -= 1
+                if splits < 0:
+                    return False
+                acc = e
+        return True
+
+    lo, hi = float("-inf"), 0
+    for e in nums:
+        lo = max(lo, e)
+        hi += e
+
+    while lo < hi:
+        mid = (lo + hi) >> 1
+        if can_split(nums, m - 1, mid):
+            hi = mid
+        else:
+            lo = mid + 1
+    return lo
+```
+
+
+
+Explanation:
+
 This problem is not immediately clear that it is a trial-and-error problem. We first need to establish the search space, which can be determined by the input _m_. Instead of thinking of _m_ as the number of subarrays, we'll instead think of it as the number of cuts we are given. Suppose that we are given no cuts. Then the subarray is the entire input array we are given, and the smallest largest sum would be the sum of the entire array. On the other hand, suppose we were given an infinite number of cuts. Then the smallest largest sum would be largest element in the array. And thus, we have our search space: `[max(nums), sum(nums)]`.
 
-Next is to figure out how to verify our guess efficiently. 
+Next is to figure out how to verify our guess efficiently. To do so 
 
