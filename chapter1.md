@@ -128,5 +128,7 @@ Template 3 is used to search for an element or condition which requires _accessi
 * Searching Left: `right = mid`
 * Searching Right: `left = mid`
 
+More reading:
 
+http://www.cnblogs.com/grandyang/p/6854825.html
 

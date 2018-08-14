@@ -14,7 +14,7 @@
 
 ```py
 def maxAverage(self, nums, k):
-    
+
     def can_find(nums, avg, k):
         acc, count = 0, 0
         for i in range(len(nums)):
@@ -22,8 +22,8 @@ def maxAverage(self, nums, k):
                 if sum(nums[i:j])/(j - i) >= avg:
                     return True
         return False
-            
-    
+
+
     # write your code here
     lo, hi = min(nums), max(nums)
     while not math.isclose(lo, hi):
@@ -37,5 +37,9 @@ def maxAverage(self, nums, k):
     return lo
 ```
 
-Again, this 
+Since we already know this is a trial-and-error problem, let's first establish the search space. The maximum possible average is equal to the max element in the array, while the smallest possible average is equal to the min element in the array. 
+
+It's important to note the peculiarity with the number 5e-324, which causes some issues with comparisons to 0. I think this has something to do with floating representation in python but I'm not sure. 
+
+The verification portion timed out, since the above implementation is at worst $$\small \mathcal O(n^{2})$$ time. 
 
