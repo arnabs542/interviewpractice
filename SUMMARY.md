@@ -17,6 +17,7 @@
     * [Find K Closest Elements](chapter1/template-3/find-k-closest-elements.md)
   * [Trial and Error](chapter1/trial-and-error.md)
     * [Koko Eating Bananas](chapter1/trial-and-error/koko-eating-bananas.md)
+    * [Split Array Largest Sum](chapter1/trial-and-error/split-array-largest-sum.md)
   * [Search a Sorted Array for Entry Equal to Its Index](chapter1/search-a-sorted-array-for-entry-equal-to-its-index.md)
   * [\*Search A Sorted Array for First Occurrence of k](chapter1/search-a-sorted-array-for-first-occurrence-of-k.md)
   * [\*\*\*Search a Cyclically Sorted Array](chapter1/search-a-cyclically-sorted-array.md)
