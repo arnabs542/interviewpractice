@@ -17,10 +17,9 @@
 >
 > Explanation: The maximum number of envelopes you can Russian doll is 3
 > ([2,3] => [5,4] => [6,7])
->
 > ```
 
-Right away this should seem very similar to the Longest Increasing Subsequence problem. However, a key difference is that order does not need to preserved. 
+Right away this should seem very similar to the Longest Increasing Subsequence problem. However, a key difference is that order does not need to preserved.
 
 My first attempt is basically an adapted version of the O\(n2\) solution for the LIS problem:
 
@@ -48,9 +47,9 @@ def maxEnvelopes(self, envelopes):
 
 First we sort the dolls based on w \(can also sort based on h\). We then build an dp array to keep track of the max number of envelopes we can fit up using the doll at `nums[i]`. In the end, we return the max number we find.
 
-However, this solution timed out, suggesting that we should use the $$\small \mathcal O(n \log(n))$$ solution from the LIS problem, which built an array and used binary search to find the inserting points of new elements as we encountered them. The final length of the array would be the longest increasing subsequence, although the array itself would not be the answer.
+However, this solution timed out, suggesting that we should use the $$\small \mathcal O(n \log(n))$$ solution from the LIS problem, which built an array and used binary search to find the inserting points of new elements as we encountered them. The final length of the array would be the longest increasing subsequence, although the array itself would not be the answer.
 
-The difficulty with implementing that solution is there are no two parameters to judge. In the LIS problem, because we were just dealing with numbers, it was easy to insert into the array. For example, suppose the input array was: `[10,9,2,5,3,7,101,18]`. As we come across the 2, binary search will return an index 0, and we can replace the original element there \(9\) with a 2. However, in this problem, suppose that we have the input `[[2,3], [3,2], [4,3]]`. It is difficult to judge if we should replace the `[2,3]` with the `[3,2]`. Furthermore, it is difficult to figure out how to apply binary search in order to figure out the right index. 
+The difficulty with implementing that solution is there are no two parameters to judge. In the LIS problem, because we were just dealing with numbers, it was easy to insert into the array. For example, suppose the input array was: `[10,9,2,5,3,7,101,18]`. As we come across the 2, binary search will return an index 0, and we can replace the original element there \(9\) with a 2. However, in this problem, suppose that we have the input `[[2,3], [3,2], [4,3]]`. It is difficult to judge if we should replace the `[2,3]` with the `[3,2]`. Furthermore, it is difficult to figure out how to apply binary search in order to figure out the right index.
 
 ##### Code:
 
@@ -84,50 +83,37 @@ def maxEnvelopes(self, envelopes):
             chain[idx] = doll
 
     return len(chain)
-
 ```
 
 ##### Explanation:
 
 There are three key points to solving this problem in O\(n log n\) time:
 
+1. Sort by width. Break ties by letting doll with largest height win.
 
+2. When implementing binary search, look for leftmost insertion point.
 
-	1. Sort by width. Break ties by letting doll with largest height win.
+The intuition behind this problem comes from the realization that binary search works only for direct comparisons. Therefore, if we choose to use height as our distinguisher, we must find a way to deal with width separately.
 
-	2. When implementing binary search, look for leftmost insertion point.
+The reason we use a reverse secondary sort \(the height breaker\) is to avoid stuffing envelopes with same widths but different heights.
 
+For example, suppose we are given an input array like so: `[[2,3],[5,4],[5,6],[6,5]]`. If we sort normally, we may end up with `[[2,3],[5,4],[5,6],[6,5]]`. As we build our sequence, we will end up appending `[5,6]` after `[5,4]`, since our binary search finds position based on height. If we were to use a reverse secondary search, we will end up with `[[2,3],[5,6],[5,4],[6,5]]`. When we come to `[5,4]`, we will end up replacing `[5,6]`, which makes sense, since `[5,4]` has the same width but has a smaller height, making it more likely to be "stuffable".
 
-
-The intuition behind this problem comes from the realization that binary search works only for direct comparisons. Therefore, if we choose to use height as our distinguisher, we must find a way to deal with width separately. 
-
-
-
-The reason we use a reverse secondary sort \(the height breaker\) is to avoid stuffing envelopes with same widths but different heights. 
-
-
-
-For example, suppose we are given an input array like so: \[\[2,3\],\[5,4\],\[5,6\],\[6,5\]\]. If we sort normally, we may end up with \[\[2,3\],\[5,4\],\[5,6\],\[6,5\]\]. As we build our sequence, we will end up appending \[5,6\] after \[5,4\], since our binary search finds position based on height. If we were to use a reverse secondary search, we will end up with \[\[2,3\],\[5,6\],\[5,4\],\[6,5\]\]. When we come to \[5,4\], we will end up replacing \[5,6\], which makes sense, since \[5,4\] has the same width but has a smaller height, making it more likely to be "stuffable". 
-
-
+In other words, we want to make sure each next doll is better than previous dolls.
 
 Another way to understand the reverse secondary sort is via case analysis:
 
-	1. Since we sort by widths, every doll will be at least as wide as all the dolls in the chain
+1. Since we sort by widths, every doll will be at least as wide as all the dolls in the chain
 
-	2. Since we reverse sort heights, every doll will be at most as tall as the dolls in the chain with the same width
+2. Since we reverse sort heights, every doll will be at most as tall as the dolls in the chain with the same width
 
-		a. Suppose idx = len\(chain\):
+   a. Suppose idx = len\(chain\):
 
-			i. Because we are looking for the leftmost insertion point by height, this doll is the highest we've seen so far. Also due to \(1\), this doll is the widest
+   1.  The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]      `
 
-		b. Suppose idx &lt; len\(chain\):
+   b. Suppose idx &lt; len\(chain\):
 
-			i. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in chain\[:idx\]
+   1. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]`
 
-
-
-We need to find the leftmost insertion point to deal with duplicates, such as \[\[1,1,\],\[1,1\],\[1,1\]\]. If we don't find the l.i.p, then we'll end up appending the duplicates after each other, giving us the wrong answer. 
-
-
+We need to find the leftmost insertion point to deal with duplicates, such as` [[1,1,],[1,1],[1,1]]`. If we don't find the l.i.p, then we'll end up appending the duplicates after each other, giving us the wrong answer.
 
