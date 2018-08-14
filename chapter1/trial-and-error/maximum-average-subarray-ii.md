@@ -37,9 +37,52 @@ def maxAverage(self, nums, k):
     return lo
 ```
 
-Since we already know this is a trial-and-error problem, let's first establish the search space. The maximum possible average is equal to the max element in the array, while the smallest possible average is equal to the min element in the array. 
+Since we already know this is a trial-and-error problem, let's first establish the search space. The maximum possible average is equal to the max element in the array, while the smallest possible average is equal to the min element in the array.
 
-It's important to note the peculiarity with the number 5e-324, which causes some issues with comparisons to 0. I think this has something to do with floating representation in python but I'm not sure. 
+It's important to note the peculiarity with the number 5e-324, which causes some issues with comparisons to 0. I think this has something to do with floating representation in python but I'm not sure.
 
-The verification portion timed out, since the above implementation is at worst $$\small \mathcal O(n^{2})$$ time. 
+The verification portion timed out, since the above implementation is at worst $$\small \mathcal O(n^{2})$$ time.
+
+##### Code:
+
+```py
+def maxAverage(self, nums, k):
+    
+    def can_find(nums, avg, k):
+        cur_sum = min_presum = pre_sum = 0
+        for i in range(k):
+            cur_sum += nums[i] - avg
+        if cur_sum >= 0:
+            return True
+        for i in range(k, len(nums)):
+            cur_sum += nums[i] - avg
+            pre_sum += nums[i-k] - avg
+            min_presum = min(min_presum, pre_sum)
+            if cur_sum >= min_presum:
+                return True
+        return False
+            
+    
+    # write your code here
+    lo, hi = min(nums), max(nums)
+    while not math.isclose(lo, hi):
+        mid = (lo + hi) / 2  # bias mid towards high
+        if lo == 5e-324 or hi == 5e-324 or mid == 5e-324:
+            return 0
+        if can_find(nums, mid, k):
+            lo = mid
+        else:
+            hi = mid
+    return lo
+```
+
+##### Explanation:
+
+The main bottleneck in the first approach was that the validation took too long. In order to reduce the time complexity to $$\small \mathcal O(n)$$, we need to first compute the average differently.  Assume the average is at least $$\small K$$, there exist some $$\small i, j$$ such that $$\small (A[i] + A[i+1] + ... + A[j]) / (j - i + 1) >= K$$. We multiply both sides by \(j-i+1\), and move the right side to left, and we get $$\small (A[i] - K) + (A[i+1] - K) + ... + (A[j] - K) >= 0$$. This new method of computing the average is really the key in improving time complexity. 
+
+So, let $$\small B[i] = A[i] - K$$, we only need to find an interval `[i, j]` \(`j - i + 1 > L`\) such that $$\small B[i] + ... + B[j] >= 0$$. Now the problem is: Given array `B` and length `L`, we are to find an interval of maximum sum whose length is more than `L`. If the maximum sum is `>= 0`, the original average number `K` is possible.
+
+The second problem can be solved by linear scan. Let `sumB[0] = 0`, `sumB[i] = B[1] + B[2] + ... + B[i]`. For each index `i`, the max-sum interval which ended at `B[i]` is `sumB[i] - min(sumB[0], sumB[1], ..., sumB[i-L-1])`. When scanning the array with increasing `i`, we can maintain the `min(sumB[0], ..., sumB[i-L-1])` on the fly.
+
+
 
