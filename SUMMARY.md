@@ -24,4 +24,5 @@
   * [\*\*\*Search a Cyclically Sorted Array](chapter1/search-a-cyclically-sorted-array.md)
   * [\*\*\*Compute the Integer Square Root](chapter1/compute-the-integer-square-root.md)
   * [\*\*\*Compute the Real Square Root](chapter1/compute-the-real-square-root.md)
+  * [Russian Doll Envelopes](chapter1/russian-doll-envelopes.md)
 
