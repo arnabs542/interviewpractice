@@ -28,4 +28,5 @@
   * [Russian Doll Envelopes](chapter1/russian-doll-envelopes.md)
 * [General Search](general-search.md)
   * [Search in a 2D Sorted Array](general-search/search-in-a-2d-sorted-array.md)
+  * [Find the Min and Max Simultaneously](general-search/find-the-min-and-max-simultaneously.md)
 

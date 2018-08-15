@@ -35,8 +35,6 @@
 > Output: false
 > ```
 
-
-
 ##### Binary Search Code:
 
 ```py
@@ -81,7 +79,7 @@ def searchMatrix(self, matrix, target):
 
 ##### Explanation:
 
-The fact that both row and columns are ordered provides us the necessary conditions to directly apply binary search. First we search all rows to see if there is a candidate row. Upon finding the candidate row, if it exists, we then perform binary search in the row itself to search for the element. Overall runtime is $$\small \mathcal O(\log(r) + \log(c))$$, where $$\small r, c$$ represent the number of rows and columns in the matrix, respectively. 
+The fact that both row and columns are ordered provides us the necessary conditions to directly apply binary search. First we search all rows to see if there is a candidate row. Upon finding the candidate row, if it exists, we then perform binary search in the row itself to search for the element. Overall runtime is $$\small \mathcal O(\log(r) + \log(c))$$, where $$\small r, c$$ represent the number of rows and columns in the matrix, respectively.
 
 ##### Linear Search Code:
 
@@ -110,8 +108,9 @@ We can also use a simple linear search to find the element in $$\small \mathcal 
 
 * $$\small A[0][c-1] > x$$, in which case $$\small x$$ is smaller than all elements in Column $$\small c - 1$$.
 
-* 
-* 
-* 
+In either case, with each comparison, we're able to discard a whole row or column. 
+
+The algorithm starts by comparing the largest element in Row 0 with the target. If the target is greater than the element, we keep moving down rows until that is no longer the case. We then begin moving inwards, since we know the element can no longer be on the right side of our column, as all elements in the column in later rows are at least as large. 
+
 
 
