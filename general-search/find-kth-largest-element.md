@@ -46,7 +46,7 @@ def find_kth_largest(k, A):
 
 ##### Explanation:
 
-The code is very poorly optimized, but it illustrates the underlying idea very well. To find the $$\small k$$th largest element in-pace without completely sorting the array we can select an element at random \(the "pivot"\) and parition the remaining entries into those greater than the pivot and those less than the pivot. If there are exactly $$\small k-1$$ elements smaller than the pivot, then the pivot is the answer. If there are more than $$\small k-1$$ elements greater than the pivot, we can discard elements less than or equal to the pivot - the $$\small k$$-largest element must be greater than the pivot. If there are less than $$\small k-1$$ elements greater than the pivot, we can discard elements greater than or equal to the pivot. 
+The code is very poorly optimized, but it illustrates the underlying idea very well. To find the $$\small k$$th largest element in-pace without completely sorting the array we can select an element at random \(the "pivot"\) and parition the remaining entries into those greater than the pivot and those less than the pivot. If there are exactly $$\small k-1$$ elements smaller than the pivot, then the pivot is the answer. If there are more than $$\small k-1$$ elements greater than the pivot, we can discard elements less than or equal to the pivot - the $$\small k$$-largest element must be greater than the pivot. If there are less than $$\small k-1$$ elements greater than the pivot, we can discard elements greater than or equal to the pivot.
 
 ##### Code \(Optimized version\):
 
@@ -86,9 +86,13 @@ def find_kth_largest(k, A):
                 right = new_pivot_idx - 1
             else:    # new_pivot_idx < k - 1
                 left = new_pivot_idx + 1
-            
+
     return find_kth(operator.gt)
 ```
 
+##### Explanation:
 
+The simple implementation was bad because it initialized basically an entire new array at each recursion level. We can avoid that by performing that partitioning in place as above. 
+
+We begin by random generating an index value from within the inclusive left and right bounds. The partition algorithm above makes a few changes that makes the boundary updates significantly easier. First, the array is reverse partitioned, i.e. all of the elements grater than the pivot value comes first. This makes it so that we don't have to do extra subtraction to figure out what position the new index is in, which can lead to lots of off-by-one errors. Next, instead of the color sort program, we don't build the equal or smaller subarray. Instead, we first stash the pivot value all the way to the right, and then as we process the array, we are only concerned with finding elements strictly greater than the pivot value. The final `new_pivot_idx`_location is exactly where the pivot_value wille` `
 
