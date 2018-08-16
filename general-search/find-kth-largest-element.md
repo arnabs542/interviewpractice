@@ -75,11 +75,9 @@ def find_kth_largest(k, A):
 
         left, right = 0, len(A) - 1
         while left <= right:
-            print(A)
             # Generates a random integer in [left, right]
             pivot_idx = random.randint(left, right)
             new_pivot_idx = partition_around_pivot(left, right, pivot_idx)
-            print(A)
             if new_pivot_idx == k - 1:
                 return A[new_pivot_idx]
             elif new_pivot_idx > k - 1:
