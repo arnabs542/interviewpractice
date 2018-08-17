@@ -31,5 +31,5 @@
   * [Find the Min and Max Simultaneously](general-search/find-the-min-and-max-simultaneously.md)
   * [Find kth Largest Element](general-search/find-kth-largest-element.md)
   * [Find the Missing IP Address](general-search/find-the-missing-ip-address.md)
-  * Find the Duplicate and Missing Elements
+  * [Find the Duplicate and Missing Elements](general-search/find-the-duplicate-and-missing-elements.md)
 
