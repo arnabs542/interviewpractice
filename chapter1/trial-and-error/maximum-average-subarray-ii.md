@@ -65,7 +65,7 @@ def maxAverage(self, nums, k):
 
     lo, hi = min(nums), max(nums)
     while not math.isclose(lo, hi):
-        mid = (lo + hi) / 2  # bias mid towards high
+        mid = (lo + hi) / 2  
         if lo == 5e-324 or hi == 5e-324 or mid == 5e-324:
             return 0
         if can_find(nums, mid, k):
