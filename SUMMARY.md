@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Binary Trees](binary-trees.md)
   * [Compute the Exterior of a Binary Tree](binary-trees/compute-the-exterior-of-a-binary-tree.md)
+  * [Flatten Binary Tree to Linked List](binary-trees/flatten-binary-tree-to-linked-list.md)
 * [Binary Search](chapter1.md)
   * [Template 1](chapter1/template-1.md)
     * [Sqrt\(x\)](chapter1/template-1/sqrtx.md)
