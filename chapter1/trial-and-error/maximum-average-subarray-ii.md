@@ -89,13 +89,19 @@ The overall running time can now be loosely bounded by $$\small \mathcal O(n * \
 
 Another way to understand the verification portion is as a modified version of Kadane's algorithm. Let $$\small A$$ be the average and $$\small C_i$$ b the $$\small i^{th}$$ element of subsequence of length $$\small n$$. We essentially want to answer the question: **does there exist a subsequence with average that is **_**at least **_$$\small A$$?
 
-$$ A &lt;= \frac{1}{n} \sum_{i=1}^{n} C\__i $$
 
-`$$\sum_{n=1}^{\infty} 2^{-n} = 1$$`
+$$
+ A \leq \frac{1}{n} \sum_{i=1}^{n} C\__i
+$$
+$$nA \leq \sum_{i=1}^{n} C\__i$$
+
+ $$0 \leq \(\sum\_{i=1}^{n} C\\_\_i\) - nA$$ 
+
+$$0 \leq  \sum\_{i=1}^{n} C\\_\_i - nA\)$$
 
 ##### References:
 
 [https://stackoverflow.com/questions/12128221/how-to-quickly-find-the-maximum-average-interval](https://stackoverflow.com/questions/12128221/how-to-quickly-find-the-maximum-average-interval)
 
-https://activities.tjhsst.edu/sct/lectures/1112/binary102111.pdf
+[https://activities.tjhsst.edu/sct/lectures/1112/binary102111.pdf](https://activities.tjhsst.edu/sct/lectures/1112/binary102111.pdf)
 
