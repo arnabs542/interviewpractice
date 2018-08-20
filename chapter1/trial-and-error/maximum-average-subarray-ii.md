@@ -113,11 +113,13 @@ $$
 $$
 
 
-##### This 
+
 
 ##### References:
 
 [https://stackoverflow.com/questions/12128221/how-to-quickly-find-the-maximum-average-interval](https://stackoverflow.com/questions/12128221/how-to-quickly-find-the-maximum-average-interval)
 
 [https://activities.tjhsst.edu/sct/lectures/1112/binary102111.pdf](https://activities.tjhsst.edu/sct/lectures/1112/binary102111.pdf)
+
+https://stackoverflow.com/questions/7861387/maximum-contiguous-subsequence-sum-of-at-least-length-l
 
