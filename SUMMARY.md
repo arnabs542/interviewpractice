@@ -35,6 +35,5 @@
   * [Find kth Largest Element](general-search/find-kth-largest-element.md)
   * [Find the Missing IP Address](general-search/find-the-missing-ip-address.md)
   * [Find the Duplicate and Missing Elements](general-search/find-the-duplicate-and-missing-elements.md)
-* [test](test.md)
 * [Hash Tables](hash-tables.md)
 
