@@ -30,23 +30,26 @@
 ##### Code:
 
 ```py
-def smallestDistancePair(self, nums, k):
+def smallestDistancePair(nums, k):
+    def possible(guess):
+        #Is there k or more pairs with distance <= guess?
+        count = left = 0
+        for right, x in enumerate(nums):
+            while x - nums[left] > guess:
+                left += 1
+            count += right - left
+        return count >= k
 
     nums.sort()
-
-    def countLTE(nums, dist):
-        ans = 0
-        for i in range(len(nums)):
-            ans += bisect.bisect_right(nums, nums[i] + dist) - i - 1
-        return ans
-
-    lo, hi = 0, nums[-1] - nums[0]
+    lo = 0
+    hi = nums[-1] - nums[0]
     while lo < hi:
-        mid = (lo + hi) >> 1
-        if countLTE(nums, mid) < k:
-            lo = mid + 1
+        mi = (lo + hi) / 2
+        if possible(mi):
+            hi = mi
         else:
-             hi = mid
+            lo = mi + 1
+
     return lo
 ```
 
@@ -58,9 +61,9 @@ We first figure out the search space, which is `[0, max(nums) - min(nums)]`. We 
 
 The trial section of the code is relatively straight forward - shrink the search space until we converge on the smallest `num` which causes `countLTE(nums, num)` to return True.
 
-Naïvely implemented, the verification portion would take $$\small \mathcal O(n^{2})$$ time, since we'd have to loop through all pairs and see how many them are less than num. However, doing it like so disregards the previous work we put into sorting the array. Let us denote interval `d_i`j as an interval that begins at `nums[i]` and ends at `nums[j]`. If we hold `i` steady and increase `j` until `d_ij > nums[i] + dist`, then we've found all intervals beginning at `i` that has a distance less than num. Since the array is sorted, and we're essentially looking for the right most insertion point of `nums[i] + dist`, we can also use binary search to assist in the verification portion. In fact, this is a bit similar to the one-armed quicksort algorithm to find the median, where we discard the array based on how many elements lie to the left of a certain element.
+Naïvely implemented, the verification portion would take $$\small \mathcal O(n^{2})$$ time, since we'd have to loop through all pairs and see how many them are less than num. However, doing it like so disregards the previous work we put into sorting the array. We will use a sliding window approach to count the number of pairs with distance `<=` guess. For every possible `right`, we maintain the loop invariant: `left` is the smallest value such that `nums[right] - nums[left] <= guess`. Then, the number of pairs with `right` as it's right-most endpoint is `right - left`, and we add all of these up.
 
-I think the overall runtime complexity is: $$\small \mathcal O(\log(d) * n * \log(n))$$.
+ Time Complexity: $$\small O(N \log{W} + N \log{N})$$, where $$\small N$$ is the length of `nums`, and $$\small W$$ is equal to `nums[-1] - nums[0]`. The $$\small \log{W}$$ factor comes from our binary search, and we do $$\small \mathcal O(n)$$ work each inside each call for verification. The $$\small \mathcal O(N \log{N})$$ factor comes from the initial sorting of the array. 
 
-The initial sort takes $$\small \mathcal O(n \log(n))$$ time. The trial takes $$\small \mathcal O(\log(d))$$ time, where `d = nums[-1] - nums[0]`. During each trial, the verification takes $$\small \mathcal O(n \log(n))$$.
+
 
