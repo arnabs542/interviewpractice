@@ -37,4 +37,5 @@
   * [Find the Duplicate and Missing Elements](general-search/find-the-duplicate-and-missing-elements.md)
 * [Hash Tables](hash-tables.md)
   * [Group Anagrams](hash-tables/group-anagrams.md)
+  * [Test for Palindromic Permutations](hash-tables/test-for-palindromic-permutations.md)
 
