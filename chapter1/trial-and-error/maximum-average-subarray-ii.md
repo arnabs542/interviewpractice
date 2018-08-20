@@ -93,11 +93,27 @@ Another way to understand the verification portion is as a modified version of K
 $$
  A \leq \frac{1}{n} \sum_{i=1}^{n} C\__i
 $$
-$$nA \leq \sum_{i=1}^{n} C\__i$$
 
- $$0 \leq \(\sum\_{i=1}^{n} C\\_\_i\) - nA$$ 
 
-$$0 \leq  \sum\_{i=1}^{n} C\\_\_i - nA\)$$
+
+$$
+nA \leq \sum_{i=1}^{n} C\__i
+$$
+
+
+
+$$
+0 \leq (\sum_{i=1}^{n} C_i) - nA
+$$
+
+
+
+$$
+0 \leq (\sum_{i=1}^{n} C_i - nA)
+$$
+
+
+##### This 
 
 ##### References:
 
