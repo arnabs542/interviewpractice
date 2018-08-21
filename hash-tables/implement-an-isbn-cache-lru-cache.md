@@ -72,5 +72,39 @@ If we were to simply build an inventory tracking system for books and prices, a 
 
 We now need to not only keep track of all the books, but also keep track of when they were last accessed. A heap could be used here, and we use a time stamp to order the entries. However, updating an entry would require a pop and then a push, each costing $$\small \mathcal O(\log{k})$$ time. Furthermore, we need to figure out the entry with the earliest timestamp, which could cost $$\small \mathcal O(n)$$ time to scan all entries. A linked list provides us $$\small \mathcal O(1)$$ removal and insertion - we could initialize a node for each book and chain them in the order they were last accessed. However, a linked chain by itself requires $$\small \mathcal O(n)$$ retreival time. However, if we use a second dictionary to keep track of each node, we could reduce that to constant time.
 
-The cache consists of two dictionaries: One to keep track of all the prices, and one to keep track of the corresponding node for each book. Upon inserting or lookup, we initialize a node if needed, then update its LRU node to the front of the position. Deleting a book requires deletion of the LRU node and the price. 
+The cache consists of two dictionaries: One to keep track of all the prices, and one to keep track of the corresponding node for each book. Upon inserting or lookup, we initialize a node if needed, then update its LRU node to the front of the position. Deleting a book requires deletion of the LRU node and the price.
+
+If we allowed, we can directly use the OrderedDict data structure from Python, which is a dictionary object that remembers the ordering of insertion
+
+##### Code \(Library\):
+
+```
+class LruCache:
+    def __init__(self, capacity):
+        self._isbn_price_table = collections.OrderedDict()
+        self._capacity = capacity
+        return
+
+
+    def lookup(self, isbn):
+        if isbn not in self._isbn_price_table:
+            return -1
+        # Moves to last position
+        price = self._isbn_price_table.pop(isbn)
+        self._isbn_price_table[isbn] = price
+        return price
+
+    def insert(self, isbn, price):
+        # Add value for key only if key is not present
+        if isbn in self._isbn_price_table:
+            price = self._isbn_price_table.pop(isbn)
+        elif len(self._isbn_price_table) == self._capacity:
+            self._isbn_price_table.popitem(last=False)
+        self._isbn_price_table[isbn] = price
+
+    def erase(self, isbn):
+        return self._isbn_price_table.pop(isbn, None) is not None
+```
+
+
 
