@@ -1,5 +1,11 @@
 #### Implement an ISBN Cache \(LRU Cache\)
 
+> Create a chace for looking up prices of books indentified by their ISBN. For the purpose of this exercise, treat ISBNs and prices as positive integers. You must implement lookup, insert, and erase methods. Use the Least Recently Used \(LRU\) policy for cache eviction. 
+>
+> * Insert: if an ISBN is already present, insert should not update the price, but should update that ISBN to be the most recently used entry. 
+> * Lookup: given an ISBN, return the corresponding price; if the element is not present, return -1. If the ISBN is present, update that entry to be the most recently used ISBN. 
+> * Erase: remove the specified ISBN and corresponding value from the case. Return true if the ISBN was present; otherwise, return false.
+
 ##### Code:
 
 ```py
