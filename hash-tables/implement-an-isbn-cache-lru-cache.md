@@ -74,7 +74,9 @@ We now need to not only keep track of all the books, but also keep track of when
 
 The cache consists of two dictionaries: One to keep track of all the prices, and one to keep track of the corresponding node for each book. Upon inserting or lookup, we initialize a node if needed, then update its LRU node to the front of the position. Deleting a book requires deletion of the LRU node and the price.
 
-If we allowed, we can directly use the OrderedDict data structure from Python, which is a dictionary object that remembers the ordering of insertion
+If we allowed, we can directly use the OrderedDict data structure from Python, which is a dictionary object that remembers the ordering of insertion. In the event of lookups and insertions, if a key is already present, we will need to pop and push again to move to the end of the list, since simply changing the value does not change the position of the entry. 
+
+When popping from a dictionary, a default value can be provided to be returned in the event the key is not in the dictionary. 
 
 ##### Code \(Library\):
 
