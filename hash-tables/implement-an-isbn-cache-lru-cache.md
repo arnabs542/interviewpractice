@@ -78,7 +78,7 @@ If we allowed, we can directly use the OrderedDict data structure from Python, w
 
 ##### Code \(Library\):
 
-```
+```py
 class LruCache:
     def __init__(self, capacity):
         self._isbn_price_table = collections.OrderedDict()
