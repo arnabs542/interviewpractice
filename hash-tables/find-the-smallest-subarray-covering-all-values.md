@@ -1,8 +1,8 @@
-Find the Smallest Subarray Covering All Values
+#### Find the Smallest Subarray Covering All Values/Minimum Window Substring
 
+> Write a program which takes an array of strings and a set of strings, and return the indices of the start and ending index of a shortest subarray of the given array that "covers" the set, i.e., contains all strings in the set.
 
-
-Code:
+##### Code:
 
 ```py
 def find_smallest_sequentially_covering_subset(paragraph, keywords):
@@ -28,5 +28,13 @@ def find_smallest_sequentially_covering_subset(paragraph, keywords):
     return result
 ```
 
+##### Explanation:
 
+First let us think of simpler problems. Suppose our task was simply to figure out whether or not a subarray existed that could cover all keywords. We would initialize a counter of the keywords and iterate through the subarray, decrementing the counter each time we find a word that's the keyword. When all of the keywords have a count of 0, then we return true. If we reach the end of the paragraph and not all keywords have been found, then we return false. 
+
+The next step would be return the indices of the subarray if it exists. The only change we need to make to the above code is we remember the first index where we found a keyword and the index where we found the last remaining keyword. 
+
+To find the smallest subarray to cover all keywords is then a simple change of the above solution. We now utilize a sliding window method: advance the right index until we have found all keyword. Then advance the left index forwards until we no longer have all the keywords in the subarray. Then advance the right index. We do this until we finish iterating through the array. 
+
+This algorithm takes $$\small \mathcal O(n)$$ time and space. One tip for optimization to remember is that we don't need a hash set to remember which words are left; instead, we just initialize an integer counter equal to the length of the keywords array and check its value instead. 
 
