@@ -41,7 +41,8 @@
   * [Test for Palindromic Permutations](hash-tables/test-for-palindromic-permutations.md)
   * [Is an Anonymous Letter Constructible](hash-tables/is-an-anonymous-letter-constructible.md)
   * [Implement an ISBN Cache \(LRU Cache\)](hash-tables/implement-an-isbn-cache-lru-cache.md)
-  * Implement a LFU Cache
-  * Compute the LCA, Optimizing for Close Ancestors
+  * [Implement a LFU Cache](hash-tables/implement-a-lfu-cache.md)
+  * [Compute the LCA, Optimizing for Close Ancestors](hash-tables/compute-the-lca-optimizing-for-close-ancestors.md)
   * [Find the Nearest Repeated Entries in an Array](hash-tables/find-the-nearest-repeated-entries-in-an-array.md)
+  * Find the Smallest Subarray Covering all Values
 
