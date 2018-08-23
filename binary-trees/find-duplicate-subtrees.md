@@ -55,7 +55,7 @@ def findDuplicateSubtrees(root):
 
 ##### Explanation:
 
-The idea is to serialize the path from each root to a leaf, and to use that as as the key instead of note values themselves. Duplicate subtrees will have the same paths, and once we traverse the tree completely, we simply check for paths with more than one root. Pay attention that we must use either preorder or postorder traversal - inorder traversal with null markers will result in identical paths for different trees \(try some examples\). 
+The idea is to serialize the path from each root to a leaf, and to use that as as the key instead of note values themselves. Duplicate subtrees will have the same paths, and once we traverse the tree completely, we simply check for paths with more than one root. Pay attention that we must use either preorder or postorder traversal - inorder traversal with null markers will result in identical paths for different trees \(try some examples\).
 
-Overall runtime should be $$\small \mathcal O(n)$$ from the tree traversal, however additional time maybe be required depending on string construction. 
+The tree traversal takes $$\small \mathcal O(n)$$ time, however, the serialization takes $$\small \mathcal O(n)$$ as well. In the case of a completely unbalanced tree, the running time is bounded by $$\small \mathcal O(n^{2})$$ time. 
 
