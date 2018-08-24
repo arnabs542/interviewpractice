@@ -1,0 +1,4 @@
+#### Compute all String Decompositions
+
+
+
