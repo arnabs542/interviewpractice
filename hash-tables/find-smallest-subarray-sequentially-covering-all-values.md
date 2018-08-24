@@ -42,7 +42,38 @@ def find_smallest_sequentially_covering_subset(paragraph, keywords):
     return Subarray(res[0], res[1])
 ```
 
-We still use a hash table to keep track of frequency of keyword occurences, however we key focal point is the index of the current keyword we are looking for. When we have found all keywords, we then start moving the left boundary inwards until we lose all occurrences of keyword, in which case we start moving right again looking for that keyword. However, this doesn't work in the situation where later examples of earlier keywords occur. For example, take the paragraph array: \[O, X, Y, R, O, Z, M, P\] and the keyword array \[O, R, M\]. We sill begin the while loop after reaching the M character, but when we move our left boundary past the first O, we need to start over, else the sequence is broken. However, because we have an extra O in the subarray, the left boundary will stop after moving past the first R, since that is the first keyword to be depleted. 
+We still use a hash table to keep track of frequency of keyword occurences, however we key focal point is the index of the current keyword we are looking for. When we have found all keywords, we then start moving the left boundary inwards until we lose all occurrences of keyword, in which case we start moving right again looking for that keyword. However, this doesn't work in the situation where later examples of earlier keywords occur. For example, take the paragraph array: \[O, X, Y, R, O, Z, M, P\] and the keyword array \[O, R, M\]. We sill begin the while loop after reaching the M character, but when we move our left boundary past the first O, we need to start over, else the sequence is broken. However, because we have an extra O in the subarray, the left boundary will stop after moving past the first R, since that is the first keyword to be depleted.
 
+##### Code:
 
+```py
+def find_smallest_sequentially_covering_subset(paragraph, keywords):
+
+    keyword_to_idx = {k: i for i, k in enumerate(keywords)}
+    latest_occurence = [-1] * len(keywords)
+    shortest_subarray_length = [float("inf")] * len(keywords)
+
+    shortest_distance = float("inf")
+    result = Subarray(-1, -1)
+
+    for i, p in enumerate(paragraph):
+        if p in keyword_to_idx:
+            keyword_idx = keyword_to_idx[p]
+            if keyword_idx == 0:
+                shortest_subarray_length[keyword_idx] = 1
+            elif shortest_subarray_length[keyword_idx - 1] < float("inf"):
+                distance_to_prev_keyword = i - latest_occurence[keyword_idx - 1]
+                shortest_subarray_length[keyword_idx] = distance_to_prev_keyword + shortest_subarray_length[keyword_idx - 1]
+            latest_occurence[keyword_idx] = i
+
+            if keyword_idx == len(keywords) - 1 and shortest_distance > shortest_subarray_length[-1]:
+                shortest_distance = shortest_subarray_length[-1]
+                result = Subarray(i - shortest_distance + 1, i)
+
+    return result
+```
+
+##### Explanation:
+
+The key to avoid doing work 
 
