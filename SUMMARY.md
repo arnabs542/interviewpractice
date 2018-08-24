@@ -48,4 +48,5 @@
   * [Find the Smallest Subarray Covering all Values](hash-tables/find-the-smallest-subarray-covering-all-values.md)
   * [Find Smallest Subarray Sequentially Covering all Values](hash-tables/find-smallest-subarray-sequentially-covering-all-values.md)
   * [Find the Longest Subarray with Distinct Entries](hash-tables/find-the-longest-subarray-with-distinct-entries.md)
+  * [Find the Length of a Longest Contained Interval](hash-tables/find-the-length-of-a-longest-contained-interval.md)
 
