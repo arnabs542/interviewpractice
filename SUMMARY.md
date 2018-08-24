@@ -47,4 +47,5 @@
   * [Find the Nearest Repeated Entries in an Array](hash-tables/find-the-nearest-repeated-entries-in-an-array.md)
   * [Find the Smallest Subarray Covering all Values](hash-tables/find-the-smallest-subarray-covering-all-values.md)
   * [Find Smallest Subarray Sequentially Covering all Values](hash-tables/find-smallest-subarray-sequentially-covering-all-values.md)
+  * [Find the Longest Subarray with Distinct Entries](hash-tables/find-the-longest-subarray-with-distinct-entries.md)
 
