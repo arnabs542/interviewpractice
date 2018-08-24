@@ -27,7 +27,7 @@ def longest_contained_range(A):
 
 ##### Explanation:
 
-We could of course sort the array, and traverse through it looking for the longest element. However, the key insight is that we don't need the absolute ordering. Suppose that we know and element $$\small e$$ is in the array, then we simply need to check for its successors and predecessors until they are no longer in the array. 
+We could of course sort the array, and traverse through it looking for the longest element. However, the key insight is that we don't need the absolute ordering. Suppose that we know and element $$\small e$$ is in the array, then we simply need to check for its successors and predecessors until they are no longer in the array.
 
-We put all elements into a set, and then while the set is not empty, we take a random element and find its highest successor and lowest predecessor. Those two numbers are enough to give us the range. Since we push and pop each element exactly once, the time complexity is $$\small O(n)$$. 
+We put all elements into a set, and then while the set is not empty, we take a random element and find its highest successor and lowest predecessor. Those two numbers are enough to give us the range. Since we push and pop each element exactly once, the time complexity is $$\small \mathcal O(n)$$.
 
