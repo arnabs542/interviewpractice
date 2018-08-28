@@ -39,6 +39,7 @@
   * [Find the Duplicate and Missing Elements](general-search/find-the-duplicate-and-missing-elements.md)
 * [Hash Tables](hash-tables.md)
   * [Group Anagrams](hash-tables/group-anagrams.md)
+  * [Groups of Special-Equivalent Strings](hash-tables/groups-of-special-equivalent-strings.md)
   * [Test for Palindromic Permutations](hash-tables/test-for-palindromic-permutations.md)
   * [Is an Anonymous Letter Constructible](hash-tables/is-an-anonymous-letter-constructible.md)
   * [Implement an ISBN Cache \(LRU Cache\)](hash-tables/implement-an-isbn-cache-lru-cache.md)
@@ -50,5 +51,5 @@
   * [Find the Longest Subarray with Distinct Entries](hash-tables/find-the-longest-subarray-with-distinct-entries.md)
   * [Find the Length of a Longest Contained Interval](hash-tables/find-the-length-of-a-longest-contained-interval.md)
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
-  * [Rearrange String K Distance Apart](hash-tables/rearrange-string-k-distance-apart.md)
+  * Groups of Special-Equivalent Strings
 
