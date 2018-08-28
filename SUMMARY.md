@@ -6,6 +6,7 @@
   * [Flatten Binary Tree to Linked List](binary-trees/flatten-binary-tree-to-linked-list.md)
   * [Construct Binary Tree from Preorder and Postorder Traversal](binary-trees/construct-binary-tree-from-preorder-and-postorder-traversal.md)
   * [Find Duplicate Subtrees](binary-trees/find-duplicate-subtrees.md)
+  * [All Possible Full Binary Trees](binary-trees/all-possible-full-binary-trees.md)
 * [Binary Search](chapter1.md)
   * [Template 1](chapter1/template-1.md)
     * [Sqrt\(x\)](chapter1/template-1/sqrtx.md)
