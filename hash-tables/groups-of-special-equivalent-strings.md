@@ -2,11 +2,11 @@
 
 > You are given an array `A` of strings.
 >
-> Two strings `S` and `T` are _special-equivalent_ if after any number of _moves_, S == T.
+> Two strings `S` and `T` are _special-equivalent_ if after any number of _moves_, S == T.
 >
 > A _move_ consists of choosing two indices `i` and `j` with `i % 2 == j % 2`, and swapping `S[i]` with `S[j]`.
 >
-> Now, a _group of special-equivalent strings from `A`_ is a non-empty subset S of `A` such that any string not in S is not special-equivalent with any string in S.
+> Now, a _group of special-equivalent strings from _`A` is a non-empty subset S of `A` such that any string not in S is not special-equivalent with any string in S.
 >
 > Return the number of groups of special-equivalent strings from `A`.
 >
@@ -32,7 +32,6 @@
 > Input: ["abc","acb","bac","bca","cab","cba"]
 > Output: 3
 > Explanation: 3 groups ["abc","cba"], ["acb","bca"], ["bac","cab"]
->
 > ```
 >
 > **Example 4:**
@@ -45,7 +44,7 @@
 
 ##### Code \(TLE\):
 
-```
+```py
 def numSpecialEquivGroups(A):
 
     def is_eq(s1, s2):
@@ -76,15 +75,15 @@ def numSpecialEquivGroups(A):
 
 ##### Explanation:
 
-My first approach time out. The idea was to process each string by running it through all other groups and see if it fit into any already processed groups. If not, then it would become its one group. The running time of the above approach is bounded by $$\small \mathcal O(N^{2}m)$$, where $$\small N, m$$ represent the number of words and the word length respectively. 
+My first approach time out. The idea was to process each string by running it through all other groups and see if it fit into any already processed groups. If not, then it would become its one group. The running time of the above approach is bounded by $$\small \mathcal O(N^{2}m)$$, where $$\small N, m$$ represent the number of words and the word length respectively.
 
-The idea here is to use hashing, but in a more efficient way. The extra layer of complexity of this problem is due to the restriction in terms of which characters are swappable  - without it, simply compute how many of each letters each word has, and if two words have the same set and frequency of letters, then they are equivalent. 
+The idea here is to use hashing, but in a more efficient way. The extra layer of complexity of this problem is due to the restriction in terms of which characters are swappable  - without it, simply compute how many of each letters each word has, and if two words have the same set and frequency of letters, then they are equivalent.
 
-Since we are only allowed to swap odd indices with odd indices and even with even, we just need to change our hashing function a bit. 
+Since we are only allowed to swap odd indices with odd indices and even with even, we just need to change our hashing function a bit.
 
 ##### Code:
 
-```
+```py
 def numSpecialEquivGroups(self, A):
 
     def encoding(string):
@@ -117,5 +116,5 @@ def numSpecialEquivGroups(self, A):
 
 ##### Explanation:
 
-This idea is the same, simply record how how many characters each word has, and their positions. If two words have the same characters and the same amount of characters in both odd and even indices, then the two words are equivalent. This algorithm takes $$\small \mathcal O(Nm)$$ time, and $$\small O(N)$$ space at worst. 
+This idea is the same, simply record how how many characters each word has, and their positions. If two words have the same characters and the same amount of characters in both odd and even indices, then the two words are equivalent. This algorithm takes $$\small \mathcal O(Nm)$$ time, and $$\small O(N)$$ space at worst.
 

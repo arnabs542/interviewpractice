@@ -10,7 +10,7 @@
 
 ##### Code \(Unoptimized\):
 
-```
+```py
 def find_all_substrings(s, words):
     char_freq = collections.Counter("".join(words))
     word_freq = collections.Counter(words)
@@ -38,7 +38,7 @@ def find_all_substrings(s, words):
 
 ##### Explanation:
 
-The fact that all words are of the same length greatly simplifies the problem. The above approach heavily utilizes this constraint. We start by generate a frequency mapping of all the characters in our words array and a frequency mapping of all the words in the words array. We then move a sliding window of the correct size through the sentence. Whenever we find a substring that matches the character frequency, we then check to see if it is an actual match by decomposing all the words. However, this approach is not ideal because we have iterate through every substring, and in the event that we get a frequency match for every substring, our time complexity is bounded by $$\small \mathcal O(n^{2})$$ \(suppose substring length = N/2, where N is the length of the sentence\). Furthermore, comparing hash tables takes $$\small \mathcal O(n)$$ time, since we have to iterate through all keys in the hash table. 
+The fact that all words are of the same length greatly simplifies the problem. The above approach heavily utilizes this constraint. We start by generate a frequency mapping of all the characters in our words array and a frequency mapping of all the words in the words array. We then move a sliding window of the correct size through the sentence. Whenever we find a substring that matches the character frequency, we then check to see if it is an actual match by decomposing all the words. However, this approach is not ideal because we have iterate through every substring, and in the event that we get a frequency match for every substring, our time complexity is bounded by $$\small \mathcal O(n^{2})$$ \(suppose substring length = N/2, where N is the length of the sentence\). Furthermore, comparing hash tables takes $$\small \mathcal O(n)$$ time, since we have to iterate through all keys in the hash table.
 
 ##### Code \(Book\):
 
@@ -63,7 +63,7 @@ def find_all_substrings(s, words):
 
 ##### Explanation:
 
-The book code is pretty much the same as mine, with some changes in implementation. Again, we move a sliding window of the correct size through the sentence, and then we try to decompose the substring into words. 
+The book code is pretty much the same as mine, with some changes in implementation. Again, we move a sliding window of the correct size through the sentence, and then we try to decompose the substring into words.
 
-The time complexity analysis can be derived as follows: Let $$\small m$$ be the number of words and $$\small n$$ the length of each word. Let $$\small N$$ be the length of the sentence. For any fixed $$\small i$$, to check if the string of length $$\small nm$$ starting at an offset of $$\small i$$ in the sentence is the concatenation of all words has time complexity $$\small \mathcal O(nm)$$, assuming a has table is used to store the set of words. This implies the overall time complexity is $$\small \mathcal O(Nnm)$$. In practice, the individual checks should be slightly faster because of early terminations. 
+The time complexity analysis can be derived as follows: Let $$\small m$$ be the number of words and $$\small n$$ the length of each word. Let $$\small N$$ be the length of the sentence. For any fixed $$\small i$$, to check if the string of length $$\small nm$$ starting at an offset of $$\small i$$ in the sentence is the concatenation of all words has time complexity $$\small \mathcal O(nm)$$, assuming a has table is used to store the set of words. This implies the overall time complexity is $$\small \mathcal O(Nnm)$$. In practice, the individual checks should be slightly faster because of early terminations.
 
