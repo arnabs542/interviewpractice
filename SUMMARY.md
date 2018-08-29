@@ -52,5 +52,4 @@
   * [Find the Longest Subarray with Distinct Entries](hash-tables/find-the-longest-subarray-with-distinct-entries.md)
   * [Find the Length of a Longest Contained Interval](hash-tables/find-the-length-of-a-longest-contained-interval.md)
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
-  * [Groups of Special-Equivalent Strings](hash-tables/groups-of-special-equivalent-strings.md)
 
