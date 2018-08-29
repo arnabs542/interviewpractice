@@ -56,4 +56,7 @@
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
+* Sorting
+  * Compute the Intersection of Two Sorted Arrays
+  * Merge Two Sorted Arrays
 
