@@ -66,5 +66,7 @@ def kEmptySlots(flowers, k):
     return -1
 ```
 
+##### Explanation:
+
 
 
