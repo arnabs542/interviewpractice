@@ -53,10 +53,10 @@
   * [Find the Length of a Longest Contained Interval](hash-tables/find-the-length-of-a-longest-contained-interval.md)
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
   * [Implement a Hash Function for Chess](hash-tables/implement-a-hash-function-for-chess.md)
+* Sorting
+  * [Compute the Intersection of Two Sorted Arrays](compute-the-intersection-of-two-sorted-arrays.md)
+  * Merge Two Sorted Arrays
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
-* Sorting
-  * Compute the Intersection of Two Sorted Arrays
-  * Merge Two Sorted Arrays
 
