@@ -68,5 +68,7 @@ def kEmptySlots(flowers, k):
 
 ##### Explanation:
 
-The first realization is that the upper or lower bound to each position must be in a specific range. For example, suppose _k _= 1. Then if we were just told that the flower at x = 2 bloomed, we would directly check whether the flower at x = 0 or x = 4 bloomed, before checking to see all flowers in between are not blooming. 
+The first realization is that the upper or lower bound to each position must be in a specific range. For example, suppose _k _= 1. Then if we were just told that the flower at `x = 2` bloomed, we would directly check whether the flower at `x = 0` or `x = 4` bloomed, before checking to see all flowers in between are not blooming.
+
+We partition the array into buckets of size `k+1`, and for each flower that blooms, we check whether it is the lowest or highest position in that bucket \(if it is not either extreme, that means there is a flower on both side with distance less than _k_ that is blooming, and therefore we can not possibly finish on that day\). If it is either extreme \(or both\), we then check to see if its counter part is the highest or lowest blooming position in the correct bucket. 
 
