@@ -52,6 +52,7 @@
   * [Find the Longest Subarray with Distinct Entries](hash-tables/find-the-longest-subarray-with-distinct-entries.md)
   * [Find the Length of a Longest Contained Interval](hash-tables/find-the-length-of-a-longest-contained-interval.md)
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
+  * [Implement a Hash Function for Chess](hash-tables/implement-a-hash-function-for-chess.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
