@@ -54,4 +54,5 @@
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
+  * [K Empty Slots](bucketing/k-empty-slots.md)
 
