@@ -23,7 +23,7 @@
 
 The problem statement is a bit confusing, but the main idea is rather straightforward. We are given an array of flowers and an integer _k_. Everyday, a flower transitions from the non-blooming state to the blooming state, where it will permanently remain. The number in the `flowers` array tell us which flowers blooms on that day. For example, if `flowers[0] = 4`, then on the 0th day, the flower at position 4 blooms. We are tasked to find the earliest occurrence in which there are two flowers \_k \_distance apart, and none of the flowers between the two are blooming.
 
-##### Code \(Unoptimized\):
+##### Code \(Iteration\):
 
 ```py
 def kEmptySlots(flowers, k):
@@ -44,7 +44,27 @@ def kEmptySlots(flowers, k):
 
 ##### Explanation:
 
-My first approach was to use a hash table to remember each location that blooms as we process them. We then check both ways to see if the flower in position `x - 1 - k` or position `x + 1 + k` have bloomed. If so, we then check to see if the _k_ flowers between the two boundary points are blooming - if not, then return, because we have found our answer. Since running through the entire array takes $$\small \mathcal O(n)$$ time, and we run 2 $$\small \mathcal O(k)$$ checks for each element, our final algorithm is bounded by $$\small \mathcal O(nk)$$ time.
+My first approach was to use a hash table to remember each location that blooms as we process them. We then check both ways to see if the flower in position `x - 1 - k` or position `x + 1 + k` have bloomed. If so, we then check to see if the _k_ flowers between the two boundary points are blooming - if not, then return, because we have found our answer. Since running through the entire array takes $$\small \mathcal O(n)$$ time, and we run 2 $$\small \mathcal O(k)$$ checks for each element, our final algorithm is bounded by $$\small \mathcal O(nk)$$ time. Space complexity is bounded by $$\small \mathcal O(n)$$.
+
+##### Code \(Bucketing\):
+
+```py
+def kEmptySlots(flowers, k):
+    bs = k + 1
+    lows, highs = [float('inf')] * math.ceil(len(flowers) / bs), [float('-inf')] * math.ceil(len(flowers) / bs)
+    for i in range(len(flowers)):
+        x = flowers[i]
+        p = (x - 1) // bs
+        if x < lows[p]:
+            lows[p] = x
+            if p > 0 and highs[p-1] == x - k - 1:
+                return i + 1
+        if x > highs[p]:
+            highs[p] = x
+            if p < len(lows) - 1 and lows[p+1] == x + k + 1:
+                return i + 1
+    return -1
+```
 
 
 
