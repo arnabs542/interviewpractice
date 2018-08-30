@@ -4,5 +4,27 @@
 
 ##### Code:
 
+```py
+def merge_two_sorted_arrays(A, m, B, n):
+    idx = m + n - 1
+    a, b = m - 1, n - 1
+    while a > - 1 and b > - 1:
+        if A[a] < B[b]:
+            A[idx] = B[b]
+            b -= 1
+        else:
+            A[idx] = A[a]
+            a -= 1
+        idx -= 1
+    while b > - 1:
+        A[idx] = B[b]
+        idx, b = idx - 1, b - 1
+    return
+```
 
+##### Explanation:
+
+Since we are told that the first array has enough space for the final solution, we simply work backwards to figure out the position each element should go in. The time complexity is again $$\small \mathcal O(m+n)$$. Note for these simultaneous pointer problems, it's entire possible that we traverse on array completely before traversing the other array completely. 
+
+Note that our final while loop deals only with the second array. If the second array has already by processed, then the rest of elements in array A were already in their correct places to begin with, and no extra work needs to be done. 
 
