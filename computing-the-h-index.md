@@ -2,7 +2,7 @@
 
 > Given an array of citations \(each citation is a non-negative integer\) of a researcher, write a function to compute the researcher's h-index.
 >
-> According to the [definition of h-index on Wikipedia](https://en.wikipedia.org/wiki/H-index): "A scientist has index h if h of his/her N papers have **at least**h citations each, and the other N − h papers have **no more than**h citations each."
+> According to the [definition of h-index on Wikipedia](https://en.wikipedia.org/wiki/H-index): "A scientist has index h if h of his/her N papers have **at least **h citations each, and the other N − h papers have **no more than**h citations each."
 >
 > **Example:**
 >
@@ -15,7 +15,7 @@
 >  with no more than 3 citations each, her h-index is 3.
 > ```
 
-Code \(Sorting\):
+##### Code \(Sorting\):
 
 ```py
 def h_index(citations):
@@ -27,5 +27,9 @@ def h_index(citations):
     return 0
 ```
 
+##### Explanation:
 
+My initial mistake was assuming that the h-index must be a value within the citation array - this is not necessarily the case. If citations = \[100\], then the h-index = 1, since there is 1 paper with at least 1 citation. 
+
+The 
 
