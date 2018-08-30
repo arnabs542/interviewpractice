@@ -31,15 +31,13 @@ def h_index(citations):
 
 My initial mistake was assuming that the h-index must be a value within the citation array - this is not necessarily the case. If citations = \[100\], then the h-index = 1, since there is 1 paper with at least 1 citation.
 
-First it is helpful to rephrase the problem in a clearer way. The h-index of an author is simply an integer h such that 
+First it is helpful to rephrase the problem in a clearer way. Let the function `count(citations, h)` return the number of papers with citations equal to or greater than h. The h-index of an author can then be simply understood as the greatest integer h for which `count(citations, h) >= h`. 
 
-`h+1 >len([x for x in citations if x >= h])`
+The brute force approach to solving this problem would be simply count up from 0 until we reach the first number in which the number of papers with citations greater than equal to it is less than it. However, this takes $$\small \mathcal O(n^{2})$$ time.
 
-The brute force approach to solving this problem would be simply count up from 0 until we reach the first number in which the number of papers with citations greater than equal to it is less than it. However, this takes $$\small \mathcal O(n^{2})$$ time. 
+The first improvement we can make is realizing that if `count(citations, a) == b`, then if `count(citations, c) == d`, and `c >= a`, then `b >= d`. This makes sense, since suppose we have 4 papers each with at least 3 citations, then if we look for the number of papers with at least 4 citations, we can not have more than 4 papers meet that requirement. The next realization is that if we were to sort the citations, we can compute `count(citations, c)` in constant time, since the number of papers with citations g.e.t. $$\small c$$ is simply the length of the array minus the index of $$\small c$$.
 
-We begin by sorting the citations and then advancing through the sorted array. If we come across a citation which is greater than equal to the number of papers left, then we stop, because the h-index requires **at least** h papers containing h citations each. Because the citations are sorted, once we find a citation greater than equal to the number of papers left, we know all later citations will be greater than equal to the current citations, 
+We begin by sorting the citations and then advancing through the sorted array. If we come across a citation which is greater than equal to the number of papers left, then we stop, because the h-index requires **at least** h papers containing h citations each. Because the citations are sorted, once we find a citation $$\small c$$ greater than equal to the number of papers left, we know all later citations will be greater than equal to $$\small c$$, meaning that `count(citations, d) <= count(citations, c)`, for a d &gt; c.
 
-
-
-Once we find a citation that is greater than equal to the number of papers left, 
+The tricky part is realizing that once we come across the first $$\small c$$ for which count\(citations, c\) &lt;= 
 
