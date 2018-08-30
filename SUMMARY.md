@@ -56,6 +56,7 @@
 * [Sorting](sorting.md)
   * [Compute the Intersection of Two Sorted Arrays](compute-the-intersection-of-two-sorted-arrays.md)
   * [Merge Two Sorted Arrays](merge-two-sorted-arrays.md)
+  * [Computing the H-Index](computing-the-h-index.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
