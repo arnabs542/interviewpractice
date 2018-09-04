@@ -37,5 +37,11 @@ def smallest_nonconstructible_value(A):
     return max_constructible_value + 1
 ```
 
+##### Explanation:
 
+The idea behind this algorithm is a behind dynamic programming-esque. Suppose we have a set of numbers that can produce every value up to and including $$\small V$$, but not $$\small V + 1$$. Let us then introduce a new element $$\small u$$ to the set. If $$\small u \leq V + 1$$, then we are able to produce every value up to and including $$\small V + u$$ and we cannot produce $$\small V + u + 1$$. However, suppose that $$\small u \geq V + 1$$. In this situation, we are still unable to produce $$\small V + 1$$, which is also the smallest nonconstructible value. 
+
+While sorting the array does not change the set of constructible values, it does help us by alerting us as soon as we encounter a value that is too large to help.
+
+Running time is $$\small \mathcal O(n \log{n})$$ for sorting. Iteration is masked by big-O notation. 
 
