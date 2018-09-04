@@ -27,7 +27,21 @@ def eliminate_duplicate(A):
 
 ##### Explanation:
 
-We could use a hash table to keep track of all first names seen so far and then iterate over the array, adding only new names. This takes $$\small \mathcal O(n)$$ space and time. To save a bit of space at the expense of time, we can sort the array, which groups all names with the same first name. This takes $$\small \mathcal O(n \log{n})$$ time, but requires no additional space. 
+We could use a hash table to keep track of all first names seen so far and then iterate over the array, adding only new names. This takes $$\small \mathcal O(n)$$ space and time. To save a bit of space at the expense of time, we can sort the array, which groups all names with the same first name. This takes $$\small \mathcal O(n \log{n})$$ time, but requires no additional space.
 
-The problem itself is rather mundane, but it's important to note that for objects to be comparable, we need to define a comparison function so that Python knows what property to use to compare. In the Name object above, we define the less than comparator function so that we know what sorting an array of names means. 
+The problem itself is rather mundane, but it's important to note that for objects to be comparable, we need to define a comparison function so that Python knows what property to use to compare. In the Name object above, we define the less than comparator function so that we know what sorting an array of names means.
+
+##### Code \(Pythonic\): 
+
+```py
+def eliminate_duplicate_pythonic(A):
+    A.sort()
+    write_idx = 0
+    for cand, _ in itertools.groupby(A):
+        A[write_idx] = cand
+        write_idx += 1
+    del A[write_idx:]
+```
+
+
 
