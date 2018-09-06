@@ -62,6 +62,7 @@
   * [Render a Calendar](render-a-calender.md)
   * [Interval Add](interval-add.md)
   * [Compute the Union of Intervals](compute-the-union-of-intervals.md)
+  * [Partitioning and Sorting an Array with many Repeated Entries](partitioning-and-sorting-an-array-with-many-repeated-entries.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
