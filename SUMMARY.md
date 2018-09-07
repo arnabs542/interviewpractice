@@ -64,6 +64,7 @@
   * [Compute the Union of Intervals](compute-the-union-of-intervals.md)
   * [Partitioning and Sorting an Array with many Repeated Entries](partitioning-and-sorting-an-array-with-many-repeated-entries.md)
   * [Team Photo Day - 1](team-photo-day-1.md)
+  * [Sorting a List](sorting-a-list.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
