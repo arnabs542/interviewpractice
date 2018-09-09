@@ -50,5 +50,7 @@ class StockSpanner:
         return self._prices[-1].weight
 ```
 
-E
+##### Explanation:
+
+For each new price entry, we're only concerned about the closest previous element which is strictly greater than it self. The brute force solution would be simply keep an array of the prices, and for each new value, iterate backwards until we find the first element greater than it, if it exists. Obviously, this takes $$\small \mathcal O(n^{2})$$ time, which is not ideal. 
 
