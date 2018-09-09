@@ -54,5 +54,15 @@ class StockSpanner:
 
 For each new price entry, we're only concerned about the closest previous element which is strictly greater than it self. The brute force solution would be simply keep an array of the prices, and for each new value, iterate backwards until we find the first element greater than it, if it exists. Obviously, this takes $$\small \mathcal O(n^{2})$$ time, which is not ideal.
 
-It's important to realize that we only need to figure out the span for a price a single time, and we don't need to save of the results. What this means is that we don't need to keep all values, only values relevant to the current price. 
+It's important to realize that we only need to figure out the span for a price a single time, and we don't need to save of the results. What this means is that we don't need to keep all values, only values relevant to the current price. For example, suppose we get a new element like `7`, and there are some previous elements like `11, 3, 9, 5, 6, 4`. Let's try to create some relationship between this query and the next query.
+
+If \(after getting `7`\) we get an element like `2`, then the answer is `1`. So in general, whenever we get a smaller element, the answer is 1.
+
+If we get an element like `8`, the answer is 1 plus the previous answer \(for `7`\), as the `8` "stops" on the same value that `7` does \(namely, `9`\).
+
+If we get an element like `10`, the answer is 1 plus the previous answer, plus the answer for `9`.
+
+Notice throughout this evaluation, we only care about elements that occur in increasing order - we "shortcut" to them. That is, from adding an element like `10`, we cut to `7` \[with "weight" 4\], then to `9` \[with weight 2\], then cut to `11` \[with weight 1\].
+
+In other words, every time we get a price, we throw out all of the prices directly before it less than or equal to it, and we remember how many we threw out as the "weight". Later prices will either be smaller than it, which we simply append to the stack, or greater than it/equal to it, meaning we can directly reference the weight to avoid having to redo work. 
 
