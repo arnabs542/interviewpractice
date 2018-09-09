@@ -1,6 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
+* [Stacks](stacks.md)
+  * [Online Stock Span](stacks/online-stock-span.md)
 * [Binary Trees](binary-trees.md)
   * [Compute the Exterior of a Binary Tree](binary-trees/compute-the-exterior-of-a-binary-tree.md)
   * [Flatten Binary Tree to Linked List](binary-trees/flatten-binary-tree-to-linked-list.md)
