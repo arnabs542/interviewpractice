@@ -52,5 +52,7 @@ class StockSpanner:
 
 ##### Explanation:
 
-For each new price entry, we're only concerned about the closest previous element which is strictly greater than it self. The brute force solution would be simply keep an array of the prices, and for each new value, iterate backwards until we find the first element greater than it, if it exists. Obviously, this takes $$\small \mathcal O(n^{2})$$ time, which is not ideal. 
+For each new price entry, we're only concerned about the closest previous element which is strictly greater than it self. The brute force solution would be simply keep an array of the prices, and for each new value, iterate backwards until we find the first element greater than it, if it exists. Obviously, this takes $$\small \mathcal O(n^{2})$$ time, which is not ideal.
+
+It's important to realize that we only need to figure out the span for a price a single time, and we don't need to save of the results. What this means is that we don't need to keep all values, only values relevant to the current price. 
 
