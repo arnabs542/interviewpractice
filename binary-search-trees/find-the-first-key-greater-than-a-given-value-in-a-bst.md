@@ -22,5 +22,7 @@ def find_first_greater_than_k(tree, k):
 
 ##### Explanation:
 
-We traverse the tree inorder iteratively, using a stack. We return the first node whose value is greater than the given value. 
+We traverse the tree inorder iteratively, using a stack. We return the first node whose value is greater than the given value. Running time is $$\small \mathcal  O(n)$$, space is $$\small \mathcal O(h)$$. 
+
+
 
