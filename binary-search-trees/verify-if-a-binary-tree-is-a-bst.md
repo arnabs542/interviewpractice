@@ -17,5 +17,5 @@ def is_binary_tree_bst(tree, low_range=float('-inf'), high_range=float('inf')):
 
 The BST property is a global property, so we can simply check the tree recursively against the current bounds relative to the node.
 
-Time complexity is $$\small \mathcal O(n)$$, where $$\small n$$ is the number of nodes in the tree. 
+Time complexity is $$\small \mathcal O(n)$$, where $$\small n$$ is the number of nodes in the tree. Space required is $$\small \mathcal O(h)$$, relative to the height of the tree. Is this due to the recursive call stack. 
 
