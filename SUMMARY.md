@@ -69,6 +69,7 @@
   * [Sorting a List](sorting-a-list.md)
   * [Compute a Salary Threshold](compute-a-salary-threshold.md)
 * [Binary Search Trees](binary-search-trees.md)
+  * [Verify if a Binary Tree is a BST](binary-search-trees/verify-if-a-binary-tree-is-a-bst.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
