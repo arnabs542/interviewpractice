@@ -68,6 +68,7 @@
   * [Team Photo Day - 1](team-photo-day-1.md)
   * [Sorting a List](sorting-a-list.md)
   * [Compute a Salary Threshold](compute-a-salary-threshold.md)
+* [Binary Search Trees](binary-search-trees.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
