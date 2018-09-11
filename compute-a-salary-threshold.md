@@ -43,7 +43,7 @@ def find_salary_cap(target_payroll, current_salaries):
 
 The cap, if it exists, lies between 0 and the maximum current salary. The payroll increases with the cap, which suggests using binary search in this range - if a cap is too high, no higher cap will work; the same is true if the cap is too low.
 
-Suppose there are $$\small n$$ employees. Let the array holding salary data be $$\small A$$. THe payrool, $$\small P(c)$$, implied by a cap of $$\small c$$, is $$\small \sum_{i=0}^{n-1} min(A[i], c)$$. Each step of the binary search requires evaluating $$\small P(c)$$ which takes time $$\small \mathcal O(n)$$. The number of binary search steps depends on the largest salary and the desired accuracy. 
+Suppose there are $$\small n$$ employees. Let the array holding salary data be $$\small A$$. The payroll, $$\small P(c)$$, implied by a cap of $$\small c$$, is $$\small \sum_{i=0}^{n-1} min(A[i], c)$$. Each step of the binary search requires evaluating $$\small P(c)$$ which takes time $$\small \mathcal O(n)$$. The number of binary search steps depends on the largest salary and the desired accuracy.
 
 ##### Code \(Iteration\):
 
@@ -66,7 +66,7 @@ def find_salary_cap(target_payroll, current_salaries):
 We first sort the current salary array. We then keep two running sums:  
  `unadjusted_salary_sum` and `adjusted_salary_sum`.
 
-The first one simply keeps a running sum of all the unadjusted salaries up to this point, while the second one calculates what the total salary looks like if we decide to cap everyone at the current salary.   
+The first one simply keeps a running sum of all the unadjusted salaries up to this point, while the second one calculates what the total salary looks like if we decide to cap everyone at the current salary.  
 For example, given an original salary list of:
 
 `[20, 30, 40, 90, 100]`
