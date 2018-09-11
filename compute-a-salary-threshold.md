@@ -47,7 +47,7 @@ Suppose there are $$\small n$$ employees. Let the array holding salary data be $
 
 ##### Code \(Iteration\):
 
-```
+```py
 def find_salary_cap(target_payroll, current_salaries):
     current_salaries.sort()
     unadjusted_salary_sum = 0
@@ -63,23 +63,15 @@ def find_salary_cap(target_payroll, current_salaries):
 
 ##### Explanation:
 
-We first sort the current salary array. We then keep two running sums:  
- `unadjusted_salary_sum` and `adjusted_salary_sum`.
+We can use a slightly more analytical method to avoid the need for a specified tolerance. The intuition is that as we increase the cap, as long as it does not exceed someone's salary, the payroll increases linearly. This is because each time the cap goes over a salary, we will see a big jump in total payroll from that salary. instead of incremental changes due to the cap adjusting. 
 
-The first one simply keeps a running sum of all the unadjusted salaries up to this point, while the second one calculates what the total salary looks like if we decide to cap everyone at the current salary.  
-For example, given an original salary list of:
+Assume the salaries are given by an array $$\small A$$, which is sorted. Suppose the cap for a total payroll of $$\small T$$ is known to lie between the $$\small k$$th and \($$\small k$$ + 1\)th salaries. We want $$\small \sum_{i=0}^{k-1} A[i] + (n-k)c$$ to equal = $$\small T$$, which solves to $$\small c = (T - \sum_{i=0}^{k-1} A[i])/(n-k)$$. 
 
-`[20, 30, 40, 90, 100]`
+For example, suppose $$\small A = <20,30,40,90,100>$$, and $$\small T = 210$$. The payrolls for caps equal to the salaries in $$\small A$$ are $$\small <100,140,170,270,280>$$. Since $$\small T= 210$$ lies between 170 and 270, the cap lies between 40 and 90. For any cap $$\small c$$ between 40 and 90, the implied payroll is 20 + 30 + 40 + 2$$\small c$$. We want this to be 210, so we solve 20 + 30 + 40 + 2$$\small c$$ = 210 for $$\small c$$, yielding $$\small c = 60$$.
 
-the adjusted caps would look like this:
+In other words, if we have to cap any employee, the array will essentially be split into 2 sections: an uncapped section, and a capped section. Everything in the capped section will equal to the cap value, so that's why we can just take an average of:
 
-\`\[100, 140, 170, 270, 280\]
+\(target\_payroll - unadjusted\_salary\_sum\)/adjusted\_people
 
-\`
 
-The first number, 100, is derived by 5 \* 20, which is if we decide to cap everyone at 20. The 140 is derived by 20 + 30\*4, which is if we leave the first person as they are, and cap the rest of the employees. We see that at 90, our total salary goes to 270, which is over our limit. Therefore, our cap must be between 40, 90.
-
-The second thing to realize is that if we have to cap any employee, the array will essentially be split into 2 sections: an uncapped section, and a capped section. Everything in the capped section will equal to the cap value, so that's why we can just take an average of:
-
-\(target\_payroll - unadjusted\_salary\_sum\)/adjusted\_people.
 
