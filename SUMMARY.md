@@ -70,6 +70,7 @@
   * [Compute a Salary Threshold](compute-a-salary-threshold.md)
 * [Binary Search Trees](binary-search-trees.md)
   * [Verify if a Binary Tree is a BST](binary-search-trees/verify-if-a-binary-tree-is-a-bst.md)
+  * [Find the First Key Greater than a Given Value in a BST](binary-search-trees/find-the-first-key-greater-than-a-given-value-in-a-bst.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
