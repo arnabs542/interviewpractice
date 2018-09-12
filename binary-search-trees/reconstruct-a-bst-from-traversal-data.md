@@ -4,7 +4,7 @@
 
 ##### Code \(Unoptimized\):
 
-```
+```py
 def rebuild_bst_from_preorder(preorder_sequence):
     if not preorder_sequence:
         return None
