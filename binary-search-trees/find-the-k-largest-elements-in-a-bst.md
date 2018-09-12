@@ -1,6 +1,6 @@
 #### Find the k Largest Elements in a BST
 
-Write a program that takes as input a BST and an integer $$\small k$$, and returns the $$\small k$$ largest elements in the BST in decreasing order. 
+Write a program that takes as input a BST and an integer $$\small k$$, and returns the $$\small k$$ largest elements in the BST in decreasing order.
 
 ##### Code \(Iteration\):
 
@@ -39,5 +39,5 @@ def find_k_largest_in_bst(tree, k):
 
 Explanation:
 
-The key concept here is that an inorder traversal of a BST results in a sorted array. Therefore we simply need to do a reverse inorder traversal to get the k largest elements. We can do this either iteratively or recursively. The time is bounded by $$\small \mathcal O(k)$$, and space is bounded by the recursive stack, which is $$\small \mathcal O(h)$$.
+The key concept here is that an inorder traversal of a BST results in a sorted array. Therefore we simply need to do a reverse inorder traversal to get the k largest elements. We can do this either iteratively or recursively. The time is bounded by $$\small \mathcal O(h + k)$$, because we need to traverse all the way down to the right most leaf node and then $$\small k$$ more times. Space is bounded by the recursive stack, which is $$\small \mathcal O(h)$$.
 
