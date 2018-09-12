@@ -46,5 +46,7 @@ def rebuild_bst_from_preorder(preorder_sequence):
 
 Once again, we take advantage of the ordering between BST nodes to help us solve the problem quicker. We begin by looking at a which node we're on, and whether it belongs in the current range we're trying to build.
 
-We use a root\_idx pointer to traverse through the preorder sequence. Since a preorder sequence goes `[root, preorder(root.left), preorder(root.right)]` , after building a node we should first try to build its left subtree. Furthermore, we know that nodes in the left subtree cannot be greater than the root node, so we check if our current node is indeed smaller than the upper bound. If not, that means we've finished the left subtree, and we're in the right subtree now. The time complexity for the above solution is $$\small \mathcal O(n)$$, which is just the time it takes to iterate through the array. 
+We use a root\_idx pointer to traverse through the preorder sequence. Since a preorder sequence goes `[root, preorder(root.left), preorder(root.right)]` , after building a node we should first try to build its left subtree. Furthermore, we know that nodes in the left subtree cannot be greater than the root node, so we check if our current node is indeed smaller than the upper bound. If not, that means we've finished the left subtree, and we're in the right subtree now. The time complexity for the above solution is $$\small \mathcal O(n)$$, which is just the time it takes to iterate through the array.
+
+A postorder traversal also uniquely identifies the array, and we can use the same method as above, except in reverse. 
 
