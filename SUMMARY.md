@@ -74,6 +74,7 @@
   * [Find the k Largest Elements in a BST](binary-search-trees/find-the-k-largest-elements-in-a-bst.md)
   * [Compute the LCA in a BST](binary-search-trees/compute-the-lca-in-a-bst.md)
   * [Reconstruct a BST From Traversal Data](binary-search-trees/reconstruct-a-bst-from-traversal-data.md)
+  * [Find the Closest Entries in Three Sorted Arrays](binary-search-trees/find-the-closest-entries-in-three-sorted-arrays.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
