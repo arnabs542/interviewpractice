@@ -77,6 +77,7 @@
   * [Find the Closest Entries in Three Sorted Arrays](binary-search-trees/find-the-closest-entries-in-three-sorted-arrays.md)
   * [Enumerate Numbers of the Form a + b\*sqrt\(2\)](binary-search-trees/enumerate-numbers-of-the-form-a-+-b.md)
   * [Build a Minimum Height BST From a Sorted Array](binary-search-trees/build-a-minimum-height-bst-from-a-sorted-array.md)
+  * [Test if Three BST Nodes are Totally Ordered](binary-search-trees/test-if-three-bst-nodes-are-totally-ordered.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
