@@ -37,7 +37,9 @@ def pair_includes_ancestor_and_descendant_of_m(possible_anc_or_desc_0,
 
 ##### Explanation:
 
-The brute force solution would be pick one of the inputs as ancestor, and try to find middle from it. If that doesn't work, try with the other input. The problem is suppose we pick a node that is a direct child of middle - we'll end up traversing the entire height of the tree before trying with the other node. Granted, in the event that the middle node doesn't exist or both given nodes are ancestors, we'll need to traverse the entire tree anyways, but we should be able to optimize the situation that we actually have a valid solution. 
+The brute force solution would be pick one of the inputs as ancestor, and try to find middle from it. If that doesn't work, try with the other input. The problem is suppose we pick a node that is a direct child of middle - we'll end up traversing the entire height of the tree before trying with the other node. Granted, in the event that the middle node doesn't exist or both given nodes are ancestors, we'll need to traverse the entire tree anyways, but we should be able to optimize the situation that we actually have a valid solution.
 
 The idea here is that we treat both nodes as possible ancestors, and try to find middle. While at least one node is valid, and we don't end up finding the other node, we simply continue down the tree until we find the middle or reach one of our terminating conditions. If we find one node from the other, that means that the middle node is not between the two nodes - they could both be ancestors, or maybe the middle node doesn't exist.
+
+Suppose that one of the nodes is a parent, we now try to find the other node from the middle node. Overall runtime is still $$\small \mathcal O(h)$$ worst-case, but in the event that a valid solution exists, we'll often be able to finish a little faster. 
 
