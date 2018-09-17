@@ -79,6 +79,7 @@
   * [Build a Minimum Height BST From a Sorted Array](binary-search-trees/build-a-minimum-height-bst-from-a-sorted-array.md)
   * [Test if Three BST Nodes are Totally Ordered](binary-search-trees/test-if-three-bst-nodes-are-totally-ordered.md)
   * [The Range Lookup Problem](binary-search-trees/the-range-lookup-problem.md)
+  * [Add Credits](binary-search-trees/add-credits.md)
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
