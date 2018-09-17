@@ -52,7 +52,45 @@ A hash table is an obvious candidate for this problem - it supports fast inserti
 
 The problem is that it takes $$\small \mathcal O(n)$$ time to find the maximum value, since hash tables aren't ordered in any way. Therefore, we need to iterate through all elements to find the maximum value. If we expect the max function to be called constantly, this can get expensive.
 
-##### Code \(BST\):
+##### Code \(Hash table + BST\):
 
+```py
+class ClientsCreditsInfo:
+    def __init__(self):
+        self._offset = 0
+        self._client_to_credit = {}
+        self._credit_to_clients = bintrees.RBTree()
 
+    def insert(self, client_id, c):
+        self.remove(client_id)
+        self._client_to_credit[client_id] = c - self._offset
+        self._credit_to_clients.setdefault(c - self._offset, set()).add(client_id)
+
+    def remove(self, client_id):
+        credit = self._client_to_credit.get(client_id)
+        if credit is not None:
+            self._credit_to_clients[credit].remove(client_id)
+            if not self._credit_to_clients[credit]:
+                del self._credit_to_clients[credit]
+            del self._client_to_credit[client_id]
+            return True
+        return False
+
+    def lookup(self, client_id):
+        credit = self._client_to_credit.get(client_id)
+        return credit + self._offset if credit is not None else -1
+
+    def add_all(self, C):
+        self._offset += C
+
+    def max(self):
+        if not self._credit_to_clients:
+            return ''
+        clients = self._credit_to_clients.max_item()[1]
+        return '' if not clients else next(iter(clients))
+```
+
+##### Explanation:
+
+To mitigate the inefficiency of finding the maximum element from a hash table, we use a BST. 
 
