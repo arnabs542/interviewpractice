@@ -6,7 +6,7 @@ Key lookup, insertion, and deletion take time proportional to the height of the 
 
 In general, avoid putting mutable objects in a BST. Otherwise, when a mutable object that's in a BST is to be updated, removed it first, then update it, then add it back.
 
-Python does not have a built-in BST library. Two options are the sortedcontainers module, which is implemented as a sorted lists of lists, and the bintrees module, which implements sorted sets and sorted dictionaries using balanced BSTs. 
+Python does not have a built-in BST library. Two options are the sortedcontainers module, which is implemented as a sorted lists of lists, and the bintrees module, which implements sorted sets and sorted dictionaries using balanced BSTs.
 
 * insert\(e\) inserts new element e into the BST
 * discard\(e\) removes e from the BST if present
@@ -14,7 +14,13 @@ Python does not have a built-in BST library. Two options are the sortedcontainer
 * min\_key\(\)/max\_key\(\) yields the smallest and largest key in the BST
 * pop\_min\(\)/pop\_max\(\) removes and returns the smallest and largest key-value pair in the BST. 
 
-It's important to note that these operations take $$\small \mathcal O(\log{n})$$, since they are backed by the underlying tree. 
+It's important to note that these operations take $$\small \mathcal O(\log{n})$$, since they are backed by the underlying tree.
+
+BSTs can also be augmented to improve certain operations. Suppose we are given a BST and a value $$\small v$$, and we are asked to find the number of entries less than $$\small v$$. We could perform a traversal on the tree, and count each node as we process it. However, by simply adding an extra field to each node that records how many nodes at rooted at that node \(i.e. the size of the subtree with that node as the root\), we can reduce the running time to $$\small \mathcal O(h)$$. The algorithm is as follows:
+
+1. Initialize count to 0
+2. Search for the first occurrence of $$\small v$$ in an inorder traversal \(stop if we determine $$\small v$$ is not present\). 
+3. Each time we take a left child, leave count unchanged. Each time we take a right child, we add one plus the size of the corresponding left child. 
 
 
 
