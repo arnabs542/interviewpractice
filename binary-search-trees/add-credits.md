@@ -92,5 +92,11 @@ class ClientsCreditsInfo:
 
 ##### Explanation:
 
-To mitigate the inefficiency of finding the maximum element from a hash table, we use a BST. 
+To mitigate the inefficiency of finding the maximum element from a hash table, we use a BST. Insert and removal takes $$\small \mathcal O(\log{n})$$ time now due to the BST. However, max also only takes $$\small \mathcal O(\log {n})$$, which is faster than just with a hash table. 
+
+The documentation for setdefault:
+
+> set\_default\(k\[,d\]\) -&gt; value, T.get\(k, d\), also set T\[k\]=d if k not in T, O\(log\(n\)\) \(synonym setdefault\(\) exist\)
+
+Use it for when you're not sure if the key exists. If not, it'll initialize the key-value pair with the value you specify.
 
