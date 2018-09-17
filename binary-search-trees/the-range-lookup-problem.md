@@ -22,7 +22,7 @@ def range_lookup_in_bst(tree, interval):
 
 ##### Explanation:
 
-The brute force solution is to simply iterate over the entire tree and append all nodes with values contained in the interval. The time complexity is $$\small \mathcal O(n)$$, and space is bounded by recursion stack: $$\small \mathcal O(h)$$. The solution is not ideal because we don't take advantage of the relationship between the nodes and their children. For example, suppose `tree.data < interval.left` - there is no reason to traverse down the left subtree at all, since all values will be less than equal to the root value. 
+The brute force solution is to simply iterate over the entire tree and append all nodes with values contained in the interval. The time complexity is $$\small \mathcal O(n)$$, and space is bounded by recursion stack: $$\small \mathcal O(h)$$. The solution is not ideal because we don't take advantage of the relationship between the nodes and their children. For example, suppose `tree.data < interval.left` - there is no reason to traverse down the left subtree at all, since all values will be less than equal to the root value.
 
 ##### Code \(Optimized\):
 
@@ -51,5 +51,7 @@ def range_lookup_in_bst(tree, interval):
 
 ##### Explanation:
 
-The time complexity is still bounded by $$\small \mathcal O(n)$$, but that's actually the best we can do - in the event the interval given covers all values in the tree, we have no choice but to iterate over every single node. 
+The time complexity is still bounded by $$\small \mathcal O(n)$$, but that's actually the best we can do - in the event the interval given covers all values in the tree, we have no choice but to iterate over every single node.
+
+However,
 
