@@ -53,5 +53,5 @@ def range_lookup_in_bst(tree, interval):
 
 The time complexity is still bounded by $$\small \mathcal O(n)$$, but that's actually the best we can do - in the event the interval given covers all values in the tree, we have no choice but to iterate over every single node.
 
-However,
+However, the extra conditionals we put in the traversal will help us discard entire subtrees as soon as we can do so. If the current root value is outside of the interval, then we can automatically discard either the left or subtree depending on which side of the interval the root lies in
 
