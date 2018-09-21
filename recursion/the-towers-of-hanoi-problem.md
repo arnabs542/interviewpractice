@@ -26,5 +26,5 @@ def compute_tower_hanoi(num_rings):
 
 This is a classic recursion problem, and it highlights the key properties of a recursive solution: do a little work, and pass the rest off. In the words of Jeff, let the recursion fairy do its thing!
 
-The key idea of recursion is figuring out a base case, i.e. when to stop, and how to do the least amount of work before passing it on. In this case, if we are given _n_ rings to move, the least amount of work we can do is move at least 1 ring. Otherwise, nothing would get done, because nobody is doing any work at any time. 
+The key idea of recursion is figuring out a base case, i.e. when to stop, and how to do the least amount of work before passing it on. In this case, if we are given _n_ rings to move, the least amount of work we can do is move at least 1 ring. Otherwise, nothing would get done, because nobody is doing any work at any time. So we agree to move one right, from the initial to peg to the final peg. But first, we ask the recursion fairy to move the top _n-1_ rings to the temp right so that we can legally move our ring, then we ask the recursion fairy to move the top _n-1_ rings back on top of ours.
 
