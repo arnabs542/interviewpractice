@@ -83,4 +83,6 @@
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
+* [Recursion](recursion.md)
+  * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
 
