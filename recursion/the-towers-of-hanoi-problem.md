@@ -24,5 +24,5 @@ def compute_tower_hanoi(num_rings):
 
 ##### Explanation:
 
-
+This is a classic recursion problem, and it highlights the key properties of a recursive solution: do a little work, and pass the rest off. In the words of Jeff, let the recursion fairy do its thing!
 
