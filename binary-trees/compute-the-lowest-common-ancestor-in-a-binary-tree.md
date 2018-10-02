@@ -1,6 +1,6 @@
 #### Compute the Lowest Common Ancestor in a Binary Tree
 
-Code:
+##### Code:
 
 ```py
 def lca(tree, node0, node1):
