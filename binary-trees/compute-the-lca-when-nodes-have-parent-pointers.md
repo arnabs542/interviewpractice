@@ -2,7 +2,7 @@
 
 > Given two nodes in a binary tree, design an algorithm that computes their LCA. Assume that each node has a parent pointer.
 
-This can be easily solved using a hash table to store the ancestors of one path, and then traverse the other path and return when we come across an ancestor or reach the root.
+Follow up to previous question. This can be easily solved using a hash table to store the ancestors of one path, and then traverse the other path and return when we come across an ancestor or reach the root.
 
 ##### Code:
 
@@ -34,7 +34,7 @@ def lca(node0, node1):
 
 ##### Explanation:
 
-Since the two nodes are given from the same tree, we know that at the very worst, the root of the tree will be the ancestor. If the nodes are at the same depth, we can move up the tree in tandem. If they are not at the same depth, we simply need to move the deeper node up to the same depth and then we can proceed. 
+Since the two nodes are given from the same tree, we know that at the very worst, the root of the tree will be the ancestor. If the nodes are at the same depth, we can move up the tree in tandem. If they are not at the same depth, we simply need to move the deeper node up to the same depth and then we can proceed.
 
 Time complexity is bounded by $$\small \mathcal O(h)$$. We don't use any extra space.
 
