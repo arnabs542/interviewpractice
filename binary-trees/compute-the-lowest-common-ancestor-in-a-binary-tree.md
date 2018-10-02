@@ -32,5 +32,5 @@ def lca(tree, node0, node1):
 
 ##### Explanation:
 
-
+A brute-force approach is to see if the nodes are in different immediate subtrees of the root, or if one of the nodes is the root. In this case, the root must be the LCA. If both nodes are in the left subtree of the root or the right subtree of the root, we recurse on that subtree. In the case of a skewed tree with two nodes at the bottom, our running time is $$\small \mathcal O(n^{2})$$
 
