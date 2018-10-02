@@ -4,6 +4,7 @@
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
 * [Binary Trees](binary-trees.md)
+  * [Compute the LCA when Nodes have Parent Pointers](binary-trees/compute-the-lca-when-nodes-have-parent-pointers.md)
   * [Compute the Exterior of a Binary Tree](binary-trees/compute-the-exterior-of-a-binary-tree.md)
   * [Flatten Binary Tree to Linked List](binary-trees/flatten-binary-tree-to-linked-list.md)
   * [Construct Binary Tree from Preorder and Postorder Traversal](binary-trees/construct-binary-tree-from-preorder-and-postorder-traversal.md)
