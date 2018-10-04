@@ -53,5 +53,5 @@ The brute-force solution would be to test all paths, and see which one has the g
 
 The problem is we iterate over subtrees over and over again. In the case of a skewed tree, we essentially run a nested for loop, taking $$\small \mathcal O(n^{2})$$ time. Instead, we need to think about the problem from a bottom up solution. Suppose we know the maximum path on the left side and maximum path on the right side. Then we simply need to see if either, both, or neither added to the current root value is the new maximum path sum.
 
-The postorder solution instead takes only $$\small \mathcal O(n)$$ time and $$\small \mathcal O(h)$$ space complexity.
+The postorder solution instead takes only $$\small \mathcal O(n)$$ time and $$\small \mathcal O(h)$$ space complexity. The problem is really a just more advanced version of Kadane's algorithm. 
 
