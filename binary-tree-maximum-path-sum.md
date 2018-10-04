@@ -21,16 +21,14 @@
 > ```
 > Input: [-10,9,20,null,null,15,7]
 >
->    -10
->    / \
->   9  20
->  /  \
-> 15   7
+>    -10
+>    / \
+>   9  20
+>  /  \
+> 15   7
 >
 > Output: 42
 > ```
-
-
 
 ##### Code:
 
@@ -48,6 +46,14 @@ class Solution:
         helper(root)
         return self.max_path
 ```
+
+##### Explanation:
+
+The brute-force solution would be to test all paths, and see which one has the greatest sum. Since we're told that the path can't be empty, that means the maximum path needs to start with some node as its root. Therefore, we could preorder traverse the tree, and treat each node as the possible root of the largest path. 
+
+The problem is we iterate over subtrees over and over again. In the case of a skewed tree, we essentially run a nested for loop, taking $$\small \mathcal O(n^{2})$$ time. Instead, we need to think about the problem from a bottom up solution. Suppose we know the maximum path on the left side and maximum path on the right side. Then we simply need to see if either, both, or neither added to the current root value is the new maximum path sum. 
+
+The postorder solution instead takes only $$\small \mathcal O(n)$$ time and $$\small \mathcal O(h0$$ space complexity. 
 
 
 
