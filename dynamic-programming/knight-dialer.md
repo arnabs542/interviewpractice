@@ -37,7 +37,7 @@
 
 My first attempt at solving this problem was to brute force generate all possible numbers of length N:
 
-```
+```py
 def knightDialer(N):
     press = {
         0 : [4,6],
@@ -75,5 +75,29 @@ However, this quickly blew up in terms of time complexity. A rough analysis of t
 
 ##### Dynamic Programming
 
+The key to reframing this problem in the context of a DP problem is to suppose that we have a function $$\small \mathcal f(start, n)$$ that gives us the distinct number of dials we have if we start on the key $$\small start$$ with $$\small n$$ moves. This can then be recursively solved by summing $$\small f(x, n-1)$$ where $$\small x$$ is all the keys $$\small start$$ can hop to. 
 
+For example, from 1 we can move to 6 or 8. Thus $$\small \mathcal f(1, n) = \mathcal f(6, n-1) + \mathcal f(8, n-1)$$. This then becomes much easier to solve:
+
+```py
+def knightDialer(N):
+
+    MOD = 10**9 + 7
+    moves = [[4,6],[6,8],[7,9],[4,8],[3,9,0],[],
+                 [1,7,0],[2,6],[1,3],[2,4]]
+
+    dp = [1] * 10
+
+    for hop in range(N - 1):
+        dp2 = [0] * 10
+        for node in range(10):
+            for nei in moves[node]:
+                dp2[node] += dp[nei]
+                dp2[node] %= MOD
+        dp = dp2
+
+    return sum(dp) % MOD
+```
+
+The running time is now simply $$\small \mathcal O(n)$$, and space is $$\small \mathcal O(10) = \mathcal O(1)$$.
 
