@@ -49,7 +49,7 @@ First we sort the dolls based on w \(can also sort based on h\). We then build a
 
 However, this solution timed out, suggesting that we should use the $$\small \mathcal O(n \log(n))$$ solution from the LIS problem, which built an array and used binary search to find the inserting points of new elements as we encountered them. The final length of the array would be the longest increasing subsequence, although the array itself would not be the answer.
 
-The difficulty with implementing that solution is there are no two parameters to judge. In the LIS problem, because we were just dealing with numbers, it was easy to insert into the array. For example, suppose the input array was: `[10,9,2,5,3,7,101,18]`. As we come across the 2, binary search will return an index 0, and we can replace the original element there \(9\) with a 2. However, in this problem, suppose that we have the input `[[2,3], [3,2], [4,3]]`. It is difficult to judge if we should replace the `[2,3]` with the `[3,2]`. Furthermore, it is difficult to figure out how to apply binary search in order to figure out the right index.
+The difficulty with implementing that solution is there are now two parameters to judge. In the LIS problem, because we were just dealing with numbers, it was easy to insert into the array. For example, suppose the input array was: `[10,9,2,5,3,7,101,18]`. As we come across the 2, binary search will return an index 0, and we can replace the original element there \(9\) with a 2. However, in this problem, suppose that we have the input `[[2,3], [3,2], [4,3]]`. It is difficult to judge if we should replace the `[2,3]` with the `[3,2]`. Furthermore, it is difficult to figure out how to apply binary search in order to figure out the right index.
 
 ##### Code:
 
@@ -109,11 +109,11 @@ Another way to understand the reverse secondary sort is via case analysis:
 
    a. Suppose idx = len\(chain\):
 
-   1.  The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]      `
+   1. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]`
 
    b. Suppose idx &lt; len\(chain\):
 
    1. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]`
 
-We need to find the leftmost insertion point to deal with duplicates, such as` [[1,1,],[1,1],[1,1]]`. If we don't find the l.i.p, then we'll end up appending the duplicates after each other, giving us the wrong answer.
+We need to find the leftmost insertion point to deal with duplicates, such as`[[1,1,],[1,1],[1,1]]`. If we don't find the l.i.p, then we'll end up appending the duplicates after each other, giving us the wrong answer.
 
