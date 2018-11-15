@@ -73,5 +73,5 @@ def numDistinct(s, t):
     return count[0]
 ```
 
-
+The brute force solution is a simple DFS method that attempts to build all substrings of length equal to length of t, then check if we succeeded in reconstructing t. The run time on this is bounded either exponential or factorial time, but either way, it times out and is unacceptably slow. 
 
