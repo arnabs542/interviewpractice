@@ -65,9 +65,9 @@ def distinctSubseqII(S):
     return sum(endswith) % (10**9 + 7)
 ```
 
-The idea behind this solution is a bit unintuitive. 
+The idea behind this solution is a bit unintuitive.
 
-The array `endswith[26]` counts how many sub sequence that ends with `i`th character in the alphabet, i.e. endswith\[0\] counts how many sub sequences end with a. Suppose we have `N = sum(endswith)` different sub sequence. If we add a new character `c` to each of them, then we have `N` different sub sequence that ends with `c`. With this idea, we loop on the whole string `S`,  
+The array `endswith[26]` counts how many sub sequence that ends with `i`th character in the alphabet, i.e. `endswith[0]` counts how many sub sequences end with a. Suppose we have `N = sum(endswith)` different sub sequence. If we add a new character `c` to each of them, then we have `N` different sub sequence that ends with `c`. With this idea, we loop on the whole string `S`,  
  and we update `end[c] = sum(end) + 1` for each character. We need to plus one here, because `"c"` itself is also a sub sequence.
 
 **Example:**
