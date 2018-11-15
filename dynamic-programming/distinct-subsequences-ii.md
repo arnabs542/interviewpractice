@@ -65,5 +65,5 @@ def distinctSubseqII(S):
     return sum(endswith) % (10**9 + 7)
 ```
 
-
+The idea behind this solution is a bit unintuitive. 
 
