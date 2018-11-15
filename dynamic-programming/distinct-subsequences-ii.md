@@ -2,7 +2,7 @@
 
 > Given a string `S`, count the number of distinct, non-empty subsequences of `S` .
 >
-> Since the result may be large, **return the answer modulo `10^9 + 7`**.
+> Since the result may be large, **return the answer modulo **`10^9 + 7`.
 >
 > **Example 1:**
 >
@@ -30,5 +30,26 @@
 > Explanation: The 3 distinct subsequences are "a", "aa" and "aaa".
 > ```
 
+##### Brute Force:
 
+```py
+def distinctSubseqII(S):
+
+    s = set()
+
+    def helper(start, S, cur):
+        if start >= len(S):
+            if len(cur) > 0:
+                s.add(cur)
+            return
+        # include current letter
+        helper(start + 1, S, cur + S[start])
+        # don't include current letter
+        helper(start + 1, S, cur)
+
+    helper(0, S, "")
+    return len(s)
+```
+
+The brute force solution simply generates all possible subsequences, adding them to a set, and then seeing how many elements are in the set. This method requires $$\small \mathcal O(2^{n})$$ time and times out very quickly. 
 
