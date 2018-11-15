@@ -1,4 +1,4 @@
-####  Minimum Area Rectangle
+#### Minimum Area Rectangle
 
 > Given a set of points in the xy-plane, determine the minimum area of a rectangle formed from these points, with sides parallel to the x and y axes.
 >
@@ -21,8 +21,8 @@
 > **Note**:
 >
 > 1. `1 <= points.length <= 500`
-> 2. `0 <= points[i][0] <= 40000`
-> 3. `0 <= points[i][1] <= 40000`
+> 2. `0 <= points[i][0] <= 40000`
+> 3. `0 <= points[i][1] <= 40000`
 > 4. All points are distinct.
 
 ##### Code:
@@ -42,5 +42,5 @@ def minAreaRect(self, points):
     return 0 if min_area == float('inf') else min_area
 ```
 
-
+The above code runs in $$\small \mathcal O(N^{2})$$ time. We basically run a nested for loop picking out pairs of points that we guess to be diagonals of the minimum rectangle. If the other two points of the rectangle exist, then we calculate and update the area as necessary. Otherwise, we continue picking points. 
 
