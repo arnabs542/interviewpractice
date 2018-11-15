@@ -51,5 +51,19 @@ def distinctSubseqII(S):
     return len(s)
 ```
 
-The brute force solution simply generates all possible subsequences, adding them to a set, and then seeing how many elements are in the set. This method requires $$\small \mathcal O(2^{n})$$ time and times out very quickly. 
+The brute force solution simply generates all possible subsequences, adding them to a set, and then seeing how many elements are in the set. This method requires $$\small \mathcal O(2^{n})$$ time and times out very quickly.
+
+##### Dynamic Programming:
+
+```py
+def distinctSubseqII(S):
+
+    endswith = [0] * 26        
+    for char in S:
+        endswith[ord(char) - ord('a')] = sum(endswith) + 1
+
+    return sum(endswith) % (10**9 + 7)
+```
+
+
 
