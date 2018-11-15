@@ -1,4 +1,4 @@
-####  Distinct Subsequences
+#### Distinct Subsequences
 
 > Given a string **S** and a string **T**, count the number of distinct subsequences of **S** which equals **T**.
 >
@@ -8,7 +8,7 @@
 >
 > ```
 > Input: S = "rabbbit", T = "rabbit"
-> Output: 3
+> Output: 3
 >
 > Explanation:
 >
@@ -29,7 +29,7 @@
 >
 > ```
 > Input: S = "babgbag", T = "bag"
-> Output: 5
+> Output: 5
 >
 > Explanation:
 >
@@ -52,7 +52,7 @@
 >     ^^^
 > ```
 
-Brute Force:
+##### Brute Force:
 
 ```py
 def numDistinct(s, t):
