@@ -91,7 +91,7 @@
 * [Dynamic Programming](dynamic-programming.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
-  * Distinct Subsequences
+  * [Distinct Subsequences](dynamic-programming/distinct-subsequences.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
