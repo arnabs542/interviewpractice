@@ -90,6 +90,7 @@
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
+  * [Perfect Squares](dynamic-programming/perfect-squares.md)
   * Distinct Subsequences
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
