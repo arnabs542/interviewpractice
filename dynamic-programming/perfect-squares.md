@@ -60,8 +60,8 @@ We start by generating all perfect squares less than equal to our target. For ex
 cnt    squares    to_check (start)    to_check (end)
 1     [0,1,4,9]         {12}             {11,8,3}
 2        ""          {11,8,3}          {10,7,2,4}
-3        ""         {10,7,2,4}        {9,5,1,6,3,1,0}
+3        ""         {10,7,2,4}        {9,5,1,6,3,0}
 ```
 
-
+We stop on the third iteration, because there are multiple ways we could've taken to arrive at 1, which is a perfect square, meaning that we have traversed a sequence of perfect squares to a base case. 
 
