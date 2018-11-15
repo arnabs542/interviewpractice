@@ -93,5 +93,5 @@ def numDistinct(s, t):
     return dp[len(t)][len(s)]
 ```
 
-
+The idea behind the above solution is that we will build a 2d memo `dp` where `dp[j][i]` records the number of times the subsequence `t[0:j]` is included in `s[0:i]`.  Therefore the result will be `dp[T.length()][S.length()]`.
 
