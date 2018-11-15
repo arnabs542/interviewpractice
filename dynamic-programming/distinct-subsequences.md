@@ -146,5 +146,5 @@ And the result is 4, as the distinct subsequences are:
       S = [  a  b ]
 ```
 
-
+Running time and space are both $$\small \mathcal O(m*n)$$, where $$\small m,n$$ are the lengths of the two strings. We could improve on space complexity by keeping only the two most relevant rows, since each current row only depends on the the previous row and previous column. 
 
