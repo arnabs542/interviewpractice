@@ -42,5 +42,5 @@ def minAreaRect(self, points):
     return 0 if min_area == float('inf') else min_area
 ```
 
-The above code runs in $$\small \mathcal O(N^{2})$$ time. We basically run a nested for loop picking out pairs of points that we guess to be diagonals of the minimum rectangle. If the other two points of the rectangle exist, then we calculate and update the area as necessary. Otherwise, we continue picking points. 
+The above code runs in $$\small \mathcal O(n^{2})$$ time. We basically run a nested for loop picking out pairs of points that we guess to be diagonals of the minimum rectangle. If the other two points of the rectangle exist, then we calculate and update the area as necessary. Otherwise, we continue picking points.
 
