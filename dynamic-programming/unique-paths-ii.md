@@ -17,9 +17,9 @@
 > ```
 > Input:
 > [
->   [0,0,0],
->   [0,1,0],
->   [0,0,0]
+>   [0,0,0],
+>   [0,1,0],
+>   [0,0,0]
 > ]
 >
 > Output: 2
@@ -72,5 +72,5 @@ def uniquePathsWithObstacles(obstacleGrid):
     return obstacleGrid[-1][-1]
 ```
 
-We could recursively solve the problem by repeatedly doing DFS on each cell, but that will very quickly time out. The subproblem relationship comes from the realization that each square at `grid[i][j]` has at most two origin points: `grid[i-1][j]` and `grid[i][j-1]`. Therefore, to figure out how many ways there are to get to `grid[i][j]`, we need to know how many ways there are to get to grid\[i-1\]\[j\] and grid\[i\]\[j-1\]. Once this relationship is derived, the problem becomes mechanical in nature. The above solution uses the input array to compute the final answer, requiring two full traversals of the array. If we initialize a new array, we can reduce time at the expense of memory. Running time is $$\small O(m*n)$$, where $$\small m,n$$ are the dimensions of the input array. 
+The only difference between this problem and the one above is that we need to perform a few checks to see if a square is an obstacle, and set that to 0 in our DP traversal. The above solution uses the input array to compute the final answer, requiring two full traversals of the array. If we initialize a new array, we can reduce time at the expense of memory. Running time remains $$\small O(m*n)$$, where $$\small m,n$$ are the dimensions of the input array.
 
