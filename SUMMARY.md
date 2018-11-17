@@ -94,6 +94,8 @@
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
   * [Distinct Subsequences](dynamic-programming/distinct-subsequences.md)
   * [Distinct Subsequences II](dynamic-programming/distinct-subsequences-ii.md)
+  * Unique Paths
+  * [Unique Paths II](dynamic-programming/unique-paths-ii.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
