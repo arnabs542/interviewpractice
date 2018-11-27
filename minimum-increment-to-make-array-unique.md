@@ -1,4 +1,4 @@
-####  Minimum Increment to Make Array Unique
+#### Minimum Increment to Make Array Unique
 
 > Given an array of integers A, a _move_ consists of choosing any `A[i]`, and incrementing it by `1`.
 >
@@ -26,7 +26,7 @@
 > 1. `0 <= A.length <= 40000`
 > 2. `0 <= A[i] < 40000`
 
-Code \(Sorting\):
+##### Code \(Sorting\):
 
 ```py
 def minIncrementForUnique(A):
@@ -41,5 +41,5 @@ def minIncrementForUnique(A):
     return moves
 ```
 
-The key constraint in this problem is that all numbers are nonnegative. 
+The key constraints in this problem is that all numbers are nonnegative and we are only allowed to increment numbers. If the current number is the same as the previous one, then it needs to be incremented to prev + 1 in order for it to be unique. Running time is dominated by the sort, making it $$\small \mathcal O(n \log{n})$$.
 

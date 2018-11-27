@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
+  * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
 * [Binary Trees](binary-trees.md)
   * [Compute the Lowest Common Ancestor in a Binary Tree](binary-trees/compute-the-lowest-common-ancestor-in-a-binary-tree.md)
   * [Compute the LCA when Nodes have Parent Pointers](binary-trees/compute-the-lca-when-nodes-have-parent-pointers.md)
