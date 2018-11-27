@@ -83,3 +83,7 @@ def bagOfTokensScore(tokens, P):
 
 The intuition is as follows: If we play a token face up, we might as well play the one with the smallest value. Similarly, if we play a token face down, we might as well play the one with the largest value.
 
+We don't need to play anything until absolutely necessary.  We should always play tokens face up until exhaustion, then play one token face down and continue.
+
+The final answer could be any of the intermediate answers we got after playing tokens face up \(but before playing them face down.\)
+
