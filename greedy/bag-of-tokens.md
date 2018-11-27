@@ -81,5 +81,5 @@ def bagOfTokensScore(tokens, P):
     return max_points
 ```
 
-
+The intuition is as follows: If we play a token face up, we might as well play the one with the smallest value. Similarly, if we play a token face down, we might as well play the one with the largest value.
 
