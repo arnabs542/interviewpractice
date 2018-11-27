@@ -30,7 +30,7 @@
 > Output: 2
 > ```
 
-##### Code \(Brute Force - Timed Out\):
+##### Brute Force - Timed Out:
 
 ```py
 def bagOfTokensScore(tokens, P):
@@ -54,5 +54,32 @@ def bagOfTokensScore(tokens, P):
     return max_points
 ```
 
-We can simply try to brute force all possible moves: 1\) if we have enough points, we can try to get more power, 2\) if we have enough power, we can try to get more points. Since there are 2 moves possible for each token, runtime blows to up exponential time, and we time out. 
+We can simply try to brute force all possible moves: 1\) if we have enough points, we can try to get more power, 2\) if we have enough power, we can try to get more points. Since there are 2 moves possible for each token, runtime blows to up exponential time, and we time out.
+
+##### Greedy:
+
+```py
+def bagOfTokensScore(tokens, P):
+
+    max_points = points = 0
+    tokens.sort()
+
+    start, end = 0, len(tokens) - 1
+    while start <= end:
+        if P >= tokens[start]:
+            P -= tokens[start]
+            points += 1
+            start += 1
+        elif points > 0:
+            points -= 1
+            P += tokens[end]
+            end -= 1
+        else:
+            return max_points
+        max_points = max(max_points, points)
+
+    return max_points
+```
+
+
 
