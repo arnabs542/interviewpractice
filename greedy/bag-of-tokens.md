@@ -54,5 +54,5 @@ def bagOfTokensScore(tokens, P):
     return max_points
 ```
 
-We can simply try to brute force all possible moves: 1\) if we have enough points, we can try to get more power, 2\) if we have enough power, we can try to get more points. Since there are 2 
+We can simply try to brute force all possible moves: 1\) if we have enough points, we can try to get more power, 2\) if we have enough power, we can try to get more points. Since there are 2 moves possible for each token, runtime blows to up exponential time, and we time out. 
 
