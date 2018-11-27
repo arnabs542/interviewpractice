@@ -101,4 +101,6 @@
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
+* [Greedy](greedy.md)
+  * [Bag of Tokens](greedy/bag-of-tokens.md)
 
