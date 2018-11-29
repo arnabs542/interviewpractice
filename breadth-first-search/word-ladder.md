@@ -80,7 +80,7 @@ def ladderLength(beginWord, endWord, wordList):
     return 0
 ```
 
-The idea behind the algorithm is to get all of the possible transformations after a certain amount of steps, and then see when we reach the final word. For example, given the input: 
+The idea behind the algorithm is to get all of the possible transformations after a certain amount of steps, and then see when we reach the final word. For example, given the input:
 
 ```
 beginWord = "hit",
@@ -88,5 +88,5 @@ endWord = "cog",
 wordList = ["hot","dot","dog","lot","log","cog"]
 ```
 
-After 1 move, we could have the words \["hot"\]. After 2 moves, we can have the words \["lot", "dot"\]. 
+After 1 move, we could have the words \["hot"\]. After 2 moves, we can have the words \["lot", "dot"\]. The problem with solution is that the method for determining a valid transformation takes too long - each word requires iterating through the entire array to determine next words. 
 
