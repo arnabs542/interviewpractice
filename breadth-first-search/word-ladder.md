@@ -1,4 +1,4 @@
-####  Word Ladder
+#### Word Ladder
 
 > Given two words \(_beginWord_ and _endWord_\), and a dictionary's word list, find the length of shortest transformation sequence from _beginWord_ to _endWord_, such that:
 >
@@ -36,9 +36,9 @@
 > wordList = ["hot","dot","dog","lot","log"]
 >
 >
-> Output: 0
+> Output: 0
 >
-> Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+> Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 > ```
 
 ##### Unoptimized BFS:
@@ -80,5 +80,5 @@ def ladderLength(beginWord, endWord, wordList):
     return 0
 ```
 
-
+Th
 
