@@ -88,5 +88,44 @@ endWord = "cog",
 wordList = ["hot","dot","dog","lot","log","cog"]
 ```
 
-After 1 move, we could have the words \["hot"\]. After 2 moves, we can have the words \["lot", "dot"\]. The problem with solution is that the method for determining a valid transformation takes too long - each word requires iterating through the entire array to determine next words. 
+After 1 move, we could have the words \["hot"\]. After 2 moves, we can have the words \["lot", "dot"\]. The problem with solution is that the method for determining a valid transformation takes too long - each word requires iterating through the entire array to determine next words.
+
+##### Optimized BFS:
+
+```py
+def ladderLength(beginWord, endWord, wordList):
+
+    wordList = set(wordList)
+
+    if endWord not in wordList:
+        return 0
+    
+    bfs = collections.deque([beginWord])
+    wordList.discard(beginWord)
+
+    dist = 1
+
+    while bfs:
+        n = len(bfs)
+        for i in range(n):
+            cur_word = bfs.popleft()
+            for i in range(len(cur_word)):
+                for c in string.ascii_lowercase:
+                    transform = cur_word[:i] + c + cur_word[i+1:]
+                    print(transform)
+                    if transform == endWord:
+                        return dist + 1
+                    elif transform in wordList:
+                        wordList.discard(transform)
+                        bfs.append(transform)
+        dist += 1
+
+    return 0
+```
+
+The first optimization we can make is change how we search for next possible transforms. Since we are only allowed to change one letter at a time, then we might as well try changing each letter of the current word to all 26 letters and see if that word is in the dictionary. If it is, we can then add it to our queue and remove it from the dictionary. The running time is bounded by $$\small \mathcal O(n * l * 26)$$. Since at most we will need to consider every single word, the while loop will take $$\small \mathcal O(n)$$ time, where $$\small n$$ is the number of words in the dictionary. We loop through every letter of each word, which takes $$\small \mathcal O(l)$$ time, where $$\small l$$ is the length of each word. The 26 is just more specific, since there are 26 letters. 
+
+##### Bidirectional BFS
+
+A stronger optimization is to perform BFS from both direction - we simultaneously change the starting and ending word and attempt to meet in the middle. 
 
