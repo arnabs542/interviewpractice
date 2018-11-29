@@ -99,7 +99,7 @@ def ladderLength(beginWord, endWord, wordList):
 
     if endWord not in wordList:
         return 0
-    
+
     bfs = collections.deque([beginWord])
     wordList.discard(beginWord)
 
@@ -123,9 +123,43 @@ def ladderLength(beginWord, endWord, wordList):
     return 0
 ```
 
-The first optimization we can make is change how we search for next possible transforms. Since we are only allowed to change one letter at a time, then we might as well try changing each letter of the current word to all 26 letters and see if that word is in the dictionary. If it is, we can then add it to our queue and remove it from the dictionary. The running time is bounded by $$\small \mathcal O(n * l * 26)$$. Since at most we will need to consider every single word, the while loop will take $$\small \mathcal O(n)$$ time, where $$\small n$$ is the number of words in the dictionary. We loop through every letter of each word, which takes $$\small \mathcal O(l)$$ time, where $$\small l$$ is the length of each word. The 26 is just more specific, since there are 26 letters. 
+The first optimization we can make is change how we search for next possible transforms. Since we are only allowed to change one letter at a time, then we might as well try changing each letter of the current word to all 26 letters and see if that word is in the dictionary. If it is, we can then add it to our queue and remove it from the dictionary. The running time is bounded by $$\small \mathcal O(n * l * 26)$$. Since at most we will need to consider every single word, the while loop will take $$\small \mathcal O(n)$$ time, where $$\small n$$ is the number of words in the dictionary. We loop through every letter of each word, which takes $$\small \mathcal O(l)$$ time, where $$\small l$$ is the length of each word. The 26 is just more specific, since there are 26 letters.
 
-##### Bidirectional BFS
+##### Bidirectional BFS:
 
-A stronger optimization is to perform BFS from both direction - we simultaneously change the starting and ending word and attempt to meet in the middle. 
+```py
+def ladderLength(beginWord, endWord, wordList):
+
+    wordList = set(wordList)
+
+    if endWord not in wordList:
+        return 0
+
+    front, back = collections.deque([beginWord]), collections.deque([endWord])
+    wordList.discard(beginWord)
+    wordList.discard(endWord)
+
+    dist = 1
+
+    while front:
+        dist += 1
+        n = len(front)
+        for i in range(n):
+            cur_word = front.popleft()
+            for i in range(len(cur_word)):
+                for c in string.ascii_lowercase:
+                    transform = cur_word[:i] + c + cur_word[i+1:]
+                    if transform in back:
+                        return dist
+                    elif transform in wordList:
+                        wordList.discard(transform)
+                        front.append(transform)
+
+        if len(front) > len(back):
+            front, back = back, front
+
+    return 0
+```
+
+A stronger optimization is to perform BFS from both direction - we simultaneously change the starting and ending word and attempt to meet in the middle.
 
