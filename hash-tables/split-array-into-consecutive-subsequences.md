@@ -1,9 +1,8 @@
-####  Split Array into Consecutive Subsequences
+#### Split Array into Consecutive Subsequences
 
 > You are given an integer array sorted in ascending order \(may contain duplicates\), you need to split them into several subsequences, where each subsequences consist of at least 3 consecutive integers. Return whether you can make such a split.
 >
-> **Example 1:**  
->
+> **Example 1:**
 >
 > ```
 > Input: [1,2,3,3,4,5]
@@ -16,8 +15,7 @@
 > 3, 4, 5
 > ```
 >
-> **Example 2:**  
->
+> **Example 2:**
 >
 > ```
 > Input: [1,2,3,3,4,4,5,5]
@@ -28,11 +26,9 @@
 > You can split them into two consecutive subsequences : 
 > 1, 2, 3, 4, 5
 > 3, 4, 5
->
 > ```
 >
-> **Example 3:**  
->
+> **Example 3:**
 >
 > ```
 > Input: [1,2,3,4,4,5]
@@ -40,7 +36,7 @@
 > Output: False
 > ```
 
-Code:
+##### Hash table \(Chains\):
 
 ```py
 def isPossible(nums):
