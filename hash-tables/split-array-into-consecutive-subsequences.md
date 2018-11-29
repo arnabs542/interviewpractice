@@ -68,5 +68,7 @@ def isPossible(nums):
 
 The idea here is to maintain a hash table of the current chains we have built. The entry `count[x]` records how many chains ended at `x-1`; in other words, how many chains are currently "waiting" for `x`.
 
-This approach is greedy by nature - we consistently try to extend each chain to its maximum length. We only start a new chain when we can't attach the current number to any existing chain.  
+This approach is greedy by nature - we consistently try to extend each chain to its maximum length. We only start a new chain when we can't attach the current number to any existing chain.
+
+Runtime and space complexity are both $$\small \mathcal O(n)$$. 
 
