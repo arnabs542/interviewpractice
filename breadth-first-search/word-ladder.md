@@ -161,5 +161,5 @@ def ladderLength(beginWord, endWord, wordList):
     return 0
 ```
 
-A stronger optimization is to perform BFS from both direction - we simultaneously change the starting and ending word and attempt to meet in the middle. At the end of each turn, we swap front and back if needed to ensure that front is always the shorter of the two queues. This means we can iterate through less elements the next turn.
+A stronger optimization is to perform BFS from both direction - we simultaneously change the starting and ending word and attempt to meet in the middle. At the end of each turn, we swap front and back if needed to ensure that front is always the shorter of the two queues. This means we can iterate through less elements the next turn. Running time doesn't change. 
 

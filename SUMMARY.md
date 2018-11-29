@@ -60,6 +60,7 @@
   * [Compute all String Decompositions](hash-tables/compute-all-string-decompositions.md)
   * [Implement a Hash Function for Chess](hash-tables/implement-a-hash-function-for-chess.md)
   * [Minimum Area Rectangle](hash-tables/minimum-area-rectangle.md)
+  * [Split Array into Consecutive Subsequences](hash-tables/split-array-into-consecutive-subsequences.md)
 * [Sorting](sorting.md)
   * [Compute the Intersection of Two Sorted Arrays](compute-the-intersection-of-two-sorted-arrays.md)
   * [Merge Two Sorted Arrays](merge-two-sorted-arrays.md)
