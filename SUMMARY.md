@@ -102,8 +102,10 @@
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
+  * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
 * [Greedy](greedy.md)
   * [Bag of Tokens](greedy/bag-of-tokens.md)
 * [Breadth-first Search](breadth-first-search.md)
   * [Word Ladder](breadth-first-search/word-ladder.md)
+* [Depth-first Search](depth-first-search.md)
 
