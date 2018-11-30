@@ -62,19 +62,19 @@ class Solution(object):
     def cleanRoom(self, robot):
 
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
- 
+
         def goBack(robot):
             robot.turnLeft()
             robot.turnLeft()
             robot.move()
             robot.turnRight()
             robot.turnRight()
- 
+
         def dfs(pos, robot, d, lookup):
             if pos in lookup:
                 return
             lookup.add(pos)
- 
+
             robot.clean()
             for _ in directions:
                 if robot.move():
@@ -84,9 +84,13 @@ class Solution(object):
                     goBack(robot)
                 robot.turnRight()
                 d = (d+1) % len(directions)
-         
-        dfs((0, 0), robot, 0, set())　　
+
+        dfs((0, 0), robot, 0, set())
 ```
+
+While the core of the algorithm is a standard DFS traversal, we need to be careful of directions. When we return from the backtracking call, we will be need to adjust direction. In a normal graph problem, we simply retrun by popping the latest call off the stack. However, to get the robot to return, we need to make 2 left turns, move, then make 2 right turns to RESTORE its position to the direction it was when it ENTERED the last visit with. Otherwise, we may end up missing neighbors.
+
+
 
 
 
