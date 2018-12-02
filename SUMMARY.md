@@ -75,7 +75,7 @@
   * [Sorting a List](sorting-a-list.md)
   * [Compute a Salary Threshold](compute-a-salary-threshold.md)
   * [Minimum Increment to Make Array Unique](minimum-increment-to-make-array-unique.md)
-  * [Most Crowded Time](most-crowded-time.md)
+  * [Most Occupants](most-crowded-time.md)
 * [Binary Search Trees](binary-search-trees.md)
   * [Verify if a Binary Tree is a BST](binary-search-trees/verify-if-a-binary-tree-is-a-bst.md)
   * [Find the First Key Greater than a Given Value in a BST](binary-search-trees/find-the-first-key-greater-than-a-given-value-in-a-bst.md)
