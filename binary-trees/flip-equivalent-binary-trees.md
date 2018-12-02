@@ -33,7 +33,7 @@ def flipEquiv(root1, root2):
 
 We could just do a standard preorder traversal on the two trees and check all possible combinations. This takes $$\small \mathcal O(min(n_{1},n_{2}))$$ time, where $$\small n_{1}, n_{2}$$ are the number of elements in each tree. Space is dictated by the recursion stack, and takes $$\small \mathcal O(min(h_{1},h_{2}))$$, where $$\small h_{1},h_{2}$$ are the height of the tree.
 
-Canonical Form:
+##### Canonical Form:
 
 ```py
 def flipEquiv(root1, root2):
@@ -55,5 +55,5 @@ def flipEquiv(root1, root2):
     return self.flipEquiv(root1.left, root2.left) and self.flipEquiv(root1.right, root2.right)
 ```
 
-
+Since we're told that all values in the trees are unique, we could also establish a canonical form for both trees and then compare them normally. If there are two children, always set the left one to be the smallest. Otherwise, make sure the child is on the left branch.
 
