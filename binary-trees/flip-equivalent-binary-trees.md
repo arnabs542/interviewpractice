@@ -31,7 +31,7 @@ def flipEquiv(root1, root2):
             or (self.flipEquiv(root1.left, root2.right) and self.flipEquiv(root1.right, root2.left)))
 ```
 
-We could just do a standard preorder traversal on the two trees and check all possible combinations. This takes $$\small \mathcal O(min(n1, n2))$$ time, where $$\small n1, n2$$ are the number of elements in each tree. Space is dictated by the recursion stack, and takes $$\small \mathcal O(min(h1,h2))$$, where $$\small h1, h2$$ are the height of the tree. 
+We could just do a standard preorder traversal on the two trees and check all possible combinations. This takes $$\small \mathcal O(min(n_{1},n_{2}))$$ time, where $$\small n_{1}, n_{2}$$ are the number of elements in each tree. Space is dictated by the recursion stack, and takes $$\small \mathcal O(min(h_{1},h_{2}))$$, where $$\small h_{1},h_{2}$$ are the height of the tree.
 
 Canonical Form:
 
@@ -52,7 +52,7 @@ def flipEquiv(root1, root2):
         if not root2.left or root2.right.val < root2.left.val:
             root2.left, root2.right = root2.right, root2.left        
 
-    return self.flipEquiv(root1.left, root2.left) and self.flipEquiv(root1.right, root2.right)   
+    return self.flipEquiv(root1.left, root2.left) and self.flipEquiv(root1.right, root2.right)
 ```
 
 
