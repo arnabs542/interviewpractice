@@ -23,7 +23,7 @@ def maxOccupants(entries):
     start = end = 0
 
     for i,e in enumerate(entries):
-        if e + cur_occupants < e:
+        if e + cur_occupants =< e:
             cur_occupants = 0
             start = i
         cur_occupants += e
@@ -36,7 +36,10 @@ def maxOccupants(entries):
 
 This problem is basically a combination of the Render a Calendar problem with Maximum Subarray. There are a few assumptions made in the solution:
 
-1. The array 
+1. The array is sorted by timestamp. If not, we will need to do so, breaking ties by placing enters before exits. 
+2. The array is valid, i.e. we won't have an exit as the first entry, more exits then entries, etc. 
+
+We iterate through the array, and whenever we encounter an entry incident, we add the count to our running sum, and whenever we encounter an exit incident, we subtract its count. We update the start when the current enter count is greater than/equal to if we had continued counting from the current starting period. However, if we assume that array is valid, all this does is keep the time frame to the shortest period which has a number of people equal to the largest count. This is because we're assuming we never have a negative amount of people in the building. 
 
 
 
