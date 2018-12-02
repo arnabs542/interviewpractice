@@ -38,7 +38,7 @@
 > 2. `1 <= A[i] <= 10^6`
 > 3. `A[i] != A[j]` for all `i != j`
 
-Draw Simulation:
+##### Draw Simulation:
 
 ```py
 def deckRevealedIncreasing(deck):
@@ -55,5 +55,5 @@ def deckRevealedIncreasing(deck):
     return res
 ```
 
-The idea of the algorithm is to work backwards from the last draw to the first and figure out what ordering works at each stage. For example, suppose the deck was `[1,2,3,4,5,6,7,8]`. We would want our last draw to be `[8]`, and the second last to be `[7,8]`. The third to last drawn card needs to be 6, and since the card directly after it gets moved to the end, the deck before drawing the 6 needs to be `[6,8,7]`. Then `[5,7,6,8]`, `[4,8,5,7,6]`, `[3,6,4,8,5,7]`, `[2,7,3,6,4,8,5]`, and finally `[1,5,2,7,3,6,4,8]`.
+The idea of the algorithm is to work backwards from the last draw to the first and figure out what ordering works at each stage. For example, suppose the deck was `[1,2,3,4,5,6,7,8]`. We would want our last draw to be `[8]`, and the second last to be `[7,8]`. The third to last drawn card needs to be 6, and since the card directly after it gets moved to the end, the deck before drawing the 6 needs to be `[6,8,7]`. Then `[5,7,6,8]`, `[4,8,5,7,6]`, `[3,6,4,8,5,7]`, `[2,7,3,6,4,8,5]`, and finally `[1,5,2,7,3,6,4,8]`. The running time of this algorithm is $$\small \mathcal O(n^{2} \log{n})$$. There is an $$\small \mathcal O(n \log{n})$$ component from the initial sort, but each iteration we need to rebuild the array. We can remove the $$\small \mathcal O(n)$$ rebuild by simulating the indices directly. 
 
