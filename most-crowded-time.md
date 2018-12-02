@@ -15,23 +15,25 @@
 ##### Sorting + Kadane's algorithm:
 
 ```py
-def maxOccupants(arr):
-
-    max_occupants = float('-inf')
-    start = end = cur_occupants = 0
-    time = (-1, -1)
-
-    for i,e in enumerate(arr):
-        if e.type == enter:
-            if e.count + cur_occupants >= cur_occupants:
-                start = i
-            cur_occupants += e.count
-        else:
-            cur_occupants -= e.count
-        if cur_occupants > max_occupants:
-            time = (start, i)
+def maxOccupants(records):
     
-    return time
+    cur_occupants = 0
+    max_occupants = float("-inf")
+    
+    start, end = 0, 0
+    cur_start = 0
+    
+    for i,e in enumerate(records):
+        if e + cur_occupants <= cur_occupants:
+            cur_occupants = 0
+            cur_start = i
+        cur_occupants += e
+        
+        if cur_occupants > max_occupants:
+            max_occupants = cur_occupants
+            start, end = cur_start, i        
+    
+    return (start, end)
 ```
 
 This problem is basically a combination of the Render a Calendar problem with Maximum Subarray. There are a few assumptions made in the solution:
