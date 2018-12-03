@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 * [Queues](queues.md)
   * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
-* [Queues](queues.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
@@ -110,5 +109,4 @@
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
 * [Greedy](greedy.md)
   * [Bag of Tokens](greedy/bag-of-tokens.md)
-* [Queues](queues.md)
 
