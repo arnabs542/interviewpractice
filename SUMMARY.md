@@ -33,6 +33,7 @@
   * [Trial and Error](chapter1/trial-and-error.md)
     * [Koko Eating Bananas](chapter1/trial-and-error/koko-eating-bananas.md)
     * [Split Array Largest Sum](chapter1/trial-and-error/split-array-largest-sum.md)
+    * [Painter's Partition Problem](chapter1/trial-and-error/painters-partition-problem.md)
     * [Find K-th Smallest Pair Distance](chapter1/trial-and-error/find-k-th-smallest-pair-distance.md)
     * [Maximum Average Subarray II](chapter1/trial-and-error/maximum-average-subarray-ii.md)
   * [Search a Sorted Array for Entry Equal to Its Index](binary-search/search-a-sorted-array-for-entry-equal-to-its-index.md)
