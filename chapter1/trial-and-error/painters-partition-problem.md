@@ -37,7 +37,37 @@ def paint(A, B, C):
     return min_time % 10000003
 ```
 
-The search space is between the minimum possible time 0 \(no boards\) and maximum possible time \(1 painter, sum all boards\). We use binary search to find the smallest possible time under which all fences can be painted. 
+The search space is between the minimum possible time 0 \(no boards\) and maximum possible time \(1 painter, sum all boards\). We use binary search to find the smallest possible time under which all fences can be painted.
 
-The trick was in the implementation of the `can_paint` function. I had initially sorted the array to greedily assign the boards, which was incorrect. The key constraint is that the painters can only work on contiguous sections of the board. That means in the final solution, each painter will be responsible for a particular section of the boards, meaning they have a starting point for their section. Once chosen, then can only paint in the right direction. Since some painter must start with the first board, we will just begin by assigning the boards to a painter until their current assigned work reaches the maximum limit. Then we start assigning the rest of the boards to the next painter. If there are no painters remaining and we haven't finished all the boards, we know it's not possible to finish with the current time and continue our binary search. Running time is $$\small \mathcal O(n \log{c})$$, where $$\small c$$ is the sum of the boards. Space complexity is constant. 
+The trick was in the implementation of the `can_paint` function. I had initially sorted the array to greedily assign the boards, which was incorrect. The key constraint is that the painters can only work on contiguous sections of the board. That means in the final solution, each painter will be responsible for a particular section of the boards, meaning they have a starting point for their section. Once chosen, then can only paint in the right direction. Since some painter must start with the first board, we will just begin by assigning the boards to a painter until their current assigned work reaches the maximum limit. Then we start assigning the rest of the boards to the next painter. If there are no painters remaining and we haven't finished all the boards, we know it's not possible to finish with the current time and continue our binary search. Running time is $$\small \mathcal O(n \log{c})$$, where $$\small c$$ is the sum of the boards. Space complexity is constant.
+
+##### Recursion:
+
+```py
+def paint(A, B, C):
+    
+    def helper(start, divs, partitions, t_time, cur_sum):
+        if not divs:
+            partitions.append(sum(C[start:]) * B)
+            t_time[0] = min(t_time[0], max(partitions))
+            partitions.pop()
+            return
+        for i in range(start, len(C) - divs):
+            cur_sum += C[i]
+            partitions.append(cur_sum * B)
+            helper(i+1, divs-1, partitions, t_time, 0)
+            partitions.pop()
+        
+    t_time = [float("inf")]
+    A = min(len(C), A)
+    helper(0, A - 1, [], t_time, 0)
+    return t_time[0] % 10000003
+```
+
+##### Edge Cases:
+
+* Empty fence list
+* Number of painters &gt; number of boards
+
+
 
