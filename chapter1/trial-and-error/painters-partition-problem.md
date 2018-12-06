@@ -45,7 +45,7 @@ The trick was in the implementation of the `can_paint` function. I had initially
 
 ```py
 def paint(A, B, C):
-    
+
     def helper(start, divs, partitions, t_time, cur_sum):
         if not divs:
             partitions.append(sum(C[start:]) * B)
@@ -57,12 +57,16 @@ def paint(A, B, C):
             partitions.append(cur_sum * B)
             helper(i+1, divs-1, partitions, t_time, 0)
             partitions.pop()
-        
+
     t_time = [float("inf")]
     A = min(len(C), A)
     helper(0, A - 1, [], t_time, 0)
     return t_time[0] % 10000003
 ```
+
+This problem could also theoretically be solved via brute force, but in reality this quickly times out. Partitions can be counted via Striling numbers of the second kind \(https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind\). 
+
+The algorithm is still worth a look at. We simply iterate through the array, splitting along each valid split point \(we must leave enough elements for the rest of the painters\), then recursively call the helper function to deal with the rest. When we have assigned sections to all painters, we then look at what the largest section is, and that will be the time required to paint according to the current division. 
 
 ##### Edge Cases:
 
