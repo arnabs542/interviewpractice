@@ -111,4 +111,5 @@
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
 * [Greedy](greedy.md)
   * [Bag of Tokens](greedy/bag-of-tokens.md)
+  * [Delete Columns to Make Sorted II](greedy/delete-columns-to-make-sorted-ii.md)
 
