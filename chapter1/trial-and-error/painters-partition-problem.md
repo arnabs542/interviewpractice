@@ -64,9 +64,13 @@ def paint(A, B, C):
     return t_time[0] % 10000003
 ```
 
-This problem could also theoretically be solved via brute force, but in reality this quickly times out. Partitions can be counted via Striling numbers of the second kind \(https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind\). 
+This problem could also theoretically be solved via brute force, but in reality this quickly times out. Partitions can be counted via Striling numbers of the second kind \([https://en.wikipedia.org/wiki/Stirling\_numbers\_of\_the\_second\_kind\](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind\)\).
 
-The algorithm is still worth a look at. We simply iterate through the array, splitting along each valid split point \(we must leave enough elements for the rest of the painters\), then recursively call the helper function to deal with the rest. When we have assigned sections to all painters, we then look at what the largest section is, and that will be the time required to paint according to the current division. 
+The algorithm is still worth a look at. We simply iterate through the array, splitting along each valid split point \(we must leave enough elements for the rest of the painters\), then recursively call the helper function to deal with the rest. When we have assigned sections to all painters, we then look at what the largest section is, and that will be the time required to paint according to the current division.
+
+##### Dynamic Programming
+
+The above recurrence can be modeled as such: the time taken to paint $$\small n$$ boards with $$\small k$$ painter is $$\small T(n, k) = \min{}$$
 
 ##### Edge Cases:
 
