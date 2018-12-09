@@ -45,6 +45,8 @@ def canReorderDoubled(A):
 
 The pattern for the array is this: `A[1] = 2*A[0], A[3] = 2*A[2]`, etc. Since there is no restriction about where elements can be placed, we can break the array down into a collection of pairs, and we only need to consider each pair at a time. For example, if we 4 2's in the array, then we need at least 4 1's or 4 4's or 2 2's and 2 1's. We can then start from the smallest number $$\small x$$ in each pair and look for $$\small 2*x$$. If we can't find any, then we simply return False.
 
+Running time is $$\small \mathcal O(n \log{n})$$.
+
 ##### Edge Cases:
 
 When I first did the problem, I didn't realize negative numbers would present a problem, since if we sort without specifying absolute value, and array of $$\small [-2, -4, 4, 2]$$ would end up as $$\small [-4, -2, 2, 4]$$. Then when we iterate through it, we would end up with $$\small -4 * 2 = -8$$, which is not present in the array, causing us to return a 0.
