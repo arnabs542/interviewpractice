@@ -1,6 +1,6 @@
-####  Array of Doubled Pairs
+#### Array of Doubled Pairs
 
-> Given an array of integers `A` with even length, return `true` if and only if it is possible to reorder it such that `A[2 * i + 1] = 2 * A[2 * i]` for every `0 <= i < len(A) / 2`.
+> Given an array of integers `A` with even length, return `true` if and only if it is possible to reorder it such that `A[2 * i + 1] = 2 * A[2 * i]` for every `0 <= i < len(A) / 2`.
 >
 > **Example 1:**
 >
@@ -47,7 +47,7 @@ The pattern for the array is this: `A[1] = 2*A[0], A[3] = 2*A[2]`, etc. Since th
 
 ##### Edge Cases:
 
-When I first did the problem, I didn't realize negative numbers would present a problem, since if we sort without specifying absolute value, and array of $$\small [-2, -4, 4, 2]$$ would end up as $$\small [-4, -2, 2, 4]$$. Then when we iterate through it, we would end up with $$\small -4 * 2 = -8$$, which is not present in the array, causing us to return a 0. 
+When I first did the problem, I didn't realize negative numbers would present a problem, since if we sort without specifying absolute value, and array of $$\small [-2, -4, 4, 2]$$ would end up as $$\small [-4, -2, 2, 4]$$. Then when we iterate through it, we would end up with $$\small -4 * 2 = -8$$, which is not present in the array, causing us to return a 0.
 
-
+It's also important to note the difference between `x//y` and `int(x/y)`. The first operation rounds down; for the case of `-3//2`, the answer would be `-2`. The second operation simply truncates the floating portion, and `int(-3/2) = -1`.
 
