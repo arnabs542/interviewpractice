@@ -99,6 +99,7 @@
   * [K Empty Slots](bucketing/k-empty-slots.md)
 * [Recursion](recursion.md)
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
+  * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
