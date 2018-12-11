@@ -41,6 +41,24 @@
 > We have to delete every column.
 > ```
 
+##### Code:
+
+```py
+def minDeletionSize(A):
+
+    deletes, n, m = 0, len(A), len(A[0])
+
+    unordered = set(i for i in range(n - 1))
+
+    for j in range(m):
+        if any(A[i][j] > A[i+1][j] for i in unordered):
+            deletes += 1
+        else:
+            unordered -= {i for i in unordered if A[i][j] < A[i+1][j]}
+
+    return deletes
+```
+
 ##### Edge Cases:
 
 Same letters:
