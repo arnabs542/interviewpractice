@@ -7,14 +7,14 @@
 > **Example:**
 >
 > ```
-> Input: "aab"
+> Input: "aab"
 >
 > Output: 1
 >
 > Explanation: The palindrome partitioning ["aa","b"] could be produced using 1 cut.
 > ```
 
-DP Solution \(TLE\):
+##### DP Solution \(TLE\):
 
 ```py
 def minCut(s):
