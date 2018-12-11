@@ -19,9 +19,7 @@
 ```py
 def minCut(s):
 
-    is_palindrom = [1] + [0] * len(s)
-    elems = [0] + [len(s)] * len(s)
-    is_palindrom[0] = 1
+    elems = [0] + [float('inf')] * len(s)
 
     min_split = len(s)
 
@@ -32,6 +30,31 @@ def minCut(s):
 
     return elems[-1] - 1
 ```
+
+The idea is similar to Word Split. We maintain an extra array that tells us how many elements are in the answer if we split the array at that point. For the example s = "aab", the initial state is below:
+
+```
+elems = [0 inf inf inf]
+    s = [   a   a   b ] 
+```
+
+We then start iterating `i`, while backwards iterating `j`. Since we want to minimize the number of cuts, we need to extend `j` as far back as possible such that `s[:j]` and `s[j:i]` are both palindromes. 
+
+```
+            i
+elems = [0 inf inf inf]
+    s = [   a   a   b ] 
+    
+                i
+elems = [0  0  inf inf]
+    s = [   a   a   b ]
+    
+                    i
+elems = [0  0   0   1]
+    s = [   a   a   b ]
+```
+
+The first `a` is by itself an element, and that requires no cuts since the empty string requires no cuts. Since `aa` is also a palindrome, the first two characters require no cuts. The third character `b` requires a cut, since we can't tack it onto the first palindrome. Therefore, the number of cuts for `elems[3] = 1 + elems[2]`. The overall runtime of this solution is bounded by $$\small \mathcal O(n^{2})$$, since we run a nested for loop. However this timed out. 
 
 
 
