@@ -1,6 +1,6 @@
 #### Delete Columns to Make Sorted II
 
-> We are given an array `A` of `N` lowercase letter strings, all of the same length.
+> We are given an array `A` of `N` lowercase letter strings, all of the same length.
 >
 > Now, we may choose any set of deletion indices, and for each string, we delete all the characters in those indices.
 >
@@ -41,11 +41,9 @@
 > We have to delete every column.
 > ```
 
-
-
 ##### Edge Cases:
 
-Greedy Row Check:
+Same letters:
 
 ```py
 def minDeletionSize(A):
@@ -68,13 +66,7 @@ def minDeletionSize(A):
     return min_delete
 ```
 
-My initial approach was to just examine each column at a time. If a column was out of order, then delete it and increment our delete counter. However, in a case like `A = ["xga","xfb","yfa"]`, this algorithm is in correct. The first column is in order, but the second column is not. However, once we delete the second column, we end up with `A = ["xa","xb","ya"]`, which is in order. However, we look at the third column by itself, we see `["a", "b", "a"]`, which is not in order, and we increment the delete counter again. 
+My initial approach was to just examine each column at a time. If a column was out of order, then delete it and increment our delete counter. However, in a case like `A = ["xga","xfb","yfa"]`, this algorithm is in correct. The first column is in order, but the second column is not. However, once we delete the second column, we end up with `A = ["xa","xb","ya"]`, which is in order. However, we look at the third column by itself, we see `["a", "b", "a"]`, which is not in order, and we increment the delete counter again.
 
-The problem with this greedy approach is it doesn't take into context whether the previous columns take care of later columns. In this particular case, we should stop after deleting the second column. 
-
-
-
-
-
-
+The problem with this greedy approach is it doesn't take into context whether the previous columns take care of later columns. In this particular case, we should stop after deleting the second column.
 
