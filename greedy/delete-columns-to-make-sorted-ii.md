@@ -59,7 +59,9 @@ def minDeletionSize(A):
     return deletes
 ```
 
-Initialize 
+We Initialize `N` empty strings. For each column, add the character to each row, and check if all rows are still sorted. If yes, then we continue onto the next column. Otherwise, this column needs to be deleted. 
+
+This algorithm takes care of edge cases when the input `A = ["xga","xfb","yfa"]` contains duplicate letters. After the first pass through, `unordered = {0}` because the 0th row is what we need to check going forward. Since `x < y`, the 1st and 2nd row are in order, if the 0th and 1st conflict going forward, we just keep delete columns. 
 
 ##### Edge Cases:
 
