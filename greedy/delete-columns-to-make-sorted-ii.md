@@ -59,6 +59,8 @@ def minDeletionSize(A):
     return deletes
 ```
 
+Initialize 
+
 ##### Edge Cases:
 
 Same letters:
