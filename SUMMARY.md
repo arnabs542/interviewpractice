@@ -103,6 +103,7 @@
   * [Palindrome Partitioning II](recursion/palindrome-partitioning-ii.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
+    * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
   * [Distinct Subsequences](dynamic-programming/distinct-subsequences.md)
