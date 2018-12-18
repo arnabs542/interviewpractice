@@ -58,5 +58,5 @@ def lengthOfLIS(nums):
     return len(chain)
 ```
 
-
+The intuition behind this approach is slightly different. We build a continuous chain of increasing elements, and we update the chain with each new element coming in. Notice that the final chain is not actually the LIS; only the length between the chain and the LIS are the same. 
 
