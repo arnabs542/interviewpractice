@@ -9,23 +9,23 @@
 >
 > Output: 4 
 >
-> Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4. 
+> Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
 > ```
 
 A classic dynamic programming problem. The subproblem pattern is this: suppose we know the longest increasing subsequence for a group of $$\small n$$ elements. If we were to add another element $$\small e$$, how would that affect the current LIS?
 
-Bottom Up:
+##### Bottom Up:
 
 ```py
 def lengthOfLIS(nums):
-    
+
     dp = [1] * len(nums)
-    
+
     for i in range(len(nums)):
         for j in range(i):
             if nums[i] > nums[j]:
                 dp[i] = max(dp[i], dp[j] + 1)
-    
+
     return max(dp) if dp else 0
 ```
 
