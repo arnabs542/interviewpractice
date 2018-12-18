@@ -108,6 +108,7 @@
   * [Distinct Subsequences II](dynamic-programming/distinct-subsequences-ii.md)
   * [Unique Paths](dynamic-programming/unique-paths.md)
   * [Unique Paths II](dynamic-programming/unique-paths-ii.md)
+  * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
