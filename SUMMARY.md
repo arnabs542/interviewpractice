@@ -115,6 +115,7 @@
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
+  * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
 * [Greedy](greedy.md)
   * [Bag of Tokens](greedy/bag-of-tokens.md)
   * [Delete Columns to Make Sorted II](greedy/delete-columns-to-make-sorted-ii.md)
