@@ -1,12 +1,14 @@
 # Summary
 
 * [Introduction](README.md)
-* [Queues](queues.md)
-  * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
+* [Arrays](arrays.md)
+  * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
   * [Interleave Stack Halves](stacks/interleave-stack-halves.md)
+* [Queues](queues.md)
+  * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
 * [Binary Trees](binary-trees.md)
   * [Compute the Lowest Common Ancestor in a Binary Tree](binary-trees/compute-the-lowest-common-ancestor-in-a-binary-tree.md)
   * [Compute the LCA when Nodes have Parent Pointers](binary-trees/compute-the-lca-when-nodes-have-parent-pointers.md)
@@ -116,7 +118,5 @@
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
   * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
-* [Greedy](greedy.md)
-  * [Bag of Tokens](greedy/bag-of-tokens.md)
-  * [Delete Columns to Make Sorted II](greedy/delete-columns-to-make-sorted-ii.md)
+* Arrays
 
