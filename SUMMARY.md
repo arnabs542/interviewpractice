@@ -120,4 +120,5 @@
   * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
 * [Greedy](greedy.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
+  * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
 
