@@ -58,5 +58,9 @@ def findMinArrowShots(points):
     return thrown
 ```
 
-We sort by endpoint here because we're going to shoot the arrow as far right as possible. For each balloon, the arrow must fall on/between `balloon[0]` and `balloon[1]`. If we fire the arrow at `balloon[1]`, that gives us the most wiggle room, since it will hit and pop any other balloon that starts before that point. Runtime is the same, but space is now constant.
+We sort by endpoint here because we're going to shoot the arrow as far right as possible. For each balloon, the arrow must fall on/between `balloon[0]` and `balloon[1]`. If we fire the arrow at `balloon[1]`, that gives us the most wiggle room, since it will hit and pop any other balloon that starts before that point. 
+
+If we did not sort by the endpoint, we would have the wrong answer with an input like $$\small [[3,9],[7,12],[3,8],[6,8],[9,10],[2,9],[0,9],[3,9],[0,6],[2,8]]$$.  After sorting by start point, the balloons are $$\small [[0, 9], [0, 6], [2, 9], [2, 8], [3, 9], [3, 8], [3, 9], [6, 8], [7, 12], [9, 10]]$$. The problem is the 2nd balloon actually has a tighter bound than the first one, but the first one will cause us to set `last_thrown = 9`. Simply having a tiebreaker in the sorting function doesn't work either, because an input like $$\small [[1, 10], [3, 9], [4, 11], [6, 7], [6, 9], [8, 12], [9, 12]]$$ will still cause errors. 
+
+Runtime is the same, but space is now constant.
 
