@@ -118,4 +118,6 @@
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
   * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
+* [Greedy](greedy.md)
+  * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
 
