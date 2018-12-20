@@ -42,19 +42,19 @@ The main idea here is to pack as many balloons as possible into one arrow. For e
 
 ```py
 def findMinArrowShots(points):
-    
+
     points.sort(key=lambda x: x[1])
-    
+
     last_thrown = float('-inf')
     thrown = 0
-    
+
     for p in points:
         if p[0] > last_thrown:
             thrown += 1
             last_thrown = p[1]
-    
+
     return thrown
 ```
 
-
+We sort by endpoint here because we're going to shoot the arrow as far right as possible. For each balloon, the arrow must fall on/between `balloon[0]` and `balloon[1]`. If we fire the arrow at `balloon[1]`, that gives us the most wiggle room, since it will hit and pop any other balloon that starts before that point. Runtime is the same, but space is now constant. 
 
