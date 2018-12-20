@@ -118,5 +118,4 @@
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
   * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
-* Arrays
 
