@@ -23,18 +23,38 @@
 
 ```py
 def findMinArrowShots(points):
-    
+
     points.sort(key=lambda x: x[0])
-    
+
     ballons = []
     for p in points:
         if not ballons or p[0] > ballons[-1][1]:
             ballons.append(p)
         else:
             ballons[-1] = [min(p[0], ballons[-1][1]), min(ballons[-1][1], p[1])]
-    
+
     return len(ballons)
 ```
 
-The main idea here is to pack as many balloons as possible into one arrow. For example, suppose the balloons were at $$\small [[7,10], [1,5], [3,6], [2,4], [1,4]]$$. After sorting it becomes $$\small [[1,4], [1,5], [2,4], [3,6], [7,10]]$$. The first balloon will be left as $$\small [1,4]$$, since an arrow at any point in that range will pop it. The second balloon overlaps will the the first, we change the existing hit range to a tigher bound. The valid hit range is still $$\small [1,4]$$, because that is the tighter range. The third balloon overlaps with the previous 2, and the hit range is now $$\small [2,4]$$. The fourth balloon change the hit range to $$\small [3,4]$$. The fifth balloon requires a new range, so we need 2 arrows to pop all balloons.
+The main idea here is to pack as many balloons as possible into one arrow. For example, suppose the balloons were at $$\small [[7,10], [1,5], [3,6], [2,4], [1,4]]$$. After sorting it becomes $$\small [[1,4], [1,5], [2,4], [3,6], [7,10]]$$. The first balloon will be left as $$\small [1,4]$$, since an arrow at any point in that range will pop it. The second balloon overlaps will the the first, we change the existing hit range to a tigher bound. The valid hit range is still $$\small [1,4]$$, because that is the tighter range. The third balloon overlaps with the previous 2, and the hit range is now $$\small [2,4]$$. The fourth balloon change the hit range to $$\small [3,4]$$. The fifth balloon requires a new range, so we need 2 arrows to pop all balloons. Runtime is bounded by $$\small O(n \log{n})$$ due to sort. Space is bounded by $$\small \mathcal O(n)$$.
+
+##### Sorting by end:
+
+```py
+def findMinArrowShots(points):
+    
+    points.sort(key=lambda x: x[1])
+    
+    last_thrown = float('-inf')
+    thrown = 0
+    
+    for p in points:
+        if p[0] > last_thrown:
+            thrown += 1
+            last_thrown = p[1]
+    
+    return thrown
+```
+
+
 
