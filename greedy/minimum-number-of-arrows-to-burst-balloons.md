@@ -38,6 +38,8 @@ def findMinArrowShots(points):
 
 The main idea here is to pack as many balloons as possible into one arrow. For example, suppose the balloons were at $$\small [[7,10], [1,5], [3,6], [2,4], [1,4]]$$. After sorting it becomes $$\small [[1,4], [1,5], [2,4], [3,6], [7,10]]$$. The first balloon will be left as $$\small [1,4]$$, since an arrow at any point in that range will pop it. The second balloon overlaps will the the first, we change the existing hit range to a tigher bound. The valid hit range is still $$\small [1,4]$$, because that is the tighter range. The third balloon overlaps with the previous 2, and the hit range is now $$\small [2,4]$$. The fourth balloon change the hit range to $$\small [3,4]$$. The fifth balloon requires a new range, so we need 2 arrows to pop all balloons. Runtime is bounded by $$\small O(n \log{n})$$ due to sort. Space is bounded by $$\small \mathcal O(n)$$.
 
+We can reduce space to constant by only keeping the current hit interval
+
 ##### Sorting by end:
 
 ```py
@@ -56,5 +58,5 @@ def findMinArrowShots(points):
     return thrown
 ```
 
-We sort by endpoint here because we're going to shoot the arrow as far right as possible. For each balloon, the arrow must fall on/between `balloon[0]` and `balloon[1]`. If we fire the arrow at `balloon[1]`, that gives us the most wiggle room, since it will hit and pop any other balloon that starts before that point. Runtime is the same, but space is now constant. 
+We sort by endpoint here because we're going to shoot the arrow as far right as possible. For each balloon, the arrow must fall on/between `balloon[0]` and `balloon[1]`. If we fire the arrow at `balloon[1]`, that gives us the most wiggle room, since it will hit and pop any other balloon that starts before that point. Runtime is the same, but space is now constant.
 
