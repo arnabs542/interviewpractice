@@ -37,5 +37,7 @@ def jump(nums):
         idx += 1
 ```
 
+Suppose the range of the current jump from some index $$\small i$$ is `[i, jump_range]`. Within that interval, `cur_max` is the farthest point that all points within `[i, jump_range]` can reach. Once $$$$`idx` reaches `jump_range`$$$$, we trigger another jump, and set the new `jump_range` as `cur_max`.
 
+Running time is $$\small \mathcal O(n)$$. We can use another variable `jump_idx` to keep track of which point gives the furthest `cur_max` in each interval, and store those to get a jump sequence of minimum jumps. 
 
