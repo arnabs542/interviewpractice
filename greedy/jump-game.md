@@ -29,7 +29,7 @@
 > the last index.
 > ```
 
-Greedy:
+##### Greedy:
 
 ```py
 def canJump(nums):
@@ -42,5 +42,7 @@ def canJump(nums):
     return False
 ```
 
+This problem is solved greedily because at each index we try to see the maximum possible jump range. We use a variable `furthest` to remember the maximum coverage we have so far, and as we advance through all the indices within that coverage, we see if any of them can extend `furthest` . 
 
+Running time is $$\small \mathcal O(n)$$. Space usage is constant
 
