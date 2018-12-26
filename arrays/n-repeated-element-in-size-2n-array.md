@@ -42,9 +42,9 @@ def repeatedNTimes(A):
         nums.add(e)
 ```
 
-The easiest solution would be to simply allocate some extra memory to store all the numbers seen so far. Return as soon as we come across a repeat. 
+The easiest solution would be to simply allocate some extra memory to store all the numbers seen so far. Return as soon as we come across a repeat.
 
-Time and space complexity are both $$\small \mathcal O(n)$$. 
+Time and space complexity are both $$\small \mathcal O(n)$$.
 
 ##### Pigeonhole:
 
@@ -57,5 +57,19 @@ def repeatedNTimes(A):
             return A[i]
 ```
 
+The above solution requires the limitation of the size of the array. If a number is repeated N times in a list of size 2N, then the repeated number will never be separated by more than 2 places. Consider when N = 4, **x** being the repeated number:
 
+\[a,b,**x**,**x**\]
+
+\[a,**x**,b,**x**\]
+
+\[**x**,a,b,**x**\] \(Distance between **x**'s is still 1 - consider it as circular list\)
+
+\[**x**,a,**x**,b\]
+
+\[**x**,**x**,a,b\]
+
+\[a,**x**,**x**,b\]
+
+We rely on this property to reduce space usage down to constant.
 
