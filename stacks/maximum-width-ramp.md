@@ -1,8 +1,8 @@
 #### Maximum Width Ramp
 
-> Given an array `A` of integers, a _ramp_ is a tuple `(i, j)` for which `i < j` and `A[i] <= A[j]`.  The width of such a ramp is `j - i`.
+> Given an array `A` of integers, a _ramp_ is a tuple `(i, j)` for which `i < j` and `A[i] <= A[j]`.  The width of such a ramp is `j - i`.
 >
-> Find the maximum width of a ramp in `A`.  If one doesn't exist, return 0.
+> Find the maximum width of a ramp in `A`.  If one doesn't exist, return 0.
 >
 > **Example 1:**
 >
@@ -28,18 +28,29 @@
 
 ```py
 def maxWidthRamp(A):
-    
+
     min_ind, max_ramp, inds = float('inf'), 0, collections.defaultdict(list)
-    
+
     for i,e in enumerate(A):
         inds[e].append(i)
-    
+
     for i,e in enumerate(sorted(A)):
         max_ramp = max(max_ramp, inds[e][-1] - min_ind)
         min_ind = min(min_ind, inds[e][0])
-    
+
     return max_ramp
 ```
 
+Another way of rephrasing this problem would be for every number, find the earliest occurrence of a number less than or equal to it. Of course, we could just use a nested for loop, but that quickly times out. 
 
+The idea above can be summarized as such:
+
+* Initial max\_ramp = 0
+* Initial min index \(min\_ind\) = float\("inf"\)
+
+* Record every index of every number in "index" collection because there can be duplicate numbers.
+* Sort A
+* For every number in sorted A, get difference between last index of current number \(index\[num\]\[-1\]\) and minimum index of previous numbers \(ind\).
+
+The runtime is dominated by the sort; $$\small \mathcal O(n \log{n})$$. Space is $$\small \mathcal O(n)$$.
 
