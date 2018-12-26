@@ -8,6 +8,7 @@
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
   * [Interleave Stack Halves](stacks/interleave-stack-halves.md)
+  * [Maximum Width Ramp](stacks/maximum-width-ramp.md)
 * [Queues](queues.md)
   * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
 * [Binary Trees](binary-trees.md)

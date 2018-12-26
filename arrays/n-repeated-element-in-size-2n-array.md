@@ -71,5 +71,5 @@ The above solution requires the limitation of the size of the array. If a number
 
 \[a,**x**,**x**,b\]
 
-We rely on this property to reduce space usage down to constant.
+We rely on this property to reduce space usage down to separated.
 
