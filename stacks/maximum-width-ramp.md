@@ -51,6 +51,7 @@ The idea above can be summarized as such:
 * Record every index of every number in "index" collection because there can be duplicate numbers.
 
 * Sort A
+
 * For every number in sorted A, get difference between last index of current number \(index\[num\]\[-1\]\) and minimum index of previous numbers \(ind\).
 
 The runtime is dominated by the sort; $$\small \mathcal O(n \log{n})$$. Space is $$\small \mathcal O(n)$$.
@@ -68,6 +69,15 @@ def maxWidthRamp(A):
 
     return max_ramp
 ```
+
+The idea is the same as the algorithm above. However, this time we generate a new array that contains the indices of the sorted original array. For example, suppose the original array $$\small A$$ was $$\small [6,0,8,2,1,5]$$. After sorting, we get the array $$\small [1, 4, 3, 5, 0, 2]$$.  This is because $$\small 0$$ is the smallest element in $$\small A$$, and it's at position $$\small 1$$, $$\small 1$$ is the second smallest element, and it's at position $$\small 4$$, and so on and so forth. 
+
+* Initial max\_ramp = 0
+* Initial min\_idx = float\("inf"\)
+* Sort A by values but keep indicies
+* For every number in the sorted array, check to see if the number at the original array could give us a larger max\_ramp compared to the previous min\_ind index, and then update min\_ind as needed.
+
+Runtime is still dominated by sort, but space is now constant.
 
 
 
