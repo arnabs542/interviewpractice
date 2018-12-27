@@ -70,7 +70,7 @@ def maxWidthRamp(A):
     return max_ramp
 ```
 
-The idea is the same as the algorithm above. However, this time we generate a new array that contains the indices of the sorted original array. For example, suppose the original array $$\small A$$ was $$\small [6,0,8,2,1,5]$$. After sorting, we get the array $$\small [1, 4, 3, 5, 0, 2]$$.  This is because $$\small 0$$ is the smallest element in $$\small A$$, and it's at position $$\small 1$$, $$\small 1$$ is the second smallest element, and it's at position $$\small 4$$, and so on and so forth. 
+The idea is the same as the algorithm above. However, this time we generate a new array that contains the indices of the sorted original array. For example, suppose the original array $$\small A$$ was $$\small [6,0,8,2,1,5]$$. After sorting, we get the array $$\small [1, 4, 3, 5, 0, 2]$$.  This is because $$\small 0$$ is the smallest element in $$\small A$$, and it's at position $$\small 1$$, $$\small 1$$ is the second smallest element, and it's at position $$\small 4$$, and so on and so forth.
 
 * Initial max\_ramp = 0
 * Initial min\_idx = float\("inf"\)
@@ -79,5 +79,5 @@ The idea is the same as the algorithm above. However, this time we generate a ne
 
 Runtime is still dominated by sort, but space is now constant.
 
-
+##### Stack:
 
