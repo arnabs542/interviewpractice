@@ -77,7 +77,9 @@ The idea is the same as the algorithm above. However, this time we generate a ne
 * Sort A by values but keep indicies
 * For every number in the sorted array, check to see if the number at the original array could give us a larger max\_ramp compared to the previous min\_ind index, and then update min\_ind as needed.
 
-Runtime is still dominated by sort, but space is now constant.
+Runtime is still dominated by sortings, but space is now constant.
 
 ##### Stack:
+
+
 
