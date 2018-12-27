@@ -98,7 +98,11 @@ The idea of the algorithm can be understood in terms of the two loops within it.
 
 When we first iterate through $$\small A$$, we're looking for possible starting points. This means we only maintain a decreasing stack; i.e. in order for us to store an index, it must either be the first index, or the element at that index is strictly smaller than the previous stored index. Suppose $$\small i$$ is currently the top element in the stack. If $$\small A[j]$$, then there is no point in recording $$\small j $$. If $$\small A[k] >= A[j]$$, then $$\small A[k] >= A[i]$$, and since $$\small i < j$$, then we'll get a larger ramp with $$\small i$$.
 
-The second ramp is looking for the ending points of ramps. The key here is as $$\small A[i] >= A[stack[-1]]$$, we pop the stack. Suppose $$\small A[j] >= A[stack[-1]]$$, and $$\small A[k] >= A[stack[-1]]$$, and $$\small j > k$$. In this case, we will always get a larger ramp with $$\small A[j]$$, since it appears later. Therefore, any element that appears before $$\small j$$, even it is larger than $$\small A[j]$$, will not give us a larger ramp unless we pair it with a starting point earlier than the starting point paired with $$\small A[j]$$. Therefore, we can safely pop without worrying about missing any starting elements. 
+The second ramp is looking for the ending points of ramps. The key here is as $$\small A[i] >= A[stack[-1]]$$, we pop the stack. Suppose $$\small A[j] >= A[stack[-1]]$$, and $$\small A[k] >= A[stack[-1]]$$, and $$\small j > k$$. In this case, we will always get a larger ramp with $$\small A[j]$$, since it appears later. Therefore, any element that appears before $$\small j$$, even it is larger than $$\small A[j]$$, will not give us a larger ramp unless we pair it with a starting point earlier than the starting point paired with $$\small A[j]$$. Therefore, we can safely pop without worrying about missing any starting elements.
 
 The runtime and space complexity are both $$\small \mathcal O(n)$$.
+
+##### Reference:
+
+https://leetcode.com/problems/maximum-width-ramp/discuss/208348/JavaC%2B%2BPython-O\(N\)-Using-Stack
 
