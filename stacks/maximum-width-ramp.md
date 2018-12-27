@@ -81,5 +81,23 @@ Runtime is still dominated by sortings, but space is now constant.
 
 ##### Stack:
 
+```py
+def maxWidthRamp(A):
+    max_ramp, stack = 0, []
+    for i,e in enumerate(A):
+        if not stack or e < A[stack[-1]]:
+            stack.append(i)
+    for i in reversed(range(len(A))):
+        while stack and A[i] >= A[stack[-1]]:
+            max_ramp = max(max_ramp, i - stack[-1])
+            stack.pop()
+    return max_ramp
+
+```
+
+The idea of the algorithm can be understood in terms of the two loops within it. 
+
+When we first iterate through $$\small A$$, we're looking for possible starting points. This means we only maintain a decreasing stack; i.e. in order for us to store an index, it must either be the first index, or the element at that index is strictly smaller than the previous stored index. Suppose $$\small i$$ is currently the top element in the stack. If $$\small A[j]$$, then there is no point in recording $$\small j $$. If $$\small A[k] >= A[j]$$, then $$\small A[k] >= A[i]$$, and since $$\small i < j$$, then we'll get a larger ramp with $$\small i$$.
+
 
 
