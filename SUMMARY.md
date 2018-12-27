@@ -108,6 +108,7 @@
 * [Dynamic Programming](dynamic-programming.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
+  * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
   * [Distinct Subsequences](dynamic-programming/distinct-subsequences.md)
