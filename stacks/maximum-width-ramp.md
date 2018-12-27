@@ -41,7 +41,7 @@ def maxWidthRamp(A):
     return max_ramp
 ```
 
-Another way of rephrasing this problem would be for every number, find the earliest occurrence of a number less than or equal to it. Of course, we could just use a nested for loop, but that quickly times out. 
+Another way of rephrasing this problem would be for every number, find the earliest occurrence of a number less than or equal to it. Of course, we could just use a nested for loop, but that quickly times out.
 
 The idea above can be summarized as such:
 
@@ -49,8 +49,25 @@ The idea above can be summarized as such:
 * Initial min index \(min\_ind\) = float\("inf"\)
 
 * Record every index of every number in "index" collection because there can be duplicate numbers.
+
 * Sort A
 * For every number in sorted A, get difference between last index of current number \(index\[num\]\[-1\]\) and minimum index of previous numbers \(ind\).
 
 The runtime is dominated by the sort; $$\small \mathcal O(n \log{n})$$. Space is $$\small \mathcal O(n)$$.
+
+##### Sorting \(No Space\):
+
+```py
+def maxWidthRamp(A):
+
+    min_idx, max_ramp = float('inf'), 0
+
+    for i in sorted(range(len(A)), key=A.__getitem__):
+        max_ramp = max(max_ramp, i - min_idx)
+        min_idx = min(min_idx, i)
+
+    return max_ramp
+```
+
+
 
