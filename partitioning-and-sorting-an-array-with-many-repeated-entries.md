@@ -6,7 +6,7 @@
 >
 > You are given an array of student objects. Each student has an integer-valued age field that is to be treated as a key. Rearrange the elements of the array so that students of equal age appear together. The order in which different ages appear is not important. How would your solution change if ages have to appear in sorted order?
 
-##### Code \(Default Sort\):
+##### Default Sort:
 
 ```py
 Person = collections.namedtuple('Person', ('age', 'name'))
@@ -20,7 +20,7 @@ def group_by_age(people):
 
 Since we're only sorting all objects based on a single field, which also happens to an integer, we can simply use the native sort function specifying the key as the age of the person. Running time is $$\small \mathcal O(n \log{n})$$.
 
-##### Code \(Counting\):
+##### Counting:
 
 ```py
 Person = collections.namedtuple('Person', ('age', 'name'))
@@ -47,8 +47,6 @@ def group_by_age(people):
         else:
             del age_to_count[to_age]
 ```
-
-##### Explanation:
 
 If we do not need to have the groups of ages be in sorted order, then a naïve sort does more than what is required. We can actually perform the grouping in $$\small \mathcal O(n)$$ time by counting the frequencies of each age.
 
