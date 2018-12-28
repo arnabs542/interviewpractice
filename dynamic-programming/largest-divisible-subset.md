@@ -20,9 +20,7 @@
 > Output: [1,2,4,8]
 > ```
 
-I initially thought this was a DSU type problem, but the difficulty in using a DSU would be figuring what a common root is for each group, since a number could be assigned to multiple subsets. 
+I initially thought this was a DSU type problem, but the difficulty in using a DSU would be figuring what a common root is for each group, since a number could be assigned to multiple subsets.
 
 In reality, this is another disguised LIS problem. Suppose we have a subset $$\small S$$ which satisfies the condition. A new element $$\small E$$ would only be included in the subset if $$\small E {\% } max(S) == 0$$.
-
-$$\\text{\\% change}$$
 
