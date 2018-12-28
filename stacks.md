@@ -1,6 +1,6 @@
 #### Rotate Array
 
-> Given an array, rotate the array to the right by_k_steps, where _k_ is non-negative.
+> Given an array, rotate the array to the right by_k\_steps, where \_k_ is non-negative.
 >
 > **Example 1:**
 >
@@ -27,19 +27,19 @@
 > rotate 2 steps to the right: [3,99,-1,-100]
 > ```
 
-The simplest way to solve this problem would be to construct a new array and move the elements one at a time to their new positions. However, the problem asks the operation be done in place. We can continuously move the last element to the front and shift all $$\small N - 1$$ elements back one. This takes $$\small \mathcal O(n^{2})$$ time, and will time out. 
+The simplest way to solve this problem would be to construct a new array and move the elements one at a time to their new positions. However, the problem asks the operation be done in place. We can continuously move the last element to the front and shift all $$\small n - 1$$ elements back one. This takes $$\small \mathcal O(n^{2})$$ time, and will time out.
 
 ##### Reverse and Rotate:
 
 ```py
 def rotate(nums, k):
-    
+
     def reverse(start, end, A):
         while start < end:
             A[start], A[end] = A[end], A[start]
             start += 1
             end -= 1
-            
+
     k %= len(nums)
 
     reverse(0, len(nums) - 1, nums)
@@ -47,5 +47,15 @@ def rotate(nums, k):
     reverse(k, len(nums) - 1, nums)
 ```
 
+This is a classic way to rotate an array to the right by $$\small k$$ elements. The steps are as follows:
 
+1. Reverse the entire array
+
+2. Reverse the first k elements
+
+3. Reverse the rest of the elements
+
+Suppose the input was $$\small [1,2,3,4,5,6,7], k = 3$$. After reversing the array, we have $$\small [7,6,5,4,3,2,1]$$. Reversing the first 3 elements, we get $$\small [5,6,7,4,3,2,1]$$. Reversing the rest of the elements results in $$\small [5,6,7,1,2,3,4]$$.
+
+Running time is $$\small O(n)$$.
 
