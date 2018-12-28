@@ -55,5 +55,5 @@ def largestDivisibleSubset(nums):
     return res
 ```
 
-
+The code above relies heavily on the LIS problem. We use two DP arrays to help us: `dp[i]` records the largest subset we can have including `nums[i]`, while `pre_idx[i]` records the index j of the number that appears before `nums[i]` in the subset \(if it exists\). 
 
