@@ -22,6 +22,7 @@
   * [All Possible Full Binary Trees](binary-trees/all-possible-full-binary-trees.md)
   * [Binary Tree Maximum Path Sum](binary-tree-maximum-path-sum.md)
   * [Flip Equivalent Binary Trees](binary-trees/flip-equivalent-binary-trees.md)
+  * [Most Frequent Subtree Sum](binary-trees/most-frequent-subtree-sum.md)
 * [Binary Search](chapter1.md)
   * [Template 1](binary-search/template-1.md)
     * [Sqrt\(x\)](binary-search/template-1/sqrtx.md)
