@@ -16,8 +16,6 @@ def group_by_age(people):
     return
 ```
 
-##### Explanation:
-
 Since we're only sorting all objects based on a single field, which also happens to an integer, we can simply use the native sort function specifying the key as the age of the person. Running time is $$\small \mathcal O(n \log{n})$$.
 
 ##### Counting:
