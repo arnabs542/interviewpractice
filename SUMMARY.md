@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [Arrays](arrays.md)
-  * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
-  * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
   * [Rotate Array](arrays/rotate-array.md)
+  * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
+  * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
