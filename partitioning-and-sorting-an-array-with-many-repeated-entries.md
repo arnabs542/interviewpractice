@@ -63,8 +63,7 @@ We then iterate through our `age_to_count`, and each time we move one element to
 from_age = 14
 from_idx = age_to_offset[14] = 0
 to_age = people[0].age
-to_idx = age_to_offset[to_age
-]
+to_idx = age_to_offset[to_age]
 ```
 
 We use the `age_to_count` hash table to keep track of which age groups haven't been completely processed yet. Each iteration, we ask the hash to give us one number \(`from_age`\). We then see where that number needs to go by looking its position in the `age_to_offset` hash table \(`from_idx`\). Next, we find the number age at `people[from_idx]`, and we find its correct position `to_idx`. We move the number originally at `from_idx` to its correct position.
