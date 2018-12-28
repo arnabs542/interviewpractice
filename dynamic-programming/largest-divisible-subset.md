@@ -22,7 +22,7 @@
 
 I initially thought this was a DSU type problem, but the difficulty in using a DSU would be figuring what a common root is for each group, since a number could be assigned to multiple subsets.
 
-In reality, this is another disguised LIS problem. Suppose we have a subset $$\small S$$ which satisfies the condition. A new element $$\small E$$ would only be included in the subset if $$\small E {\% } max(S) == 0$$ or $$\small E \% min(S) == 0$$. If we sort the array, then we would only get increasing elements, so we only need to check the first condition.
+In reality, this is another disguised LIS problem. Suppose we have a subset $$\small S$$ which satisfies the condition. A new element $$\small E$$ would only be included in the subset if $$\small E \> \% {} \> max(S) == 0$$ or $$\small E \> \% \> min(S) == 0$$. If we sort the array, then we would only get increasing elements, so we only need to check the first condition.
 
 ##### Dynamic Programming:
 
