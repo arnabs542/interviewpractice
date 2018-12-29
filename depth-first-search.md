@@ -81,7 +81,56 @@ class Solution:
         return list(self.ans)
 ```
 
-Since we don't initially know which bracket can be removed, we simply generate all possible combinations and check them. This problem differs from the **Valid Parentheses** problem in that parentheses are either "\(" or "\)", so we don't need a stack to valid if an expression is valid. Instead, we simply need to remember how many open brackets and closed brackets we have, and if the two numbers match, then it is valid. Along the way, we make sure we never have more closed brackes than open brackets in our expression, since that would immediately invalidate it. 
+Since we don't initially know which bracket can be removed, we simply generate all possible combinations and check them. This problem differs from the **Valid Parentheses** problem in that parentheses are either "\(" or "\)", so we don't need a stack to valid if an expression is valid. Instead, we simply need to remember how many open brackets and closed brackets we have, and if the two numbers match, then it is valid. Along the way, we make sure we never have more closed brackes than open brackets in our expression, since that would immediately invalidate it.
 
 For each expression, we first see if it's valid, and if so, if it's longer than our previous best attempt. Running time is bounded by $$\small \mathcal O(2^{n})$$ due to generating all possible expressions. The rebuilding of the string at the end due to Python having immutable strings will actually increase the running time to $$\small \mathcal O(n*2^{n})$$.
+
+**DFS \(Optimized\):**
+
+```py
+class Solution:
+    def removeInvalidParentheses(self, s):
+        
+        self.ans = set()
+        
+        left_rem = right_rem = 0
+        for p in s:
+            if p == '(':
+                left_rem += 1
+            elif p == ')':
+                if left_rem > 0:
+                    left_rem -= 1
+                else:
+                    right_rem += 1
+        
+        def dfs(index, left, right, left_rem, right_rem, cur):
+            if index == len(s):
+                if left_rem == right_rem == 0:
+                    self.ans.add("".join(cur))
+                return
+            
+            cur_char = s[index]
+            if cur_char == '(' and left_rem > 0:
+                dfs(index + 1, left, right, left_rem - 1, right_rem, cur)
+            if cur_char == ')' and right_rem > 0:
+                dfs(index + 1, left, right, left_rem, right_rem - 1, cur)
+            if cur_char != ')' and cur_char != '(':
+                cur.append(cur_char)
+                dfs(index + 1, left, right, left_rem, right_rem, cur)
+                cur.pop()
+            elif cur_char == '(':
+                cur.append('(')
+                dfs(index + 1, left + 1, right, left_rem, right_rem, cur)
+                cur.pop()
+            elif cur_char == ')' and right < left:
+                cur.append(')')
+                dfs(index + 1, left, right + 1, left_rem, right_rem, cur)
+                cur.pop()
+        
+            
+        dfs(0, 0, 0, left_rem, right_rem, [])
+        return list(self.ans)
+```
+
+
 
