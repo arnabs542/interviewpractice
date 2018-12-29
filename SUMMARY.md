@@ -129,4 +129,6 @@
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
   * [Jump Game](greedy/jump-game.md)
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
+* [Depth-first Search](depth-first-search.md)
+  * Remove Invalid Parentheses
 
