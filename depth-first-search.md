@@ -90,9 +90,9 @@ For each expression, we first see if it's valid, and if so, if it's longer than 
 ```py
 class Solution:
     def removeInvalidParentheses(self, s):
-        
+
         self.ans = set()
-        
+
         # left_rem and right_rem will figure out how many left and right
         # brackets we need to remove from the original expression
         left_rem = right_rem = 0
@@ -104,14 +104,14 @@ class Solution:
                     left_rem -= 1
                 else:
                     right_rem += 1
-        
+
         def dfs(index, left, right, left_rem, right_rem, cur):
             # Reached end of string - return
             if index == len(s):
                 if left_rem == right_rem == 0:
                     self.ans.add("".join(cur))
                 return
-            
+
             cur_char = s[index]
             # We still need to remove a '(' bracket
             if cur_char == '(' and left_rem > 0:
@@ -135,13 +135,13 @@ class Solution:
                 cur.append(')')
                 dfs(index + 1, left, right + 1, left_rem, right_rem, cur)
                 cur.pop()
-        
-            
+
+
         dfs(0, 0, 0, left_rem, right_rem, [])
         return list(self.ans)
 ```
 
-The intuition behind the above solution is that every single valid expression in the final answer will be the same length. In addition to simply figuring out the length, if we could figure out how many left and right parentheses to remove from the original expression, we could dramatically improve the running time by not wasting time on dead ends. For example, suppose the original expression was 1000 characters with only 3 misplaced '\(' parenthese and 2 misplaced '\)' parenthese. In the unoptimized solution, we would end up trying to remove each one of left and right parentheses and try to reach a valid expression in the end whereas we should focus on trying to remove 3 '\(' brackets and 2 '\)' brackets. 
+The intuition behind the above solution is that every single valid expression in the final answer will be the same length. In addition to simply figuring out the length, if we could figure out how many left and right parentheses to remove from the original expression, we could dramatically improve the running time by not wasting time on dead ends. For example, suppose the original expression was 1000 characters with only 3 misplaced '\(' parenthese and 2 misplaced '\)' parenthese. In the unoptimized solution, we would end up trying to remove each one of left and right parentheses and try to reach a valid expression in the end whereas we should focus on trying to remove 3 '\(' brackets and 2 '\)' brackets.
 
-The first iteration through the expression 
+Running time is still $$\small \mathcal O(2^{n})$$, since In the worst case, we can have something like `(((((((((` and the `left_rem = len(S)` and in such a case we can discard all of the characters because all are misplaced. So, in the worst case we **still **have 2 options per parenthesis.
 
