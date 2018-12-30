@@ -39,5 +39,15 @@ def partition(s):
 
 This is just a standard backtracking/dfs approach to solving the problem. Iterate through the array until we find a palindrome, then break that off and try to split the rest of the string into palindromic substrings as well.
 
-Time complexity analysis is a little tricky. For a string of length $$\small n$$, there are $$\small n-1$$ places to make cuts, resulting in $$\small \mathcal O(2^{n})$$ recursive calls. However, there is additional overhead to the palindrome checking and substring construction, with copying the current subarray into the final array at the very end. I think the actual time complexity is something like $$\small \mathcal O(n^{2} * 2^{n})$$.
+Time complexity analysis is a little tricky. The recurrence can be modeled as such:
+
+$$\small T(n) = P(1) + T(n-1) + P(2) + T(n-2) + ... + P(n-1) + T(1) + P(n) + T(0)$$
+
+$$\small = T(n-1) + T(n-2) + ... + T(1) + T(0) + P(n) + P(n-1) + ... + P(1) + P(0)$$
+
+$$\small T(n-1) = T(n-2) + T(n-3) + ... + T(1) + T(0) + P(n-1) + P(n-2) + ... + P(1) + P(0) $$
+
+Hence $$\small T(n) = T(n-1) + T(n-1) + P(n) = 2*T(n-1) + P(n)$$.
+
+This solves to $$\small O(2^{n})$$. However, the overhead needed to actually copy the substring to the final array should probably bump the bound to something like $$\small \mathcal O(n*2^{n})$$. 
 
