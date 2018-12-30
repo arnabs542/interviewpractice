@@ -35,26 +35,49 @@ The idea is similar to Word Split. We maintain an extra array that tells us how 
 
 ```
 elems = [0 inf inf inf]
-    s = [   a   a   b ] 
+    s = [   a   a   b ]
 ```
 
-We then start iterating `i`, while backwards iterating `j`. Since we want to minimize the number of cuts, we need to extend `j` as far back as possible such that `s[:j]` and `s[j:i]` are both palindromes. 
+We then start iterating `i`, while backwards iterating `j`. Since we want to minimize the number of cuts, we need to extend `j` as far back as possible such that `s[:j]` and `s[j:i]` are both palindromes.
 
 ```
             i
 elems = [0 inf inf inf]
     s = [   a   a   b ] 
-    
+
                 i
 elems = [0  0  inf inf]
     s = [   a   a   b ]
-    
+
                     i
 elems = [0  0   0   1]
     s = [   a   a   b ]
 ```
 
-The first `a` is by itself an element, and that requires no cuts since the empty string requires no cuts. Since `aa` is also a palindrome, the first two characters require no cuts. The third character `b` requires a cut, since we can't tack it onto the first palindrome. Therefore, the number of cuts for `elems[3] = 1 + elems[2]`. The overall runtime of this solution is bounded by $$\small \mathcal O(n^{2})$$, since we run a nested for loop. However this timed out. 
+The first `a` is by itself an element, and that requires no cuts since the empty string requires no cuts. Since `aa` is also a palindrome, the first two characters require no cuts. The third character `b` requires a cut, since we can't tack it onto the first palindrome. Therefore, the number of cuts for `elems[3] = 1 + elems[2]`. The overall runtime of this solution is bounded by $$\small \mathcal O(n^{3})$$. We have a nested for loop that partitions the string, but the palindrome check takes another $$\small \mathcal O(n)$$ factor. 
+
+However, if we simply add a few checks that guard against extra long palindromic inputs, or inputs that can be partitioned with just 1 split, the code passes:
+
+```py
+def minCut(s):
+    
+    if s == s[::-1]: 
+        return 0
+    for i in range(1, len(s)):
+        if s[:i] == s[:i][::-1] and s[i:] == s[i::][::-1]:
+            return 1
+        
+    elems = [0] + [float('inf')] * len(s)
+
+    min_split = len(s)
+
+    for i in range(len(s)):
+        for j in range(i, -1, -1):       
+            if s[j:i+1] == s[j:i+1][::-1]:                
+                elems[i+1] = min(elems[i+1], 1 + elems[j])
+
+    return elems[-1] - 1
+```
 
 
 
