@@ -118,6 +118,7 @@
   * [Unique Paths](dynamic-programming/unique-paths.md)
   * [Unique Paths II](dynamic-programming/unique-paths-ii.md)
   * [Largest Divisible Subset](dynamic-programming/largest-divisible-subset.md)
+  * [Minimum Triangle Sum](dynamic-programming/minimum-triangle-sum.md)
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
