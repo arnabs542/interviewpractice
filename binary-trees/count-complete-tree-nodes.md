@@ -26,32 +26,32 @@
 
 ```py
 def countNodes(root):
-    
+
     def left_height(root):
         count = 0
         while root:
             count += 1
             root = root.left
         return count
-    
+
     def right_height(root):
         count = 0
         while root:
             count += 1
             root = root.right
         return count
-    
+
     lh, rh = left_height(root), right_height(root)
-    
+
     if lh == rh:
         return 2**lh - 1
-    
+
     return self.countNodes(root.left) + self.countNodes(root.right) + 1
 ```
 
-Of course we could perform a simple traversal of the tree and count all the nodes in $$\small \mathcal O(n)$$ time. However, this disregards the fact that we're told the tree is complete. 
+Of course we could perform a simple traversal of the tree and count all the nodes in $$\small \mathcal O(n)$$ time. However, this disregards the fact that we're told the tree is complete.
 
-The above code is based on the realization that a complete tree has either a perfectleft subtree, a perfect right subtree, or both. If the left subtree is perfect, then we only need to know its height to compute the number of nodes within it, which requires only $$\small \mathcal O(\log{n})$$. The same applies for the right subtree. 
+The above code is based on the realization that a complete tree has either a perfectleft subtree, a perfect right subtree, or both. If the left subtree is perfect, then we only need to know its height to compute the number of nodes within it, which requires only $$\small \mathcal O(\log{n})$$. The same applies for the right subtree.
 
-The running time of the algorithm is bounded by $$\small \mathcal O((\log{n})^{2})$$. 
+The running time of the algorithm is bounded by $$\small \mathcal O((\log{n})^{2})$$. We halve the tree each iteration, and each iteration requires $$\small \mathcal O(\log {n})$$ time to calculate the height. 
 
