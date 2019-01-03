@@ -74,6 +74,10 @@ def nextPermutation(nums):
     return
 ```
 
+We can actually simply reverse the suffix to generate the smallest version instead of sorting it. 
+
+
+
 The biggest trick to optimizing this problem was realizing we didn't need to use a full-blown sorting algorithm. By moving s and e around, relative ordering must be preserved, otherwise there would've been no swap.
 
 First we need to recognize when there is no possible next permutation. That's when the array is already sorted in decreasing order. Since each unit position is already optimized to be the max it can be, the number is the largest.
