@@ -56,8 +56,16 @@ The above code is based on the realization that a complete tree has either a per
 The running time of the algorithm is bounded by $$\small \mathcal O((\log{n})^{2})$$. We halve the tree each iteration, and each iteration requires $$\small \mathcal O(\log {n})$$ time to calculate the height.
 
 Another way to calculate the running time is to expand the recursion relationship:
+
+
 $$
-\small T(h) = O(h) + 2T(n-1)  \\ \small = \mathcal O(h) + \mathcal O(h-1) + \mathcal O(h-1) + 2T(h-2) \\ \small = \mathcal O(h) + 2 \mathcal O(h-1) + 2 \mathcal O(h-2) + ... \mathcal O(2) + \mathcal O(1)
+\small T(h) = O(h) + 2T(n-1)  \\ \small = \mathcal O(h) + \mathcal O(h-1) + \mathcal O(h-1) + 2T(h-2) \\ \small = \mathcal O(h) + 2 \mathcal O(h-1) + 2 \mathcal O(h-2) + ... 2 \mathcal O(2) + 2 \mathcal O(1) + \mathcal O(0)
 $$
-Since $$\small \mathcal O(h) = \mathcal O(\log{n})$$, we can rewrite the equation above as $$ \small \mathcal O\(h\) + 2 \mathcal O\(h-1\) + 2 \mathcal O\(h-2\) + ... \mathcal O\(2\) + \mathcal O\(1\)$$
+
+
+Since $$\small \mathcal O(h) = \mathcal O(\log{n})$$, we can rewrite the equation above as: 
+$$
+\small \mathcal O(\log{n}) + 2 \mathcal O(\log{n}-1) + 2 \mathcal O(\log{n}-2) + ... 2 * \mathcal O(\log{n} - \log{n}) \\ = \small \mathcal O(\log{n}) + 2 \mathcal O(\log{n}) - \mathcal O(2) + 2 \mathcal O(\log{n}) - 2 \mathcal O(3) ... \\ = \small \log{n} * O(\log{n}) - C \\ = \small \mathcal O((\log{n})^{2}) 
+$$
+
 
