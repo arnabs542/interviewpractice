@@ -39,11 +39,7 @@ def nextPermutation(nums):
 
 We first approach the problem by looking at what condition\(s\) must be met such that there exists a next permutation. For example, suppose the given array was $$\small [6,5,4,3,2,1]$$. In this case, all elements are in descending order, and the number is at its largest.
 
-For there to be a next permutation, there must exist some inversion point $$\small i$$ such that $$\small nums[i] < nums[i+1]$$. We need to find the last of these points.
-
-After finding the point, we need to find the smallest number that at index $$\small j$$ such that $$\small nums[i] < nums[j]$$. The elements after the inversion point must all be in descending order, else the inversion point would not be at its current location. Therefore, a simple linear scan is sufficient, and we can break as soon we find a larger element.
-
-After replacing $$\small nums[i]$$ with the larger number, we now sort the array after that point to generate the smallest possible suffix.
+For there to be a next permutation, there must exist an inversion point where the entry $$\small e$$ is smaller than some entry $$\small s$$ after it; e.g.: $$\small [6,2,5,1,3,0]$$. In this example, we see that there are a few situations where this apply: $$\small 2$$ and $$\small 1$$ both have elements larger than it come after it. But because we're looking for the next permutation, that means we need to make the smallest change possible. In that event, we need to find the right-most inversion point, and replace with the smallest element out of all elements larger than it to the right. In the above example, we need to swap the $$\small 1$$ and $$\small 3$$: $$\small [6,2,5,3,1,0]$$. However, this is not quite finished yet, because the suffix after the inversion point is the smallest it can be: the $$\small 1$$ and $$\small0$$ need to be flipped. We generate the smallest suffix by sorting that part of the array.
 
 ##### Optimized:
 
