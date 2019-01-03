@@ -53,5 +53,11 @@ Of course we could perform a simple traversal of the tree and count all the node
 
 The above code is based on the realization that a complete tree has either a perfectleft subtree, a perfect right subtree, or both. If the left subtree is perfect, then we only need to know its height to compute the number of nodes within it, which requires only $$\small \mathcal O(\log{n})$$. The same applies for the right subtree.
 
-The running time of the algorithm is bounded by $$\small \mathcal O((\log{n})^{2})$$. We halve the tree each iteration, and each iteration requires $$\small \mathcal O(\log {n})$$ time to calculate the height. 
+The running time of the algorithm is bounded by $$\small \mathcal O((\log{n})^{2})$$. We halve the tree each iteration, and each iteration requires $$\small \mathcal O(\log {n})$$ time to calculate the height.
+
+Another way to calculate the running time is to expand the recursion relationship:
+$$
+\small T(h) = O(h) + 2T(n-1)  \\ \small = \mathcal O(h) + \mathcal O(h-1) + \mathcal O(h-1) + 2T(h-2) \\ \small = \mathcal O(h) + 2 \mathcal O(h-1) + 2 \mathcal O(h-2) + ... \mathcal O(2) + \mathcal O(1)
+$$
+Since $$\small \mathcal O(h) = \mathcal O(\log{n})$$, we can rewrite the equation above as $$ \small \mathcal O\(h\) + 2 \mathcal O\(h-1\) + 2 \mathcal O\(h-2\) + ... \mathcal O\(2\) + \mathcal O\(1\)$$
 
