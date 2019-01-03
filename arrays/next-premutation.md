@@ -37,13 +37,46 @@ def nextPermutation(nums):
     return
 ```
 
-We first approach the problem by looking at what condition\(s\) must be met such that there exists a next permutation. For example, suppose the given array was $$\small [6,5,4,3,2,1]$$. In this case, all elements are in descending order, and the number is at its largest. 
+We first approach the problem by looking at what condition\(s\) must be met such that there exists a next permutation. For example, suppose the given array was $$\small [6,5,4,3,2,1]$$. In this case, all elements are in descending order, and the number is at its largest.
 
 For there to be a next permutation, there must exist some inversion point $$\small i$$ such that $$\small nums[i] < nums[i+1]$$. We need to find the last of these points.
 
-After finding the point, we need to find the smallest number that at index $$\small j$$ such that $$\small nums[i] < nums[j]$$. The elements after the inversion point must all be in descending order, else the inversion point would not be at its current location. Therefore, a simple linear scan is sufficient, and we can break as soon we find a larger element. 
+After finding the point, we need to find the smallest number that at index $$\small j$$ such that $$\small nums[i] < nums[j]$$. The elements after the inversion point must all be in descending order, else the inversion point would not be at its current location. Therefore, a simple linear scan is sufficient, and we can break as soon we find a larger element.
 
-After replacing $$\small nums[i]$$ with the larger number, we now sort the array after that point to generate the smallest possible suffix. 
+After replacing $$\small nums[i]$$ with the larger number, we now sort the array after that point to generate the smallest possible suffix.
+
+##### Optimized:
+
+```py
+def nextPermutation(nums):   
+
+    # Find the first entry from the right that is smaller than the entry
+    # immediately after it.
+
+    ip = len(nums) - 2     
+    while ip >= 0 and nums[ip] >= nums[ip+1]:
+        ip -= 1
+
+    # Already max size
+    if ip == -1:
+        nums.reverse()
+        return
+
+    # Swap the smallest entry after index inversion_point that is greater than
+    # perm[inversion_point]. Since entries in perm are decreasing after
+    # inversion_point, if we search in reverse order, the first entry that is
+    # greater than perm[inversion_point] is the entry to swap with.
+
+    for i in reversed(range(ip, len(nums))):
+        if nums[i] > nums[ip]:
+            nums[i], nums[ip] = nums[ip], nums[i]
+            break
+
+    # Entries in perm must appear in decreasing order after inversion_point,
+    # so we simply reverse these entries to get the smallest dictionary order.
+    nums[ip+1:] = reversed(nums[ip+1:])
+    return
+```
 
 The biggest trick to optimizing this problem was realizing we didn't need to use a full-blown sorting algorithm. By moving s and e around, relative ordering must be preserved, otherwise there would've been no swap.
 
