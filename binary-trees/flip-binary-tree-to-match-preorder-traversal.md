@@ -54,10 +54,12 @@ The overall idea is quite simple, because we're assured that each node has a dis
 
 We simply go through the tree in a preorder traversal and attempt to match our voyage:
 
-1.  We use a global integer idx to indicate the next index in the voyage. 
+1. We use a global integer idx to indicate the next index in the voyage. 
 2. If current `node == null`, it's fine, we return `true`.  
 3. If current `node.val != v[i]`, it doesn't match wanted value, return `false`.
 4. If left child exist but don't have wanted value, flip it with right child.
+
+Running time should be bounded by $$\small \mathcal O(n)$$.
 
 
 
