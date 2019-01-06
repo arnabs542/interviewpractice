@@ -25,6 +25,7 @@
   * [Flip Equivalent Binary Trees](binary-trees/flip-equivalent-binary-trees.md)
   * [Most Frequent Subtree Sum](binary-trees/most-frequent-subtree-sum.md)
   * [Count Complete Tree Nodes](binary-trees/count-complete-tree-nodes.md)
+  * [Flip Binary Tree To Match Preorder Traversal](binary-trees/flip-binary-tree-to-match-preorder-traversal.md)
 * [Binary Search](chapter1.md)
   * [Template 1](binary-search/template-1.md)
     * [Sqrt\(x\)](binary-search/template-1/sqrtx.md)
