@@ -1,8 +1,8 @@
 #### Pancake Sorting
 
-> Given an array `A`, we can perform a _pancake flip_: We choose some positive integer **`k`**`<= A.length`, then reverse the order of the first **k** elements of `A`.  We want to perform zero or more pancake flips \(doing them one after another in succession\) to sort the array `A`.
+> Given an array `A`, we can perform a _pancake flip_: We choose some positive integer `k<= A.length`, then reverse the order of the first **k** elements of `A`.  We want to perform zero or more pancake flips \(doing them one after another in succession\) to sort the array `A`.
 >
-> Return the k-values corresponding to a sequence of pancake flips that sort `A`.  Any valid answer that sorts the array within `10 * A.length` flips will be judged as correct.
+> Return the k-values corresponding to a sequence of pancake flips that sort `A`.  Any valid answer that sorts the array within `10 * A.length` flips will be judged as correct.
 >
 > **Example 1:**
 >
@@ -15,10 +15,10 @@
 > After 1st flip (k=4): A = [1, 4, 2, 3]
 > After 2nd flip (k=2): A = [4, 1, 2, 3]
 > After 3rd flip (k=4): A = [3, 2, 1, 4]
-> After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted. 
+> After 4th flip (k=3): A = [1, 2, 3, 4], which is sorted.
 > ```
 
-The idea of the sort is straightforward - if working backwards, we focus on getting the largest element to the $$\small n$$ position, then second largest to the $$\small n-1$$ position, and so forth.
+##### Sorting:
 
 ```py
 def pancakeSort(A):
@@ -31,7 +31,7 @@ def pancakeSort(A):
             A[start], A[end] = A[end], A[start]
             start += 1
             end -= 1
-            
+
     flips = []
     size = len(A)
     while size > 0:
@@ -44,5 +44,5 @@ def pancakeSort(A):
     return flips
 ```
 
-
+ Find the index `max_idx` of the next maximum number `x` in the array. Reverse `i + 1` numbers, so that the largest number will be at `A[0]`. Reverse `i + 1` numbers,  so that `x` will be at `A[x - 1]`. Repeat this process `N` times. Running time is bounded by $$\small \mathcal O(n^{2})$$.
 
