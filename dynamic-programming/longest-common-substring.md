@@ -39,5 +39,7 @@ def longestCommonSubsequence(a, b, c):
     return res[::-1]
 ```
 
-The idea is to us
+The idea is to use dynamic programming to perform incremental comparisons between the strings. The entry at `dp[i][j]` records the longest common substring between `b[:i]` and `a[:j]` \(inclusive\). If the characters at indices `i,j` don't match, then it means the new character introduced doesn't help us increase our LCS, so we simply take the best of what we had before: `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`. However, if the characters do match, then we can either use the new characters to build a LCS, or keep what we had before. 
+
+
 
