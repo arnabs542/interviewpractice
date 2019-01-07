@@ -45,5 +45,7 @@ def permute(nums):
     return res
 ```
 
+This is a classic backtracking problem. At each level, we simply choose one element for the current position before calling the next level to finish the array for us. Since permutations don't allow reusing numbers, we add the index of the number we picked to a set so that for the rest of the array we won't pick it again. 
 
+There are $$\small \mathcal O(n!)$$ possible permutations, and at the end of each permutation we need to copy the array. The overall runtime is bounded by $$\small \mathcal O(n * n!)$$.
 
