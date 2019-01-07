@@ -124,6 +124,7 @@
   * [Largest Divisible Subset](dynamic-programming/largest-divisible-subset.md)
   * [Minimum Triangle Sum](dynamic-programming/minimum-triangle-sum.md)
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
+  * [Longest Common Substring](dynamic-programming/longest-common-substring.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
