@@ -41,7 +41,9 @@ def longestCommonSubsequence(a, b, c):
 
 The idea is to use dynamic programming to perform incremental comparisons between the strings. The entry at `dp[i][j]` records the longest common substring between `b[:i]` and `a[:j]` \(inclusive\). If the characters at indices `i,j` don't match, then it means the new character introduced doesn't help us increase our LCS, so we simply take the best of what we had before: `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`. However, if the characters do match, then we can either use the new characters to build a LCS, or keep what we had before.
 
-We can rebuild a LCS by starting from the end of our matrix, and working backwards depending on how the current entry got updated. 
+We can rebuild a LCS by starting from the end of our matrix, and working backwards depending on how the current entry got updated.
 
-To extend this to three strings, we simply make our matrix three-dimensional and check `a[i], b[j], c[k]` and update the array the same way as before.
+To extend this to three strings, we simply make our matrix three-dimensional and check `a[i], b[j], c[k]` and update the array the same way as before. This could be extended further to $$\small n$$ strings. 
+
+Runtime is bounded by $$\small \mathcal O(m*n)$$, where $$\small m,n$$ are the lengths of the substrings. Space complexity is the same.
 
