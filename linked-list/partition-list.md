@@ -11,5 +11,26 @@
 > Output: 1->2->2->4->3->5
 > ```
 
+##### Dummy Nodes:
 
+```py
+def partition(head, x):
+
+    s_head = s_tail = ListNode(0)
+    l_head = l_tail = ListNode(0)
+    while head:
+        if head.val < x:
+            s_tail.next = head
+            s_tail = s_tail.next
+        else:
+            l_tail.next = head
+            l_tail = l_tail.next
+        head = head.next        
+
+    l_tail.next = None
+    s_tail.next = l_head.next
+    return s_head.next
+```
+
+For linked list partitioning/rearranging problems, always consider using some dummy nodes to deal with the movement. The code above has $$\small \mathcal O(n)$$ runtime and $$\small \mathcal O(1)$$ space usage.
 
