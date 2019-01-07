@@ -20,14 +20,14 @@
 > ]
 > ```
 
-Backtracking:
+##### Backtracking:
 
 ```py
 def permute(nums):
-    
+
     res = []
     used = set()
-    
+
     def helper(res, used, cur):
         if len(used) == len(nums):
             res.append(cur[:])
@@ -40,7 +40,7 @@ def permute(nums):
             helper(res, used, cur)
             cur.pop()
             used.discard(i)
-    
+
     helper(res, used, [])
     return res
 ```
