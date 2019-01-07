@@ -136,5 +136,6 @@
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Depth-first Search](depth-first-search.md)
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
-* Linked List
+* [Linked List](linked-list.md)
+  * [Partition List](linked-list/partition-list.md)
 
