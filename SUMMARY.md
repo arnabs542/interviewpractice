@@ -109,6 +109,7 @@
   * [K Empty Slots](bucketing/k-empty-slots.md)
 * [Recursion](recursion.md)
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
+  * [Generate Permutations](recursion/generate-permutations.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
   * [Palindrome Partitioning II](recursion/palindrome-partitioning-ii.md)
 * [Dynamic Programming](dynamic-programming.md)
