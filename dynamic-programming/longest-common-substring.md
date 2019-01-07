@@ -2,7 +2,7 @@
 
 > Write a program that computes the length of the longest common subsequence of three given strings. For example, given "epidemiologist", "refrigeration", and "supercalifragilisticexpialodocious", it should return `5`, since the longest common subsequence is "eieio".
 
-This problem is a derivative of the LCS problem that asks for the longest common subsequence of two given strings. For simplicity, I will solve the classic problem. 
+This problem is a derivative of the LCS problem that asks for the longest common subsequence of two given strings. For simplicity, I will solve the classic problem.
 
 ##### Dynamic Programming:
 
@@ -17,7 +17,7 @@ def longestCommonSubsequence(a, b, c):
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1])
             else:
                 dp[i][j] = max(dp[i][j], 1 + dp[i-1][j-1])
-    
+
     # Recover any of the longest subsequences
     i, j = len(dp) - 1, len(dp[0]) - 1
     size = dp[-1][-1]
@@ -39,5 +39,5 @@ def longestCommonSubsequence(a, b, c):
     return res[::-1]
 ```
 
-
+The idea is to us
 
