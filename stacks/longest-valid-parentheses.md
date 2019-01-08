@@ -108,8 +108,6 @@ We make use of dp array where $$\small dp[i]$$ represents the length of the long
 
 To fill the dp array we will check every two consecutive characters of the string:
 
-
-
 To filldp\text{dp}dp array we will check every two consecutive characters of the string and if
 
 1. $$\small s[i] = \, ‘‘\, )"$$ and $$\small s[i-1] = \,‘‘(\,"$$, i.e. string looks like $$\small ‘‘.....()"$$ $$\small ⇒ dp[i] = dp[i-1] + 2$$
@@ -118,11 +116,9 @@ To filldp\text{dp}dp array we will check every two consecutive characters of the
 
 2. $$\small s[i] = \, ‘‘\, )"$$ and $$\small s[i-1] = \,‘‘\,)"$$, i.e. string looks like $$\small ‘‘.....))"$$ ⇒
 
-   if $$\small s[i−dp[i−1]−1]=‘‘(\,"$$ then $$\small dp[i] = dp[i-1] + dp[i-dp[i-1]-2]+2$$ $$\\$$ 
+   if $$\small s[i−dp[i−1]−1]=‘‘(\,"$$ then $$\small dp[i] = dp[i-1] + dp[i-dp[i-1]-2]+2$$ $$\\$$
 
-   The reason behind this is that if the 2nd last‘\)’\text{‘\)’}‘\)’ was a part of a valid substring \(saysubssub\_ssubs​\), for the last‘\)’\text{‘\)’}‘\)’ to be a part of a larger substring, there must be a corresponding starting‘\(’\text{‘\(’}‘\(’ which lies before the valid substring of which the 2nd last‘\)’\text{‘\)’}‘\)’ is a part \(i.e. beforesubssub\_ssubs​\). Thus, if the character beforesubssub\_ssubs​ happens to be‘\(’\text{‘\(’}‘\(’, we update thedp\[i\]\text{dp}\[i\]dp\[i\] as an addition of222 in the length ofsubssub\_ssubs​ which isdp\[i−1\]\text{dp}\[i-1\]dp\[i−1\]. To this, we also add the length of the valid substring just before the term "\(,sub\_s,\)" , i.e.dp\[i−dp\[i−1\]−2\]\text{dp}\[i-\text{dp}\[i-1\]-2\]dp\[i−dp\[i−1\]−2\].
-
-
+   If $$\small s[i-1]$$ was part of a valid substring, say $$\small sub_{s}$$, then for $$\small s[i]$$ to be part of a larger substring, the character before $$\small sub_{s}$$ must be a $$\small ‘‘(\,"$$. If this is true, then we can add 2 to the length of $$\small sub_{s}$$. In addition, we also need to add the length of the valid substring just before $$\small sub_{s}$$, i.e. $$\small dp[i-dp[i-1]-2]$$.
 
 
 
