@@ -76,5 +76,9 @@ def longestValidParentheses(s):
     return max_length
 ```
 
-The idea to this problem is pretty similar to the much easier problem of validating a sequence of parentheses. 
+The idea to this problem is pretty similar to the much easier problem of validating a sequence of parentheses. When we check for  a valid sequence, we push each opening bracket onto the stack and pop when we see a closing bracket, assuming the stack isn't empty. We follow the same procedure here, except we must also remember where the current substring began. We do so by pushing the invalidating character's position into the stack. 
+
+Let the input be $$\small ) \, ( \, )\, (\, )\, )$$. We begin with an empty stack. The first character is $$\small ($$, and since there is no opening bracket, we push 0 onto the stack. This represents that the next valid substring will being at index 1 at the earliest. If we do not push 0 onto the stack, then the substring $$\small ()()$$ will only render as 2 substrings of size 2, instead of 1 substring of size 4. 
+
+
 
