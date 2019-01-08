@@ -76,5 +76,5 @@ def longestValidParentheses(s):
     return max_length
 ```
 
-
+The idea to this problem is pretty similar to the much easier problem of validating a sequence of parentheses. 
 
