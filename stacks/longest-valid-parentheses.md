@@ -49,11 +49,32 @@ def longestValidParentheses(s):
     return max_length
 ```
 
-The brute force solution would be to simply iterate through each character, and try to build as long a valid sequence as possible. We perform the validity check as we iterate, so it saves a bit of time. The variable `left` keeps track of how many $$\small ($$ brackets we have in the current sequence. We advance until the end of the string or we encounter more $$\small )$$ brackets than their counterparts. Be careful of ending indices - if we encounter an invalid character at $$\small s[j]$$, we calculate the length by $$\small j-i$$, since $$\small j$$ should not be included. If the character at $$\small s[j]$$ validates the array, we need to add one to our calculation, since $$\small j$$ is included in the sequence. 
+The brute force solution would be to simply iterate through each character, and try to build as long a valid sequence as possible. We perform the validity check as we iterate, so it saves a bit of time. The variable `left` keeps track of how many $$\small ($$ brackets we have in the current sequence. We advance until the end of the string or we encounter more $$\small )$$ brackets than their counterparts. Be careful of ending indices - if we encounter an invalid character at $$\small s[j]$$, we calculate the length by $$\small j-i$$, since $$\small j$$ should not be included. If the character at $$\small s[j]$$ validates the array, we need to add one to our calculation, since $$\small j$$ is included in the sequence.
 
 The runtime is bounded by $$\small \mathcal O(n^{2})$$.
 
 ##### Stack:
+
+```py
+def longestValidParentheses(s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    stack = []
+    max_length = 0
+    for i,c in enumerate(s):
+        if c == '(':
+            stack.append(i)
+        else:
+            if not stack or s[stack[-1]] == ')':
+                stack.append(i)
+            else:
+                stack.pop()
+                max_length = max(max_length, i - (-1 if not stack else stack[-1]))
+
+    return max_length
+```
 
 
 
