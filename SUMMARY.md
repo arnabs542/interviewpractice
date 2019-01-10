@@ -7,6 +7,7 @@
   * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
   * [Next Premutation](arrays/next-premutation.md)
 * [Strings](strings.md)
+  * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
@@ -141,5 +142,4 @@
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Depth-first Search](depth-first-search.md)
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
-* Strings
 
