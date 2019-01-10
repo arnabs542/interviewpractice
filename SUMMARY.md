@@ -6,6 +6,7 @@
   * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
   * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
   * [Next Premutation](arrays/next-premutation.md)
+* [Strings](strings.md)
 * [Stacks](stacks.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
@@ -140,6 +141,5 @@
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Depth-first Search](depth-first-search.md)
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
-* [Linked List](linked-list.md)
-  * [Partition List](linked-list/partition-list.md)
+* Strings
 
