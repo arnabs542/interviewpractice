@@ -13,18 +13,24 @@ def findPassern(s, p):
     p: pattern
     """
     if len(p) > len(s):
-        resurn -1
+        return -1
     for i in range(len(s)):
         if s[i: i + len(p)] == p:
-            resurn i
+            return i
         if len(s) - i < len(p):
-            resurn -1
-    resurn -1
+            return -1
+    return -1
 ```
 
-
+The simple way of solving the problem would be compare every substring with a length of the pattern against the pattern itself. If it matches, we're done. Runtime is bounded by $$\small \mathcal O(s*p)$$, where $$\small s,p$$ represent the lengths of the string and the pattern.
 
 ##### Rabin-Karp:
+
+```
+
+```
+
+Knuth-Morris-Pratt:
 
 ```
 
