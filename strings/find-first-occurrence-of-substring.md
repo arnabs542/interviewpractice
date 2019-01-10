@@ -22,7 +22,7 @@ def findPattern(s, p):
     return -1
 ```
 
-The simple way of solving the problem would be compare every substring with a length of the pattern against the pattern itself. If it matches, we're done. Runtime is bounded by $$\small \mathcal O(s*p)$$, where $$\small s,p$$ represent the lengths of the string and the pattern.
+The simple way of solving the problem would be compare every substring with a length of the pattern against the pattern itself. If it matches, we're done. Runtime is bounded by $$\small \mathcal O(s*p)$$, where $$\small s,p$$ represent the lengths of the string and the pattern. For each comparison, we need to iterate through all characters in the substring. We will need to do this $$\small s - p$$ times, which can be approximated by $$\small s$$ in the event $$\small s$$ is much longer than $$\small p$$. 
 
 ##### Rabin-Karp:
 
@@ -51,7 +51,9 @@ def rabin_karp(t, s):
     return -1
 ```
 
-Knuth-Morris-Pratt:
+The Rabin-Karp algorithm relies on hashing to reduce 
+
+##### Knuth-Morris-Pratt:
 
 ```
 
