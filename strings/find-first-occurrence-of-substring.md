@@ -22,7 +22,7 @@ def findPattern(s, p):
     return -1
 ```
 
-The simple way of solving the problem would be compare every substring with a length of the pattern against the pattern itself. If it matches, we're done. Runtime is bounded by $$\small \mathcal O(s*p)$$, where $$\small s,p$$ represent the lengths of the string and the pattern. For each comparison, we need to iterate through all characters in the substring. We will need to do this $$\small s - p$$ times, which can be approximated by $$\small s$$ in the event $$\small s$$ is much longer than $$\small p$$. 
+The simple way of solving the problem would be compare every substring with a length of the pattern against the pattern itself. If it matches, we're done. Runtime is bounded by $$\small \mathcal O(s*p)$$, where $$\small s,p$$ represent the lengths of the string and the pattern. For each comparison, we need to iterate through all characters in the substring. We will need to do this $$\small s - p$$ times, which can be approximated by $$\small s$$ in the event $$\small s$$ is much longer than $$\small p$$.
 
 ##### Rabin-Karp:
 
@@ -51,7 +51,9 @@ def rabin_karp(t, s):
     return -1
 ```
 
-The Rabin-Karp algorithm relies on hashing to reduce 
+The Rabin-Karp algorithm relies on hashing to reduce the amount of checks. If the current substring isn't hash-equivalent to the pattern, then we automatically move on without checking. 
+
+The hashing provided above is simply  a base change. We take the ASCII value of the character at each position, and multiply it by 26 to the power for the position. For example, a string of `'abc'` would result in a hash of `ord('a') * 262 + ord('a') * 26 + ord('c')`. 
 
 ##### Knuth-Morris-Pratt:
 
