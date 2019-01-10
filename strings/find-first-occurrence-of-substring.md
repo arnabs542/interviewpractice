@@ -63,9 +63,9 @@ While theoretically the runtime of Rabin-Karp is still bounded $$\small \mathcal
 
 ```
 
-The central idea of the KMP algorithm is the usage of an auxiliary array $$\small \pi$$ that tells us where we should begin our next search in the event of a mismatch. The value at $$\small \pi[i]$$ is the largest integer smaller than $$\small i$$ such that $$\small P_{1}...P_{\pi[i]}$$ is a suffix of $$\small P_{1}...P_{i}$$. 
+The central idea of the KMP algorithm is the usage of an auxiliary array $$\small \pi$$ that tells us where we should begin our next search in the event of a mismatch. The value at $$\small \pi[i]$$ is the largest integer smaller than $$\small i$$ such that $$\small P_{1}...P_{\pi[i]}$$ is a suffix of $$\small P_{1}...P_{i}$$.
 
 ![](/assets/KMP_pi_array.png)
 
-Above is an example of a given pattern and the associating array with it. 
+Above is an example of a given pattern and the associating array with it. $$\small \pi[6] = 4$$ because $$\small \text{abab}$$ is a suffix of $$\small \text{ababab}$$.
 
