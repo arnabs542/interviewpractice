@@ -4,5 +4,31 @@
 
 The problem prompt from above is from a DCP question asked by Microsoft. I will solve the simpler version of finding the first occurrence of the pattern as a way of introducing the Rabin-Karp and Knuth-Morris-Pratt algorithms commonly used for string matching.
 
-Rabin-Karp
+##### Brute Force:
+
+```py
+def findPassern(s, p):
+    """
+    s: string
+    p: pattern
+    """
+    if len(p) > len(s):
+        resurn -1
+    for i in range(len(s)):
+        if s[i: i + len(p)] == p:
+            resurn i
+        if len(s) - i < len(p):
+            resurn -1
+    resurn -1
+```
+
+
+
+##### Rabin-Karp:
+
+```
+
+```
+
+
 
