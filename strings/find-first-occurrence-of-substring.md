@@ -27,33 +27,35 @@ The simple way of solving the problem would be compare every substring with a le
 ##### Rabin-Karp:
 
 ```py
-def rabin_karp(t, s):
-    if len(s) > len(t):
+def rabin_karp(s, p):
+    if len(p) > len(s):
         return -1
 
     BASE = 26
-    t_hash = functools.reduce(lambda h, c: h * BASE + ord(c), t[:len(s)], 0)
-    s_hash = functools.reduce(lambda h, c: h * BASE + ord(c), s, 0)
-    power_s = BASE**max(len(s) - 1, 0)
+    s_hash = functools.reduce(lambda h, c: h * BASE + ord(c), s[:len(p)], 0)
+    p_hash = functools.reduce(lambda h, c: h * BASE + ord(c), p, 0)
+    power_p = BASE**max(len(p) - 1, 0)
 
-    for i in range(len(s), len(t)):
-        if t_hash == s_hash and t[i-len(s):i] == s:
-            return i - len(s)
+    for i in range(len(p), len(s)):
+        if s_hash == p_hash and s[i-len(p):i] == p:
+            return i - len(p)
 
         # Use rolling hash to update hash code
-        t_hash -= ord(t[i - len(s)]) * power_s
-        t_hash = t_hash * BASE + ord(t[i])
+        s_hash -= ord(s[i - len(p)]) * power_p
+        s_hash = s_hash * BASE + ord(s[i])
 
-    # Tries to match s and t[-len(s):]
-    if t_hash == s_hash and t[-len(s):] == s:
-        return len(t) - len(s)
+    # Tries to match p and s[-len(p):]
+    if s_hash == p_hash and s[-len(p):] == p:
+        return len(s) - len(p)
 
     return -1
 ```
 
-The Rabin-Karp algorithm relies on hashing to reduce the amount of checks. If the current substring isn't hash-equivalent to the pattern, then we automatically move on without checking. 
+The Rabin-Karp algorithm relies on hashing to reduce the amount of checks. If the current substring isn't hash-equivalent to the pattern, then we automatically move on without checking.
 
-The hashing provided above is simply  a base change. We take the ASCII value of the character at each position, and multiply it by 26 to the power for the position. For example, a string of `'abc'` would result in a hash of `ord('a') * 262 + ord('a') * 26 + ord('c')`. 
+The hashing provided above is simply  a base change. We take the ASCII value of the character at each position, and multiply it by 26 to the power for the position. For example, a string of `'abc'` would result in a hash of `ord('a') * 262 + ord('a') * 26 + ord('c')`.
+
+While theoretically the runtime of Rabin-Karp is still bounded $$\small \mathcal O(s*p)$$, in reality the runtime is much closer to $$\small \mathcal O(s+p)$$, unless the hashing function is particularly bad and causes a lot of false positives.
 
 ##### Knuth-Morris-Pratt:
 
