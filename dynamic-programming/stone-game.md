@@ -43,11 +43,11 @@ def stoneGame(piles):
                 return True
             if helper(alex, lee+piles[tail], turn ^ 1, head, tail - 1):
                 return True
-    
+
     return helper(0, 0, 0, 0, len(piles) - 1)
 ```
 
-The brute force solution is to simply simulate all possible moves - try picking from the head first, and if that doesn't work, try picking from the tail. 
+The brute force solution is to simply simulate all possible moves - try picking from the head first, and if that doesn't work, try picking from the tail.
 
 The run time is $$\small \mathcal O(2^n)$$, and quickly times out.
 
@@ -70,5 +70,11 @@ def stoneGame(self, piles):
     return dp[0][-1] > 0
 ```
 
+This problem is a **minimax** problem, and is well suited for dynamic programming. 
 
+First let's address what it means for Alex to win. That condition is met when `score(Alex) >= score(Lee)`, but this also means `score(Alex) - score(Lee) >= 0` . In other words, we're only concerned about the `score` variable, which can be represented as  `score = score(Alex) - score(Lee)`.
+
+Well since Alex is playing optimally, he wants to **maximize** the `score` variable because remember, Alex only wins if `score = score(Alex) - score(Lee) >= 0` Alex should _add_ to the score because he wants to maximize it. Since Lee is also playing optimally, he wants to **minimize** the `score` variable, since if the `score` variable becomes negative, Lee has more individual score than Alex. But since we have only one variable, Lee should _damage_ the score \(or in other words, _subtract_ from the score\).
+
+The overlapping subproblem is this: suppose Alex the array currently starts at index $$\small i$$ and ends at $$\small j$$. 
 
