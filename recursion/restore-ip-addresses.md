@@ -16,7 +16,7 @@
 def restoreIpAddresses(self, s):
 
     addrs = []
-    
+
     def is_valid(a):
         if not a or len(a) > 3:
             return False
@@ -25,7 +25,7 @@ def restoreIpAddresses(self, s):
         if int(a) > 255:
             return False
         return True
-    
+
     def helper(dots, cur, s):
         if not dots:
             if is_valid(s):
@@ -38,7 +38,7 @@ def restoreIpAddresses(self, s):
                 cur.append(s[:i])
                 helper(dots - 1, cur, s[i:])
                 cur.pop()
-    
+
     helper(3, [], s)
     return addrs
 ```
