@@ -114,6 +114,7 @@
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
   * [Generate Permutations](recursion/generate-permutations.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
+  * [Restore IP Addresses](recursion/restore-ip-addresses.md)
   * [Palindrome Partitioning II](recursion/palindrome-partitioning-ii.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)

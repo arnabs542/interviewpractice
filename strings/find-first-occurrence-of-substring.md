@@ -67,5 +67,18 @@ The central idea of the KMP algorithm is the usage of an auxiliary array $$\smal
 
 ![](/assets/KMP_pi_array.png)
 
-Above is an example of a given pattern and the associating array with it. $$\small \pi[6] = 4$$ because $$\small \text{abab}$$ is a suffix of $$\small \text{ababab}$$.
+Above is an example of a given pattern and the associating array with it:
+
+* $$\small \pi[6] = 4$$ because $$\small \text{abab}$$ is a suffix of $$\small \text{ababab}$$
+* $$\small \pi[9] = 0$$ since there is no prefix of length ≤ 8 that ends with $$\small \text{c}$$
+
+Let the string $$\small s = \text{ABC ABCDAB ABCDABCDABDE}$$, and $$\small p = \text{ABCDABD}$$. $$\small \pi = (0,0,0,0,1,2,0)$$.
+
+We begin matching at the first position of $$\small s$$:
+
+![](/assets/KMP_1.png)
+
+We see there is a mismatch at the 4th letter of $$\small p$$. We've matched 3 letters so far, and $$\small \pi[3] = 0$$. 
+
+
 
