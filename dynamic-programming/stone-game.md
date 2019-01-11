@@ -70,11 +70,13 @@ def stoneGame(self, piles):
     return dp[0][-1] > 0
 ```
 
-This problem is a **minimax** problem, and is well suited for dynamic programming. 
+This problem is a **minimax** problem, and is well suited for dynamic programming.
 
 First let's address what it means for Alex to win. That condition is met when `score(Alex) >= score(Lee)`, but this also means `score(Alex) - score(Lee) >= 0` . In other words, we're only concerned about the `score` variable, which can be represented as  `score = score(Alex) - score(Lee)`.
 
 Well since Alex is playing optimally, he wants to **maximize** the `score` variable because remember, Alex only wins if `score = score(Alex) - score(Lee) >= 0` Alex should _add_ to the score because he wants to maximize it. Since Lee is also playing optimally, he wants to **minimize** the `score` variable, since if the `score` variable becomes negative, Lee has more individual score than Alex. But since we have only one variable, Lee should _damage_ the score \(or in other words, _subtract_ from the score\).
 
-The overlapping subproblem is this: suppose Alex the array currently starts at index $$\small i$$ and ends at $$\small j$$. 
+The overlapping subproblem is this: suppose for Alex's turn, the remaining array is `piles[i:j]`. If he picks `piles[i]`, then Lee starts his turn at `piles[i+1:j]`. If he picks `piles[j]`, then Lee starts with `piles[i:j-1]`. In other words, the best score Alex can achieve for the current array is `dp[i:j] = max(piles[i] - dp[i+1:j], piles[j] - dp[i:j-1])`. This is our dp table. 
+
+Runtime and space are both bounded by $$\small O(n^{2})$$.
 
