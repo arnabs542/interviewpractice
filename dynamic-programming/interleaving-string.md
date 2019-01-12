@@ -71,5 +71,7 @@ def isInterleave(s1, s2, s3):
     return dp[-1][-1]
 ```
 
-The key to the dynamic programming solution is the realization that 
+The DP table represents if `s3[:(i+j)]` can be built by interleaving `s1[:i]` and `s2[:j]`. The 0th position represents an empty string for all three strings, which is trivially true. Whenever we introduce a new character to `s3`, we check if that matches either the last character in `s1` or `s2`, and if so, if we could already built `s3` without the matching character. If yes, then we can build `s3` with the new character as well. Otherwise, `s1` and `s2` cannot currently be interleaved to build `s3`.
+
+Runtime and space are both bounded by $$\small \mathcal O(m*n)$$. Again, always be careful when accessing the DP array, since the array will usually have an extra position than the input as a base case.
 
