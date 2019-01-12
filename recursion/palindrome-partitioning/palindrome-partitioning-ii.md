@@ -105,5 +105,7 @@ def minCut(self, s):
     return splits[-1]
 ```
 
+The recurrence relationship is this: suppose we know `s[i:j]` is a palindrome. Then the maximum number of cuts requires for `s[:j]` to be palindromic is `1+s[:i]`. This idea is actually the same as the Word Break idea presented above, but the difference is how we check for palindromes. In the WB idea, we iterate through the string using i, while we keep moving j from the back and checking if `s[i:j] == s[i:j][::-1]`. In the above solution, we grow out the palindrome from the center\(s\), and this reduces our runtime to $$\small \mathcal O(n^{2})$$.
 
+We have to be careful of how we access our DP array - the array itself technically starts at index -1, which represents an empty string. Therefore we need to add one to our string iterator to match the correct position in the DP array.
 
