@@ -79,5 +79,31 @@ def minCut(s):
     return elems[-1] - 1
 ```
 
+##### Dynamic Programming:
+
+```py
+def minCut(self, s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    n = len(s)
+    splits = [-1] + [i for i in range(n)]
+
+    for i in range(n):
+        r1 = r2 = 0            
+        # Odd palindrome
+        while i-r1 >= 0 and i+r1 < n and s[i-r1] == s[i+r1]:            
+            splits[i+r1+1] = min(splits[i+r1+1], 1 + splits[i-r1])
+            r1 += 1
+
+        # Even palindrome
+        while i-r2 >= 0 and i+r2+1 < n and s[i-r2] == s[i+r2+1]:          
+            splits[i+r2+2] = min(splits[i+r2+2], 1 + splits[i-r2])
+            r2 += 1
+
+    return splits[-1]
+```
+
 
 
