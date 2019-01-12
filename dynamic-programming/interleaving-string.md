@@ -28,7 +28,7 @@ def isInterleave(self, s1, s2, s3):
     :type s3: str
     :rtype: bool
     """
-    
+
     def helper(s1_idx, s2_idx, s3_idx):
         if s3_idx == len(s3):
             return s1_idx == len(s1) and s2_idx == len(s2)
@@ -39,7 +39,7 @@ def isInterleave(self, s1, s2, s3):
             if helper(s1_idx + 1, s2_idx, s3_idx + 1):
                 return True
         return False
-    
+
     return helper(0, 0, 0)
 ```
 
@@ -49,7 +49,7 @@ The brute force solution is to simply try all combinations of rebuilding the str
 
 ```py
 def isInterleave(s1, s2, s3):
-    
+
     if len(s1) + len(s2) != len(s3):
         return False
 
@@ -58,18 +58,18 @@ def isInterleave(s1, s2, s3):
 
     if not s2:
         return s1 == s3
-    
+
     dp = [[False] * ((len(s2)) + 1) for _ in range(len(s1)+1)]
-    
+
     for i in range(len(dp)):
         for j in range(len(dp[0])):
             if i == j == 0:
                 dp[i][j] = True
             else:
                 dp[i][j] = ((s3[i+j-1] == s2[j-1]) and dp[i][j-1]) or ((s3[i+j-1] == s1[i-1]) and dp[i-1][j])
-    
+
     return dp[-1][-1]
 ```
 
-
+The key to the dynamic programming solution is the realization that 
 
