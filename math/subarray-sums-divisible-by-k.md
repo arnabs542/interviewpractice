@@ -74,5 +74,17 @@ def subarraysDivByK(A, K):
     return sum(c * (c - 1) // 2 for c in cnt)
 ```
 
+As is typical with problems involving subarrays, we use prefix sums to add each subarray. Let `P[i+1] = A[0] + A[1] + ... + A[i]`. Then, each subarray can be written as `P[j] - P[i]` \(for `j > i`\). Thus, we have `P[j] - P[i]` equal to `0` modulo `K`, or equivalently `P[i]` and `P[j]` are the same value modulo `K`.
 
+Number theory portion in more detail:
+
+We need to find all prefix sum pairs `(i,j)` such that `(P[j] - P[i]) % K == 0`. But this is only true, **if and only if**`P[j] % K == P[i] % K`.
+
+According the the division algorithm we can express `P[j]` and `P[i]` in the following way:  
+` P[j] = bK + r0 where 0 <= r0 < K`_  
+_` P[i] = aK + r1 where 0<= r1 < K`
+
+Then `P[j] - P[i] = (b*K + r0) - (a*K + r1)`  
+`= b*K - a*K + r0 - r1 = K*(b-a) + r0 - r1`  
+ Again: `P[j] - P[i] = K*(b-a) + (r0-r1)`, in other words, `K` only `divides P[j] - P[i]` iff `r0-r1 = 0 <-> r0 = r1`
 
