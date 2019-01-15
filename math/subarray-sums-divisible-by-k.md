@@ -17,7 +17,7 @@
 > [4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
 > ```
 
-Brute Force:
+##### Brute Force:
 
 ```py
 def subarraysDivByK(A, K):
@@ -38,5 +38,26 @@ def subarraysDivByK(A, K):
 
 The brute force solution is to simply use a nested for-loop to calculate all subarray sums and test their modularity. This takes $$\small \mathcal O(n^{2})$$ time and times out.
 
-Prefix Sum + Hash map
+##### Prefix Sum + Hashmap
+
+```py
+def subarraysDivByK(A, K):
+
+    sums = collections.defaultdict(int)
+    cur_sum = 0
+    res = 0
+    
+    for c in A:
+        cur_sum += c
+        if cur_sum % K == 0:
+            res += 1
+        for k in sums:
+            if (cur_sum - k) % K == 0:
+                res += sums[k]
+        sums[cur_sum] += 1
+    
+    return res
+```
+
+My next solution was to use a hashmap to store all prefix sums. As the current sum increases, I loop through the recorded sums and see how many can be subtracted from the current sum resulting in subarrays divisible by $$\small K$$. However, if all prefix sums end up different, the time required for this algorithm is still $$\small \mathcal O(n^{2})$$.
 
