@@ -32,9 +32,11 @@ def subarraysDivByK(A, K):
         for j in range(i, len(A)):
             cur_sum += A[j]
             count += (cur_sum % K == 0)
-    
+
     return count
 ```
 
-The brute force solution is to simply use a nested for-loop to calculate all subarray sums and test their modularity. This takes $$\small \mathcal O\(n^{2}\) time and times out.
+The brute force solution is to simply use a nested for-loop to calculate all subarray sums and test their modularity. This takes $$\small \mathcal O(n^{2})$$ time and times out.
+
+Prefix Sum + Hash map
 
