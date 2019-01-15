@@ -63,5 +63,16 @@ My next solution was to use a hashmap to store all prefix sums. As the current s
 
 ##### Prefix Sums and Counting
 
+```py
+def subarraysDivByK(A, K):
+    cnt = [0] * K
+    cnt[0] = 1
+    cur = 0
+    for a in A:
+        cur += a
+        cnt[cur % K] += 1
+    return sum(c * (c - 1) // 2 for c in cnt)
+```
+
 
 
