@@ -46,7 +46,7 @@ def subarraysDivByK(A, K):
     sums = collections.defaultdict(int)
     cur_sum = 0
     res = 0
-    
+
     for c in A:
         cur_sum += c
         if cur_sum % K == 0:
@@ -55,9 +55,13 @@ def subarraysDivByK(A, K):
             if (cur_sum - k) % K == 0:
                 res += sums[k]
         sums[cur_sum] += 1
-    
+
     return res
 ```
 
 My next solution was to use a hashmap to store all prefix sums. As the current sum increases, I loop through the recorded sums and see how many can be subtracted from the current sum resulting in subarrays divisible by $$\small K$$. However, if all prefix sums end up different, the time required for this algorithm is still $$\small \mathcal O(n^{2})$$.
+
+##### Prefix Sums and Counting
+
+
 
