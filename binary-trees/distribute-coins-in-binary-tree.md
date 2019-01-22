@@ -1,12 +1,10 @@
 #### Distribute Coins in Binary Tree
 
-> Given the `root` of a binary tree with `N` nodes, each `node` in the tree has `node.val` coins, and there are `N` coins total.
+> Given the `root` of a binary tree with `N` nodes, each `node` in the tree has `node.val` coins, and there are `N` coins total.
 >
-> In one move, we may choose two adjacent nodes and move one coin from one node to another.  \(The move may be from parent to child, or from child to parent.\)
+> In one move, we may choose two adjacent nodes and move one coin from one node to another.  \(The move may be from parent to child, or from child to parent.\)
 >
 > Return the number of moves required to make every node have exactly one coin.
->
->
 >
 > **Example 1:**
 >
@@ -42,14 +40,18 @@ class Solution(object):
         def helper(root):
             if not root:
                 return 0
-            
+
             left, right = helper(root.left), helper(root.right)
             self.moves += abs(left) + abs(right)
             return root.val - 1 + left + right
-        
+
         helper(root)
         return self.moves
 ```
 
+The idea of the above solution is for each left and right branch to return a number indicating its status. A positive number means there are this many extra coins in this branch; a negative number indicates there are this many coins missing. 
 
+The sum of the absolute values from the left and right subtrees indicate how many moves we need to make for the most equal distribution for the tree rooted at node. We then return the left, right, and root values up the stack.
+
+Runtime is $$\small \mathcal O(n)$$, space is $$\small \mathcal O(h)$$.
 
