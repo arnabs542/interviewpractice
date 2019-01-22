@@ -20,7 +20,7 @@
 * [Queues](queues.md)
   * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
 * [Binary Trees](binary-trees.md)
-  * [Morris Traversal](binary-trees/morris-traversal.md)
+  * [Morris Inorder Traversal](binary-trees/morris-traversal.md)
   * [Compute the Lowest Common Ancestor in a Binary Tree](binary-trees/compute-the-lowest-common-ancestor-in-a-binary-tree.md)
   * [Compute the LCA when Nodes have Parent Pointers](binary-trees/compute-the-lca-when-nodes-have-parent-pointers.md)
   * [Compute the Exterior of a Binary Tree](binary-trees/compute-the-exterior-of-a-binary-tree.md)
