@@ -82,5 +82,5 @@ Runtime and space are both bounded by $$\small O(n^{2})$$.
 
 ##### Getting final points:
 
-Suppose we want to know what the exact point amounts were of the two players after finishing the game, assuming both play optimally. We use the same solution as above, except we need to do a bit of extra math at the end. Suppose the final difference was $$\small d$$. Let Alex be $$\small a$$. Then $$\small a + a + d = T$$, where $$\small T$$ is the total number of stones. Solving the equation will give us $$\small a$$, which is Alex's final score. Combining that with $$\small d$$ gives us Lee's final score.
+Suppose we want to know what the exact point amounts were of the two players after finishing the game, assuming both play optimally. We use the same solution as above, except we need to do a bit of extra math at the end. Suppose the final difference was $$\small d$$. Let Alex be $$\small a$$. Then $$\small a + a - d = T$$, where $$\small T$$ is the total number of stones. Solving the equation will give us $$\small a$$, which is Alex's final score. Combining that with $$\small d$$ gives us Lee's final score.
 
