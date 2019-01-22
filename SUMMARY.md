@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Arrays](arrays.md)
+  * [Squares of Sorted Array](arrays/squares-of-sorted-array.md)
   * [Rotate Array](arrays/rotate-array.md)
   * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
   * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)

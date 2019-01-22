@@ -1,6 +1,6 @@
 #### Rotate Array
 
-> Given an array, rotate the array to the right by_k\_steps, where \_k_ is non-negative.
+> Given an array, rotate the array to the right by _k _steps_, _where _k_ is non-negative.
 >
 > **Example 1:**
 >
