@@ -7,6 +7,7 @@
   * [Maximum Sum Circular Subarray](arrays/maximum-sum-circular-subarray.md)
   * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
   * [Next Premutation](arrays/next-premutation.md)
+  * [Longest Turbulent Subarray](arrays/longest-turbulent-subarray.md)
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
 * [Stacks](stacks.md)
