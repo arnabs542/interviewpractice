@@ -9,6 +9,7 @@
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
 * [Stacks](stacks.md)
+  * [Simplify Path](stacks/simplify-path.md)
   * [Online Stock Span](stacks/online-stock-span.md)
   * [Validate Stack Sequences](stacks/validate-stack-sequences.md)
   * [Interleave Stack Halves](stacks/interleave-stack-halves.md)
