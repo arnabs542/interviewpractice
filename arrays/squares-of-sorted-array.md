@@ -18,7 +18,7 @@
 
 We could simply go through the array, square every number, then re-sort the array. This approach takes $$\small O(n \log{n})$$ time. However, this disregards the pre-sorted nature of the input array.
 
-Two-pointer:
+##### Two-pointer:
 
 ```py
 def sortedSquares(A):
@@ -39,5 +39,7 @@ def sortedSquares(A):
     return res[::-1]
 ```
 
+The key to the above solution is realizing that the largest element of the square array must come from either end of the array. Once we realize that property, we simply have two pointers at both ends of the array, and move them depending on which element gives the larger square.
 
+Runtime is $$\small \mathcal O(n)$$.
 
