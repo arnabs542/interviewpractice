@@ -76,7 +76,11 @@ First let's address what it means for Alex to win. That condition is met when `s
 
 Well since Alex is playing optimally, he wants to **maximize** the `score` variable because remember, Alex only wins if `score = score(Alex) - score(Lee) >= 0` Alex should _add_ to the score because he wants to maximize it. Since Lee is also playing optimally, he wants to **minimize** the `score` variable, since if the `score` variable becomes negative, Lee has more individual score than Alex. But since we have only one variable, Lee should _damage_ the score \(or in other words, _subtract_ from the score\).
 
-The overlapping subproblem is this: suppose for Alex's turn, the remaining array is `piles[i:j]`. If he picks `piles[i]`, then Lee starts his turn at `piles[i+1:j]`. If he picks `piles[j]`, then Lee starts with `piles[i:j-1]`. In other words, the best score Alex can achieve for the current array is `dp[i:j] = max(piles[i] - dp[i+1:j], piles[j] - dp[i:j-1])`. This is our dp table. 
+The overlapping subproblem is this: suppose for Alex's turn, the remaining array is `piles[i:j]`. If he picks `piles[i]`, then Lee starts his turn at `piles[i+1:j]`. If he picks `piles[j]`, then Lee starts with `piles[i:j-1]`. In other words, the best score Alex can achieve for the current array is `dp[i:j] = max(piles[i] - dp[i+1:j], piles[j] - dp[i:j-1])`. This is our dp table.
 
 Runtime and space are both bounded by $$\small O(n^{2})$$.
+
+##### Getting final points:
+
+Suppose we want to know what the exact point amounts were of the two players after finishing the game, assuming both play optimally. We use the same solution as above, except we need to do a bit of extra math at the end. Suppose the final difference was $$\small d$$. Let Alex be $$\small a$$. Then $$\small a + a + d = T$$, where $$\small T$$ is the total number of stones. Solving the equation will give us $$\small a$$, which is Alex's final score. Combining that with $$\small d$$ gives us Lee's final score.
 
