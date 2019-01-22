@@ -1,6 +1,6 @@
 #### Morris Inorder Traversal:
 
-
+The inorder traversal of a binary tree can be done recursively or iteratively with a stack mimicking the recursion. However, both methods require $$\small O(h)$$ space, where $$\small h$$ is the height of the tree.
 
 ##### Algorithm:
 
@@ -17,10 +17,10 @@ def inorderTraversal(root):
                 return it
             it = it.right
         return it
-    
+
     cur = root
     res = []
-    
+
     while cur:
         if not cur.left:
             res.append(cur.val)
@@ -34,7 +34,7 @@ def inorderTraversal(root):
                 pred.right = None
                 res.append(cur.val)
                 cur = cur.right
-    
+
     return res
 ```
 
