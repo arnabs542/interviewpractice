@@ -32,26 +32,21 @@
 ```py
 class Solution(object):
     def distributeCoins(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-        self.moves = 0
-        def helper(root):
-            if not root:
-                return 0
+        self.ans = 0
 
-            left, right = helper(root.left), helper(root.right)
-            self.moves += abs(left) + abs(right)
-            return root.val - 1 + left + right
+        def dfs(node):
+            if not node: return 0
+            L, R = dfs(node.left), dfs(node.right)
+            self.ans += abs(L) + abs(R)
+            return node.val + L + R - 1
 
-        helper(root)
-        return self.moves
+        dfs(root)
+        return self.ans
 ```
 
-The idea of the above solution is for each left and right branch to return a number indicating its status. A positive number means there are this many extra coins in this branch; a negative number indicates there are this many coins missing. 
+If the leaf of a tree has 0 coins \(an excess of -1 from what it needs\), then we should push a coin from its parent onto the leaf. If it has say, 4 coins \(an excess of 3\), then we should push 3 coins off the leaf. In total, the number of moves from that leaf to or from its parent is `excess = Math.abs(num_coins - 1)`. Afterwards, we never have to consider this leaf again in the rest of our calculation.
 
-The sum of the absolute values from the left and right subtrees indicate how many moves we need to make for the most equal distribution for the tree rooted at node. We then return the left, right, and root values up the stack.
+ We can use the above fact to build our answer. Let `dfs(node)` be the _excess_ number of coins in the subtree at or below this `node`: namely, the number of coins in the subtree, minus the number of nodes in the subtree. Then, the number of moves we make from this node to and from its children is `abs(dfs(node.left)) + abs(dfs(node.right))`. After, we have an excess of `node.val + dfs(node.left) + dfs(node.right) - 1` coins at this node.
 
 Runtime is $$\small \mathcal O(n)$$, space is $$\small \mathcal O(h)$$.
 
