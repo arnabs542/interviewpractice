@@ -54,5 +54,9 @@ def maxTurbulenceSize(A):
     return max_count
 ```
 
+We are only concerned with 3 elements at any given time: $$\small \text{A[i-1]}, \text{A[i]}, \text{A[i+1]}$$. We slide along the array, using the variable `prev_sign` to keep track of the relationship between $$\small \text{A[i-1]}$$ and $$\small \text{A[i]}$$. If the relationship between $$\small \text{A[i]}$$ and $$\small \text{A[i+1]}$$ is the opposite, then we extend our previous chain. If it is the same, then we start a new chain with $$\small \text{A[i], A[i+1]}$$. Overall runtime is $$\small \mathcal O(n)$$.
 
+##### Edge Cases:
+
+We need to watch out for duplicate elements. Suppose we have an input like: \[9,4,2,10,7,8,8,1,9\]. We have a chain of length 5$$\small (\text{A[1]} > \text{A[2]} < \text{A[3]} > \text{A[4]} < \text{A[5]})$$, but $$\small \text{A[6]}$$ is technically the opposite of the previous sign, because we only check for $$\small \text{A[i]} > \text{A[i-1]}$$, which would lead us to increasing the chain to length 6.
 
