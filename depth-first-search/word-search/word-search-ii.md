@@ -63,7 +63,11 @@ def findWords(board, words):
     return list(found)
 ```
 
-Compared to the previous problem, the naive solution introduces an extra factor of $$\small s$$ into the runtime. By first using a tree to store every single word, we don't need to keep looping through the word list, looking for a specific word each time. Instead, we simply perform a dfs search on every cell, and if we happen to build a word that is in the given list, then we add that to the result. 
+Compared to the previous problem, the naive solution introduces an extra factor of $$\small s$$ into the runtime. By first using a tree to store every single word, we don't need to keep looping through the word list, looking for a specific word each time. Instead, we simply perform a dfs search on every cell, and if we happen to build a word that is in the given list, then we add that to the result.
 
 This allows us to bring the runtime back down to $$\small \mathcal O(m*n*4^{l})$$, same as the previous problem.
+
+##### Edge Cases/Traps:
+
+The order of the checks in `find` is actually very important - it's vital we check for `#` before checking for out of bounds/extra character, because we don't check if the last character we added actually ended a word. Thus, we could be out of bounds right now, but we could still have a valid word, thanks to the square that led us out of bounds. 
 
