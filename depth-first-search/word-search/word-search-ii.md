@@ -16,12 +16,12 @@ words = ["oath","pea","eat","rain"] and board =
   ['i','f','l','v']
 ]
 
-Output: ["eat","oath"]
+Output: ["eat","oath"]
 ```
 
-Essentially the same problem as the above one, except now we need to find multiple word. If we simply apply the above solution to this one by looping through all the words, our time complexity is $$\small \mathcal O(m*n*s*4^{l})$$, where $$\small m, n$$ are the dimensions of the board, $$\small s$$ is the size of the words array, and $$\small l$$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier. 
+Essentially the same problem as the above one, except now we need to find multiple word. If we simply apply the above solution to this one by looping through all the words, our time complexity is $$\small \mathcal O(m*n*s*4^{l})$$, where $$\small m, n$$ are the dimensions of the board, $$\small s$$ is the size of the words array, and $$\small l$$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier.
 
-Trie + DFS:
+##### Trie + DFS:
 
 ```py
 def find(board, i, j, trie, cur_word, found):
@@ -37,7 +37,7 @@ def find(board, i, j, trie, cur_word, found):
     find(board, i, j-1, trie[c], cur_word, found)
     cur_word.pop()
     board[i][j] = c
-    
+
 def findWords(board, words):
     """
     :type board: List[List[str]]
