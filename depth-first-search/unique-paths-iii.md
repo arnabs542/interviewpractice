@@ -88,5 +88,5 @@ def uniquePathsIII(grid):
     return ans
 ```
 
-
+There is actually a DP solution, but it doesn't actually perform much better than the regular backtracking solution. A loose upper bound on runtime is $$\small O(4^{m*n})$$, where $$\small m,n$$ are the dimensions of the board. A tighter bound is $$\small O(4*3^{m*n}) = O(3^{m*n})$$ since only the 1st square actually has all 4 options open; all other squares only have 3 options, due to one of them being the previous cell.
 
