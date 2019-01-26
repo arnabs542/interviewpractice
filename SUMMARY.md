@@ -151,6 +151,7 @@
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Depth-first Search](depth-first-search.md)
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
+  * [Word Search](depth-first-search/word-search.md)
 * [Math](math.md)
   * [Subarray Sums Divisible by K](math/subarray-sums-divisible-by-k.md)
 
