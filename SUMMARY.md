@@ -153,6 +153,7 @@
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
   * [Word Search](depth-first-search/word-search.md)
     * [Word Search II](depth-first-search/word-search/word-search-ii.md)
+  * [Unique Paths III](depth-first-search/unique-paths-iii.md)
 * [Math](math.md)
   * [Subarray Sums Divisible by K](math/subarray-sums-divisible-by-k.md)
 
