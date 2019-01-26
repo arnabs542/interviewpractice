@@ -63,5 +63,7 @@ def findWords(board, words):
     return list(found)
 ```
 
+Compared to the previous problem, the naive solution introduces an extra factor of $$\small s$$ into the runtime. By first using a tree to store every single word, we don't need to keep looping through the word list, looking for a specific word each time. Instead, we simply perform a dfs search on every cell, and if we happen to build a word that is in the given list, then we add that to the result. 
 
+This allows us to bring the runtime back down to $$\small \mathcal O(m*n*4^{l})$$, same as the previous problem.
 
