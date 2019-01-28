@@ -75,9 +75,9 @@ def mincostTickets(days: 'List[int]', costs: 'List[int]') -> 'int':
     return self.min_cost
 ```
 
-The brute force solution is to simply simulate each day. Our helper function keeps track of which day we're currently on, the max coverage of any previous 7-day or 30-day passes, and the current cost. 
+The brute force solution is to simply simulate each day. Our helper function keeps track of which day we're currently on, the max coverage of any previous 7-day or 30-day passes, and the current cost.
 
-On each day, we see if we're covered under a previous pass. If so, then we simply move on to the next day. If not, then we have the choice of purchasing a single, 7-day, or 30-day pass on that particular day. We simulate all three possibilities, then take the cheapest option. 
+On each day, we see if we're covered under a previous pass. If so, then we simply move on to the next day. If not, then we have the choice of purchasing a single, 7-day, or 30-day pass on that particular day. We simulate all three possibilities, then take the cheapest option.
 
 This quickly times out, as each recursion node spawns three children.
 
@@ -85,25 +85,27 @@ This quickly times out, as each recursion node spawns three children.
 
 ```py
 def mincostTickets(days: 'List[int]', costs: 'List[int]') -> 'int':
-    
+
     day_set = set(days)
-    
+
     @functools.lru_cache(None)
     def dfs(i):
         if i > 365:
             return 0
-        
+
         if i not in day_set:
             return dfs(i+1)
-    
+
         return min(costs[0] + dfs(i+1), costs[1] + dfs(i+7), costs[2] + dfs(i + 30))
-    
+
     return dfs(0)
 ```
 
 The idea to the above algorithm relies on the same basic principle as the brute force solution.  Let's say `dp(i)` is the cost to fulfill your travel plan from day `i` to the end of the plan. Then, if you have to travel today, your cost is:
 
 $$\text{dp}(i) = \min(\text{dp}(i+1) + \text{costs}[0], \text{dp}(i+7) + \text{costs}[1], \text{dp}(i+30) + \text{costs}[2])$$
+
+Running time is bounded by $$\small O(365)$$, since we're told the maximum day is 365. Space complexity is the same.
 
 ##### Bottom-up \(Queue\):
 
