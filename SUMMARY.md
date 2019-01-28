@@ -139,6 +139,7 @@
   * [Longest Common Substring](dynamic-programming/longest-common-substring.md)
   * [Interleaving String](dynamic-programming/interleaving-string.md)
   * [Stone Game](dynamic-programming/stone-game.md)
+  * [Minimum Cost For Tickets](dynamic-programming/minimum-cost-for-tickets.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
