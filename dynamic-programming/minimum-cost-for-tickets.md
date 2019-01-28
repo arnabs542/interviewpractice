@@ -128,5 +128,7 @@ def mincostTickets(days: 'List[int]', costs: 'List[int]') -> 'int':
     return cost
 ```
 
+The idea here is that we track the minimum cost for every single day. For new day, we can either purchase a 1-day ticket, or use any available 7-day or 30-day tickets. As those become expired, we remove them from our queue, which store only passes that still cover today.
 
+At the start of each new day, cost represents the minimum cost required to get through the previous day. We calculate the costs to purchase a new 7- and 30-day pass on that day, enqueueing those numbers.
 
