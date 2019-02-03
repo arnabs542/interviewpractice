@@ -102,6 +102,7 @@
   * [Most Occupants](most-crowded-time.md)
   * [Array of Doubled Pairs](array-of-doubled-pairs.md)
   * [Pancake Sorting](pancake-sorting.md)
+  * [Interval List Intersections](interval-list-intersections.md)
 * [Binary Search Trees](binary-search-trees.md)
   * [Verify if a Binary Tree is a BST](binary-search-trees/verify-if-a-binary-tree-is-a-bst.md)
   * [Find the First Key Greater than a Given Value in a BST](binary-search-trees/find-the-first-key-greater-than-a-given-value-in-a-bst.md)
