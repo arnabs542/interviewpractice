@@ -36,6 +36,7 @@
   * [Count Complete Tree Nodes](binary-trees/count-complete-tree-nodes.md)
   * [Flip Binary Tree To Match Preorder Traversal](binary-trees/flip-binary-tree-to-match-preorder-traversal.md)
   * [Bottom View](binary-trees/bottom-view.md)
+  * [Smallest String Starting From Leaf](binary-trees/smallest-string-starting-from-leaf.md)
 * [Binary Search](chapter1.md)
   * [Template 1](binary-search/template-1.md)
     * [Sqrt\(x\)](binary-search/template-1/sqrtx.md)
