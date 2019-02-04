@@ -52,3 +52,29 @@ def smallestFromLeaf(root: 'TreeNode') -> 'str':
 
 We pass the string from each node up to its parent, which then picks the smallest of the two strings from its children and appends its own value to it. The traversal takes $$\small \mathcal O(n)$$ time, but since Python strings are immutable, every time we add a character to a new string, we need to recreate the entire string. The recurrence relationship is $$\small T(h) = 2*\mathcal O(h) + 2*T(h-1)$$, where $$\small h$$ is the height of the tree. This solves to $$\small \mathcal O(h^{2})$$. Total running time is $$\small \mathcal O(n+h^{2})$$.
 
+##### Preorder:
+
+```py
+def smallestFromLeaf(self, root: 'TreeNode') -> 'str':
+    self.ans = ""
+    
+    def dfs(node, cur_string):
+        if node:
+            cur_string.append(chr(node.val + ord('a')))
+            # If leaf check if this is the minimum string
+            if not node.left and not node.right:
+                if not self.ans:
+                    self.ans = "".join(reversed(cur_string))
+                else:
+                    self.ans = min(self.ans, "".join(reversed(cur_string)))
+            
+            dfs(node.left, cur_string)
+            dfs(node.right, cur_string)
+            cur_string.pop()
+        
+    dfs(root, [])
+    return self.ans
+```
+
+The running time of this algorithm is $$\small O(n+h) = O(n)$$. We build the string in reverse from the root down to each leaf. Only after we reach a leaf do we compare the string to our current best answer. The maximum length of the string is $$\small \mathcal O(h)$$, where $$\small h$$ is the height of the tree.
+
