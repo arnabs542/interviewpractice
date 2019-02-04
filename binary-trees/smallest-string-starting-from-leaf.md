@@ -52,7 +52,7 @@ def smallestFromLeaf(root: 'TreeNode') -> 'str':
 
 We build the string up from every leaf. The current node will append its value to the smaller of the strings from its two children.
 
-The postorder traversal itself takes $$\small \mathcal O(n)$$ time and $$\small \mathcal O(h)$$ space. However, Python strings are immutable, and adding a character to an existing string causes a new string to be allocated.
+The postorder traversal itself takes $$\small \mathcal O(n)$$ time and $$\small \mathcal O(h)$$ space. Python strings are immutable, and adding a character to an existing string causes a new string to be allocated. The recurrence relationship of building the strings is: $$\small T(h) = 2* \mathcal O(h) + 2* T(h-1)$$.
 
 ##### PreOrder Traversal:
 
