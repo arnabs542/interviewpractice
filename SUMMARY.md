@@ -23,6 +23,7 @@
   * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
 * [Binary Trees](binary-trees.md)
   * [Symmetric Tree](binary-trees/symmetric-tree.md)
+    * [k-ary Symmetric Tree](binary-trees/symmetric-tree/k-ary-symmetric-tree.md)
   * [Morris Inorder Traversal](binary-trees/morris-traversal.md)
   * [Compute the Lowest Common Ancestor in a Binary Tree](binary-trees/compute-the-lowest-common-ancestor-in-a-binary-tree.md)
   * [Compute the LCA when Nodes have Parent Pointers](binary-trees/compute-the-lca-when-nodes-have-parent-pointers.md)
