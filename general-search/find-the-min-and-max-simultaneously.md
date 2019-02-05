@@ -1,6 +1,6 @@
 #### Find the Min and Max Simultaneously
 
-To the find min and the max in an array we can simply iterate over it twice, once time looking for the min and the next time looking for tha max. Doing it like so requires a total of $$\small 2(n-1)$$ comparisons. However, in situations where comparisons themselves are very expensive, e.g., a comparison may involve a number of nested calls or the elements being compared may be long strings, we would like to reduce the number of comparisons needed to find the min and max elements.
+To the find min and the max in an array we can simply iterate over it twice, once time looking for the min and the next time looking for the max. Doing it like so requires a total of $$\small 2(n-1)$$ comparisons. However, in situations where comparisons themselves are very expensive, e.g., a comparison may involve a number of nested calls or the elements being compared may be long strings, we would like to reduce the number of comparisons needed to find the min and max elements.
 
 ##### Code:
 
