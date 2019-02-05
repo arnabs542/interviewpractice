@@ -25,7 +25,7 @@
 ##### Recursive Solution:
 
 ```py
-def isSymmetric(self, root: 'TreeNode') -> 'bool':
+def isSymmetric(root: 'TreeNode') -> 'bool':
     if not root:
         return True
 
@@ -42,4 +42,27 @@ def isSymmetric(self, root: 'TreeNode') -> 'bool':
 ```
 
 Recursive dfs solution. Compare the paired children as we traverse the tree. Run time is $$\small \mathcal O(n)$$, space usage is $$\small \mathcal O(h)$$.
+
+##### Iterative Solution:
+
+```py
+def isSymmetric(root: 'TreeNode') -> 'bool':
+    if not root:
+        return True
+    
+    stack = [(root.left, root.right)]
+    while stack:
+        print(stack)
+        node1, node2 = stack.pop()
+        if node1 is node2 is None:
+            continue
+        elif node1 and node2 and node1.val == node2.val:
+            stack.append((node1.left, node2.right))
+            stack.append((node1.right, node2.left))
+        else:
+            return False
+    return True
+```
+
+Iterative solution using stack to mimic recursive call stack. Had to change the if/else conditions a bit to make it work better. 
 
