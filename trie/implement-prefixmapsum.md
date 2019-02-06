@@ -23,7 +23,7 @@ class PrefixMapSum:
     def __init__(self):
         self.root = {"value": 0}
         self.words = {}
-    
+
     def find(self, word):
         return self.words.get(word, 0)
 
@@ -50,5 +50,7 @@ class PrefixMapSum:
         return node['value']
 ```
 
-We use a Trie to quickly access the prefixes. In addition to the character maps, each trie node also has a "value" key that stores the total value of all words with a prefix up to that particular character. 
+We use a Trie to quickly access the prefixes. In addition to the character maps, each trie node also has a "value" key that stores the total value of all words with a prefix up to that particular character.
+
+We use an extra dictionary to store previously stored words so we can change values quickly as we iterate through the trie.
 
