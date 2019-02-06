@@ -158,5 +158,5 @@
   * [Word Search](depth-first-search/word-search.md)
     * [Word Search II](depth-first-search/word-search/word-search-ii.md)
   * [Unique Paths III](depth-first-search/unique-paths-iii.md)
-* General Search
+* [Trie](trie.md)
 
