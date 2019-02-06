@@ -29,7 +29,7 @@ class PrefixMapSum:
 
     def insert(self, word, value):
         val = self.words.get(word, 0)
-        self.words[word] = val
+        self.words[word] = value
         node = self.root
         for c in word:
             node['value'] += (value - val)
