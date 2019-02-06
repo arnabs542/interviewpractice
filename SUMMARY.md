@@ -159,4 +159,5 @@
     * [Word Search II](depth-first-search/word-search/word-search-ii.md)
   * [Unique Paths III](depth-first-search/unique-paths-iii.md)
 * [Trie](trie.md)
+  * [Implement a Trie](trie/implement-a-trie.md)
 
