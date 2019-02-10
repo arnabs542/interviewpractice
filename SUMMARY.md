@@ -147,7 +147,6 @@
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
-  * [Regions Cut by Slashes](graphs/regions-cut-by-slashes.md)
 * [Greedy](greedy.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
@@ -162,4 +161,6 @@
 * [Trie](trie.md)
   * [Implement a Trie](trie/implement-a-trie.md)
   * [Implement PrefixMapSum](trie/implement-prefixmapsum.md)
+* [Union-Find](union-find.md)
+  * [Regions Cut by Slashes](union-find/regions-cut-by-slashes.md)
 
