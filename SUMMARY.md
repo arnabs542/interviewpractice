@@ -163,4 +163,5 @@
   * [Implement PrefixMapSum](trie/implement-prefixmapsum.md)
 * [Union-Find](union-find.md)
   * [Regions Cut by Slashes](union-find/regions-cut-by-slashes.md)
+  * [Satisfiability of Equality Equations](union-find/satisfiability-of-equality-equations.md)
 
