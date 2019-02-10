@@ -1,8 +1,8 @@
 #### Satisfiability of Equality Equations
 
-> Given an array equations of strings that represent relationships between variables, each string `equations[i]` has length `4` and takes one of two different forms: `"a==b"` or `"a!=b"`.  Here, `a` and `b` are lowercase letters \(not necessarily different\) that represent one-letter variable names.
+> Given an array equations of strings that represent relationships between variables, each string `equations[i]` has length `4` and takes one of two different forms: `"a==b"` or `"a!=b"`.  Here, `a` and `b` are lowercase letters \(not necessarily different\) that represent one-letter variable names.
 >
-> Return `true` if and only if it is possible to assign integers to variable names so as to satisfy all the given equations.
+> Return `true` if and only if it is possible to assign integers to variable names so as to satisfy all the given equations.
 >
 > **Example 1:**
 >
@@ -46,7 +46,7 @@
 
 ```py
 def equationsPossible(self, equations: 'List[str]') -> 'bool':
-    
+
     class UnionFind:
 
         def __init__(self):
@@ -85,7 +85,28 @@ def equationsPossible(self, equations: 'List[str]') -> 'bool':
     return True
 ```
 
-Suppose we are told that `a==b` and `b==c.` In this case, a,b,c should all be part of the same connected component. 
+Suppose we are told that `a==b` and `b==c.` In this case, a,b,c should all be part of the same connected component.
 
-We go through all the equations first, looking for `==` statements. We then connect the two variables. Afterwards, we go through the list of equations again, looking for `!=` statements. If the two variables were previously assigned to the same connected component, then we know it's not possible to assign all the given operations. 
+We go through all the equations first, looking for `==` statements. We then connect the two variables. Afterwards, we go through the list of equations again, looking for `!=` statements. If the two variables were previously assigned to the same connected component, then we know it's not possible to assign all the given operations.
+
+Below is a simpler implementation without using rank:
+
+```py
+def equationsPossible(self, equations: 'List[str]') -> 'bool':
+    
+    def find(a):
+        if uf[a] != a:
+            uf[a] = find(uf[a])
+        return uf[a]
+    
+    uf = {a: a for a in string.ascii_lowercase}
+    
+    for a,e,_,b in equations:
+        if e == '=':
+            uf[find(a)] = find(b)
+    
+    return not any(e == '!' and find(a) == find(b) for a,e,_,b in equations)
+```
+
+Overall runtime is $$\small O(n)$$. Each pass through the list of equations takes $$\small \mathcal O(n)$$, and since there are only 26 components total \(number of letters in alphabet\), `find(a)` doesn't take more than $$\small \mathcal O(26) = \mathcal O(1)$$ time. 
 
