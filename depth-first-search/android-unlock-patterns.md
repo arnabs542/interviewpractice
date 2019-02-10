@@ -11,6 +11,7 @@
 >    ![](https://lintcode-media.s3.amazonaws.com/problem/andriod-unlock.png "android unlock")
 >
 > **Explanation:**
+>
 > ```
 > | 1 | 2 | 3 |
 > | 4 | 5 | 6 |
@@ -36,7 +37,7 @@
 ##### DFS:
 
 ```py
-    def numberOfPatterns(self, m: "int", n: "int") -> "int":
+    def numberOfPatterns(m: "int", n: "int") -> "int":
         # Initial set up
         skips = [[0] * 10 for _ in range(10)]
         skips[1][3] = skips[3][1] = 2
@@ -46,7 +47,7 @@
         skips[1][9] = skips[9][1] = skips[2][8] = skips[8][2] = skips[3][7] = skips[7][3] =\
         skips[4][6] = skips[6][4] = 5
         visited = [False] * 10
-        
+
         def dfs(cur, remaining):
             if remaining < 0:
                 return 0
@@ -59,7 +60,7 @@
                     res += dfs(i, remaining - 1)
             visited[cur] = False
             return res
-        
+
         res = 0
         for i in range(m, n+1):
             res += dfs(1, i-1) * 4  # 1,3,7,9 are symmetric
@@ -68,5 +69,11 @@
         return res
 ```
 
+A straightforward DFS is enough to solve this problem. We simply need to keep track of what the permissible moves are. 
 
+We set up a 10x10 array that stores the jump number between two numbers. For example, to get from 1 to 9, we need to jump through 5; `skips[1][9] = skips[9][1] = 5.` If the stored number is a 0, then the two numbers are adjacent. 
+
+In our DFS, we loop through 1 - 9. In order for that number to be a valid next move, then it needs to not have been already visited, it must either be adjacent to our current number, or the jump number has already been visited. 
+
+A crucial piece of optimization is the realization that the numbers \(1,3,7,9\) and \(2,4,6,8\) form two symmetric groups. Therefore, we only need to calculate one of them and multiply by 4.
 
