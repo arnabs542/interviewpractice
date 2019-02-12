@@ -88,6 +88,7 @@
   * [Minimum Area Rectangle](hash-tables/minimum-area-rectangle.md)
   * [Split Array into Consecutive Subsequences](hash-tables/split-array-into-consecutive-subsequences.md)
   * [Subarrays with K Different Integers](hash-tables/subarrays-with-k-different-integers.md)
+    * Subarrays with At Most K Different Integers
 * [Sorting](sorting.md)
   * [Compute the Intersection of Two Sorted Arrays](compute-the-intersection-of-two-sorted-arrays.md)
   * [Merge Two Sorted Arrays](merge-two-sorted-arrays.md)

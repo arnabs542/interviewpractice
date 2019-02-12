@@ -43,7 +43,7 @@ The brute force solution is just to run a nested for loop going over all subarra
 
 Runtime is $$\small \mathcal O(n^{2})$$. Space usage is $$\small \mathcal O(n)$$.
 
-##### Sliding Window:        
+##### Sliding Window:
 
 ```py
 def subarraysWithAtMostK(A: 'List[int]', K: 'int') -> 'int':
@@ -61,10 +61,12 @@ def subarraysWithAtMostK(A: 'List[int]', K: 'int') -> 'int':
         res += j - i + 1
         j += 1
     return res
-    
+
 def subarraysWithKDistinct(A: 'List[int]', K: 'int') -> 'int':
     return subarraysWithAtMostK(A, K) - subarraysWithAtMostK(A, K-1)
 ```
 
+The above solution relies on set theory. If we calculate the number of subarrays with **at most** $$\small K$$ distinct elements and subtract from that the number of subarrays with at most $$\small K-1$$ elements, we will be let with the number of subarrays with exactly $$\small K$$ distinct elements. 
 
+Running time is $$\small \mathcal O(n)$$, same as space complexity.
 
