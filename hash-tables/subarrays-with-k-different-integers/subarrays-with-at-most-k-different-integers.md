@@ -32,5 +32,5 @@ We use a sliding window to keep track of the number of distinct elements in the 
 
 Suppose we have an array of $$\small [1,2,3]$$. This array has 6 subarrays: $$\small [1], [2], [3], [1,2], [2,3], [1,2,3]$$. If we append an additional elements, $$\small 4$$ to the array, 4 additional subarrays are introduced: $$\small [4], [3,4], [2,3,4], [1,2,3,4]$$. In other words, suppose a window of $$\small n$$ elements contains less than $$\small K$$ distinct elements. Suppose also that the $$\small n+1$$ window made by introducing a new element has less than or equal to $$\small K$$ distinct elements. In this case, $$\small n+1$$ additional valid subarrays are added.
 
-Another way to look at this is by combinations. For a valid window of size $$\small n$$, there are $$\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$$. 
+Another way to look at this is by combinations. For a valid window of size $$\small n$$, there are $$\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$$ subarrays. A valid window of size $$\small n+1$$ has $$\small {{n+2}\choose{2}} = \frac{n+1(n+2)}{2}$$. Thus, $$\small \frac{n+1(n+2)}{2} - \frac{n(n+1)}{2} = n+1$$, meaning an additional element in a valid window gives us $$\small n+1$$ more subarrays. 
 
