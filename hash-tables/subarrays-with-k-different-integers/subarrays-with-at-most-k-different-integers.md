@@ -34,5 +34,7 @@ Suppose we have an array of $$\small [1,2,3]$$. This array has 6 subarrays: $$\s
 
 Another way to look at this is by combinations. For a valid window of size $$\small n$$, there are $$\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$$ subarrays. A valid window of size $$\small n+1$$ has $$\small {{n+2}\choose{2}} = \frac{n+1(n+2)}{2}$$. Thus, $$\small \frac{n+1(n+2)}{2} - \frac{n(n+1)}{2} = n+1$$, meaning an additional element in a valid window gives us $$\small n+1$$ more subarrays.
 
-This relationship still holds after readjusting `i` to `i'`, since `res` would have included `A[i':j]`, then `A[i':j+1] `is simply an incremental update to an already processed window.
+This relationship still holds after readjusting `i` to `i'`, since `res` would have included `A[i':j]`, then `A[i':j+1]`is simply an incremental update to an already processed window.
+
+Running time is $$\small \mathcal O(n)$$, same as space complexity.
 
