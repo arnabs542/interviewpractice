@@ -26,5 +26,11 @@ def subarraysWithAtMostK(A: 'List[int]', K: 'int') -> 'int':
     return res
 ```
 
+This problem is really the key to solving the above problem. 
 
+We use a sliding window to keep track of the number of distinct elements in the current window. If less than or equal to $$\small K$$, we do `res += j - i + 1` to add the number number of valid subarrays. 
+
+Suppose we have an array of $$\small [1,2,3]$$. This array has 6 subarrays: $$\small [1], [2], [3], [1,2], [2,3], [1,2,3]$$. If we append an additional elements, $$\small 4$$ to the array, 4 additional subarrays are introduced: $$\small [4], [3,4], [2,3,4], [1,2,3,4]$$. In other words, suppose a window of $$\small n$$ elements contains less than $$\small K$$ distinct elements. Suppose also that the $$\small n+1$$ window made by introducing a new element has less than or equal to $$\small K$$ distinct elements. In this case, $$\small n+1$$ additional valid subarrays are added. 
+
+Another way to look at this is by combinations. For a valid window of size $$\small n$$, there are $$\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$$
 
