@@ -197,5 +197,15 @@ The elements `front`, `back`, and `parents` will evolve as follows:
 {'lot', 'dot'} {'dog', 'log'} {'hot': ['hit'], 'dot': ['hot'], 'lot': ['hot'], 'cog': ['dog', 'log']}
 ```
 
-When there is an overlap between `front` and `back`, then we know we've found the shortest transformation\(s\) and can rebuild the path\(s\). To do so, we begin with the end word, then for each parent it has, we create a new list with that parent in front. We recursively do this until we reach the starting word.
+When there is an overlap between `front` and `back`, then we know we've found the shortest transformation\(s\) and can rebuild the path\(s\). To do so, we begin with the end word, then for each parent it has, we create a new list with that parent in front. We recursively do this until we reach the starting word. Using the same input method as above, our result array will evolve like this:
+
+```
+[['cog']]
+[['dog', 'cog'], ['log', 'cog']]
+[['dot', 'dog', 'cog'], ['lot', 'log', 'cog']]
+[['hot', 'dot', 'dog', 'cog'], ['hot', 'lot', 'log', 'cog']]
+[['hit', 'hot', 'dot', 'dog', 'cog'], ['hit', 'hot', 'lot', 'log', 'cog']]
+```
+
+
 
