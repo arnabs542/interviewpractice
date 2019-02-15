@@ -103,5 +103,22 @@ def findLadders(beginWord, endWord, wordList):
     return []
 ```
 
+The main idea of the above algorithm is to keep track of the chain that led to each word as we transform them. For example, suppose the input is:
+
+```
+beginWord = "hit",
+endWord = "cog",
+wordList = ["hot","dot","dog","lot","log","cog"]
+```
+
+Our chain will transform as such:
+
+```
+{'hot': [['hit', 'hot']]})
+{'dot': [['hit', 'hot', 'dot']], 'lot': [['hit', 'hot', 'lot']]})
+{'dog': [['hit', 'hot', 'dot', 'dog']], 'log': [['hit', 'hot', 'lot', 'log']]})
+{'cog': [['hit', 'hot', 'dot', 'dog', 'cog'], ['hit', 'hot', 'lot', 'log', 'cog']]})
+```
+
 
 
