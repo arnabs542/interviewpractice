@@ -41,7 +41,7 @@
 > Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 > ```
 
-##### Single-ended BFS:
+##### Unoptimized BFS:
 
 ```py
 def ladderLength(beginWord, endWord, wordList):
@@ -90,7 +90,7 @@ wordList = ["hot","dot","dog","lot","log","cog"]
 
 After 1 move, we could have the words \["hot"\]. After 2 moves, we can have the words \["lot", "dot"\]. The problem with solution is that the method for determining a valid transformation takes too long - each word requires iterating through the entire array to determine next words.
 
-##### Double-ended BFS:
+##### Optimized BFS:
 
 ```py
 def ladderLength(beginWord, endWord, wordList):
