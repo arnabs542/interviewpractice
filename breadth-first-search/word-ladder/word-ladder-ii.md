@@ -159,7 +159,7 @@ class Solution:
             if not layer:
                 break
             wordSet -= layer
-            
+
             nextLayer = set()
             for w in layer:
                 for a in self.__adjacentWords(w, wordSet):
@@ -176,7 +176,25 @@ class Solution:
                 return self.__generatePath(beginWord, endWord, parents)
 
         return []
-  
+```
+
+The main idea of the above algorithm is still very similar to the single-sided BFS; we use a `defaultdict(list)` to keep track of all the parents of each word. The main difference is that instead of keeping track of the whole transformation chains, we simply keep track of the immediate preceding words.  
+
+We work from both the starting and ending work, switching to whichever currently has fewer elements. For example, suppose the input is:
+
+```
+beginWord = "hit",
+endWord = "cog",
+wordList = ["hot","dot","dog","lot","log","cog"]
+```
+
+The elements `front`, `back`, and `parents` will evolve as follows:
+
+```
+{'hit'} {'cog'} {}
+{'hot'} {'cog'} {'hot': ['hit']}
+{'lot', 'dot'} {'cog'} {'hot': ['hit'], 'dot': ['hot'], 'lot': ['hot']}
+{'lot', 'dot'} {'dog', 'log'} {'hot': ['hit'], 'dot': ['hot'], 'lot': ['hot'], 'cog': ['dog', 'log']}
 ```
 
 
