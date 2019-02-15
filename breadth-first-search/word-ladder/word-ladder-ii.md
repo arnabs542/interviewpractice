@@ -74,11 +74,11 @@ def findLadders(beginWord: 'str', endWord: 'str', wordList: 'List[str]') -> 'Lis
 
 The brute force solution is to simply perform a DFS search with all 26 letters at each seed word. I think running time is $$\small \mathcal O(n*l*26)$$, where $$\small n,l$$ are the sizes of the arrays and words. The depth of the DFS search is bounded by $$\small n$$, since we won't search more than all the words in the array. For each word, we loop through and replace one letter at a time with all 26 possible letters in the alphabet.
 
-Single-ended BFS:
+##### Single-ended BFS:
 
 ```py
 def findLadders(beginWord, endWord, wordList):
-        
+
     wordList = set(wordList)
     res = []
     chains = {}
