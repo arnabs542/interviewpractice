@@ -24,7 +24,7 @@
 > Output:
 > [
 >   ["hit","hot","dot","dog","cog"],
->   ["hit","hot","lot","log","cog"]
+>   ["hit","hot","lot","log","cog"]
 > ]
 > ```
 >
@@ -39,14 +39,14 @@
 > Output: 
 > []
 >
-> Explanation: The endWord "cog" is not in wordList, therefore no possibletransformation.
+> Explanation: The endWord "cog" is not in wordList, therefore no possibletransformation.
 > ```
 
 ##### DFS \(TLE\):
 
 ```py
 def findLadders(beginWord: 'str', endWord: 'str', wordList: 'List[str]') -> 'List[List[str]]':
-        
+
     wordset = set(wordList)
     res = []
 
@@ -72,5 +72,36 @@ def findLadders(beginWord: 'str', endWord: 'str', wordList: 'List[str]') -> 'Lis
     return res
 ```
 
-The brute force solution is to simply perform a DFS search with all 26 letters at each seed word. This quickly times out. 
+The brute force solution is to simply perform a DFS search with all 26 letters at each seed word. I think running time is $$\small \mathcal O(n*l*26)$$, where $$\small n,l$$ are the sizes of the arrays and words. The depth of the DFS search is bounded by $$\small n$$, since we won't search more than all the words in the array. For each word, we loop through and replace one letter at a time with all 26 possible letters in the alphabet.
+
+Single-ended BFS:
+
+```py
+def findLadders(beginWord, endWord, wordList):
+        
+    wordList = set(wordList)
+    res = []
+    chains = {}
+    chains[beginWord] = [[beginWord]]
+
+    while chains:
+        next_chains = collections.defaultdict(list)
+        for w in chains:
+            if w == endWord:
+                res = chains[endWord]
+                return res
+            else:                
+                for i in range(len(w)):
+                    for c in string.ascii_lowercase:
+                        new_word = w[:i] + c + w[i+1:]
+                        if new_word in wordList:
+                            next_chains[new_word] += [j + [new_word] for j in chains[w]]
+
+        wordList -= set(next_chains.keys())
+        chains = next_chains
+
+    return []
+```
+
+
 
