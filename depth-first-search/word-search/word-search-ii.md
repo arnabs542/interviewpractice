@@ -19,7 +19,7 @@ words = ["oath","pea","eat","rain"] and board =
 Output: ["eat","oath"]
 ```
 
-Essentially the same problem as the above one, except now we need to find multiple word. If we simply apply the above solution to this one by looping through all the words, our time complexity is $$\small \mathcal O(m*n*s*4^{l})$$, where $$\small m, n$$ are the dimensions of the board, $$\small s$$ is the size of the words array, and $$\small l$$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier.
+Essentially the same problem as the above one, except now we need to find multiple words. If we simply apply the above solution to this one by looping through all the words, our time complexity is $$\small \mathcal O(m*n*s*4^{l})$$, where $$\small m, n$$ are the dimensions of the board, $$\small s$$ is the size of the words array, and $$\small l$$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier.
 
 ##### Trie + DFS:
 
@@ -69,5 +69,5 @@ This allows us to bring the runtime back down to $$\small \mathcal O(m*n*4^{l})$
 
 ##### Edge Cases/Traps:
 
-The order of the checks in `find` is actually very important - it's vital we check for `#` before checking for out of bounds/extra character, because we don't check if the last character we added actually ended a word. Thus, we could be out of bounds right now, but we could still have a valid word, thanks to the square that led us out of bounds. 
+The order of the checks in `find` is actually very important - it's vital we check for `#` before checking for out of bounds/extra character, because we don't check if the last character we added actually ended a word. Thus, we could be out of bounds right now, but we could still have a valid word, thanks to the square that led us out of bounds.
 
