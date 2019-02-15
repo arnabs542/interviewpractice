@@ -178,7 +178,7 @@ class Solution:
         return []
 ```
 
-The main idea of the above algorithm is still very similar to the single-sided BFS; we use a `defaultdict(list)` to keep track of all the parents of each word. The main difference is that instead of keeping track of the whole transformation chains, we simply keep track of the immediate preceding words.  
+The main idea of the above algorithm is still very similar to the single-sided BFS; we use a `defaultdict(list)` to keep track of all the parents of each word. The main difference is that instead of keeping track of the whole transformation chains, we simply keep track of the immediate preceding words.
 
 We work from both the starting and ending work, switching to whichever currently has fewer elements. For example, suppose the input is:
 
@@ -197,5 +197,5 @@ The elements `front`, `back`, and `parents` will evolve as follows:
 {'lot', 'dot'} {'dog', 'log'} {'hot': ['hit'], 'dot': ['hot'], 'lot': ['hot'], 'cog': ['dog', 'log']}
 ```
 
-
+When there is an overlap between `front` and `back`, then we know we've found the shortest transformation\(s\) and can rebuild the path\(s\). To do so, we begin with the end word, then for each parent it has, we create a new list with that parent in front. We recursively do this until we reach the starting word.
 
