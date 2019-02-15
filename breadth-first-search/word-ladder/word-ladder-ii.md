@@ -207,5 +207,5 @@ When there is an overlap between `front` and `back`, then we know we've found th
 [['hit', 'hot', 'dot', 'dog', 'cog'], ['hit', 'hot', 'lot', 'log', 'cog']]
 ```
 
-
+Complexity analysis is a bit complicated, but let's call `k` the max number of neighbors of a node, and `d` is the distance from `start` to `end`. In traditional BFS, we explore `k` nodes at each BFS level, each one generating in the worst case `k` neighbors till we find `end`. So the maximum number of nodes we explore till we reach `end` is `k*k*k...*k`, `d` times. So it's $$\small \mathcal O(k^{d})$$ . In double-ended BFS we finish when the forward and backward searches collide, which is at approximately at `d/2` distance. Let's call this point `mid`. So it's $$\small \mathcal O(k^{d/2})  \, \text{(start to mid)} + O(k^{d/2})  \, \text{(end to mid)}$$, yielding $$\small \mathcal O(k^{d/2})$$. While the time complexity is in the same class as a standard BFS, it may perform much faster in large graphs.
 
