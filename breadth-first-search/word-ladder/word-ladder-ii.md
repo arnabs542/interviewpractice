@@ -74,7 +74,7 @@ def findLadders(beginWord: 'str', endWord: 'str', wordList: 'List[str]') -> 'Lis
 
 The brute force solution is to simply perform a DFS search with all 26 letters at each seed word. I think running time is $$\small \mathcal O(n*l*26)$$, where $$\small n,l$$ are the sizes of the arrays and words. The depth of the DFS search is bounded by $$\small n$$, since we won't search more than all the words in the array. For each word, we loop through and replace one letter at a time with all 26 possible letters in the alphabet.
 
-##### Single-ended BFS:
+##### Single-sided BFS:
 
 ```py
 def findLadders(beginWord, endWord, wordList):
@@ -118,6 +118,65 @@ Our chain will transform as such:
 {'dot': [['hit', 'hot', 'dot']], 'lot': [['hit', 'hot', 'lot']]})
 {'dog': [['hit', 'hot', 'dot', 'dog']], 'log': [['hit', 'hot', 'lot', 'log']]})
 {'cog': [['hit', 'hot', 'dot', 'dog', 'cog'], ['hit', 'hot', 'lot', 'log', 'cog']]})
+```
+
+##### Double-sided BFS:
+
+```py
+class Solution:
+    def __adjacentWords(self, word, wordSet):
+        for i in range(len(word)):
+            p1, p2 = word[:i], word[i + 1:]
+            for c in string.ascii_lowercase:
+                w = p1 + c + p2
+                if w in wordSet:
+                    yield w
+
+    def __generatePath(self, beginWord, endWord, parents):
+        result = [[endWord]]
+        while result[0][0] != beginWord:
+            result = [[p] + r for r in result for p in parents[r[0]]]
+        return result
+
+    def findLadders(self, beginWord, endWord, wordList):
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: List[List[str]]
+        """
+        wordSet = set(wordList)
+        if endWord not in wordSet:
+            return []
+
+        front, back = {beginWord}, {endWord}
+        parents = collections.defaultdict(list)
+
+        while True:
+            layer = front
+            if len(front) > len(back):
+                layer = back
+            if not layer:
+                break
+            wordSet -= layer
+            
+            nextLayer = set()
+            for w in layer:
+                for a in self.__adjacentWords(w, wordSet):
+                    nextLayer.add(a)
+                    if layer == front:
+                        parents[a].append(w)
+                    else:
+                        parents[w].append(a)
+            if layer == front:
+                front = nextLayer
+            else:
+                back = nextLayer
+            if front & back:
+                return self.__generatePath(beginWord, endWord, parents)
+
+        return []
+  
 ```
 
 
