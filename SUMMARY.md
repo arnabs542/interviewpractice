@@ -122,6 +122,7 @@
 * [Recursion](recursion.md)
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
   * [Generate Permutations](recursion/generate-permutations.md)
+    * [Generate Permutations II](recursion/generate-permutations/generate-permutations-ii.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
     * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
