@@ -119,9 +119,6 @@
   * [Test if Three BST Nodes are Totally Ordered](binary-search-trees/test-if-three-bst-nodes-are-totally-ordered.md)
   * [The Range Lookup Problem](binary-search-trees/the-range-lookup-problem.md)
   * [Add Credits](binary-search-trees/add-credits.md)
-* [Bucketing](bucketing.md)
-  * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
-  * [K Empty Slots](bucketing/k-empty-slots.md)
 * [Recursion](recursion.md)
   * [The Towers of Hanoi Problem](recursion/the-towers-of-hanoi-problem.md)
   * [Generate Permutations](recursion/generate-permutations.md)
@@ -169,4 +166,7 @@
 * [Union-Find](union-find.md)
   * [Regions Cut by Slashes](union-find/regions-cut-by-slashes.md)
   * [Satisfiability of Equality Equations](union-find/satisfiability-of-equality-equations.md)
+* [Bucketing](bucketing.md)
+  * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
+  * [K Empty Slots](bucketing/k-empty-slots.md)
 

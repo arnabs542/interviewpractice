@@ -20,7 +20,7 @@
 > ]
 > ```
 
-##### Backtracking:
+##### Backtracking \(Set\):
 
 ```py
 def permute(nums):
@@ -45,7 +45,29 @@ def permute(nums):
     return res
 ```
 
-This is a classic backtracking problem. At each level, we simply choose one element for the current position before calling the next level to finish the array for us. Since permutations don't allow reusing numbers, we add the index of the number we picked to a set so that for the rest of the array we won't pick it again. 
+This is a classic backtracking problem. At each level, we simply choose one element for the current position before calling the next level to finish the array for us. Since permutations don't allow reusing numbers, we add the index of the number we picked to a set so that for the rest of the array we won't pick it again.
 
 There are $$\small \mathcal O(n!)$$ possible permutations, and at the end of each permutation we need to copy the array. The overall runtime is bounded by $$\small \mathcal O(n * n!)$$.
+
+The above solution uses $$\small \mathcal O(n)$$ space in addition to the recursion stack, due to the set being used to stored chosen elements.
+
+##### Backtracking \(Swap\):
+
+```py
+def permutations(A):
+    res = []
+
+    def directed_perm(i):
+        if i == len(A) - 1:
+            res.append(A.copy())
+        for j in range(i, len(A)):
+            A[i], A[j] = A[j], A[i]
+            directed_perm(i+1)
+            A[i], A[j] = A[j], A[i]
+
+    directed_perm(0)
+    return res
+```
+
+
 
