@@ -69,5 +69,7 @@ def permutations(A):
     return res
 ```
 
+The time complexity of the above solution doesn't change, but we save on space because we don't use a set to store chosen elements anymore. 
 
+The idea of the above algorithm is as follows: suppose we are given an input array $$\small <7,3,5>$$. We would first generate all permutations with 7, which requires us to generate all permutations of $$\small <3,5>$$. We then find all permutations beginning with 3. Since $$\small <5>$$ is a single element, we just return it. This implies $$\small <3,5>$$ has a single permutation with 3. Next we look for permutations of $$\small <3,5>$$ beginning with 5. To do this, we swap 3 and 5, and find, as before, there is a single permutation of $$\small <3,5>$$, namely $$\small <5,3>$$. Hence, there are two permutations of $$\small <7,3,5>$$ beginning with 7. We then swap 7 with 3 to find all permutations with 3, and then finally swap 7 with 5 to find all permutations starting with 5.
 
