@@ -43,9 +43,9 @@ def generate_power_set(S):
     return power_set
 ```
 
-The runtime for the above algorithm is $$\small \mathcal O(2^{n})$$, since for every element, we can choose to include it or exclude it from our current set. Therefor, we have a total of $$\small 2^{n}$$ decisions to make.
+The runtime for the above algorithm is $$\small \mathcal O(n*2^{n})$$, since for every element, we can choose to include it or exclude it from our current set. Therefore, we have a total of $$\small 2^{n}$$ decisions to make. After calculating each powerset, we need to copy the current array into our final array, resulting in the additional $$\small n$$ factor.
 
-Space is bounded by $$\sum_{i=0}^{n} \binom{n}{n-i} * (n-i) \small { \, = 2^{n-1}*n = \mathcal O(2^{n})}$$
+Space is bounded by $$\sum_{i=0}^{n} \binom{n}{n-i} * (n-i) \small { \, = 2^{n-1}*n = \mathcal O(2^{n})}$$. Another way to look at this is that we have $$\small 2^{n}$$ elements, and on average each element has $$\small {n}/{2}$$ elements within.
 
 ##### Recursion \(Loop\):
 
