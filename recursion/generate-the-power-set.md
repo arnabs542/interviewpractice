@@ -45,7 +45,7 @@ def generate_power_set(S):
 
 The runtime for the above algorithm is $$\small \mathcal O(2^{n})$$, since for every element, we can choose to include it or exclude it from our current set. Therefor, we have a total of $$\small 2^{n}$$ decisions to make.
 
-Space is bounded by $$\sum_{i=0}^{n} \binom{n}{n-i} * (n-i) \small {= 2^{n-1}*n = \mathcal O(2^{n})}$$
+Space is bounded by $$\sum_{i=0}^{n} \binom{n}{n-i} * (n-i) \small { \, = 2^{n-1}*n = \mathcal O(2^{n})}$$
 
 ##### Recursion \(Loop\):
 
