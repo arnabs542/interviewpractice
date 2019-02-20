@@ -63,5 +63,5 @@ def generate_power_set(S):
     return power_set
 ```
 
-For a given ordering of the elements of $$\small S$$, there exists a one-to-one correspondence between the $$\small 2^{n}$$ bit arrays of length $$\small n$$ and the set of all subsets of $$\small S$$ - the 1s in the $$\small n$$-length bit array $$\small v$$ indicate  the elements of $$\small S$$ in the subset corresponding to $$\small v$$. For example, suppose $$\small S = \{a,b,c,d\}$$. The bit array $$\small <1,0,1,1>$$ corresponds to the subset $$\small \{a,c,d\}$$
+For a given ordering of the elements of $$\small S$$, there exists a one-to-one correspondence between the $$\small 2^{n}$$ bit arrays of length $$\small n$$ and the set of all subsets of $$\small S$$ - the 1s in the $$\small n$$-length bit array $$\small v$$ indicate  the elements of $$\small S$$ in the subset corresponding to $$\small v$$. For example, suppose $$\small S = \{a,b,c,d\}$$. The bit array $$\small <1,0,1,1>$$ corresponds to the subset $$\small \{a,c,d\}$$. While time complexity doesn't change, we can reduce space complexity dramatically if we just want to enumerate subsets rather than return all of them.
 
