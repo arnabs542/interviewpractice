@@ -22,7 +22,7 @@
 > ]
 > ```
 
-##### Recursion \(No Loop\):
+##### Recursion:
 
 ```py
 def generate_power_set(S):
@@ -47,22 +47,21 @@ The runtime for the above algorithm is $$\small \mathcal O(n*2^{n})$$, since for
 
 Space is bounded by $$\sum_{i=0}^{n} \binom{n}{n-i} * (n-i) \small { \, = 2^{n-1}*n = \mathcal O(2^{n})}$$. Another way to look at this is that we have $$\small 2^{n}$$ elements, and on average each element has $$\small {n}/{2}$$ elements within.
 
-##### Recursion \(Loop\):
+##### Recursion \(Bit Mask\):
 
 ```py
 def generate_power_set(S):
     power_set = []
 
-    def helper(i, cur, S):
-        for j in range(i, len(S)):
-            cur.append(S[j])
-            helper(j+1, cur, S)
-            cur.pop()
-        power_set.append(cur.copy())
-
-    helper(0, [], S)
+    for int_for_subset in range(1 << len(S)):
+        bit_array = int_for_subset
+        subset = []
+        while bit_array:
+            subset.append(int(math.log2(bit_array & ~(bit_array - 1))))
+            bit_array &= bit_array - 1
+        power_set.append(subset)
     return power_set
 ```
 
-
+For a given ordering of the elements of $$\small S$$, there exists a one-to-one correspondence between the $$\small 2^{n}$$ bit arrays of length $$\small n$$ and the set of all subsets of $$\small S$$ - the 1s in the $$\small n$$-length bit array $$\small v$$ indicate  the elements of $$\small S$$ in the subset corresponding to $$\small v$$. For example, suppose $$\small S = \{a,b,c,d\}$$. The bit array $$\small <1,0,1,1>$$ corresponds to the subset $$\small \{a,c,d\}$$
 
