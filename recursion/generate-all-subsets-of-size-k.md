@@ -40,5 +40,5 @@ def combinations(n, k):
     return res
 ```
 
-We use the same algorithm we used to generate subsets, except this time we break when our current subset reaches the length indicated by $$\small k$$. Running time should be bounded by $$\small \mathcal O(\binom{n}{k})$$. Space is bounded by $$\small \mathcal O(\binom{n}{k} * k)$$.
+We use the same algorithm we used to generate subsets, except this time we break when our current subset reaches the length indicated by $$\small k$$. Running time should be bounded by $$\small \mathcal O(k*\binom{n}{k})$$. Space is bounded by $$\small \mathcal O(\binom{n}{k} * k)$$.
 
