@@ -69,5 +69,7 @@ def combinations(n, k):
     return helper(nums, n, 0, k)
 ```
 
-Another recursive method is to frame the problem in a more focused manner. 
+Another recursive method is to frame the problem in a more focused manner. There are two possibilities for a subset - it does not contain 1, or it does contain 1. In the first case, we return all subsets of size $$\small k$$ of $$\small \{2,3,...,n\}$$; in the second case, we return compute all $$\small k-1$$ sized subsets of $$\small \{2,3,...,n\}$$ and add 1 to each of them. 
+
+In the helper function above, the arguments `nums, N, start, k` respectively represent the input array, the size of the current subarray, the starting element of the current subarray, and $$\small k$$. If the current subarray starting from `start` is exactly size $$\small k$$, then return the entire subarray, since we can't shrink it anymore. Otherwise, we generate all subarrays containing and excluding the current element.
 
