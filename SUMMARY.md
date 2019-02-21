@@ -124,6 +124,7 @@
   * [Generate Permutations](recursion/generate-permutations.md)
     * [Generate Permutations II](recursion/generate-permutations/generate-permutations-ii.md)
   * [Generate the Power Set](recursion/generate-the-power-set.md)
+    * [Generate the Power Set with Duplicates](recursion/generate-the-power-set/generate-the-power-set-with-duplicates.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
     * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
