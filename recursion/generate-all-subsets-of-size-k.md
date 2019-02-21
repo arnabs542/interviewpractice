@@ -42,3 +42,32 @@ def combinations(n, k):
 
 We use the same algorithm we used to generate subsets, except this time we break when our current subset reaches the length indicated by $$\small k$$. Running time should be bounded by $$\small \mathcal O(k*\binom{n}{k})$$. Space is bounded by $$\small \mathcal O(\binom{n}{k} * k)$$.
 
+##### Recursion \(Case analysis\):
+
+```py
+def helper(nums, N, start, k):
+    if N == k:
+        return [nums[start:]]
+    if k == 0:
+        return [[]]
+
+    ans = []
+
+    pick = nums[start]
+
+    for i in helper(nums, N - 1, start + 1, k - 1):
+        ans.append([pick] + i)
+
+    for i in helper(nums, N - 1, start + 1, k):
+        ans.append(i)
+
+    return ans
+
+
+def combinations(n, k):
+    nums = list(range(1, n + 1))
+    return helper(nums, n, 0, k)
+```
+
+Another recursive method is to frame the problem in a more focused manner. 
+
