@@ -127,6 +127,7 @@
   * [Generate the Power Set](recursion/generate-the-power-set.md)
     * [Generate the Power Set with Duplicates](recursion/generate-the-power-set/generate-the-power-set-with-duplicates.md)
   * [Generate all Subsets of Size k](recursion/generate-all-subsets-of-size-k.md)
+  * [Generate Strings of Matched Parentheses](recursion/generate-strings-of-matched-parentheses.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
     * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
