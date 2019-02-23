@@ -39,7 +39,9 @@ def generate_balanced_parentheses(num_pairs):
 
 The brute force solution would to be enumerate all possible $$\small 2^{2n}$$ combinations of the characters '\(' and '\)' and then keep only the valid ones. However, we can use some additional constraints to prune our backtracking a bit earlier. First, the individual number of left parens and right parens must not exceed the given input $$\small n$$. Second, we can only insert a right paren if the number of right parens is currently less than the number of left parens. Otherwise, the string is already invalid.
 
-The time complexity of this problem seems quite difficult to derive. Leetcode simply states that it is the nth Catalan number: 
+The time complexity of this problem seems quite difficult to derive. Leetcode simply states that it is the nth Catalan number:
+
+
 $$
 {\frac{1}{1+n}} \binom{2n}{n} = \frac{4^{n}}{n\sqrt{n}}
 $$
