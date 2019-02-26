@@ -72,8 +72,6 @@ The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetr
 
 Bottom Up:
 
-
-
 Taking 1~n as root respectively:
 
 * 1 as root: \# of trees = F\(0\) \* F\(n-1\)  // F\(0\) == 1
