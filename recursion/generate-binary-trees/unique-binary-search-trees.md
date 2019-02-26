@@ -70,7 +70,26 @@ left    right
 
 The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetric. Thus, we simply record all the work we've already done. The running time should be reduced to $$\small \mathcal O(n)$$, since each left and right subtree number should be calculated once.
 
-Bottom Up:
+##### Bottom Up:
+
+```py
+def numTrees(self, n: int) -> int:
+    # dp[n] stores the number of trees with n nodes
+    dp = [0] * (n+1)
+    dp[0] = dp[1] = 1
+    
+    # Iterate through the total number of nodes
+    for nodes in range(2, n + 1):
+        # For each value, assign it as the root
+        for root in range(nodes + 1):
+            # For a given root value r, there are r - 1 numbers that belong on the left
+            # and nodes - r numbers that belong on the right
+            dp[nodes] +=  dp[root - 1] * dp[nodes - root]
+
+    return dp[-1]
+```
+
+The idea of the above solution is that we first iterate through the total number of nodes from 1 ~ n. For each number $$\small i$$, we iterate from 1 ~ $$\small i$$ using $$\small r$$ and place $$\small r$$ as the root value. For each $$\small r$$, there are $$\small r-1$$ nodes that could be place on the left, and $$\small i - r$$ nodes on the right. 
 
 Taking 1~n as root respectively:
 
