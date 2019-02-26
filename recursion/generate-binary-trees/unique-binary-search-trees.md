@@ -77,7 +77,7 @@ def numTrees(self, n: int) -> int:
     # dp[n] stores the number of trees with n nodes
     dp = [0] * (n+1)
     dp[0] = dp[1] = 1
-    
+
     # Iterate through the total number of nodes
     for nodes in range(2, n + 1):
         # For each value, assign it as the root
@@ -89,7 +89,7 @@ def numTrees(self, n: int) -> int:
     return dp[-1]
 ```
 
-The idea of the above solution is that we first iterate through the total number of nodes from 1 ~ n. For each number $$\small i$$, we iterate from 1 ~ $$\small i$$ using $$\small r$$ and place $$\small r$$ as the root value. For each $$\small r$$, there are $$\small r-1$$ nodes that could be place on the left, and $$\small i - r$$ nodes on the right. 
+The idea of the above solution is that we first iterate through the total number of nodes from 1 ~ n. For each number $$\small i$$, we iterate from 1 ~ $$\small i$$ using $$\small r$$ and place $$\small r$$ as the root value. For each $$\small r$$, there are $$\small r-1$$ nodes that could be place on the left, and $$\small i - r$$ nodes on the right.
 
 Taking 1~n as root respectively:
 
@@ -100,5 +100,5 @@ Taking 1~n as root respectively:
 * n-1 as root: \# of trees = F\(n-2\) \* F\(1\)
 * n as root:   \# of trees = F\(n-1\) \* F\(0\)
 
-
+The solution above uses $$\small \mathcal O(n^{2})$$ time and $$\small \mathcal O(n)$$ space.
 
