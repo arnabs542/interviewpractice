@@ -131,6 +131,7 @@
   * [Generate Binary Trees](recursion/generate-binary-trees.md)
     * [Unique Binary Search Trees](recursion/generate-binary-trees/unique-binary-search-trees.md)
     * [Unique Binary Search Trees II](recursion/generate-binary-trees/generate-binary-trees-ii.md)
+  * Implement a Sudoku Solver
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
     * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
