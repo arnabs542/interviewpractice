@@ -129,6 +129,7 @@
   * [Generate all Subsets of Size k](recursion/generate-all-subsets-of-size-k.md)
   * [Generate Strings of Matched Parentheses](recursion/generate-strings-of-matched-parentheses.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
+  * [Generate Binary Trees](recursion/generate-binary-trees.md)
   * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
     * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
 * [Dynamic Programming](dynamic-programming.md)

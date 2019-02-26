@@ -1,0 +1,42 @@
+#### Generate Binary Trees
+
+> Write a program which returns all distinct binary trees with a specified number of nodes. For example, if the number of nodes is specified to be 3, return 5:
+>
+> ```
+> 0         0         0         0    0
+>  \         \       / \       /    /
+>   0         0     0   0     0    0
+>    \       /               /      \
+>     0     0               0        0
+> ```
+>
+> Note that we're only counting distinct shapes as distinct trees, i.e.
+>
+> ```
+> 1       1
+>  \       \
+>   2       3
+>    \       \
+>     3       2
+> ```
+>
+> counts as the same tree in this scenario.
+
+##### Recursion:
+
+```py
+def generate_all_binary_trees(num_nodes: "int") -> "List[BinaryTreeNode]":
+    if num_nodes == 0:
+        return [0]
+
+    results = []
+    for left_subtree_nodes in range(num_nodes):
+        right_subtree_nodes = num_nodes - left_subtree_nodes - 1
+        left_subtrees = generate_all_binary_trees(left_subtree_nodes)
+        right_subtrees = generate_all_binary_trees(right_subtree_nodes)
+        results += [BinaryTreeNode(0, l, r) for l in left_subtrees for r in right_subtrees]
+    return results
+```
+
+
+
