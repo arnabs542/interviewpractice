@@ -68,5 +68,5 @@ left    right
  2        1
 ```
 
-The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetric. Thus, we simply record all the work we've already done. The running time should be reduced to 
+The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetric. Thus, we simply record all the work we've already done. The running time should be reduced to $$\small \mathcal O(n)$$, since each left and right subtree number should be calculated once.
 
