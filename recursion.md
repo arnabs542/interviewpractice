@@ -70,7 +70,7 @@ def solve_sudoku(partial_assignment):
             I = i // region_size
             J = j // region_size
             return not any(
-                val == partial_assignment[region_size * I + a][region_size * J + b]                                                               + b]
+                val == partial_assignment[region_size * I + a][region_size * J + b]
                 for a, b in itertools.product(range(region_size), repeat=2))
 
         for val in range(1, len(partial_assignment) + 1):
