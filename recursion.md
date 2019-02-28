@@ -32,5 +32,9 @@ def solve_sudoku(partial_assignment):
     return True
 ```
 
+The above solution makes use of a checker class which checks the validity of the board so far. 
 
+We begin by grabbing the \(x,y\) coordinates of all unfilled spaces. For each of the spaces, we iterate through the number s 1-9, attempting to put each of them down to fill the cell. If the number we choose is valid, we continue onto the next cell. If there are no spaces left, we return True, signaling that we finished filling out the board. Otherwise, we try with the number number.
+
+Running time should be $$\small \mathcal O(m*n + s^{9})$$, where $$\small m,n$$ represent the dimensions of the board, and $$\small s$$ the number of spaces the board initially has. We have to iterate over all values first to grab the unfilled squares, giving us a coordinate list of size $$\small s$$. For each of these cells, there's 9 values we can try, giving us the $$\small s^{9}$$ component. Space should be bounded by $$\small s$$, since the recursion stack will reach at most depth $$\small s$$.
 
