@@ -90,5 +90,5 @@ def solve_sudoku(partial_assignment):
     return solve_partial_sudoku(0, 0)
 ```
 
-
+The book actually argues that since the size of the board is bounded as a 9x9 grid, it doesn't really make sense to talk about its time complexity, since it doesn't scale with a size parameter. However, since the problem of solving Sudoku generalized to $$\small n \times n$$ grids is NP-complete, it's not difficult to prove that generalization of this algorithm to $$\small n \times n$$ grids has exponential time complexity.
 
