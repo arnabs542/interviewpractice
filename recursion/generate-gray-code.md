@@ -84,5 +84,5 @@ def grayCode(n: "int") -> "List[int]":
     return code + [(1 << (n-1)) + e for e in reversed(code)]
 ```
 
-
+The idea for the above algorithm is as follows - suppose we have the gray code for $$\small n - 1$$, how can we generate the gray code for $$\small n$$ using that?
 
