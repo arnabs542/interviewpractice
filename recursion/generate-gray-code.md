@@ -41,7 +41,7 @@
 
 ```py
 def grayCode(n: int) -> List[int]:
-    
+
     def differ_by_one(x, y):
         xor = x ^ y
         count = 0
@@ -71,6 +71,8 @@ def grayCode(n: int) -> List[int]:
     helper(code, nums)
     return code
 ```
+
+My initial approach was to generate a set of all values for the sequence, then try to insert each of them if they differ from the previous insertion by one bit. Since there are $$\small 2^{n}$$ numbers, and a total of $$\small (2^{n})!$$ permutations, the runtime is $$\small \mathcal O((2^{n})!)$$, which is incredibly slow. 
 
 
 
