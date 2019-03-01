@@ -9,5 +9,32 @@
 >
 > Write a program that takes the final score and scores for individual plays, and returns of the number of combinations of plays that result in the final score.
 
+##### Bottom Up \(Incorrect\):
+
+```py
+def num_combinations_for_final_score(final_score, individual_play_scores):
+    # One way to reach 0
+    combos = [1] + [0]*final_score
+    for i in range(final_score+1):
+        for s in individual_play_scores:
+            if s <= i:
+                combos[i] += combos[i-s]
+    return combos[-1]
+```
+
+My original solution was based on the coin 
+
+##### Bottom Up:
+
+```py
+def num_combinations_for_final_score(final_score, individual_play_scores):
+    # One way to reach 0
+    combos = [1] + [0]*final_score
+    for x in individual_play_scores:
+        for i in range(x, final_score+1):
+            combos[i] += combos[i - x]
+    return combos[-1]
+```
+
 
 
