@@ -40,7 +40,7 @@
 ##### Backtracking \(Brute Force\):
 
 ```py
-def grayCode(n: int) -> List[int]:
+def grayCode(n: "int") -> "List[int]":
 
     def differ_by_one(x, y):
         xor = x ^ y
