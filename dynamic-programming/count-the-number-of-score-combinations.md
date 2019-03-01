@@ -22,7 +22,13 @@ def num_combinations_for_final_score(final_score, individual_play_scores):
     return combos[-1]
 ```
 
-My original solution was based on the coin 
+My original solution was based on the Coin Change problem above. However, this leads to counting duplicates. For example, suppose the score is 5, and the individual plays are \[1,2\]. The dp array will look like this:
+
+| 0 | 1 | 2 | 3 | 4 | 5 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 1 | 2 | 3 | 5 | 8 |
+
+For score = 3, there's only two ways to get it: \(1,2\), \(1,1,1\). However, we ended up counting \(1,2\) and \(2,1\) as two separate combinations. We get a combination of \(1,2\) by doing `combo[3] += combo[3-2]`. We get a combination of \(2,1\) by doing `combo[3] = combo[3-1]`, since 2 is a score by itself, so it contributes to the number of ways we get a score of 2.
 
 ##### Bottom Up:
 
