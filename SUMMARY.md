@@ -132,9 +132,8 @@
     * [Unique Binary Search Trees](recursion/generate-binary-trees/unique-binary-search-trees.md)
     * [Unique Binary Search Trees II](recursion/generate-binary-trees/generate-binary-trees-ii.md)
   * Implement a Sudoku Solver
+  * [Generate Gray Code](recursion/generate-gray-code.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
-  * [Palindrome Partitioning](recursion/palindrome-partitioning.md)
-    * [Palindrome Partitioning II](recursion/palindrome-partitioning/palindrome-partitioning-ii.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
