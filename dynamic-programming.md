@@ -1,47 +1,20 @@
-#### Interleaving String
+#### Dynamic Programming
 
-> Given _s1_, _s2_, _s3_, find whether _s3_ is formed by the interleaving of _s1_ and _s2_.
->
-> **Example 1:**
->
-> ```
-> Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac"
->
-> Output: true
-> ```
->
-> **Example 2:**
->
-> ```
-> Input: s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"
->
-> Output: false
-> ```
+Consider using DP whenever you have to **make choices** to arrive at the solution. Specifically, DP is applicable when you can construct a solution to the given instance from solutions to sub-instances of smaller problems of the same kind.
 
-##### Brute Force \(DFS\):
+In addition to optimization problems, DP is also **applicable** to **counting and decision problems** - any problems where you can express a solution recursively in terms of the same computation on smaller instances. 
 
-```py
-def isInterleave(s1, s2, s3):
-    """
-    :type s1: str
-    :type s2: str
-    :type s3: str
-    :rtype: bool
-    """
-    
-    def helper(s1_idx, s2_idx, s3_idx):
-        if s3_idx == len(s3):
-            return s1_idx == len(s1) and s2_idx == len(s2)
-        if s2_idx < len(s2) and s3[s3_idx] == s2[s2_idx]:
-            if helper(s1_idx, s2_idx + 1, s3_idx + 1):
-                return True
-        if s1_idx < len(s1) and s3[s3_idx] == s1[s1_idx]:
-            if helper(s1_idx + 1, s2_idx, s3_idx + 1):
-                return True
-        return False
-    
-    return helper(0, 0, 0)
-```
+Although conceptually DP involves recursion, often for efficiency the cache is **build "bottom-up"**, i.e. iteratively.
+
+When DP is implemented recursively the cache is typically a dynamic data structure such as a hash table or a BST; when it is implemented iteratively the cache is usually a one- or multi-dimensional array.
+
+To save space, **cache space** may be **recycled **once it is known that a set of entries will not be looked up again. 
+
+Sometimes, **recursion may out-perform a bottom-up DP **solution, e.g., when the solution is found early or subproblems can be **pruned** through bounding. 
+
+A commong **mistake** in solving DP problems is trying to think of the recursive case by splitting the problems into **two equal halves**, _a la_ quicksort, i.e. solve the subproblems for subarrays A\[0, n/2\] and A\[n/2+1, n\] and combine the results. However, in most cases, these two subproblems are not sufficient to solve the original problem. 
+
+DP is based on **combining solutions** to subproblems to **yield a solution** to the original problem. However, for some problems DP will not work. For example, if you need to compute the longest path from City 1 to City 2 without repeating an intermediate city, and this longest path passes through City 3, then the subpaths from City 1 to City 3 and City 3 to City 2 may not be individually longest paths without repeated cities.
 
 
 

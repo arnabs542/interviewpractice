@@ -135,6 +135,7 @@
   * [Generate Gray Code](recursion/generate-gray-code.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
 * [Dynamic Programming](dynamic-programming.md)
+  * [Count the Number of Score Combinations](dynamic-programming/count-the-number-of-score-combinations.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
@@ -150,7 +151,7 @@
   * [Longest Common Substring](dynamic-programming/longest-common-substring.md)
   * [Interleaving String](dynamic-programming/interleaving-string.md)
   * [Stone Game](dynamic-programming/stone-game.md)
-  * [Minimum Cost For Tickets](dynamic-programming/minimum-cost-for-tickets.md)
+  * Count the Number of Score Combinations
 * [Greedy](greedy.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
