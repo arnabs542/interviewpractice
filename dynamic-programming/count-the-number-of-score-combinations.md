@@ -28,7 +28,9 @@ My original solution was based on the Coin Change problem above. However, this l
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | 1 | 2 | 3 | 5 | 8 |
 
-For score = 3, there's only two ways to get it: \(1,2\), \(1,1,1\). However, we ended up counting \(1,2\) and \(2,1\) as two separate combinations. We get a combination of \(1,2\) by doing `combo[3] += combo[3-2]`. We get a combination of \(2,1\) by doing `combo[3] = combo[3-1]`, since 2 is a score by itself, so it contributes to the number of ways we get a score of 2.
+For score = 3, there's only two ways to get it: \(1,2\), \(1,1,1\). However, we ended up counting \(1,2\) and \(2,1\) as two separate combinations. We get a combination of \(1,2\) by doing `combo[3] += combo[3-2]`. We get a combination of \(2,1\) by doing `combo[3] = combo[3-1]`, since 2 is a score by itself, so it contributes to the number of ways we get a score of 2. 
+
+The fundamental difference between this problem and the Coin Change problem is that in the Coin Change problem, we were simply concerned with finding the smallest combination. Thus, it didn't matter if we process \(1,2\) and \(2,1\) - all we keep is their length. In this problem, we need to figure out how many combinations there are, which means we need to avoid double counting.
 
 ##### Bottom Up:
 
