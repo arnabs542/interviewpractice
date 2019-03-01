@@ -7,7 +7,7 @@
 > **Example 1:**
 >
 > ```
-> Input: 2
+> Input: 2
 >
 > Output: [0,1,3,2]
 > Explanation:
@@ -17,7 +17,7 @@
 > 11 - 3
 > 10 - 2
 >
-> For a given n, a gray code sequence may not be uniquely defined.
+> For a given n, a gray code sequence may not be uniquely defined.
 > For example, [0,2,3,1] is also a valid gray code sequence.
 >
 > 00 - 0
@@ -29,7 +29,7 @@
 > **Example 2:**
 >
 > ```
-> Input: 0
+> Input: 0
 >
 > Output:[0]
 >
@@ -37,7 +37,40 @@
 > n = 0 the size is 2^0 = 1. Therefore, for n = 0 the gray code sequence is [0].
 > ```
 
+##### Backtracking \(Brute Force\):
 
+```py
+def grayCode(n: int) -> List[int]:
+    
+    def differ_by_one(x, y):
+        xor = x ^ y
+        count = 0
+        while xor:
+            count += xor & 1
+            if count > 1:
+                return False
+            xor >>= 1
+        return count == 1
+
+    num_range = 2**n
+    code = [0]
+    nums = set([i for i in range(1, num_range)])
+
+    def helper(code, nums):
+        if len(nums) == 0:
+            return differ_by_one(code[-1], code[0])
+        for i in nums:
+            if differ_by_one(i, code[-1]):
+                code.append(i)
+                nums.discard(i)
+                if helper(code, nums):
+                    return code
+                code.pop()
+                nums.add(i)
+
+    helper(code, nums)
+    return code
+```
 
 
 
