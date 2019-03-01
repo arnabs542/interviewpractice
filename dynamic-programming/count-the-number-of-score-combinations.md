@@ -32,7 +32,7 @@ For score = 3, there's only two ways to get it: \(1,2\), \(1,1,1\). However, we 
 
 The fundamental difference between this problem and the Coin Change problem is that in the Coin Change problem, we were simply concerned with finding the smallest combination. Thus, it didn't matter if we process \(1,2\) and \(2,1\) - all we keep is their length. In this problem, we need to figure out how many combinations there are, which means we need to avoid double counting.
 
-##### Bottom Up:
+##### Bottom Up \(By play\):
 
 ```py
 def num_combinations_for_final_score(final_score, individual_play_scores):
