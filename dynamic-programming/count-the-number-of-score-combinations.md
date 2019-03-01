@@ -44,11 +44,15 @@ def num_combinations_for_final_score(final_score, individual_play_scores):
     return combos[-1]
 ```
 
-Suppose the score is 5, and the individual plays are worth \[1,2\]. The dp array will look like this:
+Suppose the score is 5, and the individual plays are worth \[1,2\]. The dp array will look like this after each outer iteration:
 
-| 0 | 1 | 2 | 3 | 4 | 5 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | 1 | 2 | 2 | 3 | 3 |
+```
+# x = 1
+[1, 1, 1, 1, 1, 1]
 
-The difference between this approach and the previous one is that we go forwards in this solution, whereas the previous solution worked backwards. 
+# x = 2
+[1, 1, 2, 2, 3, 3]
+```
+
+The difference between this approach is that we deal with one play at a time. We first mark all the scores that can be achieved with only 1 point plays. Next, we mark all the scores that can be achieved with both 1 and 2 point plays. This allows us to avoid double counting, because we only introduce one play at a time. 
 
