@@ -72,7 +72,17 @@ def grayCode(n: int) -> List[int]:
     return code
 ```
 
-My initial approach was to generate a set of all values for the sequence, then try to insert each of them if they differ from the previous insertion by one bit. Since there are $$\small 2^{n}$$ numbers, and a total of $$\small (2^{n})!$$ permutations, the runtime is $$\small \mathcal O((2^{n})!)$$, which is incredibly slow. 
+My initial approach was to generate a set of all values for the sequence, then try to insert each of them if they differ from the previous insertion by one bit. Since there are $$\small 2^{n}$$ numbers, and a total of $$\small (2^{n})!$$ permutations, the runtime is $$\small \mathcal O((2^{n})!)$$, which is incredibly slow.
+
+##### Backtracking \(Reverse and Add\):
+
+```py
+def grayCode(n: "int") -> "List[int]":
+    if n == 0:
+        return [0]
+    code = grayCode(n-1)
+    return code + [(1 << (n-1)) + e for e in reversed(code)]
+```
 
 
 
