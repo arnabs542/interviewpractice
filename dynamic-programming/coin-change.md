@@ -35,5 +35,5 @@ def coinChange(coins: "List[int]", amount: "int") -> "int":
     return count[-1] if count[-1] < float('inf') else -1
 ```
 
-The idea of the solution is simple: if we want to get to some amount $$\small n$$ with a set of coins $$\small c$$, we need to find out how much it takes to get to the amounts$$\small \{n - c_{i} \, \text{for} \, c_{i} \, \text{in} \, c\}$$.
+The idea of the solution is simple: if we want to get to some amount $$\small n$$ with a set of coins $$\small c$$, we need to find out how much it takes to get to the amounts$$\small \{n - c_{i} \, \text{for} \, c_{i} \, \text{in} \, c\}$$. Out of those amounts, we take the one that took the least amount of coins to get to, and add 1. 
 
