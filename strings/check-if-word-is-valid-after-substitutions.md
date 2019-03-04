@@ -78,5 +78,9 @@ def isValid(self, S: str) -> bool:
     return len(stack) == 0
 ```
 
+This is an $$\small \mathcal O(n)$$ solution that relies on the same principle as above. Whenever we meet a "c", we try to pop "a" and "b" from the end of the stack. If we're not able to do so, then we return `False`.
 
+##### Notes:
+
+In the future, think about whether or not a manual stack can be used to replace a recursive solution.
 
