@@ -12,6 +12,7 @@
     * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
+  * [Check If Word Is Valid After Substitutions](strings/check-if-word-is-valid-after-substitutions.md)
 * [Stacks](stacks.md)
   * [Simplify Path](stacks/simplify-path.md)
   * [Online Stock Span](stacks/online-stock-span.md)
