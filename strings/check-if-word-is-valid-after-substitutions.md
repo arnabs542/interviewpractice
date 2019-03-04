@@ -60,3 +60,23 @@ A valid string consists of insert copies of the string "abc" into an existing va
 
 The recurrence relationship can be modeled as such: $$\small T(n) = T(n-3) + \mathcal O(n)$$. This solves to a time complexity of $$\small \mathcal O(n^{2})$$.
 
+##### Stack:
+
+```py
+def isValid(self, S: str) -> bool:
+    if len(S) % 3:
+        return False
+    stack = []
+    for c in S:
+        if c == "c":
+            if len(stack) < 2 or stack[-2:] != ['a', 'b']:
+                return False
+            stack.pop()
+            stack.pop()
+        else:
+            stack.append(c)
+    return len(stack) == 0
+```
+
+
+
