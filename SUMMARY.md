@@ -9,6 +9,7 @@
   * [Next Premutation](arrays/next-premutation.md)
   * [Longest Turbulent Subarray](arrays/longest-turbulent-subarray.md)
   * [Sliding Window](arrays/sliding-window.md)
+    * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
 * [Stacks](stacks.md)
