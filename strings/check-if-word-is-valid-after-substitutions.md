@@ -2,11 +2,11 @@
 
 > We are given that the string `"abc"` is valid.
 >
-> From any valid string `V`, we may split `V` into two pieces `X` and `Y` such that `X + Y` \(`X` concatenated with `Y`\) is equal to `V`.  \(`X` or `Y` may be empty.\)  Then, `X + "abc" + Y` is also valid.
+> From any valid string `V`, we may split `V` into two pieces `X` and `Y` such that `X + Y` \(`X` concatenated with `Y`\) is equal to `V`.  \(`X` or `Y` may be empty.\)  Then, `X + "abc" + Y` is also valid.
 >
-> If for example `S = "abc"`, then examples of valid strings are: `"abc", "aabcbc", "abcabc", "abcabcababcc"`.  Examples of **invalid** strings are: `"abccba"`, `"ab"`, `"cababc"`, `"bac"`.
+> If for example `S = "abc"`, then examples of valid strings are: `"abc", "aabcbc", "abcabc", "abcabcababcc"`.  Examples of **invalid** strings are: `"abccba"`, `"ab"`, `"cababc"`, `"bac"`.
 >
-> Return `true` if and only if the given string `S` is valid.
+> Return `true` if and only if the given string `S` is valid.
 >
 > **Example 1:**
 >
@@ -47,16 +47,16 @@
 ```py
 def isValid(S: str) -> bool:
     if len(S) % 3:
-	return False
+        return False
     if S == "abc":
-	return True
+        return True
     for i in range(len(S) - 2):
-	if S[i:i+3] == "abc":
-		return isValid(S[:i] + S[i+3:])
+        if S[i:i+3] == "abc":
+            return isValid(S[:i] + S[i+3:])
     return False
 ```
 
-A valid string consists of insert copies of the string "abc" into an existing valid string. Therefore, in the end, there must be a substring "abc" in the string. We find that substring, then see if the rest of the string is valid. 
+A valid string consists of insert copies of the string "abc" into an existing valid string. Therefore, in the end, there must be a substring "abc" in the string. We find that substring, then see if the rest of the string is valid.
 
 The recurrence relationship can be modeled as such: $$\small T(n) = T(n-3) + \mathcal O(n)$$. This solves to a time complexity of $$\small \mathcal O(n^{2})$$.
 
