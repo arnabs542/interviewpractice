@@ -8,6 +8,7 @@
   * [N-Repeated Element in Size 2N Array](arrays/n-repeated-element-in-size-2n-array.md)
   * [Next Premutation](arrays/next-premutation.md)
   * [Longest Turbulent Subarray](arrays/longest-turbulent-subarray.md)
+  * [Sliding Window](arrays/sliding-window.md)
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
 * [Stacks](stacks.md)
