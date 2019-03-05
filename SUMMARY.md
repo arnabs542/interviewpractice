@@ -137,6 +137,8 @@
   * Implement a Sudoku Solver
   * [Generate Gray Code](recursion/generate-gray-code.md)
   * [Restore IP Addresses](recursion/restore-ip-addresses.md)
+  * Combination Sum
+    * [Combination Sum II](recursion/combination-sum-ii.md)
 * [Dynamic Programming](dynamic-programming.md)
   * [Coin Change](dynamic-programming/coin-change.md)
   * [Count the Number of Score Combinations](dynamic-programming/count-the-number-of-score-combinations.md)
