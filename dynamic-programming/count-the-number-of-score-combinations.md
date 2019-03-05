@@ -54,7 +54,7 @@ Suppose the score is 5, and the individual plays are worth \[1,2\]. The dp array
 [1, 1, 2, 2, 3, 3]
 ```
 
-The difference between this approach is that we deal with one play at a time. We first mark all the scores that can be achieved with only 1 point plays. Next, we mark all the scores that can be achieved with both 1 and 2 point plays. This allows us to avoid double counting, because we only introduce one play at a time.
+The reason we loop the scores in the outer loop is because we're interested in the total number of combinations, not permutations. If the outer loop is the amount, then the same combination will be counted multiple times because they can come in different orders. By setting the outer loop as the scores, we assure that for any valid combination, the order of each score will always be the same as their order in `individual_play_scores`, so there can be no duplicates.
 
 Time complexity is bounded by $$\small \mathcal O(n*s)$$, where $$\small n,s$$ represent the final score and the number of individual play scores. Space is bounded by $$\small \mathcal O(n)$$.
 
