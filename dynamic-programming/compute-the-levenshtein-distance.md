@@ -58,7 +58,7 @@ def minDistance(word1: str, word2: str) -> int:
     return dp[-1][-1]
 ```
 
-The brute force solution would be enumerate all strings that are distance 1,2,3... from the first string, and see how long it takes us to reach the second string. The number of strings may grow enormously, e.g., if the first string is $$\small n$$ 0s and the second string is $$\small n$$ 1s we will visit all $$\small 2^{n}$$possible bit strings from the first string before we reach the second string. 
+The brute force solution would be enumerate all strings that are distance 1,2,3... from the first string, and see how long it takes us to reach the second string. The number of strings may grow enormously, e.g., if the first string is $$\small n$$ 0s and the second string is $$\small n$$ 1s we will visit all $$\small 2^{n}$$possible bit strings from the first string before we reach the second string.
 
 The subproblem recurrence is this: suppose we know the Levenshtein Distance between `word1[:-1]` and `word2[:-1]`. There are two cases:
 
@@ -72,7 +72,7 @@ Let $$\small a,b$$ be the lengths of the two strings. The above solution runs in
 
 ```py
 def minDistance(word1: str, word2: str) -> int:
-    
+
     if len(word1) < len(word2):
         word1, word2 = word2, word1
 
@@ -92,5 +92,5 @@ def minDistance(word1: str, word2: str) -> int:
     return prev_row[-1]
 ```
 
-
+This solution requires $$\small \mathcal O(min(a,b))$$ space. Time complexity doesn't change.
 
