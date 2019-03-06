@@ -94,3 +94,7 @@ def minDistance(word1: str, word2: str) -> int:
 
 This solution requires $$\small \mathcal O(min(a,b))$$ space. Time complexity doesn't change.
 
+##### Notes:
+
+Often times dynamic programming can be improved space complexity wise, because we usually only need a current row and a previous row. This is always worth considering, because if we have a particularly large input, it might not fit into memory. This is something that needs to be asked before jumping into the problem.
+
