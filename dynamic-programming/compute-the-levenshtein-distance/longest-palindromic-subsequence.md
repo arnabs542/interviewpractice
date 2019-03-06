@@ -45,18 +45,19 @@ def longestPalindromeSubseq(s: str) -> int:
         if s[i] == s[j]:
             return 2 + helper(i+1, j-1)
         else:
-            return max(helper(i+1, j), helper(i, j-1), helper(i+1, j-1))
+            return max(helper(i+1, j), helper(i, j-1))
 
     return helper(0, len(s) - 1)
 ```
 
 If we are given a string of length 0, the longest palindromic subsequence is 0. If we are given a string of length 1, the longest palindromic subsequence is 1. These are our two base cases.
 
-If the first and last characters of the string are equal, then we can add 2 to the longest palindromic subsequence found in `s[1:-1]`. Otherwise, we have three options:
+If the first and last characters of the string are equal, then we can add 2 to the longest palindromic subsequence found in `s[1:-1]`. Otherwise, we have two options:
 
 1. Find the longest palindromic subsequence in `s[:-1]`
 2. Find the longest palindromic subsequence in `s[1:]`
-3. Find the longest palindromic subsequence in `s[1:-1]`
+
+
 
 This however times out because we keep doing the same work over and over again \(runtime is $$\small \mathcal O(2^{n})$$\). To improve our time complexity, we use remember the result for `s[i:j]`.
 
