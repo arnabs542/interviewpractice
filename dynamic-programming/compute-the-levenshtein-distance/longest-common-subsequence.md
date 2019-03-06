@@ -9,7 +9,7 @@ def longestCommonSubsequence(A, B):
     # Edge case check
     if not A or not B:
         return 0
-        
+            
     # Setting up DP array
     dp = [[0] * (len(B) + 1) for _ in range(len(A) + 1)]
     
@@ -19,9 +19,25 @@ def longestCommonSubsequence(A, B):
                 dp[i][j] = 1 + dp[i-1][j-1]
             else:
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+                
+    # Rebuild the subsequence
+    subsequence = []
+    i, j = len(dp) - 1, len(dp[0]) - 1
+    left = dp[-1][-1]
     
-    return dp[-1][-1]
+    while left:
+        if A[i-1] == B[j-1]:
+            subsequence.append(A[i-1])
+            left -= 1
+            i -= 1
+            j -= 1
+        elif dp[i][j] == dp[i-1][j]:
+            i -= 1
+        else:
+            j -= 1
+    
+    return subsequence[::-1]
 ```
 
-
+This problem is essentially the same idea as the parent problem. We begin by assuming we know the longest common subsequence 
 
