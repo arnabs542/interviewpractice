@@ -102,10 +102,10 @@ The overall runtime for this solution is $$\small \mathcal O(n^{2})$$, where $$\
 def longestPalindromeSubseq(s: str) -> int:
     if not s:
         return 0
-    
+
     n = len(s)
     dp = [[0] * n for _ in range(n)]
-    
+
     for i in range(n-1, -1, -1):
         dp[i][i] = 1
         for j in range(i+1, n):
@@ -113,9 +113,9 @@ def longestPalindromeSubseq(s: str) -> int:
                 dp[i][j] = 2 + dp[i+1][j-1]
             else:
                 dp[i][j] = max(dp[i+1][j], dp[i][j-1])
-    
+
     return dp[0][-1]
 ```
 
-
+This is the bottom-up version of the above solution. We build a 2D $$\small n \times n$$ array, where `dp[i][j]` stores the longest palindromic subsequence found in `s[i:j+1]`. Running time and space are both bounded by $$\small \mathcal O(n^{2})$$. We can reduce space to $$\small \mathcal O(n)$$ since we only use 2 rows at a time.
 
