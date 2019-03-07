@@ -96,3 +96,26 @@ def longestPalindromeSubseq(s: str) -> int:
 
 The overall runtime for this solution is $$\small \mathcal O(n^{2})$$, where $$\small n$$ is the length of the string. This is because we calculate the longest palindromic subsequence in each substring once before storing the result, and there are a total of $$\small n^{2}$$ substrings.
 
+##### DP \(Bottom-up\):
+
+```py
+def longestPalindromeSubseq(s: str) -> int:
+    if not s:
+        return 0
+    
+    n = len(s)
+    dp = [[0] * n for _ in range(n)]
+    
+    for i in range(n-1, -1, -1):
+        dp[i][i] = 1
+        for j in range(i+1, n):
+            if s[i] == s[j]:
+                dp[i][j] = 2 + dp[i+1][j-1]
+            else:
+                dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+    
+    return dp[0][-1]
+```
+
+
+
