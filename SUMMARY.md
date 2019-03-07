@@ -161,7 +161,6 @@
   * [Minimum Triangle Sum](dynamic-programming/minimum-triangle-sum.md)
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
   * [Longest Common Substring](dynamic-programming/longest-common-substring.md)
-  * [Interleaving String](dynamic-programming/interleaving-string.md)
   * [Stone Game](dynamic-programming/stone-game.md)
 * [Greedy](greedy.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
