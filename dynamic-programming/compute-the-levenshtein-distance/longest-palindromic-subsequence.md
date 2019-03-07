@@ -57,7 +57,15 @@ If the first and last characters of the string are equal, then we can add 2 to t
 1. Find the longest palindromic subsequence in `s[:-1]`
 2. Find the longest palindromic subsequence in `s[1:]`
 
+This is where the subproblem structure comes in:
 
+```
+          L(0, 5)    
+         /      \     
+    L(1,5)      L(0,4)    
+   /     \      /     \    
+L(2,5)  L(1,4) L(1,4) L(0,3)
+```
 
 This however times out because we keep doing the same work over and over again \(runtime is $$\small \mathcal O(2^{n})$$\). To improve our time complexity, we use remember the result for `s[i:j]`.
 
