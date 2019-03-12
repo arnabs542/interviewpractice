@@ -11,8 +11,8 @@
 >
 > **Note:**
 >
-> * `s` could be empty and contains only lowercase letters `a-z`.
-> * `p` could be empty and contains only lowercase letters `a-z`, and characters like `.` or `*`.
+> * `s` could be empty and contains only lowercase letters `a-z`.
+> * `p` could be empty and contains only lowercase letters `a-z`, and characters like `.` or `*`.
 >
 > **Example 1:**
 >
@@ -34,7 +34,7 @@
 >
 > Output: true
 >
-> Explanation: '*' means zero or more of the precedeng element, 'a'. Therefore, by repeating 'a' once, 
+> Explanation: '*' means zero or more of the precedeng element, 'a'. Therefore, by repeating 'a' once, 
 > it becomes "aa".
 > ```
 >
@@ -47,7 +47,7 @@
 >
 > Output: true
 >
-> Explanation: ".*" means "zero or more (*) of any character (.)".
+> Explanation: ".*" means "zero or more (*) of any character (.)".
 > ```
 >
 > **Example 4:**
@@ -59,7 +59,7 @@
 >
 > Output: true
 >
-> Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore it matches "aab".
+> Explanation: c can be repeated 0 times, a can be repeated 1 time. Therefore it matches "aab".
 > ```
 >
 > **Example 5:**
@@ -99,7 +99,31 @@ def isMatch(text, pattern):
         return first_match and self.isMatch(text[1:], pattern[1:])
 ```
 
-##### Dynamic Programming:
+##### Dynamic Programming \(Top-down\):
 
+The above solutions will obviously have a lot of overlapping subproblems. Thus, we use dynamic programming to avoid redoing work:
 
+```py
+def isMatch(s: str, p: str) -> bool:
+    memo = {}
+    
+    def helper(i, j):
+        # Base conditions
+        if (i,j) in memo:
+            return memo[(i,j)]
+        if j == len(p):
+            memo[(i,j)] = (i == len(s))
+            return memo[(i,j)]
+            
+        first_match = (i < len(s)) and (p[j] in [s[i], '.'])
+        if j < len(p) - 1 and p[j+1] == '*':
+            memo[(i,j)] = first_match and helper(i+1, j) or helper(i, j+2)
+        else:
+            memo[(i,j)] = first_match and helper(i+1, j+1)
+        return memo[(i,j)]
+
+    return helper(0, 0)
+```
+
+In the top-down approach, we use `i,j` to mark the current locations in our string and pattern that we're processing. If we've already processed `s[i:]` and `p[j:]` then we just return whatever result we got. Otherwise, we do the work, store the result, then return it. If $$\small m,n$$ are the lengths of the string and pattern, then there are a total of $$\small \mathcal O(mn)$$ combinations of substrings. Thus, our time complexity and space complexity are both bounded by $$\small \mathcal O(mn)$$.
 
