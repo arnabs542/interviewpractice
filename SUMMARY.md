@@ -148,6 +148,7 @@
       * [Delete Operation for Two Strings](dynamic-programming/compute-the-levenshtein-distance/longest-common-subsequence/delete-operation-for-two-strings.md)
     * [Longest Palindromic Subsequence](dynamic-programming/compute-the-levenshtein-distance/longest-palindromic-subsequence.md)
     * [Interleaving String](dynamic-programming/compute-the-levenshtein-distance/interleaving-string.md)
+  * [Regular Expression Matching](dynamic-programming/regular-expression-matching.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
@@ -161,7 +162,7 @@
   * [Minimum Triangle Sum](dynamic-programming/minimum-triangle-sum.md)
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
   * [Longest Common Substring](dynamic-programming/longest-common-substring.md)
-  * [Stone Game](dynamic-programming/stone-game.md)
+  * Regular Expression Matching
 * [Greedy](greedy.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
