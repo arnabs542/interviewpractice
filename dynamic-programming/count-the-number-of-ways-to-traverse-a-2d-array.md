@@ -30,7 +30,7 @@ def number_of_ways(n, m):
 
     if n < m:
         n, m = m, n
-        
+
     prev_row, cur_row = [1] * m, [1] + [0] * (m - 1)
 
     for i in range(1, n):
@@ -43,4 +43,8 @@ def number_of_ways(n, m):
 ```
 
 Time complexity doesn't change, space is reduced to $$\small \mathcal O(min(n,m))$$.
+
+##### Analytical Solution:
+
+A more analytical way of solving this problem is to use the fact that each path from $$\small (0,0)$$ to $$\small (n-1, m-1)$$ is a sequence of $$\small m-1$$ horizontal steps and $$\small n - 1$$ vertical steps. There are $$\small \binom{n+m-2}{n-1} = \binom{n+m-2}{m-1} = \frac{(n+m-2)!}{(n-1)!(m-1)!}$$ such paths.
 
