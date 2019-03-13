@@ -21,7 +21,26 @@ def number_of_ways(n, m):
     return matrix[-1][-1]
 ```
 
-Since we're only allowed to go right or down, then the number of ways to get to a certain cell is simply the number of ways to get to the cell above it and the cell to the left of it \(if they exist\). This optimal subproblem structure calls for dynamic programming. All cells in the first row and first column has only one way to get to it. Otherwise take the sum. 
+Since we're only allowed to go right or down, then the number of ways to get to a certain cell is simply the number of ways to get to the cell above it and the cell to the left of it \(if they exist\). This optimal subproblem structure calls for dynamic programming. All cells in the first row and first column has only one way to get to it. Otherwise take the sum.
 
-Running time and space are both bounded by $$\small \mathcal O(n*m)$$.
+Running time and space are both bounded by $$\small \mathcal O(n*m)$$. Similar to many other dp problems, we can reduce space complexity since we only require two rows at a time:
+
+```py
+def number_of_ways(n, m):
+
+    if n < m:
+        n, m = m, n
+        
+    prev_row, cur_row = [1] * m, [1] + [0] * (m - 1)
+
+    for i in range(1, n):
+        for j in range(1, m):
+            cur_row[j] += prev_row[j] + cur_row[j-1]
+        prev_row = cur_row
+        cur_row = [1] + [0] * (m - 1)
+
+    return prev_row[-1]
+```
+
+Time complexity doesn't change, space is reduced to $$\small \mathcal O(min(n,m))$$.
 
