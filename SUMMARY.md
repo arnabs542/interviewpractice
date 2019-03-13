@@ -150,6 +150,7 @@
     * [Interleaving String](dynamic-programming/compute-the-levenshtein-distance/interleaving-string.md)
   * [Regular Expression Matching](dynamic-programming/regular-expression-matching.md)
   * [Count the Number of Ways to Traverse a 2D Array](dynamic-programming/count-the-number-of-ways-to-traverse-a-2d-array.md)
+    * [Count Ways with Obstacles](dynamic-programming/count-the-number-of-ways-to-traverse-a-2d-array/count-ways-with-obstacles.md)
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
