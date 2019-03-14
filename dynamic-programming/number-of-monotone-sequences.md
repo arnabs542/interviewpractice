@@ -1,6 +1,6 @@
 #### Number of Monotone Sequences
 
-> A decimal number is a sequence of digits, i.e., a sequence over$$\small \{0,1,2,...,9\}$$. The sequence has to be of length 1 or more, and the first element in the sequence cannot be 0. Call a decimal number D monotone if $$\small D[i] < D{i+1}, 0 \leq i < |{D}|$$. Write a program which takes as input a positive integer $$\small k$$ and computes the number of decimal numbers of length $$\small k$$ that are monotone.
+> A decimal number is a sequence of digits, i.e., a sequence over$$\small \{0,1,2,...,9\}$$. The sequence has to be of length 1 or more, and the first element in the sequence cannot be 0. Call a decimal number D monotone if $$\small D[i] < D[i+1], 0 \leq i < |{D}|$$. Write a program which takes as input a positive integer $$\small k$$ and computes the number of decimal numbers of length $$\small k$$ that are monotone.
 
 ##### Recursion -&gt; Dynamic Programming:
 
