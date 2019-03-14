@@ -48,19 +48,19 @@ def monotoneSequence(k):
 
 or bottom-up:
 
-```
+```py
 def monotoneSequence(k):
-	nums = 9
-	dp = [[0] * (nums+1) for _ in range(k+1)]
+    nums = 9
+    dp = [[0] * (nums+1) for _ in range(k+1)]
 
-	for i in range(nums+1):
-		dp[1][i] = i
+    for i in range(nums+1):
+        dp[1][i] = i
 
-	for i in range(2, k+1):
-		for j in range(i, nums+1):
-			dp[i][j] += dp[i-1][j-1] + dp[i][j-1]
+    for i in range(2, k+1):
+        for j in range(i, nums+1):
+            dp[i][j] += dp[i-1][j-1] + dp[i][j-1]
 
-	return dp[-1][-1]
+    return dp[-1][-1]
 ```
 
 The bottom up idea is as follows: suppose we introduce a new number. We can either choose to not use it \(`dp[i][j-1]`\). If we wish to use the new number, we can attach it to the end of all the sequences of length `i-1` that didn't use the number \(`dp[i-1][j-1]`\).
