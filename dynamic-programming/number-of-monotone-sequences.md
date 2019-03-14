@@ -1,6 +1,6 @@
 #### Number of Monotone Sequences
 
-> A decimal number is a sequence of digits, i.e., a sequence over$$\small \{0,1,2,...,9\}$$. The sequence has to be of length 1 or more, and the first element in the sequence cannot be 0. Call a decimal number D _monotone _if $$\small D[i] < D{i+1}, 0 \leq i < |{D}|$$. Write a program which takes as input a positive integer $$\small k$$ and computes the number of decimal numbers of length $$\small k$$ that are monotone.
+> A decimal number is a sequence of digits, i.e., a sequence over$$\small \{0,1,2,...,9\}$$. The sequence has to be of length 1 or more, and the first element in the sequence cannot be 0. Call a decimal number D monotone if $$\small D[i] < D{i+1}, 0 \leq i < |{D}|$$. Write a program which takes as input a positive integer $$\small k$$ and computes the number of decimal numbers of length $$\small k$$ that are monotone.
 
 ##### Recursion -&gt; Dynamic Programming:
 
@@ -19,9 +19,9 @@ def monotoneSequence(k):
     return helper(k, 9)
 ```
 
-We're told that a sequence cannot start with 0; since 0 is smaller than any other digit, we essentially only consider the digits 1 - 9. 
+We're told that a sequence cannot start with 0; since 0 is smaller than any other digit, we essentially only consider the digits 1 - 9.
 
-If $$\small k = 1$$, then we simply return the number of digits we haven't used it. Otherwise, we loop through the number of unused digits, pick one to start the sequence, and see how many sequences of length $$\small k-1$$ we can make with the rest of the digits that are equal to or greater than the digit we just chose. 
+If $$\small k = 1$$, then we simply return the number of digits we haven't used it. Otherwise, we loop through the number of unused digits, pick one to start the sequence, and see how many sequences of length $$\small k-1$$ we can make with the rest of the digits that are equal to or greater than the digit we just chose.
 
 We can anticipate a lot of repeating subproblems - thus, we can simply cache our previous results to speed up computation:
 
