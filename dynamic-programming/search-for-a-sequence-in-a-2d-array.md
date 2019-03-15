@@ -65,5 +65,5 @@ def is_pattern_contained_in_grid(grid, S):
                for j in range(len(grid[i])))
 ```
 
-
+We can expect a lot of repeated work from a simple DFS approach. Thus, we use a cache to store intermediate work so we don't keep repeating ourselves. The key is `(i, j, idx)`. If we're not able to find the character at `S[idx]` at `i,j` or we're not able to finish `S[idx:]` starting at `i,j` then there's no point in doing it again when we encounter the same scenario next time. The time complexity is now reduced to $$\small \mathcal O(mn|S|)$$.
 
