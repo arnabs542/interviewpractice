@@ -31,11 +31,17 @@ def compute_binomial_coefficient(n, k):
     return dp[-1][-1]
 ```
 
-My first instinct was try to factor $$\binom{n}{k}$$ in terms of common factors in the numerator and denominator; however that approach is unsatisfactory because the problem of factoring numbers itself is rather challenging. 
+My first instinct was try to factor $$\binom{n}{k}$$ in terms of common factors in the numerator and denominator; however that approach is unsatisfactory because the problem of factoring numbers itself is rather challenging.
 
-A better approach is to consider what the binomial coefficient means fundamentally. Consider the $$\small n$$th element in the initial set. A subset of size $$\small k$$ either contains this element, or doesn't. This is the basis for a recursive enumeration - find all subsets of size $$\small k-1$$ amongst the first $$\small n-1$$ elements and add the $$\small n$$th element into those sets, and then find all subsets of size $$\small k$$ amongst the first $$\small n-1$$ elements. The union of these two subsets if all subsets of size $$\small k$$. Thus, we have our recursive sequence: 
+A better approach is to consider what the binomial coefficient means fundamentally. Consider the $$\small n$$th element in the initial set. A subset of size $$\small k$$ either contains this element, or doesn't. This is the basis for a recursive enumeration - find all subsets of size $$\small k-1$$ amongst the first $$\small n-1$$ elements and add the $$\small n$$th element into those sets, and then find all subsets of size $$\small k$$ amongst the first $$\small n-1$$ elements. The union of these two subsets if all subsets of size $$\small k$$. Thus, we have our recursive sequence:
+
+
 $$
 \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}
 $$
+
+
 The base cases are $$\binom{r}{r}$$ and $$\binom{r}{0}$$, both of which are 1. The individual results from the subcalls are 32-bit integers and if $$\binom{n}{k}$$ can b represented by a 32-bit integer, they can too, so it's not possible for intermediate results to overflow.
+
+The time and space complexity are bounded by $$\small \mathcal O(nk)$$, which are all the possible combinations of $$\small n,k$$. However, we can reduce space complexity to $$\small \mathcal O(k)$$, since we only use two rows at a time. 
 
