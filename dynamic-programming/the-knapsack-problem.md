@@ -64,7 +64,7 @@ def optimum_subject_to_capacity(items, capacity):
     return dp[-1][-1]
 ```
 
-To avoid counting duplicates, we need to simply switch the ordering of the array. Instead of increasing the weight in the outer loop, we instead introduce each item. This way, we guarantee that all previous calculated values will not have the current item factored in - thus eliminating duplicates. 
+To avoid counting duplicates, we need to simply switch the ordering of the array. Instead of increasing the weight in the outer loop, we instead introduce each item. This way, we guarantee that all previous calculated values will not have the current item factored in - thus eliminating duplicates.
 
-The running time and space complexity are bounded by $$\small \mathcal O(n*m)$$, where $$\small n,m$$ represent the number of items and the total capacity of the knapsack.
+The running time and space complexity are bounded by $$\small \mathcal O(n*w)$$, where $$\small n,w$$ represent the number of items and the total capacity of the knapsack.
 
