@@ -43,9 +43,11 @@ def optimum_subject_to_capacity(items, capacity):
     return dp[-1][-1]
 ```
 
-Most recursive problems can be optimized with dynamic programming. The idea of the above is solution is this: let dp be the dynamic programming memo that we use. The entry at `dp[i][j]` represents the maximum value the thief can achieve with a knapsack of weight `i`, and he only has the first `j` items to pick from. If `item[j].weight <= i`, then the thief can choose to take the item, meaning that the maximum value he can obtain after is `dp[i - item[j].weight][j-1]`. If he chooses to not take the item, then he can achieve a current max value of `dp[i][j-1] `\(the previous maximum value he achieved without being able to access the current item\).
+Most recursive problems can be optimized with dynamic programming. The idea of the above is solution is this: let dp be the dynamic programming memo that we use. The entry at `dp[i][j]` represents the maximum value the thief can achieve with a knapsack of weight `i`, and he only has the first `j` items to pick from. If `item[j].weight <= i`, then the thief can choose to take the item, meaning that the maximum value he can obtain after is `dp[i - item[j].weight][j-1]`. If he chooses to not take the item, then he can achieve a current max value of `dp[i][j-1]`\(the previous maximum value he achieved without being able to access the current item\).
 
+However, this approach is not correct because we will end up counting duplicates. For instance, suppose we're currently dealing with weight `k > i`. When we consider `items[j]`, if we choose to include it, we will set `dp[k][j] = items[j].value + dp[k-items[j].weight][j-1]`. However, the value at `dp[k-items[j].weight][j-1]` could also contain `items[j]`, leading to incorrectly duplicate counting.
 
+##### Dynamic Programming:
 
 ```py
 def optimum_subject_to_capacity(items, capacity):
@@ -62,5 +64,7 @@ def optimum_subject_to_capacity(items, capacity):
     return dp[-1][-1]
 ```
 
+To avoid counting duplicates, we need to simply switch the ordering of the array. Instead of increasing the weight in the outer loop, we instead introduce each item. This way, we guarantee that all previous calculated values will not have the current item factored in - thus eliminating duplicates. 
 
+The running time and space complexity are bounded by $$\small \mathcal O(n*m)$$, where $$\small n,m$$ represent the number of items and the total capacity of the knapsack.
 
