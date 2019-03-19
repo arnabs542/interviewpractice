@@ -68,3 +68,22 @@ To avoid counting duplicates, we need to simply switch the ordering of the array
 
 The running time and space complexity are bounded by $$\small \mathcal O(n*w)$$, where $$\small n,w$$ represent the number of items and the total capacity of the knapsack.
 
+We can also reduce space complexity to $$\small \mathcal O(w)$$ by only keep the two relevant rows. Time complexity doesn't change.
+
+```py
+def optimum_subject_to_capacity(items, capacity):
+
+    dp = [[0] * (capacity + 1) for _ in range(2)]
+    prev_row, cur_row = 0, 1
+
+    for i in range(len(items)):
+        for j in range(capacity + 1):
+            if items[i].weight <= j:
+                dp[cur_row][j] = max(dp[cur_row][j], dp[prev_row][j - items[i].weight] + items[i].value)
+            dp[cur_row][j] = max(dp[cur_row][j], dp[prev_row][j])
+        prev_row, cur_row = cur_row, prev_row
+    return dp[prev_row][-1]
+```
+
+
+
