@@ -157,6 +157,7 @@
   * [Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/longest-increasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Search for a Sequence in a 2D Array](dynamic-programming/search-for-a-sequence-in-a-2d-array.md)
+  * [The Knapsack Problem](dynamic-programming/the-knapsack-problem.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
