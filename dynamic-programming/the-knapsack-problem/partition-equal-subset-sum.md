@@ -17,8 +17,6 @@
 > Explanation: The array can be partitioned as [1, 5, 5] and [11].
 > ```
 >
->
->
 > **Example 2:**
 >
 > ```
@@ -37,10 +35,10 @@ The brute force solution would be to try all possible partitions of the elements
 from functools import lru_cache
 
 def canPartition(nums: List[int]) -> bool:
-    
+
     if sum(nums) % 2:
         return False
-    
+
     @lru_cache(None)
     def helper(left, right, idx):
         if idx >= len(nums):
@@ -48,7 +46,7 @@ def canPartition(nums: List[int]) -> bool:
         if helper(left + nums[idx], right, idx+1):
             return True
         return helper(left, right + nums[idx], idx+1)
-    
+
     return helper(0, 0, 0)
 ```
 
@@ -61,7 +59,7 @@ def canPartition(nums: List[int]) -> bool:
     target = sum(nums)
     if target % 2:
         return False
-    
+
     target >>= 1
     dp = [[0] * (target + 1) for _ in range(len(nums))]
     for i in range(len(nums)):
@@ -69,7 +67,7 @@ def canPartition(nums: List[int]) -> bool:
             if j >= nums[i]:
                 dp[i][j] = max(dp[i][j], dp[i-1][j - nums[i]] + nums[i])
             dp[i][j] = max(dp[i][j], dp[i-1][j])
-    
+
     return dp[-1][-1] == target
 ```
 
@@ -77,7 +75,7 @@ The quickest solution is a modified version of the top-down solution above. Inst
 
 ```py
 def canPartition(nums: List[int]) -> bool:
-    
+
     def canfind(idx, target, memo):
         if target in memo:
             return memo[target]
@@ -91,11 +89,11 @@ def canPartition(nums: List[int]) -> bool:
                         memo[target] = True
                         break
         return memo[target]
-    
+
     s = sum(nums)
     if s % 2:
         return False
-    
+
     return canfind(0, s // 2, {})
 ```
 
