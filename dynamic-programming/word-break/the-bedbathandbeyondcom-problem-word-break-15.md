@@ -4,6 +4,8 @@
 >
 > Given a dictionary, i.e. a set of strings, and a name, design an efficient algorithm that checks whether the name is the concatenation of a sequence of dictionary words. If such a concatenation exists, return it. A dictionary word may appear more than once in the sequence. For example, "a", "man", "a", "plan", "a", "canal", is a valid sequence for "amanaplanacanal".
 
+##### Solution:
+
 The solution is quite similar to that of Word Break, the main difference being we store an integer value representing the length of the last dictionary word in the decomposition. For example, suppose the given domain was `bedbathandbeyond.com` and the dictionary was `['bed', 'bat', 'hand', 'beyond']`. The resulting dp array would look like this:
 
 ```
