@@ -1,6 +1,6 @@
 #### Word Break II
 
-> Given a **non-empty** string _s_ and a dictionary _wordDict_ containing a list of **non-empty** words, add spaces in _s_ to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
+> Given a **non-empty** string _s_ and a dictionary _wordDict_ containing a list of **non-empty** words, add spaces in _s_ to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
 >
 > **Note:**
 >
@@ -18,8 +18,8 @@
 > Output:
 >
 > [
->   "cats and dog",
->   "cat sand dog"
+>   "cats and dog",
+>   "cat sand dog"
 > ]
 > ```
 >
@@ -34,9 +34,9 @@
 > Output:
 >
 > [
->   "pine apple pen apple",
->   "pineapple pen apple",
->   "pine applepen apple"
+>   "pine apple pen apple",
+>   "pineapple pen apple",
+>   "pine applepen apple"
 > ]
 >
 > Note that you are allowed to reuse a dictionary word.
@@ -70,7 +70,7 @@ def reconstruct(dp: "Dict[List]", idx: "int", s:"str", decomp: "List[str]", deco
 def wordBreak(s: str, wordDict: "List[str]") -> "List[str]":
     dp = collections.defaultdict(list)
     wordDict = set(wordDict)
-    
+
     for i in range(len(s)):
         if s[:i+1] in wordDict:
             dp[i].append(i+1)
