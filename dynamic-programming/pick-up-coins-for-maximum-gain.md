@@ -38,11 +38,34 @@ The strategy of the players don't change - both seek to balance maximizing their
 
 We can modify the recurrence for $$\small R$$. Since the second player seeks to maximize his revenue, and the total revenue is a constant, it is equivalent for the second player to move so as to minimize the first player's revenue. Therefore, $$\small R(a,b)$$ satisfies the following equations:
 
-  
+
 $$
 R(a,b)=\begin{cases}\text{max}\begin{cases}C[a]+\text{min}\begin{cases}R(a+2,b),\\R(a+1,b-1)\end{cases}\\C[b]+\text{min}\begin{cases}R(a+1,b-1),\\R(a,b-2)\end{cases}\\\end{cases}&\text{if} \,a\le b\\\\0,&\text{otherwise}\end{cases}
 $$
 
 
-The inner $$\small R(a,b)$$ represents the maximum score the second player can obtain playing optimally. Therefore, we want the minimum of that since we're trying to solve for the maximum score the first player can obtain. 
+The inner $$\small R(a,b)$$ represents the maximum score the second player can obtain playing optimally. Therefore, we want the minimum of that since we're trying to solve for the maximum score the first player can obtain.
+
+```py
+def maximum_revenue(coins):
+
+    def compute_maximum_revenue_for_range(a, b):
+        if a > b:
+            # No coins left
+            return 0
+        
+        if maximum_revenue_for_range[a][b] == 0:
+            maximum_revenue_a = coins[a] + min(compute_maximum_revenue_for_range(a+2, b), 
+                                               compute_maximum_revenue_for_range(a+1, b-1))
+            maximum_revenue_b = coins[b] + min(compute_maximum_revenue_for_range(a+1, b-1), 
+                                               compute_maximum_revenue_for_range(a, b-2))        
+            maximum_revenue_for_range[a][b] = max(maximum_revenue_a, maximum_revenue_b)
+
+        return maximum_revenue_for_range[a][b]
+
+    maximum_revenue_for_range = [[0] * len(coins) for _ in range(len(coins))]
+    return compute_maximum_revenue_for_range(0, len(coins) - 1)
+```
+
+
 
