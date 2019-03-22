@@ -163,6 +163,7 @@
     * [The BedBathandBeyond.com Problem \(Word Break 1.5\)](dynamic-programming/word-break/the-bedbathandbeyondcom-problem-word-break-15.md)
     * [Word Break II](dynamic-programming/word-break/word-break-ii.md)
     * [Palindrome Partitioning II](dynamic-programming/word-break/palindrome-partitioning-ii.md)
+  * [Find the Minimum Weight Path in a Triangle](dynamic-programming/find-the-minimum-weight-path-in-a-triangle.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
