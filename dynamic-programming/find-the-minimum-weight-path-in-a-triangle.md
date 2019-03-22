@@ -29,7 +29,7 @@ def minimum_path_weight(triangle):
     return triangle[0][0]
 ```
 
-The main idea here is to work backward. Since we have to go from the top to bottom, that means we have to end at one of the cells in the last row. To get there, we must go through one of the cells through the second to last row, and etc. Furthermore, since we're only allowed to move to adjacent entries, we can figure out the smallest possible weight for each cell for its path to the last row. For example, suppose there are $$\small n$$ rows. The cell at `triangle[n-2][0]` can only move to either `triangle[n-1][0]` or `triangle[n-1][1]`. Thus, if we start at triangle\[n-2\]\[0\], the smallest path we can have to the bottom is:
+The main idea here is to work backward. Since we have to go from the top to bottom, that means we have to end at one of the cells in the last row. To get there, we must go through one of the cells through the second to last row, and etc. Furthermore, since we're only allowed to move to adjacent entries, we can figure out the smallest possible weight for each cell for its path to the last row. For example, suppose there are $$\small n$$ rows. The cell at `triangle[n-2][0]` can only move to either `triangle[n-1][0]` or `triangle[n-1][1]`. Thus, if we start at `triangle[n-2][0]`, the smallest path we can have to the bottom is:
 
 `triangle[n-2][0] += min(triangle[n-1][0], triangle[n-1][1])`
 
