@@ -6,7 +6,7 @@
 
 ##### Dynamic Programming
 
-It's important to note that a greedy approach will not work for this problem. Suppose the coins are \[5, 25, 10, 1\]. If the first player chooses 5, the second player will choose 25, and thus win. The first player needs to choose 1 in order to force the second player to expose the 25, and thus lose the game. This leads to a key insight - we can reframe the problem as maximizing the difference between the two final scores. 
+It's important to note that a greedy approach will not work for this problem. Suppose the coins are \[5, 25, 10, 1\]. If the first player chooses 5, the second player will choose 25, and thus win. The first player needs to choose 1 in order to force the second player to expose the 25, and thus lose the game. This leads to a key insight - we can reframe the problem as maximizing the difference between the two final scores.
 
 ```js
 def maximum_revenue(coins):
@@ -20,8 +20,9 @@ def maximum_revenue(coins):
             elif start + length >= len(coins):
                 break
             else:
-                dp[start][start + length] = max(coins[start] - dp[start + 1][start + length], coins[start + length] - dp[start][start + length - 1])
-    
+                dp[start][start + length] = max(coins[start] - dp[start + 1][start + length], 
+                                                coins[start + length] - dp[start][start + length - 1])
+
     return (sum(coins) + dp[0][-1]) // 2
 ```
 
