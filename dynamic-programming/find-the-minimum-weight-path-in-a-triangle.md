@@ -50,5 +50,7 @@ def minimum_path_weight(triangle):
     return cur_row[0]
 ```
 
+##### Notes:
 
+Remember to check for empty inputs whenever dealing with array like structures.
 
