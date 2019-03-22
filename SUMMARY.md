@@ -165,6 +165,7 @@
     * [Palindrome Partitioning II](dynamic-programming/word-break/palindrome-partitioning-ii.md)
   * [Find the Minimum Weight Path in a Triangle](dynamic-programming/find-the-minimum-weight-path-in-a-triangle.md)
   * [Pick Up Coins for Maximum Gain](dynamic-programming/pick-up-coins-for-maximum-gain.md)
+  * [Count the Number of Ways to Climb Stairs](dynamic-programming/count-the-number-of-ways-to-climb-stairs.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
