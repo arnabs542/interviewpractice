@@ -53,7 +53,7 @@ def maximum_revenue(coins):
         if a > b:
             # No coins left
             return 0
-        
+
         if maximum_revenue_for_range[a][b] == 0:
             maximum_revenue_a = coins[a] + min(compute_maximum_revenue_for_range(a+2, b), 
                                                compute_maximum_revenue_for_range(a+1, b-1))
@@ -67,5 +67,5 @@ def maximum_revenue(coins):
     return compute_maximum_revenue_for_range(0, len(coins) - 1)
 ```
 
-
+For both solutions, running time and space are bounded by $$\small \mathcal O(n^{2})$$, where $$\small n$$ is the number of coins.
 
