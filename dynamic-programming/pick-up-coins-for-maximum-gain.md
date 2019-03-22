@@ -4,7 +4,7 @@
 >
 > Design an efficient algorithm for computing the maximum total value for the starting player in the pick-up-coins game.
 
-##### Dynamic Programming
+##### Dynamic Programming \(Bottom-up\)
 
 It's important to note that a greedy approach will not work for this problem. Suppose the coins are \[5, 25, 10, 1\]. If the first player chooses 5, the second player will choose 25, and thus win. The first player needs to choose 1 in order to force the second player to expose the 25, and thus lose the game. The fundamental problem with the greedy approach is that it doesn't consider the opportunities created for the second player.
 
@@ -31,4 +31,18 @@ def maximum_revenue(coins):
 The array `dp` keeps track of the maximum difference between the two scores depending on the index bounds. For example, the entry at `dp[i][j]` will store the maximum difference between player one's score and player two's final score if we start the game with `coins[i:j+1]`. A positive score means that at the end, player one will win by that much. A negative score means player one will lose by that much.
 
 When we come across an entry `dp[i][j],` we can choose to take from `coins[i]` or `coins[j]`. If we take from `coins[i]`, then it's the same as player two starting from `dp[i+1][j]`, so the final difference between the scores is `coins[i] - dp[i+1][j]`. The same logic applies for picking `coins[j]` instead.
+
+##### Dynamic Programming \(Top-down\):
+
+The strategy of the players don't change - both seek to balance maximizing their score and minimizing the other's score. Let $$\small R(a,b)$$ be the maximum revenue a player can get when it is his turn to play, and the coins remaining on the table are at indices $$\small a$$ to $$\small b$$, inclusive. Let $$\small C$$ be an array representing the lines of coins, i.e., $$\small C[i]$$ is the value of the $$\small i$$th coin. If the first player selects the coin at $$\small a$$, since the second player plays optimally, the first player will end up with a total revenue of $$\small C[a] + S(a+1,b) - R(a+1,b)$$, where $$\small S(a,b)$$ is the sum of the coins from the positions $$\small a$$ to $$\small b$$, inclusive. If he selects the coin at $$\small b$$, he will end up with a total revenue of $$\small C[b] + S(a,b-1)-R(a,b-1)$$. Since the first player wants to maximize revenue, he chooses the greater of the two, i.e., $$$$$$\small R(a,b) = \text{max}(C[a] + S(a+1,b) - R(a+1,b), C[b] + S(a,b-1) - R(a,b-1))$$.
+
+We can modify the recurrence for $$\small R$$. Since the second player seeks to maximize his revenue, and the total revenue is a constant, it is equivalent for the second player to move so as to minimize the first player's revenue. Therefore, $$\small R(a,b)$$ satisfies the following equations:
+
+  
+$$
+R(a,b)=\begin{cases}\text{max}\begin{cases}C[a]+\text{min}\begin{cases}R(a+2,b),\\R(a+1,b-1)\end{cases}\\C[b]+\text{min}\begin{cases}R(a+1,b-1),\\R(a,b-2)\end{cases}\\\end{cases}&\text{if} \,a\le b\\\\0,&\text{otherwise}\end{cases}
+$$
+
+
+The inner $$\small R(a,b)$$ represents the maximum score the second player can obtain playing optimally. Therefore, we want the minimum of that since we're trying to solve for the maximum score the first player can obtain. 
 
