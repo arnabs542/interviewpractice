@@ -49,7 +49,5 @@ def minimum_messiness(words, line_length):
     return min_messiness[-1]
 ```
 
-In the above algorithm, the array `min_messiness[i]` stores the minimum messiness required to place the first $$\small i$$ words. As we encounter a new word, we begin by placing them on their own line and calculating the total messiness. 
-
-We work backwards from each word, starting by placing them on their own line and calculating the total messiness. 
+In the above algorithm, the array `min_messiness[i]` stores the minimum messiness required to place the first $$\small i$$ words. As we encounter a new word, we work backwards to figure out the optimal subset of words, including the new word, we can fit on the last line. 
 
