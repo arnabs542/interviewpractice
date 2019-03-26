@@ -49,5 +49,7 @@ def minimum_messiness(words, line_length):
     return min_messiness[-1]
 ```
 
-In the above algorithm, the array `min_messiness[i]` stores the minimum messiness required to place the first $$\small i$$ words. As we encounter a new word, we work backwards to figure out the optimal subset of words, including the new word, we can fit on the last line. 
+In the above algorithm, the array `min_messiness[i]` stores the minimum messiness required to place the first $$\small i$$ words. As we encounter a new word, we work backwards to figure out the optimal subset of words, including the new word, we can fit on the last line.
+
+Let $$\small L$$ be the line length. Then there can certainly be no more than $$\small L$$ words on a line, so the amount of time spent processing each word is $$\small \mathcal O(L)$$. Therefore, if there are $$\small n$$ words, the time complexity is $$\small \mathcal O(nL)$$. The space complexity is $$\small \mathcal O(n)$$ for the cache. 
 
