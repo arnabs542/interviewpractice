@@ -8,7 +8,7 @@
 def longest_nondecreasing_subsequence_length(A):
     if not A:
         return 0
-        
+
     longest_sequence_with_num = [1] * len(A)
     max_length = 1
 
@@ -22,4 +22,6 @@ def longest_nondecreasing_subsequence_length(A):
 ```
 
 Intuitively, if we have processed the initial set of entries of the input array, we should be able to use those results when dealing with the next entry. Concretely, if we know the longest subsequences of `A[0:5]`, then the longest possible subsequence that ends at `A[5]` would be one more than the longest subsequences ending at `A[0:5]` whose value is smaller than or equal to `A[5]`.
+
+The running time is $$\small \mathcal O(n^{2})$$, and space is $$\small \mathcal O(n)$$.
 
