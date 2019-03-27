@@ -168,6 +168,7 @@
   * [Count the Number of Ways to Climb Stairs](dynamic-programming/count-the-number-of-ways-to-climb-stairs.md)
   * [The Pretty Printing Problem](dynamic-programming/the-pretty-printing-problem.md)
   * [Find the Longest Nondecreasing Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence.md)
+    * [Number of Longest Increasing Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/number-of-longest-increasing-subsequence.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
