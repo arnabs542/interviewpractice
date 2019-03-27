@@ -25,3 +25,38 @@ Intuitively, if we have processed the initial set of entries of the input array,
 
 The running time is $$\small \mathcal O(n^{2})$$, and space is $$\small \mathcal O(n)$$.
 
+##### Binary Search:
+
+```py
+def binary_search(A, val):
+    lo, hi = 0, len(A) - 1
+    while lo < hi:
+        mid = (lo + hi) >> 1
+        if A[mid] <= val:
+            lo = mid + 1
+        else:
+            hi = mid
+    return lo
+
+def longest_nondecreasing_subsequence_length(A):
+    if not A:
+        return 0
+    
+    subsequence = []
+
+    for num in A:
+        if not subsequence or num >= subsequence[-1]:
+            subsequence.append(num)
+        else:
+            idx = binary_search(subsequence, num)
+            subsequence[idx] = num
+    
+    return len(subsequence)
+```
+
+The first thing to note is that this method doesn't actually store the final subsequence. Instead, it builds a dummy sequence with the final length equal to the longest nondecreasing subsequence. 
+
+As we iterate through the array, we look at where each element would fit in our subsequence. If it's the largest element we've seen so far, then we simply append it to the end. Otherwise, we find the first item it would replace \(the first item larger than or equal to the current item\) and replace that item with this one. The reason for doing so is that if this item is smaller than the item we just replaced, then we have a better chance of constructing a longer chain in the future, since we're appending to a smaller item.
+
+Running time is now $$\small \mathcal O(n \log{n})$$.
+
