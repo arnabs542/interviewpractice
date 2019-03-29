@@ -170,6 +170,7 @@
   * [Find the Longest Nondecreasing Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence.md)
     * [Increasing Triplet Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/increasing-triplet-subsequence.md)
     * [Number of Longest Increasing Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/number-of-longest-increasing-subsequence.md)
+    * [Longest Alternating Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/longest-alternating-subsequence.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
