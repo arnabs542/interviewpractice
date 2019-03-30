@@ -26,19 +26,19 @@ def maxEnvelopes(envelopes: "List[List[int]]") -> int:
     n = len(envelopes)
     if n == 0:
         return 0
-    
+
     envelopes.sort(key=lambda x: (x[0]))        
     lis = [1] * n
-    
+
     for i in range(1, n):
         for j in range(i):
             if envelopes[i][0] > envelopes[j][0] and envelopes[i][1] > envelopes[j][1]:
                 lis[i] = max(lis[i], lis[j] + 1)
-    
+
     return max(lis)
 ```
 
-Since, we're not given any restrictions on the ordering, we can sort the array. We pick one feature to sort \(weight in the above code\), and then iterate through the dolls, checking for the longest subsequence that can be formed among all previous dolls that can be fit into the current one. 
+Since, we're not given any restrictions on the ordering, we can sort the array. We pick one feature to sort \(weight in the above code\), and then iterate through the dolls, checking for the longest subsequence that can be formed among all previous dolls that can be fit into the current one.
 
 Running time is $$\small \mathcal O(n^{2})$$, and space is $$\small \mathcal O(n)$$.
 
@@ -59,19 +59,37 @@ def maxEnvelopes(envelopes: List[List[int]]) -> int:
     n = len(envelopes)
     if n == 0:
         return 0
-    
+
     envelopes.sort(key=lambda x: (x[0], -x[1]))        
     lis = []
-    
+
     for doll in envelopes:
         if not lis or doll[0] > lis[-1][0] and doll[1] > lis[-1][1]:
             lis.append(doll)
         else:
             idx = bin_search(lis, doll)
             lis[idx] = doll                
-    
+
     return len(lis)
 ```
 
+When we sort the dolls, we sort by widths, then break ties by reverse heights. In other words, if two dolls have the same width, the higher doll will appear first. The reason for doing so is that by first sorting by widths, we know that there will never be an issue with a previous doll being too wide for the current doll. However, by sorting by reverse height, we ensure that dolls strictly become more "stuffable".  
 
+Another way to understand the reverse secondary sort is via case analysis:
+
+1. Since we sort by widths, every doll will be at least as wide as all the dolls in the chain
+
+2. Since we reverse sort heights, every doll will be at most as tall as the dolls in the chain with the same width
+
+   a. Suppose `idx = len(chain)`:
+
+   1. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]`
+
+   b. Suppose `idx < len(chain)`:
+
+   1. The current doll is shorter than/equal to a previously seen doll height-wise. However, since weight is normally sorted, this doll is guaranteed to be wider than all dolls in `chain[:idx]`
+
+We need to find the leftmost insertion point to deal with duplicates, such as`[[1,1,],[1,1],[1,1]]`. If we don't find the l.i.p, then we'll end up appending the duplicates after each other, giving us the wrong answer.
+
+Running time is now $$\small \mathcal O(n \log{n})$$, space remains $$\small \mathcal O(n)$$.
 
