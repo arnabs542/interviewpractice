@@ -184,8 +184,9 @@
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
   * Number of Monotone Sequences
 * [Greedy](greedy.md)
-  * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
+  * [Compute an Optimum Assignment of Tasks](greedy/compute-an-optimum-assignment-of-tasks.md)
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
+  * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
   * [Jump Game](greedy/jump-game.md)
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Graphs](graphs.md)
