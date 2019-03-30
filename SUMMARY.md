@@ -185,6 +185,7 @@
   * Number of Monotone Sequences
 * [Greedy](greedy.md)
   * [Compute an Optimum Assignment of Tasks](greedy/compute-an-optimum-assignment-of-tasks.md)
+  * Schedule to Minimize Waiting Time
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
   * [Jump Game](greedy/jump-game.md)
