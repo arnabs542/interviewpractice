@@ -71,7 +71,7 @@ The main ideas of the above algorithm are:
 3. If the land square can reach the boundary, add all squares along its expansion path into the set `can_reach`. Otherwise, add all squares to `cant_reach`
 4. Return the number of elements in `cant_reach`
 
-The initial collection of all land squares takes $$\small \mathcal O(mn)$$ time. The bfs traversal takes $$\small \mathcal O(mn)$$ time for each square. But since we categorize all squares after visiting them once, overall runtime is $$\small \mathcal O(mn)$$.
+The initial collection of all land squares takes $$\small \mathcal O(m*n)$$ time. The bfs traversal takes $$\small \mathcal O(m*n)$$ time for each square. But since we categorize all squares after visiting them once, overall runtime is $$\small \mathcal O(m*n)$$.
 
 ##### DFS \(Expand inwards\):
 
@@ -85,25 +85,35 @@ def dfs( A, row, col, i, j):
 
 def numEnclaves(self, A: List[List[int]]) -> int:
     row, col = len(A), len(A[0])
-    
+
     # Expand inwards from top and bottom row
     for r in [0, row-1]:
         for c in range(col):
             self.dfs(A, row, col, r, c)
-    
+
     # Expand inwards from left and right cols
     for c in [0, col-1]:
         for r in range(row):
             dfs(A, row, col, r, c)
-    
+
     # Find how many land squares are left
     count = 0
     for i in range(row):
         for j in range(col):
             count += A[i][j]
-    
+
     return count
 ```
 
 The idea of the above algorithm is essentially the same, except we go through all boundary squares and try to expand in. Each time we find a land square that is reachable from the boundaries, we "flood" it by turning it from a 1 to a 0. At the end, we see how many land squares are left. 
+
+* Notice that we can encounter each cell at most 4 times \(by the 4 neighbours\). Once the cell is visited, it won't be considered again. Hence, the net effect is 3-4 traversals of the matrix. 
+* At the end, we traverse the matrix once.
+* Hence, the time complexity is $$\small \mathcal O(m*n)$$
+
+
+
+.
+
+
 
