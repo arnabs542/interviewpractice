@@ -64,5 +64,14 @@ def numEnclaves(A: "List[List[int]]") -> int:
     return len(cant_reach)
 ```
 
+The main ideas of the above algorithm are:
+
+1. Grab the locations of all land squares
+2. For each land square, if it has not already been visited, try to reach the boundary
+3. If the land square can reach the boundary, add all squares along its expansion path into the set `can_reach`. Otherwise, add all squares to `cant_reach`
+4. Return the number of elements in `cant_reach`
+
+The initial collection of all land squares takes $$\small \mathcal O(mn)$$ time. The bfs traversal takes $$\small \mathcal O(mn)$$ time for each square. But since we categorize all squares after visiting them once, overall runtime is $$\small \mathcal O(mn)$$.
+
 
 
