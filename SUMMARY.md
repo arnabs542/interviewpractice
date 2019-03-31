@@ -194,6 +194,7 @@
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
   * [Robot Room Cleaner](graphs/robot-room-cleaner.md)
+  * [Number of Enclaves](graphs/number-of-enclaves.md)
 * [Depth-first Search](depth-first-search.md)
   * [Remove Invalid Parentheses](depth-first-search/remove-invalid-parentheses.md)
   * [Word Search](depth-first-search/word-search.md)
