@@ -24,7 +24,7 @@
 > All 1s are either on the boundary or can reach the boundary.
 > ```
 
-##### BFS:
+##### BFS \(Expand to boundary\):
 
 ```py
 def numEnclaves(A: "List[List[int]]") -> int:
@@ -72,6 +72,4 @@ The main ideas of the above algorithm are:
 4. Return the number of elements in `cant_reach`
 
 The initial collection of all land squares takes $$\small \mathcal O(mn)$$ time. The bfs traversal takes $$\small \mathcal O(mn)$$ time for each square. But since we categorize all squares after visiting them once, overall runtime is $$\small \mathcal O(mn)$$.
-
-
 
