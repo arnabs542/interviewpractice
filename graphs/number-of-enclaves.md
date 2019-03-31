@@ -73,3 +73,37 @@ The main ideas of the above algorithm are:
 
 The initial collection of all land squares takes $$\small \mathcal O(mn)$$ time. The bfs traversal takes $$\small \mathcal O(mn)$$ time for each square. But since we categorize all squares after visiting them once, overall runtime is $$\small \mathcal O(mn)$$.
 
+##### DFS \(Expand inwards\):
+
+```py
+def dfs( A, row, col, i, j):
+    if not (0 <= i < row and 0 <= j < col) or A[i][j] == 0:
+        return
+    A[i][j] = 0
+    for i,j in ((i+1,j), (i,j+1), (i-1,j), (i,j-1)):
+        dfs(A, row, col, i, j)
+
+def numEnclaves(self, A: List[List[int]]) -> int:
+    row, col = len(A), len(A[0])
+    
+    # Expand inwards from top and bottom row
+    for r in [0, row-1]:
+        for c in range(col):
+            self.dfs(A, row, col, r, c)
+    
+    # Expand inwards from left and right cols
+    for c in [0, col-1]:
+        for r in range(row):
+            dfs(A, row, col, r, c)
+    
+    # Find how many land squares are left
+    count = 0
+    for i in range(row):
+        for j in range(col):
+            count += A[i][j]
+    
+    return count
+```
+
+The idea of the above algorithm is essentially the same, except we go through all boundary squares and try to expand in. Each time we find a land square that is reachable from the boundaries, we "flood" it by turning it from a 1 to a 0. At the end, we see how many land squares are left. 
+
