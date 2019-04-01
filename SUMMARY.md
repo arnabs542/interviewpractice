@@ -213,4 +213,5 @@
 * [Bucketing](bucketing.md)
   * [Rearrange String k Distance Apart](bucketing/rearrange-string-k-distance-apart.md)
   * [K Empty Slots](bucketing/k-empty-slots.md)
+  * [Task Scheduler](bucketing/task-scheduler.md)
 
