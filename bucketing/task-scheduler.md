@@ -27,7 +27,7 @@ def leastInterval(tasks: List[str], n: int) -> int:
 
     elems_and_counts = [(key, count[key]) for key in count.keys()]
     elems_and_counts.sort(key=lambda x: -x[1])
-    
+
     max_count = elems_and_counts[0][1]
 
     buckets = [[] for _ in range(max_count)]
@@ -46,20 +46,21 @@ def leastInterval(tasks: List[str], n: int) -> int:
     return time
 ```
 
-The idea is that we try to pack the tasks into frames. The most frequently appearing elements will each appear in their own frame, then we try to pack the rest of the elements in, trying to get each frame to have $$\small n+1$$ elements. 
+The idea is that we try to pack the tasks into frames. The most frequently appearing elements will each appear in their own frame, then we try to pack the rest of the elements in, trying to get each frame to have $$\small n+1$$ elements.
 
 Let us use the given example input `tasks = ["A","A","A","B","B","B"], n = 2` to walk through this algorithm. We first group each element and count their occurrences, and then sort them in reversed order based on their count. The array `elems_and_counts` for the given example would appear as such: `[('A', 3), ('B', 3)]`.
 
 The frames will then look like this:
 
 ```
-A    A    A
-B    B    B
+| A |  | A |  | A |
+| B |  | B |  | B |
+-----  -----  -----
 ```
 
-We don't care about the last frame, since it doesn't need to be filled completely to achieve the condition that same tasks are separated by $$\small n$$ intervals, since there aren't any more tasks. However, for the first two frames, we see that there's only 2 elements in them, when we need three. Thus, each of the frames need an additional idle cycle to fulfill the separation requirement. 
+We don't care about the last frame, since it doesn't need to be filled completely to achieve the condition that same tasks are separated by $$\small n$$ intervals, since there aren't any more tasks. However, for the first two frames, we see that there's only 2 elements in them, when we need three. Thus, each of the frames need an additional idle cycle to fulfill the separation requirement.
 
-The initial counting takes $$\small \mathcal O(n)$$ time; the sorting takes $$\small \mathcal O(n \log{n})$$ time, and the final bucket construction takes $$\small \mathcal O(n)$$ time. Thus, overall runtime is dominated by the sort, which takes $$\small \mathcal O(n \log{n})$$ time. 
+The initial counting takes $$\small \mathcal O(n)$$ time; the sorting takes $$\small \mathcal O(n \log{n})$$ time, and the final bucket construction takes $$\small \mathcal O(n)$$ time. Thus, overall runtime is dominated by the sort, which takes $$\small \mathcal O(n \log{n})$$ time.
 
 Space usage is $$\small \mathcal O(n)$$. The `counter`, `elems_and_counts` array, and `buckets` array all take $$\small \mathcal O(n)$$ space.
 
@@ -68,7 +69,7 @@ The above solution not only calculates the required time, but actually provides 
 ```py
 def leastInterval(tasks: "List[str]", n: int) -> int:
     c = collections.Counter(tasks)
-    
+
     max_num = max(c.values())
     t_num = len(c.keys())   
     max_num_t = list(c.values()).count(max_num)
