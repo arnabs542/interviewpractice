@@ -188,6 +188,7 @@
   * [Schedule to Minimize Waiting Time](greedy/schedule-to-minimize-waiting-time.md)
   * [Non-overlapping Intervals](greedy/non-overlapping-intervals.md)
   * [Minimum Number of Arrows to Burst Balloons](greedy/minimum-number-of-arrows-to-burst-balloons.md)
+  * [The Interval Covering Problem](greedy/the-interval-covering-problem.md)
   * [Jump Game](greedy/jump-game.md)
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
 * [Graphs](graphs.md)
