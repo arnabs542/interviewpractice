@@ -54,5 +54,11 @@ def maxPathSum(root: TreeNode) -> int:
     return helper(root)[0]
 ```
 
+Essentially the same idea as the previous solution, except we need to return both the maximum even path and the maximum odd path ending at the current node. 
 
+As we get the left and right subtree results, we first calculate the maximum even and odd paths that end at the current node. Since these will be the paths that we propagate up the chain, we can only pick either the left or right paths.
+
+We then try to build a global maximum with the current node, which means we need to add the current root value to all combinations of left and right subtree paths. 
+
+Overall runtime is $$\small \mathcal O(n)$$.
 
