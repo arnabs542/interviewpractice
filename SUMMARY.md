@@ -42,6 +42,7 @@
   * [Flip Binary Tree To Match Preorder Traversal](binary-trees/flip-binary-tree-to-match-preorder-traversal.md)
   * [Bottom View](binary-trees/bottom-view.md)
   * [Make Full Tree](binary-trees/make-full-tree.md)
+  * [Binary Tree Maximum Path Sum](binary-trees/binary-tree-maximum-path-sum.md)
 * [Binary Search](chapter1.md)
   * [Template 1](binary-search/template-1.md)
     * [Sqrt\(x\)](binary-search/template-1/sqrtx.md)
