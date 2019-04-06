@@ -20,37 +20,37 @@
 ##### Postorder:
 
 ```py
-def helper(self, root):
+def helper(root):
     if not root:
         #[max even in tree, max even with root, max odd with root]
         return [float('-inf'), float('-inf'), float('-inf')]   
     left, right = helper(root.left), helper(root.right)
-    
+
     # Get best even and odd path with current root
     new_root_maxes = [root.val + left[1], root.val + left[2], root.val + right[1], root.val + right[2]]
     odd_max = even_max = float('inf')
-    
+
     for n in new_root_maxes:
         if n % 2:   
             odd_max = max(odd_max, n)
         else:   
             even_max = max(even_max, n)
-            
-    
+
+
     # Get best overall even
     new_overall_maxes = [root.val + left[1] + right[1], 
                          root.val + left[2] + right[1], 
                          root.val + right[1] + left[2], 
                          root.val + right[2] + left[2]]
-    
+
     overall_max = float('inf')
     for n in new_overall_maxes:
         if n % 2 == 0:
             overall_max = max(overall_max, n)
-    
+
     return [overall_max, even_max, odd_max]            
 
-def maxPathSum(self, root: TreeNode) -> int:        
+def maxPathSum(root: TreeNode) -> int:        
     return helper(root)[0]
 ```
 
