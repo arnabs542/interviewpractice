@@ -43,6 +43,7 @@
   * [Bottom View](binary-trees/bottom-view.md)
   * [Make Full Tree](binary-trees/make-full-tree.md)
   * [Binary Tree Maximum Path Sum](binary-trees/binary-tree-maximum-path-sum.md)
+    * [Binary Tree Maximum Even Path Sum](binary-trees/binary-tree-maximum-path-sum/given-a-non-empty-binary-tree-find-the-maximum-even-path-sum.md)
 * [Binary Search](chapter1.md)
   * [Template 1](binary-search/template-1.md)
     * [Sqrt\(x\)](binary-search/template-1/sqrtx.md)
