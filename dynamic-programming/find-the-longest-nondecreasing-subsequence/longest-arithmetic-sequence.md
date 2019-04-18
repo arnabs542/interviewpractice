@@ -2,7 +2,7 @@
 
 > Given an array `A` of integers, return the **length** of the longest arithmetic subsequence in `A`.
 >
-> Recall that a _subsequence_ of `A` is a list `A[i_1], A[i_2], ..., A[i_k]` with `0 <= i_1 < i_2 < ... < i_k <= A.length - 1`, and that a sequence `B` is _arithmetic_ if `B[i+1] - B[i]` are all the same value \(for `0 <= i < B.length - 1`\).
+> Recall that a _subsequence_ of `A` is a list `A[i_1], A[i_2], ..., A[i_k]` with `0 <= i_1 < i_2 < ... < i_k <= A.length - 1`, and that a sequence `B` is _arithmetic_ if `B[i+1] - B[i]` are all the same value \(for `0 <= i < B.length - 1`\).
 >
 > **Example 1:**
 >
@@ -64,12 +64,14 @@ The key idea of the above solution is build off the LIS problem. The modificatio
 
 Since any two elements form a arithmetic sequence, our inner loop checks if there is a sequence ending at `A[j]` with diff. If not, then `A[i]` can form a new sequence with `A[j]` of length 2. If there is already a sequence, then we can just attach `A[i]` to the end of the sequence at `A[j]`.
 
-Let `A=[20,1,15,4,10,5,8]`. Then diff would look like this:
+Let `A=[20,1,15,3,10,5,8]`. Then diff would look like this:
 
 ```
 [{}, {-19: 2}, {-5: 2, 14: 2}, {-17: 2, 2: 2, -12: 2}, {-10: 2, 9: 2, -5: 3, 7: 2}, 
 {-15: 2, 4: 2, -10: 2, 2: 3, -5: 4}, {-12: 2, 7: 2, -7: 2, 5: 2, -2: 2, 3: 2}]
 ```
+
+For `A[4]`, there are 4 arithmetic sequences it can form: `[20, 10], [1, 10], [20, 15, 10], [3,10]`. The longest is `[20,15,10]`, which has a length of `3` and a difference of `-5`.
 
 Runtime is $$\small \mathcal O(n^{2})$$, same for space.
 
