@@ -174,6 +174,7 @@
     * [Number of Longest Increasing Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/number-of-longest-increasing-subsequence.md)
     * [Longest Alternating Subsequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/longest-alternating-subsequence.md)
     * [Russian Doll Envelopes](dynamic-programming/find-the-longest-nondecreasing-subsequence/russian-doll-envelopes.md)
+    * [Longest Arithmetic Sequence](dynamic-programming/find-the-longest-nondecreasing-subsequence/longest-arithmetic-sequence.md)
   * [Knight Dialer](dynamic-programming/knight-dialer.md)
   * [Buy and Sell Stock with Transaction Fee](dynamic-programming/buy-and-sell-stock-with-transaction-fee.md)
   * [Perfect Squares](dynamic-programming/perfect-squares.md)
