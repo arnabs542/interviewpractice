@@ -22,6 +22,7 @@
   * [Longest Valid Parentheses](stacks/longest-valid-parentheses.md)
   * [Monotonic Stack](stacks/monotonic-stack.md)
     * [Sum of Subarray Minimums](stacks/monotonic-stack/sum-of-subarray-minimums.md)
+  * [Recover a Tree From Preorder Traversal](stacks/recover-a-tree-from-preorder-traversal.md)
 * [Queues](queues.md)
   * [Reveal Cards In Increasing Order](queues/reveal-cards-in-increasing-order.md)
 * [Binary Trees](binary-trees.md)
