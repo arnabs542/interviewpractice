@@ -10,6 +10,8 @@
   * [Longest Turbulent Subarray](arrays/longest-turbulent-subarray.md)
   * [Sliding Window](arrays/sliding-window.md)
     * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
+  * Best Time to Buy and Sell Stock
+    * [Best Time to Buy and Sell Stock III](arrays/best-time-to-buy-and-sell-stock-iii.md)
 * [Strings](strings.md)
   * [Find First Occurrence of Substring](strings/find-first-occurrence-of-substring.md)
   * [Check If Word Is Valid After Substitutions](strings/check-if-word-is-valid-after-substitutions.md)
