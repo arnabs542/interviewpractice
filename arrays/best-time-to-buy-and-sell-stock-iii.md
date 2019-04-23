@@ -1,10 +1,10 @@
 #### Best Time to Buy and Sell Stock III
 
-Say you have an array for which the _i_th element is the price of a given stock on day _i_.
+Say you have an array for which the _i\_th element is the price of a given stock on day \_i_.
 
 Design an algorithm to find the maximum profit. You may complete at most _two_ transactions.
 
-**Note: **You may not engage in multiple transactions at the same time \(i.e., you must sell the stock before you buy again\).
+**Note: **You may not engage in multiple transactions at the same time \(i.e., you must sell the stock before you buy again\).
 
 **Example 1:**
 
@@ -12,7 +12,7 @@ Design an algorithm to find the maximum profit. You may complete at most _two_ t
 Input: [3,3,5,0,0,3,1,4]
 Output: 6
 Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
-             Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
+             Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
 ```
 
 **Example 2:**
@@ -21,8 +21,8 @@ Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-
 Input: [1,2,3,4,5]
 Output: 4
 Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
-             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
-             engaging multiple transactions at the same time. You must sell before buying again.
+             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+             engaging multiple transactions at the same time. You must sell before buying again.
 ```
 
 **Example 3:**
@@ -74,22 +74,17 @@ def buy_and_sell_stock_twice(prices):
         max_price_so_far = max(max_price_so_far, price)
         max_total_profit = max(max_total_profit, max_price_so_far - price + first_buy_sell_profits[i-1])
     return max_total_profit
-
 ```
 
-We can solve the problem in $$\small \mathcal O(n)$$ for both time and space. We first iterate forwards, building a vector of the max profit if we sell buy date `i`. We then iterate backwards, and find the max profit working from the back. This way, we've essentially split the array without having to do extra work. 
+We can solve the problem in $$\small \mathcal O(n)$$ for both time and space. We first iterate forwards, building a vector of the max profit if we sell buy date `i`. We then iterate backwards, and find the max profit working from the back. This way, we've essentially split the array without having to do extra work.
 
-Suppose the input array is: $$\small <12, 11, 13, 9, 12, 8, 14, 13, 15>$$.
+Suppose the input array is: $$\small <12, 11, 13, 9, 12, 8, 14, 13, 15>$$.
 
-Forward profit is: $$\small&lt; 0, 0, 2, 2, 3, 3, 6, 6,7&gt;$$
+Forward profit is: $$\small< 0, 0, 2, 2, 3, 3, 6, 6,7>$$
 
-Backward profit is: &lt; 7, 7, 7, 7, 7, 7, 2, 2, 0&gt;
+Backward profit is: $$\small < 7, 7, 7, 7, 7, 7, 2, 2, 0>$$
 
+The maximum profit is: $$\small< 7, 7, 7, 9, 9, 10, 5, 8, 6>$$, i.e. the max profit is 10.
 
-
-The maximum profit is: &lt; 7, 7, 7, 9, 9, 10, 5, 8, 6&gt; i.e. the max profit is 10
-
-
-
-The forward pass is basically saying what's the max profit if we buy and sell by date i. The backward pass is saying the same thing, except backwards. By find the max\_profit from the backward pass and adding that to the max\_profit from forward pass at i-1, we're basically saying what's the max pass if we split the array at i.
+The forward pass is basically saying what's the max profit if we buy and sell by date `i`. The backward pass is saying the same thing, except backwards. By find the max\_profit from the backward pass and adding that to the max\_profit from forward pass at `i-1`, we're basically saying what's the max pass if we split the array at `i`.
 
