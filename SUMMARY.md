@@ -10,7 +10,7 @@
   * [Longest Turbulent Subarray](arrays/longest-turbulent-subarray.md)
   * [Sliding Window](arrays/sliding-window.md)
     * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
-  * Best Time to Buy and Sell Stock
+  * [Best Time to Buy and Sell Stock](arrays/best-time-to-buy-and-sell-stock.md)
     * [Best Time to Buy and Sell Stock III](arrays/best-time-to-buy-and-sell-stock-iii.md)
       * [Maximum Sum of Two Non-Overlapping Subarrays](arrays/best-time-to-buy-and-sell-stock-iii/maximum-sum-of-two-non-overlapping-subarrays.md)
 * [Strings](strings.md)
