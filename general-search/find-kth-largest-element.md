@@ -22,9 +22,9 @@
 > Output: 4
 > ```
 
-A naive way to approach this problem would be to simply sort the array, then return the index at the $$\small k^{th}$$ index. This results in at best $$\small \mathcal O(n \log(n))$$ time complexity. Space complexity differs depending on sorting algorithm used. However, this is not actually idea, because there is no reason to actually do the work of sorting all elements. If $$\small k << n$$, we don't really care about the order of all elements larger that the $$\small k^{th}$$ element, and therefore we shouldn't waste time putting those in order.
+A naive way to approach this problem would be to simply sort the array, then return the index at the $\small k^{th}$ index. This results in at best $\small \mathcal O(n \log(n))$ time complexity. Space complexity differs depending on sorting algorithm used. However, this is not actually idea, because there is no reason to actually do the work of sorting all elements. If $\small k << n$, we don't really care about the order of all elements larger that the $\small k^{th}$ element, and therefore we shouldn't waste time putting those in order.
 
-We could also use a heap to find the correct element, improving our running time to $$\small \mathcal O(n \log(k))$$ and the cost of $$\small \mathcal O(k)$$ space, but again, we're doing a lot more work than we need to. The heap not only gives the $$\small k^{th}$$ element, but it actually computes the $$\small k$$ largest elements in sorted order when we're only asked for a single element.
+We could also use a heap to find the correct element, improving our running time to $\small \mathcal O(n \log(k))$ and the cost of $\small \mathcal O(k)$ space, but again, we're doing a lot more work than we need to. The heap not only gives the $\small k^{th}$ element, but it actually computes the $\small k$ largest elements in sorted order when we're only asked for a single element.
 
 ##### Code \(Simple version\):
 
@@ -46,7 +46,7 @@ def find_kth_largest(k, A):
 
 ##### Explanation:
 
-The code is very poorly optimized, but it illustrates the underlying idea very well. To find the $$\small k$$th largest element in-pace without completely sorting the array we can select an element at random \(the "pivot"\) and parition the remaining entries into those greater than the pivot and those less than the pivot. If there are exactly $$\small k-1$$ elements smaller than the pivot, then the pivot is the answer. If there are more than $$\small k-1$$ elements greater than the pivot, we can discard elements less than or equal to the pivot - the $$\small k$$-largest element must be greater than the pivot. If there are less than $$\small k-1$$ elements greater than the pivot, we can discard elements greater than or equal to the pivot.
+The code is very poorly optimized, but it illustrates the underlying idea very well. To find the $\small k^{th}$ largest element in-place without completely sorting the array we can select an element at random \(the "pivot"\) and parition the remaining entries into those greater than the pivot and those less than the pivot. If there are exactly $\small k-1$ elements smaller than the pivot, then the pivot is the answer. If there are more than $\small k-1$ elements greater than the pivot, we can discard elements less than or equal to the pivot - the $\small k$-largest element must be greater than the pivot. If there are less than $\small k-1$ elements greater than the pivot, we can discard elements greater than or equal to the pivot.
 
 ##### Code \(Optimized version\):
 
@@ -94,5 +94,5 @@ The simple implementation was bad because it initialized basically an entire new
 
 We begin by random generating an index value from within the inclusive left and right bounds. The partition algorithm above makes a few changes that makes the boundary updates significantly easier. First, the array is reverse partitioned, i.e. all of the elements grater than the pivot value comes first. This makes it so that we don't have to do extra subtraction to figure out what position the new index is in, which can lead to lots of off-by-one errors. Next, instead of the _Dutch Flag Sorting_ program, we don't build the equal or smaller subarray. Instead, we first stash the pivot value all the way to the right, and then as we process the array, we are only concerned with finding elements strictly greater than the pivot value. The final `new_pivot_idx` location is exactly where the pivot value will be in the original array, which saves us having to do calculations to update in our subsequent searches, as in our first implementation, since the array itself is being changed in later calls.
 
-Overall runtime of this algorithm will be $$\small \mathcal O(n)$$, since we expect to be able to reduce the number of elements to process by roughly half each time. The recurrence relationship can be modeled as: $$\small T(n) = \mathcal O(n) +  T(n/2)$$.
+Overall runtime of this algorithm will be $\small \mathcal O(n)$, since we expect to be able to reduce the number of elements to process by roughly half each time. The recurrence relationship can be modeled as: $\small T(n) = \mathcal O(n) +  T(n/2)$.
 

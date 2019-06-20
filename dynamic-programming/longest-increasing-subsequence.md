@@ -29,7 +29,7 @@ def lengthOfLIS(nums):
     return max(dp) if dp else 0
 ```
 
-This a simple brute force solution to calculate the LIS. We use a table `dp` that records the longest entry ending at each element. In other words, `dp[i]` is the LIS if we include `nums[i]`. We then run a nested for loop. If `nums[i] > nums[j]`, then `dp[i] = max(dp[i], dp[j] + 1)`. Running time is $$\small \mathcal O(n^{2})$$.
+This a simple brute force solution to calculate the LIS. We use a table `dp` that records the longest entry ending at each element. In other words, `dp[i]` is the LIS if we include `nums[i]`. We then run a nested for loop. If `nums[i] > nums[j]`, then `dp[i] = max(dp[i], dp[j] + 1)`. Running time is $\small \mathcal O(n^{2})$.
 
 ##### Binary Search:
 
@@ -58,5 +58,5 @@ def lengthOfLIS(nums):
     return len(chain)
 ```
 
-The intuition behind this approach is slightly different. We build a continuous chain of increasing elements, and we update the chain with each new element coming in. Notice that the final chain is not actually the LIS; only the length between the chain and the LIS are the same. Running time is $$\small \mathcal O(n \log{n})$$.
+The intuition behind this approach is slightly different. We build a continuous chain of increasing elements, and we update the chain with each new element coming in. Notice that the final chain is not actually the LIS; only the length between the chain and the LIS are the same. Running time is $\small \mathcal O(n \log{n})$.
 
