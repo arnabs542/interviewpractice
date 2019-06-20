@@ -202,10 +202,10 @@
   * [The Interval Covering Problem](greedy/the-interval-covering-problem.md)
   * [Jump Game](greedy/jump-game.md)
     * [Jump Game II](greedy/jump-game/jump-game-ii.md)
-  * [Majority Element](greedy\majority-element.md)
+  * [Majority Element](greedy/majority-element.md)
   * [The Gasup Problem]
-  * [Container With Most Water](greedy\max-trapped-water.md)
-  * [Largest Rectangle in Histogram](greedy\largest-rectangle-in-histogram.md)
+  * [Container With Most Water](greedy/max-trapped-water.md)
+  * [Largest Rectangle in Histogram](greedy/largest-rectangle-in-histogram.md)
 * [Graphs](graphs.md)
   * [Shortest Bridge](graphs/shortest-bridge.md)
   * [Is Graph Bipartite?](graphs/is-graph-bipartite.md)
