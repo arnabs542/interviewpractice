@@ -20,5 +20,5 @@ def optimum_task_assignment(task_durations):
 
 Since we want to minimize the time the longest pair will take, it makes sense to pair the tasks towards the average. In other words, if we give a worker a long task, we would want to try to minimize his other task.
 
-Algorithm takes $$\small \mathcal O(n \log{n})$$ time to run due to sorting.  
+Algorithm takes $\small \mathcal O(n \log{n})$ time to run due to sorting.  
 

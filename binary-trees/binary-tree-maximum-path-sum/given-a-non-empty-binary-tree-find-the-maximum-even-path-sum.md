@@ -50,7 +50,7 @@ def helper(root):
                             root.val + right[2]
                          ]
 
-    overall_max = float('inf')
+    overall_max = float('-inf')
     for n in new_overall_maxes:
         if n % 2 == 0:
             overall_max = max(overall_max, n)
@@ -67,7 +67,7 @@ As we get the left and right subtree results, we first calculate the maximum eve
 
 We then try to build a global maximum with the current node, which means we need to add the current root value to all combinations of left and right subtree paths.
 
-Overall runtime is $$\small \mathcal O(n)$$.
+Overall runtime is $\small \mathcal O(n)$.
 
 Note that the above solution assumes positive node values. In the case of negative node values, we need to consider 
 
