@@ -54,7 +54,7 @@ The idea above can be summarized as such:
 
 * For every number in sorted A, get difference between last index of current number \(index\[num\]\[-1\]\) and minimum index of previous numbers \(ind\).
 
-The runtime is dominated by the sort; $$\small \mathcal O(n \log{n})$$. Space is $$\small \mathcal O(n)$$.
+The runtime is dominated by the sort; $\small \mathcal O(n \log{n})$. Space is $\small \mathcal O(n)$.
 
 ##### Sorting \(No Space\):
 
@@ -70,7 +70,7 @@ def maxWidthRamp(A):
     return max_ramp
 ```
 
-The idea is the same as the algorithm above. However, this time we generate a new array that contains the indices of the sorted original array. For example, suppose the original array $$\small A$$ was $$\small [6,0,8,2,1,5]$$. After sorting, we get the array $$\small [1, 4, 3, 5, 0, 2]$$.  This is because $$\small 0$$ is the smallest element in $$\small A$$, and it's at position $$\small 1$$, $$\small 1$$ is the second smallest element, and it's at position $$\small 4$$, and so on and so forth.
+The idea is the same as the algorithm above. However, this time we generate a new array that contains the indices of the sorted original array. For example, suppose the original array $\small A$ was $\small [6,0,8,2,1,5]$. After sorting, we get the array $\small [1, 4, 3, 5, 0, 2]$.  This is because $\small 0$ is the smallest element in $\small A$, and it's at position $\small 1$, $\small 1$ is the second smallest element, and it's at position $\small 4$, and so on and so forth.
 
 * Initial max\_ramp = 0
 * Initial min\_idx = float\("inf"\)
@@ -96,11 +96,11 @@ def maxWidthRamp(A):
 
 The idea of the algorithm can be understood in terms of the two loops within it.
 
-When we first iterate through $$\small A$$, we're looking for possible starting points. This means we only maintain a decreasing stack; i.e. in order for us to store an index, it must either be the first index, or the element at that index is strictly smaller than the previous stored index. Suppose $$\small i$$ is currently the top element in the stack. If $$\small A[j]$$, then there is no point in recording $$\small j $$. If $$\small A[k] >= A[j]$$, then $$\small A[k] >= A[i]$$, and since $$\small i < j$$, then we'll get a larger ramp with $$\small i$$.
+When we first iterate through $\small A$, we're looking for possible starting points. This means we only maintain a decreasing stack; i.e. in order for us to store an index, it must either be the first index, or the element at that index is strictly smaller than the previous stored index. Suppose $\small i$ is currently the top element in the stack. If $\small A[j]$, then there is no point in recording $\small j $. If $\small A[k] >= A[j]$, then $\small A[k] >= A[i]$, and since $\small i < j$, then we'll get a larger ramp with $\small i$.
 
-The second ramp is looking for the ending points of ramps. The key here is as $$\small A[i] >= A[stack[-1]]$$, we pop the stack. Suppose $$\small A[j] >= A[stack[-1]]$$, and $$\small A[k] >= A[stack[-1]]$$, and $$\small j > k$$. In this case, we will always get a larger ramp with $$\small A[j]$$, since it appears later. Therefore, any element that appears before $$\small j$$, even it is larger than $$\small A[j]$$, will not give us a larger ramp unless we pair it with a starting point earlier than the starting point paired with $$\small A[j]$$. Therefore, we can safely pop without worrying about missing any starting elements.
+The second ramp is looking for the ending points of ramps. The key here is as $\small A[i] >= A[stack[-1]]$, we pop the stack. Suppose $\small A[j] >= A[stack[-1]]$, and $\small A[k] >= A[stack[-1]]$, and $\small j > k$. In this case, we will always get a larger ramp with $\small A[j]$, since it appears later. Therefore, any element that appears before $\small j$, even it is larger than $\small A[j]$, will not give us a larger ramp unless we pair it with a starting point earlier than the starting point paired with $\small A[j]$. Therefore, we can safely pop without worrying about missing any starting elements.
 
-The runtime and space complexity are both $$\small \mathcal O(n)$$.
+The runtime and space complexity are both $\small \mathcal O(n)$.
 
 ##### Reference:
 

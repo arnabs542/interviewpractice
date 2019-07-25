@@ -34,7 +34,7 @@ def searchRange(nums, target):
 
 In terms of templates, the above solution more closely resembles template 1. We start with inclusive bounds, and we terminate when all candidates have been tested. In the first search, we just go as far left as possible, remembering each time we see an occurrence of the target. In the second search we go as far right as possible, also recording down each time we see the target.
 
-Overall the run time should be $$\small \mathcal O(\log(n))$$, but the constant setting of variables actually slows it down a bit. A better solution would be to use a variable to keep track of the range bounds, then set them once:
+Overall the run time should be $\small \mathcal O(\log(n))$, but the constant setting of variables actually slows it down a bit. A better solution would be to use a variable to keep track of the range bounds, then set them once:
 
 ```py
 def searchRange(nums, target):
@@ -123,7 +123,7 @@ We start with an inclusive search space of `[0, len(nums) - 1]`. From the value 
 2. `nums[mid] == target`    The range must begin on the **left** or **at** mid. Update `hi = mid` for next iteration
 3. `nums[mid] > target`    The range must begin on the **left** of mid. Update `hi = mid - 1`for next iteration.
 
-Since we move the hi boundary for two conditions, we just combine it into a single case:
+Since we move the `hi` boundary for two conditions, we just combine it into a single case:
 
 ```py
 if nums[mid] >= target:
@@ -135,8 +135,8 @@ We're able to combine the two because our termination condition allows for one c
 For the right of the range, we can use a similar idea. We start with an inclusive search space of `[lo, len(nums) - 1]`. There is no point in starting at 0, because we've already found the left most bound. From the value at `nums[mid]`, there are three possibilities:
 
 1. `nums[mid] > target`    The range must begin on the **right** of mid. Update `hi = mid - 1` for next iteration
-2. `nums[mid] == target`    The range must begin on the **right** or **at** mid. Update lo`= mid` for next iteration
-3. `nums[mid] < target`    The range must begin on the **left** of mid. Update lo`= mid + 1`for next iteration.
+2. `nums[mid] == target`    The range must begin on the **right** or **at** mid. Update `lo = mid` for next iteration
+3. `nums[mid] < target`    The range must begin on the **left** of mid. Update `lo = mid + 1`for next iteration.
 
 Again, we can merge condition 2 and 3 into:
 
@@ -145,15 +145,15 @@ if nums[mid] <= target:
     i = mid
 ```
 
-However, the terminate condition on longer works this time. Consider the following case:
+However, the terminate condition no longer works this time. Consider the following case:
 
 ```
 [5 7], target = 5
 ```
 
-Now `nums[mid] = 5`, then according to rule 2, we set `i = mid`. This practically does nothing because i is already equal to mid. As a result, the search range is not moved at all.
+Now `nums[mid] = 5`, then according to rule 2, we set `i = mid`. This practically does nothing because `i` is already equal to `mid`. As a result, the search range is not moved at all.
 
 To solve this, we calculate `mid` slightly differently: `mid = (lo + hi) // 2 + 1`
 
-This is to "bias" mid towards hi, so that it will always be greater than lo. Again, binary searches run into infinite loops when no new information is provided regarding the search bounds between iterations. By biasing mid, we know that `lo != mid`, and by setting `lo = mid`, we're still ensuring the interval shrinks.
+This is to "bias" mid towards `hi`, so that it will always be greater than `lo`. Again, binary searches run into infinite loops when no new information is provided regarding the search bounds between iterations. By biasing mid, we know that `lo != mid`, and by setting `lo = mid`, we're still ensuring the interval shrinks.
 

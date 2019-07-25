@@ -1,6 +1,6 @@
 #### Maximum Sum Circular Subarray
 
-> Given a **circular arrayC** of integers represented by `A`, find the maximum possible sum of a non-empty subarray of **C**.
+> Given a **circular array C** of integers represented by `A`, find the maximum possible sum of a non-empty subarray of **C**.
 >
 > Here, a _circular array_ means the end of the array connects to the beginning of the array.  \(Formally, `C[i] = A[i]` when `0 <= i < A.length`, and `C[i+A.length] = C[i]` when `i >= 0`.\)
 >

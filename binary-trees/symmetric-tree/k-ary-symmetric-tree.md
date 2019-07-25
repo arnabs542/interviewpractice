@@ -36,5 +36,5 @@ def isSymmetric(root):
     return dfs(root, root)
 ```
 
-Same idea as the recursive solution for the binary tree, except we need to loop through the children using two pointer. Running time is $$\small \mathcal O(n)$$, height is $$\small \mathcal O(h)$$.
+Same idea as the recursive solution for the binary tree, except we need to loop through the children using two pointer. Running time is $\small \mathcal O(n)$, height is $\small \mathcal O(h)$.
 

@@ -58,7 +58,7 @@ def isValid(S: str) -> bool:
 
 A valid string consists of insert copies of the string "abc" into an existing valid string. Therefore, in the end, there must be a substring "abc" in the string. We find that substring, then see if the rest of the string is valid.
 
-The recurrence relationship can be modeled as such: $$\small T(n) = T(n-3) + \mathcal O(n)$$. This solves to a time complexity of $$\small \mathcal O(n^{2})$$.
+The recurrence relationship can be modeled as such: $\small T(n) = T(n-3) + \mathcal O(n)$. This solves to a time complexity of $\small \mathcal O(n^{2})$.
 
 ##### Stack:
 
@@ -78,7 +78,7 @@ def isValid(self, S: str) -> bool:
     return len(stack) == 0
 ```
 
-This is an $$\small \mathcal O(n)$$ solution that relies on the same principle as above. Whenever we meet a "c", we try to pop "a" and "b" from the end of the stack. If we're not able to do so, then we return `False`.
+This is an $\small \mathcal O(n)$ solution that relies on the same principle as above. Whenever we meet a "c", we try to pop "a" and "b" from the end of the stack. If we're not able to do so, then we return `False`.
 
 ##### Notes:
 

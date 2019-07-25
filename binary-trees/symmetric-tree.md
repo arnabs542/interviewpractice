@@ -41,7 +41,7 @@ def isSymmetric(root: 'TreeNode') -> 'bool':
     return dfs(root.left, root.right)
 ```
 
-Recursive dfs solution. Compare the paired children as we traverse the tree. Run time is $$\small \mathcal O(n)$$, space usage is $$\small \mathcal O(h)$$.
+Recursive dfs solution. Compare the paired children as we traverse the tree. Run time is $\small \mathcal O(n)$, space usage is $\small \mathcal O(h)$.
 
 ##### Iterative Solution:
 

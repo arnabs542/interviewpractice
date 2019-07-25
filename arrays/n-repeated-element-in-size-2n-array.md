@@ -44,7 +44,7 @@ def repeatedNTimes(A):
 
 The easiest solution would be to simply allocate some extra memory to store all the numbers seen so far. Return as soon as we come across a repeat.
 
-Time and space complexity are both $$\small \mathcal O(n)$$.
+Time and space complexity are both $\small \mathcal O(n)$.
 
 ##### Pigeonhole:
 

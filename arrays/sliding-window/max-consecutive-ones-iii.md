@@ -44,7 +44,7 @@ def longestOnes(A: "List[int]", K: "int") -> "int":
     return max_ones
 ```
 
-The brute force approach is simply to use a nested for loop to try to start at each element and see how far we can go. This takes $$\small \mathcal O(n^{2})$$ time quickly times out.
+The brute force approach is simply to use a nested for loop to try to start at each element and see how far we can go. This takes $\small \mathcal O(n^{2})$ time quickly times out.
 
 ##### Sliding Window:
 
@@ -74,5 +74,5 @@ def longestOnes(A: "List[int]", K: "int") -> "int":
     return max_count
 ```
 
-The key to the above approach is to reframe the question. In essence, we're simply asking what's the longest subarray we can have that contains at most $$\small K$$ 0s. This is perfect for using a sliding window. We grow the array until we have more than the allowed 0s, then we shrink the array until we're within the valid limit again. This requires only $$\small \mathcal O(n)$$ time, since each element is processed at most once.
+The key to the above approach is to reframe the question. In essence, we're simply asking what's the longest subarray we can have that contains at most $\small K$ 0s. This is perfect for using a sliding window. We grow the array until we have more than the allowed 0s, then we shrink the array until we're within the valid limit again. This requires only $\small \mathcal O(n)$ time, since each element is processed at most once.
 

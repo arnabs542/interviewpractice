@@ -48,7 +48,7 @@ def constructFromPrePost(pre, post):
 
 ##### Explanation:
 
-A preorder traversal can be summarized as such: `(root node) (preorder of left branch) (preorder of right branch)`. A postorder traversal: `(postorder of left branch) (postorder of right branch) (root node)`. Let us assume the left branch has $$\small L$$ nodes. We also know that the root of the left branch occurs at `pre[1]`. Since the values are all unique, that same node can be uniquely identified in the postorder traversal as well. Therefore, we look for the index of `pre[1]` in the postorder traversal, because its index marks a potential split between the left and right subtrees. Remember that the current root is located at `pre[0]`. Since the preorder and postorder traversals of the left branch must have the same number of nodes, and since the postorder traversal starts with the left branch, the location of $$\small L$$ in the postorder array is from the beginning of the array, which makes it the length of the branch. We then simply build the rest of the tree recursively. 
+A preorder traversal can be summarized as such: `(root node) (preorder of left branch) (preorder of right branch)`. A postorder traversal: `(postorder of left branch) (postorder of right branch) (root node)`. Let us assume the left branch has $\small L$ nodes. We also know that the root of the left branch occurs at `pre[1]`. Since the values are all unique, that same node can be uniquely identified in the postorder traversal as well. Therefore, we look for the index of `pre[1]` in the postorder traversal, because its index marks a potential split between the left and right subtrees. Remember that the current root is located at `pre[0]`. Since the preorder and postorder traversals of the left branch must have the same number of nodes, and since the postorder traversal starts with the left branch, the location of $\small L$ in the postorder array is from the beginning of the array, which makes it the length of the branch. We then simply build the rest of the tree recursively. 
 
 One big drawback of the above method is that we keep passing in copies of the arrays in our recursive calls. This can be sped up.
 
@@ -76,7 +76,7 @@ def constructFromPrePost(pre, post):
 
 Explanation:
 
-The code above solves the problem in $$\small O(n)$$ time and space. The key idea is we use a stack to generate TreeNodes in a preorder fashion, then pop them out in a postorder fashion. 
+The code above solves the problem in $\small O(n)$ time and space. The key idea is we use a stack to generate TreeNodes in a preorder fashion, then pop them out in a postorder fashion. 
 
 To understand, look again at how postorder traversal works: `(postorder of left branch) (postorder of right branch) (root node)`. If we encounter a node \(all nodes values are distinct\) in a postorder traversal, that means we have finished traversing all of its children.
 

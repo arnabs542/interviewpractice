@@ -36,5 +36,5 @@ def lca(node0, node1):
 
 Since the two nodes are given from the same tree, we know that at the very worst, the root of the tree will be the ancestor. If the nodes are at the same depth, we can move up the tree in tandem. If they are not at the same depth, we simply need to move the deeper node up to the same depth and then we can proceed.
 
-Time complexity is bounded by $$\small \mathcal O(h)$$. We don't use any extra space.
+Time complexity is bounded by $\small \mathcal O(h)$. We don't use any extra space.
 

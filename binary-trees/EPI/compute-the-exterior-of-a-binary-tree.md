@@ -1,6 +1,6 @@
 ##### Compute the Exterior of a Binary Tree
 
-> The exterior of a binary tree is the following sequence of nodes: the nodes from the root to the leftmost leaf, followed by the leaves in left-to-right order, followed by the nodes from the rightmost leaf to the root. For example, the exterior of the binary tree below is &lt;2, 7, 2, 5, 11, 4, 9, 5&gt;.
+> The exterior of a binary tree is the following sequence of nodes: the nodes from the root to the leftmost leaf, followed by the leaves in left-to-right order, followed by the nodes from the rightmost leaf to the root. For example, the exterior of the binary tree below is `[2, 7, 2, 5, 11, 4, 9, 5]`.
 >
 > ![](/assets/binary_tree.png)
 

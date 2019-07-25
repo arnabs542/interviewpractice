@@ -5,23 +5,26 @@
 > For example, given the following tree:
 >
 > ```
->          0
->       /     \
->     1         2
->   /            \
-> 3                 4
->   \             /   \
->     5          6     7
+> 
+>      0
+>    /   \
+>   1     2
+>  /       \
+> 3         4
+>  \       /  \
+>   5     6    7
 > ```
 >
-> You should convert it to:
+> 
+> You should convert it to:
 >
 > ```
->      0
->   /     \
-> 5         4
->         /   \
->        6     7
+> 
+>     0
+>   /   \
+>  5     4
+>       /  \
+>      6    7
 > ```
 
 ##### Postorder Pruning:
@@ -42,5 +45,5 @@ def makeFull(node):
 
 We prune the tree recursively, and return either `None` or full nodes. The variables `left, right` represent the pruned left and right subtrees. If both subtrees are not null objects, then there are full trees on both side of the current node. In that case, set `left,right` as the left and right subtrees of the current node and return it. Otherwise, return whatever isn't null, or return either if both are null.
 
-Running time is $$\small \mathcal O(n)$$. Space is $$\small \mathcal O(h)$$.
+Running time is $\small \mathcal O(n)$. Space is $\small \mathcal O(h)$.
 

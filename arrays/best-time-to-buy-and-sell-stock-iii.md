@@ -55,7 +55,7 @@ def buy_and_sell_stock_twice(prices):
 
 Since we're not allowed to hold stocks while buying, the array is essentially split into two halves: the first half is where we make our first transaction, and the second half where we make our second transaction. Thus, we can iterate through the array, splitting it into two parts each time, and then find the maximum profit from both half.
 
-This takes $$\small \mathcal O(n^{2})$$.
+This takes $\small \mathcal O(n^{2})$.
 
 ##### Two-pass:
 
@@ -76,15 +76,15 @@ def buy_and_sell_stock_twice(prices):
     return max_total_profit
 ```
 
-We can solve the problem in $$\small \mathcal O(n)$$ for both time and space. We first iterate forwards, building a vector of the max profit if we sell buy date `i`. We then iterate backwards, and find the max profit working from the back. This way, we've essentially split the array without having to do extra work.
+We can solve the problem in $\small \mathcal O(n)$ for both time and space. We first iterate forwards, building a vector of the max profit if we sell buy date `i`. We then iterate backwards, and find the max profit working from the back. This way, we've essentially split the array without having to do extra work.
 
-Suppose the input array is: $$\small <12, 11, 13, 9, 12, 8, 14, 13, 15>$$.
+Suppose the input array is: $\small <12, 11, 13, 9, 12, 8, 14, 13, 15>$.
 
-Forward profit is: $$\small< 0, 0, 2, 2, 3, 3, 6, 6,7>$$
+Forward profit is: $\small< 0, 0, 2, 2, 3, 3, 6, 6,7>$
 
-Backward profit is: $$\small < 7, 7, 7, 7, 7, 7, 2, 2, 0>$$
+Backward profit is: $\small < 7, 7, 7, 7, 7, 7, 2, 2, 0>$
 
-The maximum profit is: $$\small< 7, 7, 7, 9, 9, 10, 5, 8, 6>$$, i.e. the max profit is 10.
+The maximum profit is: $\small< 7, 7, 7, 9, 9, 10, 5, 8, 6>$, i.e. the max profit is 10.
 
 The forward pass is basically saying what's the max profit if we buy and sell by date `i`. The backward pass is saying the same thing, except backwards. By find the max\_profit from the backward pass and adding that to the max\_profit from forward pass at `i-1`, we're basically saying what's the max pass if we split the array at `i`.
 

@@ -1,6 +1,6 @@
 #### Validate Stack Sequences
 
-> Given two sequences `pushed` and `popped`**with distinct values**, return `true` if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.
+> Given two sequences `pushed` and `popped` **with distinct values**, return `true` if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.
 >
 > **Example 1:**
 >
@@ -43,5 +43,5 @@ def validateStackSequences(pushed, popped):
     return not stack
 ```
 
-Since we're told that all values are distinct, the sequence can easily be simulated. We keep track of what the next popped item is supposed to be, and we push values until we hit the popped the value. Then we continue to pop according to the popped sequence. In the end, we simply check to make sure the stack is empty. If not, then the pop sequence does not match the push sequence. Runtime and space are both $$\small \mathcal O(n)$$. 
+Since we're told that all values are distinct, the sequence can easily be simulated. We keep track of what the next popped item is supposed to be, and we push values until we hit the popped the value. Then we continue to pop according to the popped sequence. In the end, we simply check to make sure the stack is empty. If not, then the pop sequence does not match the push sequence. Runtime and space are both $\small \mathcal O(n)$. 
 
