@@ -1,6 +1,6 @@
 #### Number of Strict Monotone Sequences
 
-> Call a decimal number $$\small D$$, as defined above, strictly monotone if $$\small D[i] < D[i+1], 0 \leq i < |{D}|$$. Write a program which takes as input a positive integer $$\small k$$ and computes the number of decimal numbers of length $$\small k$$ that are strictly monotone.
+> Call a decimal number $\small D$, as defined above, strictly monotone if $\small D[i] < D[i+1], 0 \leq i < |{D}|$. Write a program which takes as input a positive integer $\small k$ and computes the number of decimal numbers of length $\small k$ that are strictly monotone.
 
 ##### Recursion -&gt; Dynamic Programming:
 
@@ -65,5 +65,5 @@ def monotoneSequence(k):
 
 The bottom up idea is as follows: suppose we introduce a new number. We can either choose to not use it \(`dp[i][j-1]`\). If we wish to use the new number, we can attach it to the end of all the sequences of length `i-1` that didn't use the number \(`dp[i-1][j-1]`\).
 
-Running time and space are bounded by $$\small \mathcal O(k)$$, same as before.
+Running time and space are bounded by $\small \mathcal O(k)$, same as before.
 

@@ -15,5 +15,5 @@ def can_form_palindrome(s):
 
 A string can only be a palindrom if and only if the number of characters whose frequencies is odd is at most 1. We simply count how many times each letter appears, and test if the previous condition holds. 
 
-Time complexity: $$\small \mathcal O(n)$$, where $$\small n$$ is the length of the string. Space complexity is $$\small \mathcal O(c)$$, where $$\small c$$ is the number of unique characters. 
+Time complexity: $\small \mathcal O(n)$, where $\small n$ is the length of the string. Space complexity is $\small \mathcal O(c)$, where $\small c$ is the number of unique characters. 
 

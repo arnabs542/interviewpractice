@@ -1,4 +1,4 @@
-#### Regular Expression Matching
+#### Regular Expression Matching - LC 10
 
 > Given an input string \(`s`\) and a pattern \(`p`\), implement regular expression matching with support for `'.'` and `'*'`.
 >
@@ -125,7 +125,7 @@ def isMatch(s: str, p: str) -> bool:
     return helper(0, 0)
 ```
 
-In the top-down approach, we use `i,j` to mark the current locations in our string and pattern that we're processing. If we've already processed `s[i:]` and `p[j:]` then we just return whatever result we got. Otherwise, we do the work, store the result, then return it. If $$\small m,n$$ are the lengths of the string and pattern, then there are a total of $$\small \mathcal O(mn)$$ combinations of substrings. Thus, our time complexity and space complexity are both bounded by $$\small \mathcal O(mn)$$.
+In the top-down approach, we use `i,j` to mark the current locations in our string and pattern that we're processing. If we've already processed `s[i:]` and `p[j:]` then we just return whatever result we got. Otherwise, we do the work, store the result, then return it. If $\small m,n$ are the lengths of the string and pattern, then there are a total of $\small \mathcal O(mn)$ combinations of substrings. Thus, our time complexity and space complexity are both bounded by $\small \mathcal O(mn)$.
 
 ##### Dynamic Programming \(Bottom-up\):
 

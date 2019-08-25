@@ -42,5 +42,5 @@ def is_letter_constructible_from_magazine(letter_text, magazine_text):
     return not char_frequency_for_letter
 ```
 
-Overall runtime is $$\small O(m+n)$$, where $$\small m,n$$ are the lengths of the letter and magazine, respectively. Space depends on which text we choose to build the character for. 
+Overall runtime is $\small O(m+n)$, where $\small m,n$ are the lengths of the letter and magazine, respectively. Space depends on which text we choose to build the character for. 
 

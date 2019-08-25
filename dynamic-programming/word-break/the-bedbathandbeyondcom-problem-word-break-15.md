@@ -49,5 +49,5 @@ def decompose_into_dictionary_words(domain, dictionary):
     return decompositions
 ```
 
-The derivations for time complexity is as follows: let $$\small n$$ be the length of the input string $$\small s$$. For each $$\small k < n$$ we check for each $$\small j < k$$ whether the substring $$\small s[j+1,k]$$ is a dictionary word, and each such check requires $$\small \mathcal O(k-j)$$ time. This implies the time complexity is $$\small \mathcal O(n^{3})$$. If we restrict $$\small j$$ to range from $$\small k-W$$ to $$\small k-1$$, where $$\small W$$ is length of the longest word, we can reduce the time complexity to $$\small \mathcal O(n^{2}W)$$. 
+The derivations for time complexity is as follows: let $\small n$ be the length of the input string $\small s$. For each $\small k < n$ we check for each $\small j < k$ whether the substring $\small s[j+1,k]$ is a dictionary word, and each such check requires $\small \mathcal O(k-j)$ time. This implies the time complexity is $\small \mathcal O(n^{3})$. If we restrict $\small j$ to range from $\small k-W$ to $\small k-1$, where $\small W$ is length of the longest word, we can reduce the time complexity to $\small \mathcal O(n^{2}W)$. 
 

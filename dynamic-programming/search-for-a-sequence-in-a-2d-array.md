@@ -39,7 +39,7 @@ def is_pattern_contained_in_grid(grid, S):
     return False
 ```
 
-A brute force solution would be to iterate through every single cell, attempting to start the word at that location. Let $$\small l$$ be the length of the word; it takes $$\small \mathcal O(4^{l})$$ time to find the word, assuming it exists, since we can go in four directions to search for each character. Overall runtime is $$\small \mathcal O(n*m*4^{l})$$, where $$\small m,n$$ are the dimensions of the grid.
+A brute force solution would be to iterate through every single cell, attempting to start the word at that location. Let $\small l$ be the length of the word; it takes $\small \mathcal O(4^{l})$ time to find the word, assuming it exists, since we can go in four directions to search for each character. Overall runtime is $\small \mathcal O(n*m*4^{l})$, where $\small m,n$ are the dimensions of the grid.
 
 ##### Dynamic Programming:
 
@@ -65,5 +65,5 @@ def is_pattern_contained_in_grid(grid, S):
                for j in range(len(grid[i])))
 ```
 
-We can expect a lot of repeated work from a simple DFS approach. Thus, we use a cache to store intermediate work so we don't keep repeating ourselves. The key is `(i, j, idx)`. If we're not able to find the character at `S[idx]` at `i,j` or we're not able to finish `S[idx:]` starting at `i,j` then there's no point in doing it again when we encounter the same scenario next time. The time complexity is now reduced to $$\small \mathcal O(mn|S|)$$.
+We can expect a lot of repeated work from a simple DFS approach. Thus, we use a cache to store intermediate work so we don't keep repeating ourselves. The key is `(i, j, idx)`. If we're not able to find the character at `S[idx]` at `i,j` or we're not able to finish `S[idx:]` starting at `i,j` then there's no point in doing it again when we encounter the same scenario next time. The time complexity is now reduced to $\small \mathcal O(mn|S|)$.
 

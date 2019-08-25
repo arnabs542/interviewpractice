@@ -1,6 +1,6 @@
 #### Subarrays with At Most K Different Integers
 
-> Given an array `A` of positive integers, call a \(contiguous, not necessarily distinct\) subarray of `A`_good_ if the number of different integers in that subarray is at most `K`.
+> Given an array `A` of positive integers, call a \(contiguous, not necessarily distinct\) subarray of `A` _good_ if the number of different integers in that subarray is at most `K`.
 >
 > \(For example, `[1,2,3,1,2]` has `3` different integers: `1`, `2`, and `3`.\)
 >
@@ -28,13 +28,13 @@ def subarraysWithAtMostK(A: 'List[int]', K: 'int') -> 'int':
 
 This problem is really the key to solving the above problem.
 
-We use a sliding window to keep track of the number of distinct elements in the current window. If less than or equal to $$\small K$$, we do `res += j - i + 1` to add the number number of valid subarrays.
+We use a sliding window to keep track of the number of distinct elements in the current window. If less than or equal to $\small K$, we do `res += j - i + 1` to add the number number of valid subarrays.
 
-Suppose we have an array of $$\small [1,2,3]$$. This array has 6 subarrays: $$\small [1], [2], [3], [1,2], [2,3], [1,2,3]$$. If we append an additional elements, $$\small 4$$ to the array, 4 additional subarrays are introduced: $$\small [4], [3,4], [2,3,4], [1,2,3,4]$$. In other words, suppose a window of $$\small n$$ elements contains less than $$\small K$$ distinct elements. Suppose also that the $$\small n+1$$ window made by introducing a new element has less than or equal to $$\small K$$ distinct elements. In this case, $$\small n+1$$ additional valid subarrays are added.
+Suppose we have an array of $\small [1,2,3]$. This array has 6 subarrays: $\small [1], [2], [3], [1,2], [2,3], [1,2,3]$. If we append an additional elements, $\small 4$ to the array, 4 additional subarrays are introduced: $\small [4], [3,4], [2,3,4], [1,2,3,4]$. In other words, suppose a window of $\small n$ elements contains less than $\small K$ distinct elements. Suppose also that the $\small n+1$ window made by introducing a new element has less than or equal to $\small K$ distinct elements. In this case, $\small n+1$ additional valid subarrays are added.
 
-Another way to look at this is by combinations. For a valid window of size $$\small n$$, there are $$\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$$ subarrays. A valid window of size $$\small n+1$$ has $$\small {{n+2}\choose{2}} = \frac{n+1(n+2)}{2}$$. Thus, $$\small \frac{n+1(n+2)}{2} - \frac{n(n+1)}{2} = n+1$$, meaning an additional element in a valid window gives us $$\small n+1$$ more subarrays.
+Another way to look at this is by combinations. For a valid window of size $\small n$, there are $\small {{n+1}\choose{2}} = \frac{n(n+1)}{2}$ subarrays. A valid window of size $\small n+1$ has $\small {{n+2}\choose{2}} = \frac{n+1(n+2)}{2}$. Thus, $\small \frac{n+1(n+2)}{2} - \frac{n(n+1)}{2} = n+1$, meaning an additional element in a valid window gives us $\small n+1$ more subarrays.
 
 This relationship still holds after readjusting `i` to `i'`, since `res` would have included `A[i':j]`, then `A[i':j+1]`is simply an incremental update to an already processed window.
 
-Running time is $$\small \mathcal O(n)$$, same as space complexity.
+Running time is $\small \mathcal O(n)$, same as space complexity.
 

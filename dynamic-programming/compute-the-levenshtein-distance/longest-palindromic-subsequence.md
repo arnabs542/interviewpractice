@@ -67,7 +67,7 @@ This is where the subproblem structure comes in:
 L(2,5)  L(1,4) L(1,4) L(0,3)
 ```
 
-This however times out because we keep doing the same work over and over again \(runtime is $$\small \mathcal O(2^{n})$$\). To improve our time complexity, we use remember the result for `s[i:j]`.
+This however times out because we keep doing the same work over and over again \(runtime is $\small \mathcal O(2^{n})$\). To improve our time complexity, we use remember the result for `s[i:j]`.
 
 ##### Dynamic Programming \(Top-down\):
 
@@ -94,7 +94,7 @@ def longestPalindromeSubseq(s: str) -> int:
     return helper(0, len(s) - 1)
 ```
 
-The overall runtime for this solution is $$\small \mathcal O(n^{2})$$, where $$\small n$$ is the length of the string. This is because we calculate the longest palindromic subsequence in each substring once before storing the result, and there are a total of $$\small n^{2}$$ substrings.
+The overall runtime for this solution is $\small \mathcal O(n^{2})$, where $\small n$ is the length of the string. This is because we calculate the longest palindromic subsequence in each substring once before storing the result, and there are a total of $\small n^{2}$ substrings.
 
 ##### DP \(Bottom-up\):
 
@@ -117,5 +117,5 @@ def longestPalindromeSubseq(s: str) -> int:
     return dp[0][-1]
 ```
 
-This is the bottom-up version of the above solution. We build a 2D $$\small n \times n$$ array, where `dp[i][j]` stores the longest palindromic subsequence found in `s[i:j+1]`. Running time and space are both bounded by $$\small \mathcal O(n^{2})$$. We can reduce space to $$\small \mathcal O(n)$$ since we only use 2 rows at a time.
+This is the bottom-up version of the above solution. We build a 2D $\small n \times n$ array, where `dp[i][j]` stores the longest palindromic subsequence found in `s[i:j+1]`. Running time and space are both bounded by $\small \mathcal O(n^{2})$. We can reduce space to $\small \mathcal O(n)$ since we only use 2 rows at a time.
 

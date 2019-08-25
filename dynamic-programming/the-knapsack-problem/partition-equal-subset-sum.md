@@ -29,7 +29,7 @@
 
 ##### Dynamic Programming:
 
-The brute force solution would be to try all possible partitions of the elements. Since each element can go into one of two subsets, this results in a time complexity of $$\small \mathcal O(2^{n})$$ time complexity. Instead, we cache previous work to save on time.:
+The brute force solution would be to try all possible partitions of the elements. Since each element can go into one of two subsets, this results in a time complexity of $\small \mathcal O(2^{n})$ time complexity. Instead, we cache previous work to save on time.:
 
 ```py
 from functools import lru_cache
@@ -50,7 +50,7 @@ def canPartition(nums: List[int]) -> bool:
     return helper(0, 0, 0)
 ```
 
-I'm using the lru\_cache decorator from functools, but we can easily convert that to a manual dictionary using `(left, right, idx)` as the key.
+I'm using the `lru\_cache` decorator from `functools`, but we can easily convert that to a manual dictionary using `(left, right, idx)` as the key.
 
 In reality, this problem is a disguised version of the knapsack problem. The bag capacity is `sum(nums) / 2`, and we need to pick elements to try to hit that target. Interestingly enough, the bottom-up solution actually times out:
 
@@ -95,6 +95,24 @@ def canPartition(nums: List[int]) -> bool:
         return False
 
     return canfind(0, s // 2, {})
+```
+
+The bottom up solution actually requires only a 1D array; the solution is actually more similar to the coin problem, which itself is a type of the 0/1 knapsack problem:
+
+```py
+def canPartition(nums: List[int]) -> bool:
+    target = sum(nums)
+    if target & 1:
+        return False
+    target >>= 1
+    dp = [False] * (target + 1)
+    dp[0] = True
+    for c in sorted(nums):
+        for i in range(target, c-1, -1):
+            dp[i] = dp[i] or dp[i-c]
+        if dp[-1]:
+            return True
+    return False
 ```
 
 

@@ -21,7 +21,7 @@ def find_LCA(tree, s, b):
 
 ##### Explanation:
 
-We take advantage of the relative ordering between the root of a BST and its node values to throw away half the tree each time. Running time is $$\small \mathcal O(h)$$, since we descent a level each time. Space is bounded by recursive call stack, also $$\small \mathcal O(h)$$.
+We take advantage of the relative ordering between the root of a BST and its node values to throw away half the tree each time. Running time is $\small \mathcal O(h)$, since we descent a level each time. Space is bounded by recursive call stack, also $\small \mathcal O(h)$.
 
 ##### Code \(Iterative\):
 

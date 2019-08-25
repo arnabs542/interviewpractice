@@ -70,5 +70,5 @@ The idea here is to maintain a hash table of the current chains we have built. T
 
 This approach is greedy by nature - we consistently try to extend each chain to its maximum length. We only start a new chain when we can't attach the current number to any existing chain.
 
-Runtime and space complexity are both $$\small \mathcal O(n)$$. 
+Runtime and space complexity are both $\small \mathcal O(n)$. 
 

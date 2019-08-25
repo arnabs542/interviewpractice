@@ -62,5 +62,5 @@ def combinationSum(candidates: List[int], target: int) -> List[List[int]]:
 
 This is a classic backtracking problem. We first sort the array in order to prune our search as soon as the current candidate is greater than our target \(all numbers after will be at least as big as the current one so no point in continuing\). 
 
-The key to not containing duplicate combinations is to pass a `start` variable to our helper function so we don't use numbers previously used. This ensures that our combinations are always in increasing order, so once we have a combination like $$\small <2,3,3>$$, we won't have something like $$\small <3,2,3>$$.
+The key to not containing duplicate combinations is to pass a `start` variable to our helper function so we don't use numbers previously used. This ensures that our combinations are always in increasing order, so once we have a combination like $\small <2,3,3>$, we won't have something like $\small <3,2,3>$.
 

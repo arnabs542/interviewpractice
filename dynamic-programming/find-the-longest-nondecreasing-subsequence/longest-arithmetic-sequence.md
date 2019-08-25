@@ -73,5 +73,5 @@ Let `A=[20,1,15,3,10,5,8]`. Then diff would look like this:
 
 For `A[4]`, there are 4 arithmetic sequences it can form: `[20, 10], [1, 10], [20, 15, 10], [3,10]`. The longest is `[20,15,10]`, which has a length of `3` and a difference of `-5`.
 
-Runtime is $$\small \mathcal O(n^{2})$$, same for space.
+Runtime is $\small \mathcal O(n^{2})$, same for space.
 

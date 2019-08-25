@@ -19,7 +19,7 @@ words = ["oath","pea","eat","rain"] and board =
 Output: ["eat","oath"]
 ```
 
-Essentially the same problem as the above one, except now we need to find multiple words. If we simply apply the above solution to this one by looping through all the words, our time complexity is $$\small \mathcal O(m*n*s*4^{l})$$, where $$\small m, n$$ are the dimensions of the board, $$\small s$$ is the size of the words array, and $$\small l$$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier.
+Essentially the same problem as the above one, except now we need to find multiple words. If we simply apply the above solution to this one by looping through all the words, our time complexity is $\small \mathcal O(m*n*s*4^{l})$, where $\small m, n$ are the dimensions of the board, $\small s$ is the size of the words array, and $\small l$ is the length of the longest word. This quickly times out, which suggests we need to figure out how to prune our backtracking earlier.
 
 ##### Trie + DFS:
 
@@ -63,9 +63,9 @@ def findWords(board, words):
     return list(found)
 ```
 
-Compared to the previous problem, the naive solution introduces an extra factor of $$\small s$$ into the runtime. By first using a tree to store every single word, we don't need to keep looping through the word list, looking for a specific word each time. Instead, we simply perform a dfs search on every cell, and if we happen to build a word that is in the given list, then we add that to the result.
+Compared to the previous problem, the naive solution introduces an extra factor of $\small s$ into the runtime. By first using a tree to store every single word, we don't need to keep looping through the word list, looking for a specific word each time. Instead, we simply perform a dfs search on every cell, and if we happen to build a word that is in the given list, then we add that to the result.
 
-This allows us to bring the runtime back down to $$\small \mathcal O(m*n*4^{l})$$, same as the previous problem.
+This allows us to bring the runtime back down to $\small \mathcal O(m*n*4^{l})$, same as the previous problem.
 
 ##### Edge Cases/Traps:
 

@@ -34,7 +34,7 @@ def minCut(s: str) -> int:
 
 This problem is extremely similar to Word Break. As we iterate through the string, we check if it is a palindrome. If not, we try to find the longest palindrome that ends at the current index; the string requires 1 additional cut in addition to the amount of cuts its prefix has.
 
-Running time is $$\small \mathcal O(n^{3})$$, thanks to the way we check if a string is a palindrome. We can reduce this to $$\small \mathcal O(n^{2})$$ by changing the way we check if a string is a palindrome:
+Running time is $\small \mathcal O(n^{3})$, thanks to the way we check if a string is a palindrome. We can reduce this to $\small \mathcal O(n^{2})$ by changing the way we check if a string is a palindrome:
 
 ```py
 def minCut(s: str) -> int:

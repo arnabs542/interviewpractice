@@ -1,8 +1,8 @@
 #### Find the Duplicate and Missing Elements
 
-> Given an array of $$\small n$$ integers, each between $$\small 0$$ and $$\small n - 1$$ inclusive, eactly one element appears twice, implying that exactly one number between $$\small 0$$ and $$\small n - 1$$ is missing from the array. Find the missing and duplicate numbers.
+> Given an array of $\small n$ integers, each between $\small 0$ and $\small n - 1$ inclusive, eactly one element appears twice, implying that exactly one number between $\small 0$ and $\small n - 1$ is missing from the array. Find the missing and duplicate numbers.
 
-An easy solution would be to sort the array, then iterate through until we find the duplicate numbers. This takes $$\small \mathcal O(n \log(n))$$ time, but it modifies the array, which might not be allowed. Another option is to use extra space, such as a hash table or a set, and this would bring time complexity to $$\small \mathcal O(n)$$. There is actually an $$\small \mathcal O(n)$$ time complexity and $$\small \mathcal O(1)$$ space complexity solution. 
+An easy solution would be to sort the array, then iterate through until we find the duplicate numbers. This takes $\small \mathcal O(n \log(n))$ time, but it modifies the array, which might not be allowed. Another option is to use extra space, such as a hash table or a set, and this would bring time complexity to $\small \mathcal O(n)$. There is actually an $\small \mathcal O(n)$ time complexity and $\small \mathcal O(1)$ space complexity solution. 
 
 ##### Bit Manipulation Code:
 
@@ -24,7 +24,7 @@ def find_duplicate_missing(A):
 
 ##### Explanation:
 
-This problem is a more advanced version of the classical problem where we are asked to find the duplicate in an array where all elements appear once except one which appears twice. In that problem, we simply needed to XOR all elements together, since$$\small x \oplus x = 0$$.
+This problem is a more advanced version of the classical problem where we are asked to find the duplicate in an array where all elements appear once except one which appears twice. In that problem, we simply needed to XOR all elements together, since $\small x \oplus x = 0$.
 
 The first thing to notice is that we are given very strict bounds on the range of possible numbers. Specifically, the range of possible values of the elements is also the range of the length of the array. This means that all elements appear twice, except the duplicate which appears three times and the missing which appears once. We begin by iterating through the array, XORing all elements with the index number. This leaves us with `miss_XOR_dup`, which is the missing and duplicate values XOR'd together.
 
@@ -85,7 +85,7 @@ def findDuplicate(self, nums):
 
 A few things to note here:
 
-1. Since there are $$\small n+1$$ numbers, and elements start at 1, we are guaranteed to not start immediately on a cycle, since  `nums[0] != 0`
+1. Since there are $\small n+1$ numbers, and elements start at 1, we are guaranteed to not start immediately on a cycle, since  `nums[0] != 0`
 
 2. `slow` and `fast` point to the array indices \("nodes"\), and not the actual values.
 

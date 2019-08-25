@@ -39,7 +39,7 @@ def permuteUnique(nums: 'List[int]') -> 'List[List[int]]':
     return perms
 ```
 
-Running time of the algorithm is $$\small \mathcal O(n*n!)$$. We use the same method as the parent problem to generate the permutations. Once we generate a permutation, we convert the array to a string to check if this particular permutation has already been generated. 
+Running time of the algorithm is $\small \mathcal O(n*n!)$. We use the same method as the parent problem to generate the permutations. Once we generate a permutation, we convert the array to a string to check if this particular permutation has already been generated. 
 
-Storing the keys requires $$\small \mathcal O(n!)$$ space.
+Storing the keys requires $\small \mathcal O(n!)$ space.
 

@@ -58,7 +58,7 @@ def wordBreak(s: str, wordDict: List[str]) -> bool:
 
 The brute force solution is to advance along the string, and as we encounter a prefix that is a word in the dictionary, we break at that point, and then try to split the rest of the string.
 
-A string of $$\small n$$ characters gives us $$\small n-1 = \mathcal O(n)$$ positions to make our cut, resulting in a runtime of $$\small \mathcal O(2^{n})$$. This does not factor in the time taken to splice and rebuild the substring. Obviously, this quickly times out for large inputs.
+A string of $\small n$ characters gives us $\small n-1 = \mathcal O(n)$ positions to make our cut, resulting in a runtime of $\small \mathcal O(2^{n})$. This does not factor in the time taken to splice and rebuild the substring. Obviously, this quickly times out for large inputs.
 
 ##### Dynamic Programming:
 
@@ -79,5 +79,5 @@ def wordBreak(s: str, wordDict: List[str]) -> bool:
 
 The idea of the solution above is that each time we advance along the array, we work backwards to see if there is a dictionary word that we can build with the last character of the current substring. If there is, and the prefix can also be split into words, then `memo[i] = True`, meaning that we can split `s[:i+1]` into dictionary words. We need to be careful of how we access indices, since the length of our dp array is different from the length of our string. 
 
-The nested for loop means our time complexity is $$\small \mathcal O(n^{2})$$, however the string splicing takes additional time. 
+The nested for loop means our time complexity is $\small \mathcal O(n^{2})$, however the string splicing takes additional time. 
 

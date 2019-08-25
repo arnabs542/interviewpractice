@@ -36,5 +36,5 @@ The next step would be return the indices of the subarray if it exists. The only
 
 To find the smallest subarray to cover all keywords is then a simple change of the above solution. We now utilize a sliding window method: advance the right index until we have found all keyword. Then advance the left index forwards until we no longer have all the keywords in the subarray. Then advance the right index. We do this until we finish iterating through the array. 
 
-This algorithm takes $$\small \mathcal O(n)$$ time and space. One tip for optimization to remember is that we don't need a hash set to remember which words are left; instead, we just initialize an integer counter equal to the length of the keywords array and check its value instead. 
+This algorithm takes $\small \mathcal O(n)$ time and space. One tip for optimization to remember is that we don't need a hash set to remember which words are left; instead, we just initialize an integer counter equal to the length of the keywords array and check its value instead. 
 

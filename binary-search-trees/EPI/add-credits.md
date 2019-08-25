@@ -48,9 +48,9 @@ class ClientsCreditsInfo:
 
 ##### Explanation:
 
-A hash table is an obvious candidate for this problem - it supports fast insertion, removal, and lookup. A quick way to deal with add-to-all is to simply keep a global counter of the current offset. When new elements come in, we adjust their value by subtracting the offset, and when we return lookups, we return the value plus the offset. For example, if we are to add 22 to all current values, values afterwards need to account for the 22, otherwise we'd end returning the wrong value.
+A hash table is an obvious candidate for this problem - it supports fast insertion, removal, and lookup. A quick way to deal with add-to-all is to simply keep a global counter of the current offset. When new elements come in, we adjust their value by subtracting the offset, and when we return lookups, we return the value plus the offset. For example, if we are to add `22` to all current values, values afterwards need to account for the `22`, otherwise we'd end returning the wrong value.
 
-The problem is that it takes $$\small \mathcal O(n)$$ time to find the maximum value, since hash tables aren't ordered in any way. Therefore, we need to iterate through all elements to find the maximum value. If we expect the max function to be called constantly, this can get expensive.
+The problem is that it takes $\small \mathcal O(n)$ time to find the maximum value, since hash tables aren't ordered in any way. Therefore, we need to iterate through all elements to find the maximum value. If we expect the max function to be called constantly, this can get expensive.
 
 ##### Code \(Hash table + BST\):
 
@@ -92,7 +92,7 @@ class ClientsCreditsInfo:
 
 ##### Explanation:
 
-To mitigate the inefficiency of finding the maximum element from a hash table, we use a BST. Insert and removal takes $$\small \mathcal O(\log{n})$$ time now due to the BST. However, max also only takes $$\small \mathcal O(\log {n})$$, which is faster than just with a hash table. 
+To mitigate the inefficiency of finding the maximum element from a hash table, we use a BST. Insert and removal takes $\small \mathcal O(\log{n})$ time now due to the BST. However, max also only takes $\small \mathcal O(\log {n})$, which is faster than just with a hash table. 
 
 The documentation for setdefault:
 

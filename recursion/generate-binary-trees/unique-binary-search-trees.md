@@ -38,7 +38,7 @@ This is almost the same problem as the parent problem. Here we're asked to simpl
 
 We again break the computation into finding the number of left and right subtrees. Since `left_count, right_count` could be 0, we need to bound it to 1. Once we find the number of subtrees, we multiply to get the number of total trees we can have with the number of left and right nodes in the subtrees.
 
-This results in the recurrence formula of $$\small T(n) = \sum_{i=0}^{n-1} T(i)*T(n-i-1)$$, which quickly times out.
+This results in the recurrence formula of $\small T(n) = \sum_{i=0}^{n-1} T(i)*T(n-i-1)$, which quickly times out.
 
 ##### Memoization:
 
@@ -59,7 +59,7 @@ class Solution:
         return count
 ```
 
-We see there is a lot of overlap between the work being done. For example, suppose $$\small n=3$$. We will calculate the following scenarios:
+We see there is a lot of overlap between the work being done. For example, suppose $\small n=3$. We will calculate the following scenarios:
 
 ```
 left    right
@@ -68,7 +68,7 @@ left    right
  2        1
 ```
 
-The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetric. Thus, we simply record all the work we've already done. The running time should be reduced to $$\small \mathcal O(n)$$, since each left and right subtree number should be calculated once.
+The results of `left = 0, right = 2` and `left = 2, right = 0` should be symmetric. Thus, we simply record all the work we've already done. The running time should be reduced to $\small \mathcal O(n)$, since each left and right subtree number should be calculated once.
 
 ##### Bottom Up:
 
@@ -89,7 +89,7 @@ def numTrees(self, n: int) -> int:
     return dp[-1]
 ```
 
-The idea of the above solution is that we first iterate through the total number of nodes from 1 ~ n. For each number $$\small i$$, we iterate from 1 ~ $$\small i$$ using $$\small r$$ and place $$\small r$$ as the root value. For each $$\small r$$, there are $$\small r-1$$ nodes that could be place on the left, and $$\small i - r$$ nodes on the right.
+The idea of the above solution is that we first iterate through the total number of nodes from 1 ~ n. For each number $\small i$, we iterate from 1 ~ $\small i$ using $\small r$ and place $\small r$ as the root value. For each $\small r$, there are $\small r-1$ nodes that could be place on the left, and $\small i - r$ nodes on the right.
 
 Taking 1~n as root respectively:
 
@@ -100,5 +100,5 @@ Taking 1~n as root respectively:
 * n-1 as root: \# of trees = F\(n-2\) \* F\(1\)
 * n as root:   \# of trees = F\(n-1\) \* F\(0\)
 
-The solution above uses $$\small \mathcal O(n^{2})$$ time and $$\small \mathcal O(n)$$ space.
+The solution above uses $\small \mathcal O(n^{2})$ time and $\small \mathcal O(n)$ space.
 

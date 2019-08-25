@@ -26,8 +26,7 @@
 ```py
 def shortestCommonSupersequence(str1: str, str2: str) -> str:
     
-    # Find LCS first
-    
+    # Find LCS first    
     def find_lcs(str1, str2):
         n, m = len(str1), len(str2)
         lcs = [["" for _ in range(m+1)] for _ in range(n+1)]
