@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Arrays](arrays.md)
+  * [Prefix Sum](arrays/prefix-sums/can-make-palindrome-from-substring.md)
   * [Sliding Window](arrays/sliding-window.md)
     * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
     * [Product of K Consecutive Numbers](arrays/sliding-window/product-k-consecutive-numbers.md)
