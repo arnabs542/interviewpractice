@@ -159,6 +159,7 @@
   * [Array of Doubled Pairs](array-of-doubled-pairs.md)
   * [Pancake Sorting](pancake-sorting.md)
   * [Interval List Intersections](interval-list-intersections.md)
+  * [Reducing Dishes](sorting/reducing-dishes.md)
 * [Recursion](recursion.md)
   * EPI
     * [The Towers of Hanoi Problem](recursion/EPI/the-towers-of-hanoi-problem.md)
