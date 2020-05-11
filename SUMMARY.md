@@ -277,6 +277,7 @@
   * [Read N Characters Given Read4 II - Call multiple times](design/read-N-characters-given-read4-2.md)
   * [Add/Multiply to Collection](design/add-multiply-to-collection.md)
   * [Snapshot Array - LC 1146]()
+  * [Insert Delete GetRandom O(1) - Duplicates allowed](design/insert_delete_getrandom_o(1).md)
 * [Honors Class](null)
   * 
 
