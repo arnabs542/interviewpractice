@@ -79,5 +79,5 @@ The intuition behind the above algorithm is a bit difficult.  To find the number
 
 One "brute force" way to specify the graph is to associate each grid square with 4 nodes \(north, south, west, and east\), representing 4 triangles inside the square if it were to have both slashes. Then, we can connect all 4 nodes if the grid square is `" "`, and connect two pairs if the grid square is `"/"` or `""`. Finally, we can connect all neighboring nodes \(for example, the east node of the square at `grid[0][0]` connects with the west node of the square at `grid[0][1]`\).
 
-Runtime complexity is bounded by $$\small \mathcal O(N∗N∗α(N))$$, where $$\small α$$ is the Inverse-Ackermann function since we join by rank.
+Runtime complexity is bounded by $\small \mathcal O(N∗N∗α(N))$, where $\small α$ is the Inverse-Ackermann function since we join by rank.
 
