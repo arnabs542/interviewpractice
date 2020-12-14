@@ -218,6 +218,7 @@
   * [Minimum Triangle Sum](dynamic-programming/minimum-triangle-sum.md)
   * [Delete Columns to Make Sorted III](dynamic-programming/delete-columns-to-make-sorted-iii.md)
   * Number of Monotone Sequences
+  * [Burst Balloons](dynamic-programming/burst_ballons.md)
 * [Greedy](greedy.md)
   * [Compute an Optimum Assignment of Tasks](greedy/EPI/compute-an-optimum-assignment-of-tasks.md)
   * [Schedule to Minimize Waiting Time](greedy/EPI/schedule-to-minimize-waiting-time.md)
