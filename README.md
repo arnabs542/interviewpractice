@@ -232,6 +232,7 @@
   * [Container With Most Water](greedy/EPI/max-trapped-water.md)
   * [Largest Rectangle in Histogram](greedy/EPI/largest-rectangle-in-histogram.md)
   * [Dota2 Senate](greedy/leetcode/dota2-senate.md)
+  * [Minimum Swaps to Make Strings Equal](greedy/leetcode/minimum_swaps_to_make_string_equal.md)
 * [Graphs](graphs.md)
   * EPI Problems
     * [Search a Maze](graphs/EPI/search-maze.md)
