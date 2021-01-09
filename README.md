@@ -5,6 +5,7 @@
   * [Sliding Window](arrays/sliding-window.md)
     * [Max Consecutive Ones III](arrays/sliding-window/max-consecutive-ones-iii.md)
     * [Product of K Consecutive Numbers](arrays/sliding-window/product-k-consecutive-numbers.md)
+    * [Minimum Adjacent Swaps for K Consecutive Ones](arrays/sliding-window/minimum_adjacent_swaps_K_consecutive_ones.md)
   * Range Additions (Boundary Marking)
     * [Range Addition](arrays/range-addition/range-addition.md)
     * [Corporate Flight Bookings](arrays/range-addition/corporate-flight-bookings.md)
